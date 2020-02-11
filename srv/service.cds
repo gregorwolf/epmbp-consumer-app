@@ -9,7 +9,7 @@ service CatalogService {
   
   entity Orders as select from my.Orders mixin {
     EPMBusinessPartner: Association to EPMBusinessPartners
-      on EPMBusinessPartner.bpId = businessPartner
+      on EPMBusinessPartner.BpId = businessPartner
   } into {
     *,
     EPMBusinessPartner
@@ -17,9 +17,9 @@ service CatalogService {
 
   @cds.persistence.skip
   entity EPMBusinessPartners as projection on EPM_BP_API.EPMBusinessPartner {
-    key BpId as bpId,
-    CompanyName as companyName,
-    City as city,
-    Street as street
+    key BpId,
+    CompanyName,
+    City,
+    Street
   };
 };

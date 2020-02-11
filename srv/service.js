@@ -1,5 +1,5 @@
-const { EpmBusinessPartnerSet } = require('odata-client/zepm-bp-service')
-const { FilterList } = require('@sap/cloud-sdk-core')
+const { EpmBusinessPartnerSet } = require('./odata-client/zepm-bp-service')
+const { FilterList, serializeEntity } = require('@sap/cloud-sdk-core')
 const destination = {
     url: 'http://localhost:3000/v2'
 }
@@ -46,9 +46,10 @@ module.exports = srv => {
 						.getAll()
 						.filter(createFilter(results))
 						.execute(destination)
+						.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
 
 					results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmbps.find(
-						EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.bpId
+						EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.BpId
 					)))
 				}
 			}
