@@ -1,0 +1,7 @@
+{
+  "ZEPM_BP_SRV": {
+    "directoryName": "zepm-bp-service",
+    "servicePath": "/sap/opu/odata/sap/ZEPM_BP_SRV",
+    "npmPackageName": "zepm-bp-service"
+  }
+}

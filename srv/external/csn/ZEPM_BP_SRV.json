@@ -1,0 +1,94 @@
+{
+    "version": {
+        "csn": "1.0"
+    },
+    "definitions": {
+        "ZEPM_BP_SRV.EPMBusinessPartner": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "BpId": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "BpRole": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "EmailAddress": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "PhoneNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "FaxNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "WebAddress": {
+                    "type": "cds.String",
+                    "length": 255
+                },
+                "CompanyName": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "LegalForm": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "CurrencyCode": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "City": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "PostalCode": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Street": {
+                    "type": "cds.String",
+                    "length": 60
+                },
+                "Building": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Country": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AddressType": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "AddressValStartDate": {
+                    "type": "cds.Timestamp"
+                },
+                "AddressValEndDate": {
+                    "type": "cds.Timestamp"
+                },
+                "CreatedBy": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "CreatedAt": {
+                    "type": "cds.Timestamp"
+                },
+                "ChangedBy": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ChangedAt": {
+                    "type": "cds.Timestamp"
+                }
+            }
+        }
+    }
+}
