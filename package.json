@@ -25,6 +25,21 @@
           "srv/",
           "app/"
         ]
+      },
+      "EpmBpService": {
+        "kind": "odata",
+        "model": "srv/external/csn/ZEPM_BP_SRV.json",
+        "vcap": {
+          "label": "destination"
+        },
+        "credentials": {
+          "destination": "NPL",
+          "requestTimeout": 300000
+        },
+        "pool": {
+          "min": 1,
+          "max": 10
+        }
       }
     }
   }
