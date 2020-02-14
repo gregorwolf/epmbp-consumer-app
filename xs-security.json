@@ -1,0 +1,7 @@
+{
+  "xsappname": "epmbp-consumer-app",
+  "tenant-mode": "dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}

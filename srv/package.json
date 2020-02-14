@@ -1,0 +1,25 @@
+{
+	"name": "serve",
+	"dependencies": {
+		"@sap/cds": "^3.21.3",
+		"@sap/hana-client": "^2.4.182",
+		"@sap/xsenv": "^2.2.0",
+		"@sap/xssec": "^2.2.4",
+		"express": "^4.17.1",
+		"passport": "^0.4.1",
+		"uuid": "^3.4.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"postinstall": "npm dedupe && node .build.js",
+		"start": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json"
+	},
+	"cds": {
+		"requires": {
+			"db": {
+				"kind": "hana",
+				"model": "gen/csn.json"
+			}
+		}
+	}
+}

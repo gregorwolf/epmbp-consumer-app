@@ -6,11 +6,17 @@
   "license": "ISC",
   "dependencies": {
     "@sap/cds": "^3",
+    "@sap/hana-client": "^2.4.182",
+    "passport": "^0.4.1",
     "express": "^4"
   },
   "scripts": {
     "start": "npx cds run",
-    "generate-odata-client": "npx generate-odata-client --inputDir srv/service-specifications --outputDir srv/odata-client --forceOverwrite"
+    "build": "cds build/all --clean",
+    "build:cf": "mbt build -p=cf",
+    "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
+    "generate-odata-client": "npx generate-odata-client --inputDir srv/service-specifications --outputDir srv/odata-client --forceOverwrite",
+    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar"
   },
   "devDependencies": {
     "@sap/cloud-sdk-generator": "^1.17.0",

@@ -3,7 +3,7 @@ using ZEPM_BP_SRV as EPM_BP_API from './external/csn/ZEPM_BP_SRV.json';
 
 
 
-service CatalogService {
+service CatalogService @(requires: 'authenticated-user'){
   entity Books as projection on my.Books;
   entity Authors as projection on my.Authors;
   
