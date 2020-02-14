@@ -31,6 +31,7 @@ modules:
       - name: epmbp-consumer-app-db-hdi-container
       - name: epmbp-consumer-app-uaa
       - name: epmbp-consumer-app-destination-service
+      - name: epmbp-consumer-app-connectivity-service
 
   - name: epmbp-consumer-app-app
     type: nodejs
@@ -41,14 +42,16 @@ modules:
       memory: 256M
       disk-quota: 1024M
     requires:
-     - name: epmbp-consumer-app-uaa
-     - name: srv_api
-       group: destinations
-       properties:
-          forwardAuthToken: true
-          strictSSL: false
-          name: srv_api
-          url: ~{url}
+      - name: epmbp-consumer-app-destination-service
+      - name: epmbp-consumer-app-connectivity-service
+      - name: epmbp-consumer-app-uaa
+      - name: srv_api
+        group: destinations
+        properties:
+            forwardAuthToken: true
+            strictSSL: false
+            name: srv_api
+            url: ~{url}
 
 resources:
   - name: epmbp-consumer-app-db-hdi-container
@@ -67,4 +70,9 @@ resources:
     parameters:
        service-plan: lite
        service: destination
+    type: org.cloudfoundry.managed-service
+  - name: epmbp-consumer-app-connectivity-service
+    parameters:
+       service-plan: lite
+       service: connectivity
     type: org.cloudfoundry.managed-service
