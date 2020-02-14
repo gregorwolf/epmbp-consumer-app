@@ -1,8 +1,6 @@
 const { EpmBusinessPartnerSet } = require('./odata-client/zepm-bp-service')
 const { FilterList, serializeEntity } = require('@sap/cloud-sdk-core')
-const destination = {
-    url: 'http://localhost:3000/v2'
-}
+const destination = { destinationName: "NPL" }
 
 const createFilter = xs => {
 	const andFilters = xs.map(x => new FilterList([
