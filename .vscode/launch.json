@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "cds run",
       "type": "node",
@@ -14,6 +15,20 @@
       "internalConsoleOptions": "openOnSessionStart",
       "console": "internalConsole",
       "autoAttachChildProcesses": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "srv/express",
+      "env": {
+        "XS_APP_LOG_LEVEL":"DEBUG",
+        "DEBUG":"X",
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/srv/express",
+      "cwd": "${workspaceFolder}/srv"
     }
   ]
 }
