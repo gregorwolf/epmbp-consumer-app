@@ -14,6 +14,13 @@
       "csrfProtection": true
     },
     {
+      "source": "/api/(.*)$",
+      "target": "/api/$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_api",
+      "csrfProtection": true
+    },
+    {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
       "destination": "NPL"
