@@ -64,7 +64,7 @@ var EpmBusinessPartnerSet = /** @class */ (function (_super) {
      * @returns An object containing all instance variables + custom fields.
      */
     EpmBusinessPartnerSet.prototype.toJSON = function () {
-        return __assign({}, this, this._customFields);
+        return __assign(__assign({}, this), this._customFields);
     };
     /**
      * Technical entity name for EpmBusinessPartnerSet.

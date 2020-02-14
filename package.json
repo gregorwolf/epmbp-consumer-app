@@ -13,7 +13,7 @@
     "generate-odata-client": "npx generate-odata-client --inputDir srv/service-specifications --outputDir srv/odata-client --forceOverwrite"
   },
   "devDependencies": {
-    "@sap/cloud-sdk-generator": "^1.16.0",
+    "@sap/cloud-sdk-generator": "^1.17.0",
     "sqlite3": "^4.1.1"
   },
   "cds": {
