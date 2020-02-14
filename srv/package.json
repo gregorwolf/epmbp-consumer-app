@@ -12,13 +12,19 @@
 	"devDependencies": {},
 	"scripts": {
 		"postinstall": "npm dedupe && node .build.js",
-		"start": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json"
+		"start:cds:serve": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json",
+		"start": "node express.js"
 	},
 	"cds": {
 		"requires": {
 			"db": {
 				"kind": "hana",
 				"model": "gen/csn.json"
+			}
+		},
+		"auth": {
+			"passport": {
+				"strategy": "JWT"
 			}
 		}
 	}
