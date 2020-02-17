@@ -25,10 +25,12 @@ const port = process.env.PORT || 4004
   await app.use("/", express.static("resources/"))
 
   await app.get('/api/userInfo', function (req, res) {
+    res.header("Content-Type", "application/json");
     res.send(JSON.stringify(req.user))
   })
   await app.get('/api/jwt', function (req, res) {
     const jwt = /^Bearer (.*)$/.exec(req.headers.authorization)[1]
+    res.header("Content-Type", "application/json");
     res.send(JSON.stringify({ "JWT": jwt }))
   })  
   // serve odata v4
