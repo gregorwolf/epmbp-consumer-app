@@ -13,7 +13,7 @@
 	"scripts": {
 		"postinstall": "npm dedupe && node .build.js",
 		"start:cds:serve": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json",
-		"start": "node express.js"
+		"start": "node --inspect express.js"
 	},
 	"cds": {
 		"requires": {
