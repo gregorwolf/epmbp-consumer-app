@@ -46,17 +46,22 @@ module.exports = srv => {
 						.build({ destinationName: "NPL", jwt: jwt })
 					console.log("Request URL: " + request.url())
 					console.log("Request headers: " + JSON.stringify(await request.headers()))
-					
-					const epmbps = await await EpmBusinessPartnerSet
+
+					try{
+						const epmbps = await await EpmBusinessPartnerSet
 						.requestBuilder()
 						.getAll()
 						.filter(createFilter(results))
-						.execute({ destinationName: "NPL", jwt: jwt })
+						.execute({ destinationName: "NPL", jwt: jwt}, { rejectUnauthorized: false })
 						.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
 
-					results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmbps.find(
-						EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.BpId
-					)))
+						results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmbps.find(
+							EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.BpId
+						)))
+					} catch (e) {
+						console.log("Error: " + e.message)
+						console.log("Stack: " + e.stack)
+					}
 				}
 			}
 		}
