@@ -1,5 +1,5 @@
 const { EpmBusinessPartnerSet } = require('./odata-client/zepm-bp-service')
-const { FilterList, serializeEntity } = require('@sap/cloud-sdk-core')
+const { FilterList, serializeEntity, retrieveJwt, getDestinationFromDestinationService } = require('@sap/cloud-sdk-core')
 
 const createFilter = xs => {
 	const andFilters = xs.map(x => new FilterList([
@@ -37,7 +37,8 @@ module.exports = srv => {
 		if ($expand){
 			if($expand.match(entityRE).includes('EPMBusinessPartner')) {
 				if('businessPartner' in result) {
-					var jwt = /^Bearer (.*)$/.exec(req._.req.headers.authorization)[1]
+					var jwt = retrieveJwt(req._.req)
+					// var dest = await getDestinationFromDestinationService("NPL")
 					const epmbps = await EpmBusinessPartnerSet
 						.requestBuilder()
 						.getAll()
