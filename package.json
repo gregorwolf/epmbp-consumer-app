@@ -16,7 +16,8 @@
     "build:cf": "mbt build -p=cf",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
     "generate-odata-client": "npx generate-odata-client --inputDir srv/service-specifications --outputDir srv/odata-client --forceOverwrite",
-    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar"
+    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
+    "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
     "@sap/cloud-sdk-generator": "^1.17.0",

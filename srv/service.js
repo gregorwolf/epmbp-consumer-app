@@ -38,6 +38,7 @@ module.exports = srv => {
 			if($expand.match(entityRE).includes('EPMBusinessPartner')) {
 				if('businessPartner' in result) {
 					var jwt = retrieveJwt(req._.req)
+					debugger;
 					// var dest = await getDestinationFromDestinationService("NPL")
 					const epmbps = await EpmBusinessPartnerSet
 						.requestBuilder()
