@@ -9,6 +9,10 @@
       "name": "cds run",
       "type": "node",
       "request": "launch",
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED":"0",
+        "DEBUG":"",
+      },
       "program": "${workspaceFolder}/.vscode/cds",
       "args": [ "run", "--with-mocks", "--in-memory?" ],
       "skipFiles": [ "<node_internals>/**" ],
