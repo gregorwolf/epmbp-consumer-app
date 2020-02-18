@@ -39,26 +39,33 @@ module.exports = srv => {
 				if('businessPartner' in result) {
 					var jwt = retrieveJwt(req._.req)
 					// var dest = await getDestinationFromDestinationService("NPL")
-					const request = await EpmBusinessPartnerSet
-						.requestBuilder()
-						.getAll()
-						.filter(createFilter(results))
-						.build({ destinationName: "NPL", jwt: jwt })
-					console.log("Request URL: " + request.url())
-					console.log("Request headers: " + JSON.stringify(await request.headers()))
-
 					try{
+						const request = await EpmBusinessPartnerSet
+							.requestBuilder()
+							.getAll()
+							.filter(createFilter(results))
+							.build({ destinationName: "NPL", jwt: jwt })
+						console.log("Request URL: " + request.url())
+						console.log("Request headers: " + JSON.stringify(await request.headers()))
+					} catch (e) {
+						debugger;
+						console.log("Error: " + e.message)
+						console.log("Stack: " + e.stack)
+					}
+					try{
+						debugger;
 						const epmbps = await await EpmBusinessPartnerSet
 						.requestBuilder()
 						.getAll()
 						.filter(createFilter(results))
-						.execute({ destinationName: "NPL", jwt: jwt}, { rejectUnauthorized: false })
+						.execute({ destinationName: "NPL", jwt: jwt})
 						.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
 
 						results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmbps.find(
 							EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.BpId
 						)))
 					} catch (e) {
+						debugger;
 						console.log("Error: " + e.message)
 						console.log("Stack: " + e.stack)
 					}
