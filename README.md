@@ -1,5 +1,32 @@
 # EPM Business Partner - Consumer App
 
+This example application demontrates how to use a custom built OData Service with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model.
+
+## Run local
+
+To run against the local mock service [epmbp-mock-service](https://github.com/gregorwolf/epmbp-mock-service) you have to create a file named *default-env.json* with the following content:
+
+```
+{
+  "VCAP_SERVICES": {
+  },
+  "destinations": [
+    {
+      "name": "NPL_SDK",
+      "url": "http://localhost:3000/v2"
+    }
+  ]
+}
+```
+
+Then execute:
+
+`npm run setup`
+
+Followed by:
+
+`npm start`
+
 ## Deploy to SAP Cloud Platform - Cloud Foundry
 
 ### Prerequisite
