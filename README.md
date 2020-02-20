@@ -1,6 +1,6 @@
 # EPM Business Partner - Consumer App
 
-This example application demontrates how to use a custom built OData Service with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model.
+This example application demonstrates how to use a custom built OData Service with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model.
 
 This example wouldn't work without the help of [Dennis Hempfing](https://github.com/mr-flannery) who steped in to help in this questions:
 
