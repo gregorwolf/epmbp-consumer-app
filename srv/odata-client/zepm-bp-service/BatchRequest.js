@@ -1,8 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /*!
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ *
+ * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
 var index_1 = require("./index");
 /**
@@ -32,5 +34,5 @@ function changeset() {
 }
 exports.changeset = changeset;
 exports.defaultZepmBpServicePath = '/sap/opu/odata/sap/ZEPM_BP_SRV';
-var map = { 'EPMBusinessPartner': index_1.EpmBusinessPartnerSet };
+var map = { 'EPMBusinessPartnerSet': index_1.EpmBusinessPartnerSet };
 //# sourceMappingURL=BatchRequest.js.map

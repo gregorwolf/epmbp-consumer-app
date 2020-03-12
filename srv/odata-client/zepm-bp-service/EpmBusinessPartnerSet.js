@@ -1,7 +1,4 @@
 "use strict";
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -27,6 +24,11 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/*!
+ * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ *
+ * This is a generated file powered by the SAP Cloud SDK for JavaScript.
+ */
 var EpmBusinessPartnerSetRequestBuilder_1 = require("./EpmBusinessPartnerSetRequestBuilder");
 var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
 /**

@@ -1,7 +1,8 @@
 /*!
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ *
+ * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-
 import { CreateRequestBuilder, DeleteRequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, ODataBatchChangeSet, ODataBatchRequestBuilder, UpdateRequestBuilder } from '@sap/cloud-sdk-core';
 import { EpmBusinessPartnerSet } from './index';
 
@@ -24,6 +25,6 @@ export function changeset(...requests: WriteZepmBpServiceRequestBuilder[]): ODat
 }
 
 export const defaultZepmBpServicePath = '/sap/opu/odata/sap/ZEPM_BP_SRV';
-const map = { 'EPMBusinessPartner': EpmBusinessPartnerSet };
+const map = { 'EPMBusinessPartnerSet': EpmBusinessPartnerSet };
 export type ReadZepmBpServiceRequestBuilder = GetAllRequestBuilder<EpmBusinessPartnerSet> | GetByKeyRequestBuilder<EpmBusinessPartnerSet>;
 export type WriteZepmBpServiceRequestBuilder = CreateRequestBuilder<EpmBusinessPartnerSet> | UpdateRequestBuilder<EpmBusinessPartnerSet> | DeleteRequestBuilder<EpmBusinessPartnerSet>;

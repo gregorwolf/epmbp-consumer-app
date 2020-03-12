@@ -5,10 +5,10 @@
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap/cds": "^3",
+    "@sap/cds": "^3.31.2",
     "@sap/hana-client": "^2.4.182",
     "passport": "^0.4.1",
-    "express": "^4"
+    "express": "^4.17.1"
   },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
@@ -22,7 +22,7 @@
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
-    "@sap/cloud-sdk-generator": "^1.17.0",
+    "@sap/cloud-sdk-generator": "^1.17.2",
     "sqlite3": "^4.1.1"
   },
   "cds": {

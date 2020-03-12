@@ -1,6 +1,6 @@
 {
   "name": "zepm-bp-service",
-  "version": "1.17.0",
+  "version": "1.17.2",
   "description": "SAP Cloud SDK for JavaScript: Virtual Data Model (VDM) for service zepm-bp-service",
   "homepage": "https://www.sap.com/cloud-sdk",
   "main": "./index.js",
@@ -24,10 +24,10 @@
     "doc": "npx typedoc"
   },
   "dependencies": {
-    "@sap/cloud-sdk-core": "^1.17.0"
+    "@sap/cloud-sdk-core": "^1.17.2"
   },
   "peerDependencies": {
-    "@sap/cloud-sdk-core": "^1.17.0"
+    "@sap/cloud-sdk-core": "^1.17.2"
   },
   "devDependencies": {
     "@types/node": "^11.13.5",
