@@ -7,6 +7,8 @@
   "dependencies": {
     "@sap/cds": "^3.31.2",
     "@sap/hana-client": "^2.4.182",
+    "@sap/xsenv": "^2.2.0",
+    "@sap/xssec": "^2.2.5",
     "passport": "^0.4.1",
     "express": "^4.17.1"
   },

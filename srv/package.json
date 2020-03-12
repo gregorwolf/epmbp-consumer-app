@@ -1,13 +1,13 @@
 {
 	"name": "serve",
 	"dependencies": {
-		"@sap/cds": "^3.21.3",
+		"@sap/cds": "^3.31.2",
 		"@sap/hana-client": "^2.4.182",
 		"@sap/xsenv": "^2.2.0",
-		"@sap/xssec": "^2.2.4",
+		"@sap/xssec": "^2.2.5",
 		"express": "^4.17.1",
 		"passport": "^0.4.1",
-		"uuid": "^3.4.0"
+		"uuid": "^7.0.2"
 	},
 	"devDependencies": {},
 	"scripts": {

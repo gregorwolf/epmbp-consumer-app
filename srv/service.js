@@ -18,6 +18,14 @@ function SELECT (columns) {
   }}
 }
 
+function getJWT (req) {
+	if(typeof(req._) !== 'undefined') {
+		return retrieveJwt(req._.req)
+	} else {
+		return ""
+	}
+}
+
 module.exports = srv => {
 
 	srv.before('READ', 'Orders', async (req) => {
@@ -39,24 +47,10 @@ module.exports = srv => {
 		if ($expand){
 			if($expand.match(entityRE).includes('EPMBusinessPartner')) {
 				if('businessPartner' in result) {
-					var jwt = retrieveJwt(req._.req)
-					// var dest = await getDestinationFromDestinationService("NPL")
-					try{
-						const request = await EpmBusinessPartnerSet
-							.requestBuilder()
-							.getAll()
-							.filter(createFilter(results))
-							.build({ destinationName: destinationName, jwt: jwt })
-						console.log("Request URL: " + request.url())
-						console.log("Request headers: " + JSON.stringify(await request.headers()))
-					} catch (e) {
-						debugger;
-						console.log("Error: " + e.message)
-						console.log("Stack: " + e.stack)
-					}
+					var jwt = getJWT(req)
 					try{
 						debugger;
-						const epmbps = await await EpmBusinessPartnerSet
+						const epmbps = await EpmBusinessPartnerSet
 						.requestBuilder()
 						.getAll()
 						.filter(createFilter(results))
@@ -74,6 +68,22 @@ module.exports = srv => {
 				}
 			}
 		}
-
 	})
+
+	srv.on('READ', 'EPMBusinessPartners', async (results, req) => {
+		var jwt = getJWT(req)
+		try{
+			const epmbps = await EpmBusinessPartnerSet
+			.requestBuilder()
+			.getAll()
+			.execute({ destinationName: destinationName, jwt: jwt})
+			.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
+			return epmbps
+		} catch (e) {
+			debugger;
+			console.log("Error: " + e.message)
+			console.log("Stack: " + e.stack)
+		}
+	})
+
 }

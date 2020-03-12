@@ -16,10 +16,5 @@ service CatalogService @(requires: 'authenticated-user'){
   };
 
   @cds.persistence.skip
-  entity EPMBusinessPartners as projection on EPM_BP_API.EPMBusinessPartner {
-    key BpId,
-    CompanyName,
-    City,
-    Street
-  };
+  entity EPMBusinessPartners as projection on EPM_BP_API.EPMBusinessPartner;
 };
