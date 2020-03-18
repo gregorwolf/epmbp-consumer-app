@@ -1,6 +1,9 @@
 {
   "name": "epmbp-consumer-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "^10"
+  },
   "description": "A simple CAP project.",
   "repository": "<Add your repository here>",
   "license": "ISC",

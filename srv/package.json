@@ -1,5 +1,8 @@
 {
 	"name": "serve",
+	"engines": {
+		"node": "^10"
+	},
 	"dependencies": {
 		"@sap/cds": "^3.31.2",
 		"@sap/hana-client": "^2.4.182",

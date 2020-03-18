@@ -2,6 +2,9 @@
   "name": "appadmin",
   "version": "0.0.1",
   "description": "",
+  "engines": {
+    "node": "^10"
+  },
   "devDependencies": {
     "@sap/grunt-sapui5-bestpractice-build": "1.4.2"
   },
