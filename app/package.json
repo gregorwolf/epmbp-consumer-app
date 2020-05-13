@@ -9,7 +9,7 @@
     "@sap/grunt-sapui5-bestpractice-build": "1.4.2"
   },
   "dependencies": {
-    "@sap/approuter": "6.8.2"
+    "@sap/approuter": "7.1.2"
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js"

@@ -1,6 +1,8 @@
 # EPM Business Partner - Consumer App
 
-This example application demonstrates how to use a custom built OData Service with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model. And that with authentication and principal propagation. So that the service in the ABAP Backend is called not with a technical user, but with the user that was authenticated in the SAP Cloud Platform.
+This example application demonstrates how to use an OData Service available on the [SAP Gateway Demo Server - ES5](https://developers.sap.com/tutorials/gateway-demo-signup.html) with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model. 
+
+You can also run this app against your on premise [ABAP Developer Edition](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) using the SAP Cloud Connection. Here you can then configure end-to-end authentication with principal propagation. In that case the service in the ABAP Backend is called not with a technical user, but with the user that was authenticated in the SAP Cloud Platform.
 
 This example wouldn't work without the help of [Dennis Hempfing](https://github.com/mr-flannery) who steped in to help in this questions:
 
@@ -18,8 +20,35 @@ To run against the local mock service [epmbp-mock-service](https://github.com/gr
   },
   "destinations": [
     {
-      "name": "NPL_SDK",
-      "url": "http://localhost:3000/v2"
+      "name": "ES5",
+      "url": "http://localhost:3000/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV"
+    },
+    {
+      "name": "ES5_SDK",
+      "url": "http://localhost:3000/"
+    }
+  ]
+}
+```
+
+If you want to da a local test against the ES5 system then use this content for the *default-env.json*
+
+```
+{
+  "VCAP_SERVICES": {
+  },
+  "destinations": [
+    {
+      "name": "ES5",
+      "url": "https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",
+      "username": "<Your ES5 Username>",
+      "password": "<Your ES5 Password>"
+    },
+    {
+      "name": "ES5_SDK",
+      "url": "https://sapes5.sapdevcenter.com",
+      "username": "<Your ES5 Username>",
+      "password": "<Your ES5 Password>"
     }
   ]
 }
@@ -42,29 +71,90 @@ Followed by:
 - The [Cloud Foundry commandline tool](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) is installed
 - The [MultiApps CF CLI Plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin) is installed
 - You've connected using `cf login`to your trial account
+- Three destinations either to the ES5 or your local ABAP system
+
+Optional
+
 - You've connected a SAP Cloud Connector to your subaccount
 - Principal Propagation is setup in the Cloud Connector to the ABAP Backend
 
-### Preperation
 
-Before you can deploy the application to your Cloud Foundry account two destinations must be created. Please find here what I've used in my environment:
+### Preperation for a Connection to ES5
 
-Destination NPL used by the approuter:
+Destination ES5 used by the approuter:
 
 ```
-URL=http\://npl752.virtual\:44300
-Name=NPL
+Description=SAP Gateway Demo System
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
+Name=ES5
+WebIDEEnabled=true
+URL=https\://sapes5.sapdevcenter.com
+ProxyType=Internet
+User=<Your ES5 Username>
+WebIDESystem=ES5
+```
+
+Destination ES5 used by the CAP:
+
+```
+Description=SAP Gateway Demo System
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
+Name=ES5_CAP
+WebIDEEnabled=true
+URL=https\://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
+ProxyType=Internet
+User=<Your ES5 Username>
+WebIDESystem=ES5_CAP
+```
+
+Destination ES5_SDK used by the SAP Cloud SDK:
+
+```
+Description=SAP Gateway Demo System
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
+Name=ES5_SDK
+WebIDEEnabled=true
+URL=https\://sapes5.sapdevcenter.com
+ProxyType=Internet
+User=<Your ES5 Username>
+WebIDESystem=ES5_SDK
+```
+
+### Preperation for on premise connection with principal propagation
+
+Destination ES5 used by the approuter:
+
+```
+URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>
+Name=ES5
 ProxyType=OnPremise
 Type=HTTP
 sap-client=001
 Authentication=PrincipalPropagation
 ```
 
-Destination NPL_SDK used by the SAP Cloud SDK:
+Destination ES5 used by the CAP:
 
 ```
-URL=http\://npl752.virtual\:44300
-Name=NPL_SDK
+URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
+Name=ES5_CAP
+ProxyType=OnPremise
+Type=HTTP
+sap-client=001
+Authentication=PrincipalPropagation
+```
+
+Destination ES5_SDK used by the SAP Cloud SDK:
+
+```
+URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>
+Name=ES5_SDK
 ProxyType=OnPremise
 Type=HTTP
 sap-client=001

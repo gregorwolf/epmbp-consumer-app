@@ -13,22 +13,33 @@
 			<li><a href="/api/userInfo">/api/userInfo</a></li>
 			<li><a href="/api/jwt">/api/jwt</a></li>
 		</ul>
+
+		<h2>Reading from Backend via approuter destination directly</h2>
+			<ul>
+				<li><a href="/sap/public/ping">/sap/public/ping</a></li>
+				<li><a href="/sap/bc/ping">/sap/bc/ping</a></li>
+				<li><a href="sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products?$format=json&$top=10">sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products?$format=json&amp;$top=10</a></li>
+				<li><a href="sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Suppliers?$format=json&$top=10">sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Suppliers?$format=json&amp;$top=10</a></li>
+		</ul>
+
 		<h2>CAP only API</h2>
 		<ul>
 			<li><a href="/catalog/Orders">/catalog/Orders</a></li>
 		</ul>
-		<h2>Reading from Backend via Destination using Cloud SDK</h2>
+		<h2>Reading from Backend via CAP Middleware using Cloud SDK</h2>
 		<ul>
-			<li><a href="/catalog/EPMBusinessPartners">/catalog/EPMBusinessPartners</a></li>
+			<li><a href="/catalog/sdkSuppliers">/catalog/sdkSuppliers</a></li>
+			<!--
 			<li><a href="/catalog/Orders?$expand=EPMBusinessPartner">/catalog/Orders?$expand=EPMBusinessPartner</a></li>
+			-->
 		</ul>
 
-		<h2>Reading from Backend via Destination directly</h2>
-			<ul>
-				<li><a href="/sap/public/ping">/sap/public/ping</a></li>
-				<li><a href="/sap/bc/ping">/sap/bc/ping</a></li>
-				<li><a href="/sap/opu/odata/sap/ZEPM_BP_SRV/EPMBusinessPartnerSet?$format=json&$top=10">/sap/opu/odata/sap/ZEPM_BP_SRV/EPMBusinessPartnerSet?$format=json&amp;$top=10</a></li>
+		<h2>Reading from Backend via CAP Middleware using CAP</h2>
+		<ul>
+			<li><a href="/catalog/Suppliers">/catalog/Suppliers</a></li>
+			<li><a href="/catalog/Products">/catalog/Products</a></li>
 		</ul>
+
 		<p><a href="/do/logout">Logout</a></p>
 	</body>
 

@@ -8,12 +8,13 @@
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap/cds": "^3.31.2",
-    "@sap/hana-client": "^2.4.182",
+    "@sap/cds": "^3.34.1",
+    "@sap/cloud-sdk-core": "^1.17.2",
+    "@sap/hana-client": "^2.4.196",
     "@sap/xsenv": "^2.2.0",
     "@sap/xssec": "^2.2.5",
-    "passport": "^0.4.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "passport": "^0.4.1"
   },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
@@ -21,14 +22,14 @@
     "build": "cds build/all --clean",
     "build:cf": "mbt build -p=cf",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
-    "generate-odata-client": "npx generate-odata-client --inputDir srv/service-specifications --outputDir srv/odata-client --forceOverwrite",
+    "generate-odata-client": "npx generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy db --to sqlite",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
     "@sap/cloud-sdk-generator": "^1.17.2",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.2.0"
   },
   "cds": {
     "requires": {
@@ -36,15 +37,14 @@
         "kind": "sqlite",
         "model": "db"
       },
-      "EpmBpService": {
+      "EPM_REF_APPS_PROD_MAN_SRV": {
         "kind": "odata",
-        "model": "srv/external/csn/ZEPM_BP_SRV.json",
-        "vcap": {
-          "label": "destination"
-        },
+        "model": "srv/external/EPM_REF_APPS_PROD_MAN_SRV",
         "credentials": {
-          "destination": "NPL",
-          "requestTimeout": 300000
+          "xdestination": "NETWEAVER_ABAP",
+          "destination": "ES5_CAP",
+          "zdestination": "LOCAL",
+          "requestTimeout": 30000
         },
         "pool": {
           "min": 1,

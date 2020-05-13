@@ -37,10 +37,16 @@ const port = process.env.PORT || 4004
   await cds.connect('db') // ensure database is connected!
 
   await cds
-    .serve('all')
+    .serve('CatalogService')
     .from('gen/csn.json')
     .with('service.js')
     .in(app);
+
+  await cds
+    .serve('EPM_REF_APPS_PROD_MAN_SRV')
+    .from('gen/csn.json')
+    .in(app);
+
   // start server
   const server = app.listen(port, host, () => {
     console.info(`app is listing at ${port}`)

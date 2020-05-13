@@ -23,7 +23,7 @@
     {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
-      "destination": "NPL"
+      "destination": "ES5"
     },
     {
       "source": "^/app/logout.html$", 

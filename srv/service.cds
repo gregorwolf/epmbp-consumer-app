@@ -1,12 +1,10 @@
 using my.bookshop as my from '../db/extended';
-using ZEPM_BP_SRV as EPM_BP_API from './external/csn/ZEPM_BP_SRV.json';
-
-
+using EPM_REF_APPS_PROD_MAN_SRV from './external/EPM_REF_APPS_PROD_MAN_SRV';
 
 service CatalogService @(requires: 'authenticated-user'){
   entity Books as projection on my.Books;
   entity Authors as projection on my.Authors;
-  
+  /*
   entity Orders as select from my.Orders mixin {
     EPMBusinessPartner: Association to EPMBusinessPartners
       on EPMBusinessPartner.BpId = businessPartner
@@ -14,7 +12,12 @@ service CatalogService @(requires: 'authenticated-user'){
     *,
     EPMBusinessPartner
   };
-
+  */
   @cds.persistence.skip
-  entity EPMBusinessPartners as projection on EPM_BP_API.EPMBusinessPartner;
+  entity sdkSuppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
+  @cds.persistence.skip
+  entity Suppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
+  @cds.persistence.skip
+  entity Products as projection on EPM_REF_APPS_PROD_MAN_SRV.Products;
+
 };

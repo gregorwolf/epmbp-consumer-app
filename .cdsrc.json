@@ -1,4 +1,7 @@
 {
+    "odata": {
+        "skipValidation": "true"
+    },
     "build": {
         "target": ".",
         "tasks": [

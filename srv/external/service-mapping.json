@@ -1,0 +1,7 @@
+{
+  "EPM_REF_APPS_PROD_MAN_SRV": {
+    "directoryName": "EPM_REF_APPS_PROD_MAN_SRV",
+    "servicePath": "/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",
+    "npmPackageName": "EPM_REF_APPS_PROD_MAN_SRV"
+  }
+}

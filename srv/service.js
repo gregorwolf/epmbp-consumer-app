@@ -1,11 +1,8 @@
-const { EpmBusinessPartnerSet } = require('./odata-client/zepm-bp-service')
-const { FilterList, serializeEntity, retrieveJwt } = require('@sap/cloud-sdk-core')
-
-const destinationName = 'NPL_SDK'
-
+const cds = require('@sap/cds')
+/*
 const createFilter = xs => {
 	const andFilters = xs.map(x => new FilterList([
-		EpmBusinessPartnerSet.BP_ID.equals(x.businessPartner),
+		Suppliers.SUPPLIER.equals(x.businessPartner),
 	]))
 	return new FilterList(undefined, andFilters).flatten()
 }
@@ -17,6 +14,7 @@ function SELECT (columns) {
       return b
   }}
 }
+*/
 
 function getJWT (req) {
 	if(typeof(req._) !== 'undefined') {
@@ -26,18 +24,27 @@ function getJWT (req) {
 	}
 }
 
-module.exports = srv => {
+module.exports = async function (){
 
-	srv.before('READ', 'Orders', async (req) => {
+	const { Suppliers: sdkSuppliers } = require('./odata-client/EPM_REF_APPS_PROD_MAN_SRV')
+	const { FilterList, serializeEntity, retrieveJwt } = require('@sap/cloud-sdk-core')
+	
+  const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
+  const { Products, Suppliers } = externalService.entities
+	
+	const destinationName = 'ES5_SDK'
+	
+		
+	/*
+	this.before('READ', 'Orders', async (req) => {
 
 		const { SELECT } = req.query
 		SELECT.columns = SELECT.columns.filter(c => !(c.expand && c.ref[0] === 'EPMBusinessPartner'))
 
 	})
+	this.after('READ', 'Orders', async (results, req) => {
 
-	srv.after('READ', 'Orders', async (results, req) => {
-
-		const { EPMBusinessPartners } = srv.entities
+		const { EPMBusinessPartners } = this.entities
 
 		const $expand = req._.odataReq.getQueryOptions() && req._.odataReq.getQueryOptions().$expand || ''
 		const result = results[0] || {}
@@ -50,15 +57,15 @@ module.exports = srv => {
 					var jwt = getJWT(req)
 					try{
 						debugger;
-						const epmbps = await EpmBusinessPartnerSet
+						const epmSuppliers = await Suppliers
 						.requestBuilder()
 						.getAll()
 						.filter(createFilter(results))
 						.execute({ destinationName: destinationName, jwt: jwt})
-						.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
+						.then(Suppliers => Suppliers.map(bp => serializeEntity(bp, Suppliers)))
 
-						results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmbps.find(
-							EpmBusinessPartnerSet => order.businessPartner === EpmBusinessPartnerSet.BpId
+						results.forEach(order => order.EPMBusinessPartner = SELECT (EPMBusinessPartners.elements) .from (epmSuppliers.find(
+							Suppliers => order.businessPartner === Suppliers.BpId
 						)))
 					} catch (e) {
 						debugger;
@@ -69,21 +76,46 @@ module.exports = srv => {
 			}
 		}
 	})
-
-	srv.on('READ', 'EPMBusinessPartners', async (results, req) => {
+	*/
+	this.on('READ', 'sdkSuppliers', async (results, req) => {
 		var jwt = getJWT(req)
 		try{
-			const epmbps = await EpmBusinessPartnerSet
+			const epmSuppliers = await sdkSuppliers
 			.requestBuilder()
 			.getAll()
 			.execute({ destinationName: destinationName, jwt: jwt})
-			.then(businessPartners => businessPartners.map(bp => serializeEntity(bp, EpmBusinessPartnerSet)))
-			return epmbps
+			// console.log("epmSuppliers: " + JSON.stringify(epmSuppliers))
+			let mappedSuppliers = await epmSuppliers.map(bp => serializeEntity(bp, sdkSuppliers))
+			// console.log("mappedSuppliers: " + JSON.stringify(mappedSuppliers))
+			return mappedSuppliers
 		} catch (e) {
 			debugger;
-			console.log("Error: " + e.message)
+			console.error("Error: " + e.message)
 			console.log("Stack: " + e.stack)
 		}
 	})
 
+  this.on ('READ','Suppliers', async req => {
+    const tx = externalService.transaction(req)
+    const cqn = SELECT.from(Suppliers)
+    // const cqn = req.query.SELECT
+    try {
+      let result = await tx.run(cqn)
+      return result
+    } catch (error) {
+      console.error(error.message)
+    }
+  })
+
+	this.on('READ', 'Products', async (results, req) => {
+    const tx = externalService.transaction(req)
+    const cqn = SELECT.from(Products)
+    try {
+			let result = await tx.run(cqn)
+			// console.log("Products: " + JSON.stringify(result))
+      return result
+    } catch (error) {
+      console.error(error.message)
+    }
+	})
 }

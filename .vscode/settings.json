@@ -3,5 +3,6 @@
     "**/.gitignore": true,
     "**/.git": true,
     "**/.vscode": true
-  }
+  },
+  "codewindProfiling.showProfiling": false
 }
