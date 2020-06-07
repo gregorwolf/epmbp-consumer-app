@@ -22,13 +22,13 @@
     "build": "cds build/all --clean",
     "build:cf": "mbt build -p=cf",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
-    "generate-odata-client": "npx generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
+    "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy db --to sqlite",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
-    "@sap/cloud-sdk-generator": "^1.17.2",
+    "@sap-cloud-sdk/generator": "^1.21.1",
     "sqlite3": "^4.2.0"
   },
   "cds": {
