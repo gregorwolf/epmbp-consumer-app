@@ -1,9 +1,4 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
-import { FunctionImportRequestBuilder } from '@sap/cloud-sdk-core';
+import { FunctionImportRequestBuilder } from '@sap-cloud-sdk/core';
 import { ProductDrafts } from './ProductDrafts';
 import { Products } from './Products';
 /**
@@ -18,7 +13,7 @@ export interface EditProductParameters {
 /**
  * Edit Product.
  *
- * @param parameters Object containing all parameters for the function import.
+ * @param parameters - Object containing all parameters for the function import.
  * @returns A request builder that allows to overwrite some of the values and execute the resultng request.
  */
 export declare function editProduct(parameters: EditProductParameters): FunctionImportRequestBuilder<EditProductParameters, ProductDrafts>;
@@ -34,7 +29,7 @@ export interface CopyProductParameters {
 /**
  * Copy Product.
  *
- * @param parameters Object containing all parameters for the function import.
+ * @param parameters - Object containing all parameters for the function import.
  * @returns A request builder that allows to overwrite some of the values and execute the resultng request.
  */
 export declare function copyProduct(parameters: CopyProductParameters): FunctionImportRequestBuilder<CopyProductParameters, ProductDrafts>;
@@ -50,7 +45,7 @@ export interface ActivateProductParameters {
 /**
  * Activate Product.
  *
- * @param parameters Object containing all parameters for the function import.
+ * @param parameters - Object containing all parameters for the function import.
  * @returns A request builder that allows to overwrite some of the values and execute the resultng request.
  */
 export declare function activateProduct(parameters: ActivateProductParameters): FunctionImportRequestBuilder<ActivateProductParameters, Products>;

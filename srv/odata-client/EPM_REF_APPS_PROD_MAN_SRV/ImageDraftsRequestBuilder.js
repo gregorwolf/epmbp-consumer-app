@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.ImageDraftsRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var ImageDrafts_1 = require("./ImageDrafts");
 /**
  * Request builder class for operations supported on the [[ImageDrafts]] entity.
@@ -34,14 +35,14 @@ var ImageDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `ImageDrafts` entity based on its keys.
      */
     ImageDraftsRequestBuilder.prototype.getByKey = function (id) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(ImageDrafts_1.ImageDrafts, { Id: id });
+        return new core_1.GetByKeyRequestBuilder(ImageDrafts_1.ImageDrafts, { Id: id });
     };
     /**
      * Returns a request builder for querying all `ImageDrafts` entities.
      * @returns A request builder for creating requests to retrieve all `ImageDrafts` entities.
      */
     ImageDraftsRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(ImageDrafts_1.ImageDrafts);
+        return new core_1.GetAllRequestBuilder(ImageDrafts_1.ImageDrafts);
     };
     /**
      * Returns a request builder for creating a `ImageDrafts` entity.
@@ -49,7 +50,7 @@ var ImageDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that create an entity of type `ImageDrafts`.
      */
     ImageDraftsRequestBuilder.prototype.create = function (entity) {
-        return new cloud_sdk_core_1.CreateRequestBuilder(ImageDrafts_1.ImageDrafts, entity);
+        return new core_1.CreateRequestBuilder(ImageDrafts_1.ImageDrafts, entity);
     };
     /**
      * Returns a request builder for updating an entity of type `ImageDrafts`.
@@ -57,12 +58,12 @@ var ImageDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `ImageDrafts`.
      */
     ImageDraftsRequestBuilder.prototype.update = function (entity) {
-        return new cloud_sdk_core_1.UpdateRequestBuilder(ImageDrafts_1.ImageDrafts, entity);
+        return new core_1.UpdateRequestBuilder(ImageDrafts_1.ImageDrafts, entity);
     };
     ImageDraftsRequestBuilder.prototype.delete = function (idOrEntity) {
-        return new cloud_sdk_core_1.DeleteRequestBuilder(ImageDrafts_1.ImageDrafts, idOrEntity instanceof ImageDrafts_1.ImageDrafts ? idOrEntity : { Id: idOrEntity });
+        return new core_1.DeleteRequestBuilder(ImageDrafts_1.ImageDrafts, idOrEntity instanceof ImageDrafts_1.ImageDrafts ? idOrEntity : { Id: idOrEntity });
     };
     return ImageDraftsRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.ImageDraftsRequestBuilder = ImageDraftsRequestBuilder;
 //# sourceMappingURL=ImageDraftsRequestBuilder.js.map

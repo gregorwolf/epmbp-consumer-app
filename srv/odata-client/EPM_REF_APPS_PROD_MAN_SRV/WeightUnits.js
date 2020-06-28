@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.WeightUnits = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var WeightUnitsRequestBuilder_1 = require("./WeightUnitsRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "WeightUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var WeightUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `WeightUnits`.
      */
     WeightUnits.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(WeightUnits);
+        return core_1.Entity.entityBuilder(WeightUnits);
     };
     /**
      * Returns a request builder to construct requests for operations on the `WeightUnits` entity type.
@@ -59,7 +60,7 @@ var WeightUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `WeightUnits`.
      */
     WeightUnits.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, WeightUnits);
+        return core_1.Entity.customFieldSelector(fieldName, WeightUnits);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,24 +83,24 @@ var WeightUnits = /** @class */ (function (_super) {
      */
     WeightUnits._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return WeightUnits;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.WeightUnits = WeightUnits;
 (function (WeightUnits) {
     /**
      * Static representation of the [[unit]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    WeightUnits.UNIT = new cloud_sdk_core_1.StringField('Unit', WeightUnits, 'Edm.String');
+    WeightUnits.UNIT = new core_1.StringField('Unit', WeightUnits, 'Edm.String');
     /**
      * Static representation of the [[shorttext]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    WeightUnits.SHORTTEXT = new cloud_sdk_core_1.StringField('Shorttext', WeightUnits, 'Edm.String');
+    WeightUnits.SHORTTEXT = new core_1.StringField('Shorttext', WeightUnits, 'Edm.String');
     /**
      * Static representation of the [[text]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    WeightUnits.TEXT = new cloud_sdk_core_1.StringField('Text', WeightUnits, 'Edm.String');
+    WeightUnits.TEXT = new core_1.StringField('Text', WeightUnits, 'Edm.String');
     /**
      * All fields of the WeightUnits entity.
      */
@@ -111,7 +112,7 @@ exports.WeightUnits = WeightUnits;
     /**
      * All fields selector.
      */
-    WeightUnits.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', WeightUnits);
+    WeightUnits.ALL_FIELDS = new core_1.AllFields('*', WeightUnits);
     /**
      * All key fields of the WeightUnits entity.
      */

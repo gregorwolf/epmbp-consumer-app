@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.SuppliersRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var Suppliers_1 = require("./Suppliers");
 /**
  * Request builder class for operations supported on the [[Suppliers]] entity.
@@ -34,16 +35,16 @@ var SuppliersRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `Suppliers` entity based on its keys.
      */
     SuppliersRequestBuilder.prototype.getByKey = function (id) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(Suppliers_1.Suppliers, { Id: id });
+        return new core_1.GetByKeyRequestBuilder(Suppliers_1.Suppliers, { Id: id });
     };
     /**
      * Returns a request builder for querying all `Suppliers` entities.
      * @returns A request builder for creating requests to retrieve all `Suppliers` entities.
      */
     SuppliersRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(Suppliers_1.Suppliers);
+        return new core_1.GetAllRequestBuilder(Suppliers_1.Suppliers);
     };
     return SuppliersRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.SuppliersRequestBuilder = SuppliersRequestBuilder;
 //# sourceMappingURL=SuppliersRequestBuilder.js.map

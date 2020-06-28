@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
@@ -6,7 +6,7 @@
 import { ProductsRequestBuilder } from './ProductsRequestBuilder';
 import { Moment } from 'moment';
 import { BigNumber } from 'bignumber.js';
-import { AllFields, BigNumberField, CustomField, DateField, Entity, EntityBuilderType, NumberField, OneToOneLink, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, BigNumberField, CustomField, DateField, Entity, EntityBuilderType, Field, NumberField, OneToOneLink, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "Products" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -397,11 +397,11 @@ export namespace Products {
   /**
    * All key fields of the Products entity.
    */
-  export const _keyFields: Array<Selectable<Products>> = [Products.ID];
+  export const _keyFields: Array<Field<Products>> = [Products.ID];
   /**
    * Mapping of all key field names to the respective static field property Products.
    */
-  export const _keys: { [keys: string]: Selectable<Products> } = Products._keyFields.reduce((acc: { [keys: string]: Selectable<Products> }, field: Selectable<Products>) => {
+  export const _keys: { [keys: string]: Field<Products> } = Products._keyFields.reduce((acc: { [keys: string]: Field<Products> }, field: Field<Products>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.SubCategories = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var SubCategoriesRequestBuilder_1 = require("./SubCategoriesRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "SubCategories" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var SubCategories = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `SubCategories`.
      */
     SubCategories.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(SubCategories);
+        return core_1.Entity.entityBuilder(SubCategories);
     };
     /**
      * Returns a request builder to construct requests for operations on the `SubCategories` entity type.
@@ -59,7 +60,7 @@ var SubCategories = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `SubCategories`.
      */
     SubCategories.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, SubCategories);
+        return core_1.Entity.customFieldSelector(fieldName, SubCategories);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,7 +83,7 @@ var SubCategories = /** @class */ (function (_super) {
      */
     SubCategories._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return SubCategories;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.SubCategories = SubCategories;
 var MainCategories_1 = require("./MainCategories");
 (function (SubCategories) {
@@ -90,27 +91,27 @@ var MainCategories_1 = require("./MainCategories");
      * Static representation of the [[id]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    SubCategories.ID = new cloud_sdk_core_1.StringField('Id', SubCategories, 'Edm.String');
+    SubCategories.ID = new core_1.StringField('Id', SubCategories, 'Edm.String');
     /**
      * Static representation of the [[name]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    SubCategories.NAME = new cloud_sdk_core_1.StringField('Name', SubCategories, 'Edm.String');
+    SubCategories.NAME = new core_1.StringField('Name', SubCategories, 'Edm.String');
     /**
      * Static representation of the [[mainCategoryId]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    SubCategories.MAIN_CATEGORY_ID = new cloud_sdk_core_1.StringField('MainCategoryId', SubCategories, 'Edm.String');
+    SubCategories.MAIN_CATEGORY_ID = new core_1.StringField('MainCategoryId', SubCategories, 'Edm.String');
     /**
      * Static representation of the [[mainCategoryName]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    SubCategories.MAIN_CATEGORY_NAME = new cloud_sdk_core_1.StringField('MainCategoryName', SubCategories, 'Edm.String');
+    SubCategories.MAIN_CATEGORY_NAME = new core_1.StringField('MainCategoryName', SubCategories, 'Edm.String');
     /**
      * Static representation of the one-to-one navigation property [[mainCategory]] for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    SubCategories.MAIN_CATEGORY = new cloud_sdk_core_1.OneToOneLink('MainCategory', SubCategories, MainCategories_1.MainCategories);
+    SubCategories.MAIN_CATEGORY = new core_1.OneToOneLink('MainCategory', SubCategories, MainCategories_1.MainCategories);
     /**
      * All fields of the SubCategories entity.
      */
@@ -124,7 +125,7 @@ var MainCategories_1 = require("./MainCategories");
     /**
      * All fields selector.
      */
-    SubCategories.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', SubCategories);
+    SubCategories.ALL_FIELDS = new core_1.AllFields('*', SubCategories);
     /**
      * All key fields of the SubCategories entity.
      */

@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.QuantityUnitsRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var QuantityUnits_1 = require("./QuantityUnits");
 /**
  * Request builder class for operations supported on the [[QuantityUnits]] entity.
@@ -34,16 +35,16 @@ var QuantityUnitsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `QuantityUnits` entity based on its keys.
      */
     QuantityUnitsRequestBuilder.prototype.getByKey = function (unit) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(QuantityUnits_1.QuantityUnits, { Unit: unit });
+        return new core_1.GetByKeyRequestBuilder(QuantityUnits_1.QuantityUnits, { Unit: unit });
     };
     /**
      * Returns a request builder for querying all `QuantityUnits` entities.
      * @returns A request builder for creating requests to retrieve all `QuantityUnits` entities.
      */
     QuantityUnitsRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(QuantityUnits_1.QuantityUnits);
+        return new core_1.GetAllRequestBuilder(QuantityUnits_1.QuantityUnits);
     };
     return QuantityUnitsRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.QuantityUnitsRequestBuilder = QuantityUnitsRequestBuilder;
 //# sourceMappingURL=QuantityUnitsRequestBuilder.js.map

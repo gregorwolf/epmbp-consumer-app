@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.Suppliers = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var SuppliersRequestBuilder_1 = require("./SuppliersRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "Suppliers" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var Suppliers = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `Suppliers`.
      */
     Suppliers.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(Suppliers);
+        return core_1.Entity.entityBuilder(Suppliers);
     };
     /**
      * Returns a request builder to construct requests for operations on the `Suppliers` entity type.
@@ -59,7 +60,7 @@ var Suppliers = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `Suppliers`.
      */
     Suppliers.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, Suppliers);
+        return core_1.Entity.customFieldSelector(fieldName, Suppliers);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,59 +83,59 @@ var Suppliers = /** @class */ (function (_super) {
      */
     Suppliers._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return Suppliers;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.Suppliers = Suppliers;
 (function (Suppliers) {
     /**
      * Static representation of the [[id]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.ID = new cloud_sdk_core_1.StringField('Id', Suppliers, 'Edm.String');
+    Suppliers.ID = new core_1.StringField('Id', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[name]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.NAME = new cloud_sdk_core_1.StringField('Name', Suppliers, 'Edm.String');
+    Suppliers.NAME = new core_1.StringField('Name', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[phone]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.PHONE = new cloud_sdk_core_1.StringField('Phone', Suppliers, 'Edm.String');
+    Suppliers.PHONE = new core_1.StringField('Phone', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[email]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.EMAIL = new cloud_sdk_core_1.StringField('Email', Suppliers, 'Edm.String');
+    Suppliers.EMAIL = new core_1.StringField('Email', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[webAddress]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.WEB_ADDRESS = new cloud_sdk_core_1.StringField('WebAddress', Suppliers, 'Edm.String');
+    Suppliers.WEB_ADDRESS = new core_1.StringField('WebAddress', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[formattedAddress]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.FORMATTED_ADDRESS = new cloud_sdk_core_1.StringField('FormattedAddress', Suppliers, 'Edm.String');
+    Suppliers.FORMATTED_ADDRESS = new core_1.StringField('FormattedAddress', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[formattedContactName]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.FORMATTED_CONTACT_NAME = new cloud_sdk_core_1.StringField('FormattedContactName', Suppliers, 'Edm.String');
+    Suppliers.FORMATTED_CONTACT_NAME = new core_1.StringField('FormattedContactName', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[contactPhone1]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.CONTACT_PHONE_1 = new cloud_sdk_core_1.StringField('ContactPhone1', Suppliers, 'Edm.String');
+    Suppliers.CONTACT_PHONE_1 = new core_1.StringField('ContactPhone1', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[contactPhone2]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.CONTACT_PHONE_2 = new cloud_sdk_core_1.StringField('ContactPhone2', Suppliers, 'Edm.String');
+    Suppliers.CONTACT_PHONE_2 = new core_1.StringField('ContactPhone2', Suppliers, 'Edm.String');
     /**
      * Static representation of the [[contactEmail]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Suppliers.CONTACT_EMAIL = new cloud_sdk_core_1.StringField('ContactEmail', Suppliers, 'Edm.String');
+    Suppliers.CONTACT_EMAIL = new core_1.StringField('ContactEmail', Suppliers, 'Edm.String');
     /**
      * All fields of the Suppliers entity.
      */
@@ -153,7 +154,7 @@ exports.Suppliers = Suppliers;
     /**
      * All fields selector.
      */
-    Suppliers.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', Suppliers);
+    Suppliers.ALL_FIELDS = new core_1.AllFields('*', Suppliers);
     /**
      * All key fields of the Suppliers entity.
      */

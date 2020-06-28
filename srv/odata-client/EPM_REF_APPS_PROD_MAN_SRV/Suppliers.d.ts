@@ -1,10 +1,5 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { SuppliersRequestBuilder } from './SuppliersRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "Suppliers" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -181,12 +176,12 @@ export declare namespace Suppliers {
     /**
      * All key fields of the Suppliers entity.
      */
-    const _keyFields: Array<Selectable<Suppliers>>;
+    const _keyFields: Array<Field<Suppliers>>;
     /**
      * Mapping of all key field names to the respective static field property Suppliers.
      */
     const _keys: {
-        [keys: string]: Selectable<Suppliers>;
+        [keys: string]: Field<Suppliers>;
     };
 }
 //# sourceMappingURL=Suppliers.d.ts.map

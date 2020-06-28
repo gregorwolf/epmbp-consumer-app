@@ -1,10 +1,10 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { SuppliersRequestBuilder } from './SuppliersRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "Suppliers" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -206,11 +206,11 @@ export namespace Suppliers {
   /**
    * All key fields of the Suppliers entity.
    */
-  export const _keyFields: Array<Selectable<Suppliers>> = [Suppliers.ID];
+  export const _keyFields: Array<Field<Suppliers>> = [Suppliers.ID];
   /**
    * Mapping of all key field names to the respective static field property Suppliers.
    */
-  export const _keys: { [keys: string]: Selectable<Suppliers> } = Suppliers._keyFields.reduce((acc: { [keys: string]: Selectable<Suppliers> }, field: Selectable<Suppliers>) => {
+  export const _keys: { [keys: string]: Field<Suppliers> } = Suppliers._keyFields.reduce((acc: { [keys: string]: Field<Suppliers> }, field: Field<Suppliers>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

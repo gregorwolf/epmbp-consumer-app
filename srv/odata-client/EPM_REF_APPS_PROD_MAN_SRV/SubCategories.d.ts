@@ -1,10 +1,5 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { SubCategoriesRequestBuilder } from './SubCategoriesRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, OneToOneLink, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, OneToOneLink, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "SubCategories" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -122,12 +117,12 @@ export declare namespace SubCategories {
     /**
      * All key fields of the SubCategories entity.
      */
-    const _keyFields: Array<Selectable<SubCategories>>;
+    const _keyFields: Array<Field<SubCategories>>;
     /**
      * Mapping of all key field names to the respective static field property SubCategories.
      */
     const _keys: {
-        [keys: string]: Selectable<SubCategories>;
+        [keys: string]: Field<SubCategories>;
     };
 }
 //# sourceMappingURL=SubCategories.d.ts.map

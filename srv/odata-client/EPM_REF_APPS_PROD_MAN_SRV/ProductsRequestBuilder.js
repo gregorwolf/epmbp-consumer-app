@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.ProductsRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var Products_1 = require("./Products");
 /**
  * Request builder class for operations supported on the [[Products]] entity.
@@ -34,16 +35,16 @@ var ProductsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `Products` entity based on its keys.
      */
     ProductsRequestBuilder.prototype.getByKey = function (id) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(Products_1.Products, { Id: id });
+        return new core_1.GetByKeyRequestBuilder(Products_1.Products, { Id: id });
     };
     /**
      * Returns a request builder for querying all `Products` entities.
      * @returns A request builder for creating requests to retrieve all `Products` entities.
      */
     ProductsRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(Products_1.Products);
+        return new core_1.GetAllRequestBuilder(Products_1.Products);
     };
     return ProductsRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.ProductsRequestBuilder = ProductsRequestBuilder;
 //# sourceMappingURL=ProductsRequestBuilder.js.map

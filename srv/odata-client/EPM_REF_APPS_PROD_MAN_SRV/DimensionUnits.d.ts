@@ -1,10 +1,5 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { DimensionUnitsRequestBuilder } from './DimensionUnitsRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "DimensionUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -98,12 +93,12 @@ export declare namespace DimensionUnits {
     /**
      * All key fields of the DimensionUnits entity.
      */
-    const _keyFields: Array<Selectable<DimensionUnits>>;
+    const _keyFields: Array<Field<DimensionUnits>>;
     /**
      * Mapping of all key field names to the respective static field property DimensionUnits.
      */
     const _keys: {
-        [keys: string]: Selectable<DimensionUnits>;
+        [keys: string]: Field<DimensionUnits>;
     };
 }
 //# sourceMappingURL=DimensionUnits.d.ts.map

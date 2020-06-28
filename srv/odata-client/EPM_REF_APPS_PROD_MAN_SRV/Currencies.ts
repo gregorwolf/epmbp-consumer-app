@@ -1,10 +1,10 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { CurrenciesRequestBuilder } from './CurrenciesRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "Currencies" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -103,11 +103,11 @@ export namespace Currencies {
   /**
    * All key fields of the Currencies entity.
    */
-  export const _keyFields: Array<Selectable<Currencies>> = [Currencies.CODE];
+  export const _keyFields: Array<Field<Currencies>> = [Currencies.CODE];
   /**
    * Mapping of all key field names to the respective static field property Currencies.
    */
-  export const _keys: { [keys: string]: Selectable<Currencies> } = Currencies._keyFields.reduce((acc: { [keys: string]: Selectable<Currencies> }, field: Selectable<Currencies>) => {
+  export const _keys: { [keys: string]: Field<Currencies> } = Currencies._keyFields.reduce((acc: { [keys: string]: Field<Currencies> }, field: Field<Currencies>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

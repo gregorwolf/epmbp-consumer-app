@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.defaultEpm_Ref_Apps_Prod_Man_SrvPath = exports.changeset = exports.batch = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var index_1 = require("./index");
 /**
  * Batch builder for operations supported on the Epm_Ref_Apps_Prod_Man_Srv.
@@ -17,7 +18,7 @@ function batch() {
     for (var _i = 0; _i < arguments.length; _i++) {
         requests[_i] = arguments[_i];
     }
-    return new cloud_sdk_core_1.ODataBatchRequestBuilder(exports.defaultEpm_Ref_Apps_Prod_Man_SrvPath, requests, map);
+    return new core_1.ODataBatchRequestBuilder(exports.defaultEpm_Ref_Apps_Prod_Man_SrvPath, requests, map);
 }
 exports.batch = batch;
 /**
@@ -30,7 +31,7 @@ function changeset() {
     for (var _i = 0; _i < arguments.length; _i++) {
         requests[_i] = arguments[_i];
     }
-    return new cloud_sdk_core_1.ODataBatchChangeSet(requests);
+    return new core_1.ODataBatchChangeSet(requests);
 }
 exports.changeset = changeset;
 exports.defaultEpm_Ref_Apps_Prod_Man_SrvPath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';

@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.ProductDraftsRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var ProductDrafts_1 = require("./ProductDrafts");
 /**
  * Request builder class for operations supported on the [[ProductDrafts]] entity.
@@ -34,14 +35,14 @@ var ProductDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `ProductDrafts` entity based on its keys.
      */
     ProductDraftsRequestBuilder.prototype.getByKey = function (id) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(ProductDrafts_1.ProductDrafts, { Id: id });
+        return new core_1.GetByKeyRequestBuilder(ProductDrafts_1.ProductDrafts, { Id: id });
     };
     /**
      * Returns a request builder for querying all `ProductDrafts` entities.
      * @returns A request builder for creating requests to retrieve all `ProductDrafts` entities.
      */
     ProductDraftsRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(ProductDrafts_1.ProductDrafts);
+        return new core_1.GetAllRequestBuilder(ProductDrafts_1.ProductDrafts);
     };
     /**
      * Returns a request builder for creating a `ProductDrafts` entity.
@@ -49,7 +50,7 @@ var ProductDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that create an entity of type `ProductDrafts`.
      */
     ProductDraftsRequestBuilder.prototype.create = function (entity) {
-        return new cloud_sdk_core_1.CreateRequestBuilder(ProductDrafts_1.ProductDrafts, entity);
+        return new core_1.CreateRequestBuilder(ProductDrafts_1.ProductDrafts, entity);
     };
     /**
      * Returns a request builder for updating an entity of type `ProductDrafts`.
@@ -57,12 +58,12 @@ var ProductDraftsRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `ProductDrafts`.
      */
     ProductDraftsRequestBuilder.prototype.update = function (entity) {
-        return new cloud_sdk_core_1.UpdateRequestBuilder(ProductDrafts_1.ProductDrafts, entity);
+        return new core_1.UpdateRequestBuilder(ProductDrafts_1.ProductDrafts, entity);
     };
     ProductDraftsRequestBuilder.prototype.delete = function (idOrEntity) {
-        return new cloud_sdk_core_1.DeleteRequestBuilder(ProductDrafts_1.ProductDrafts, idOrEntity instanceof ProductDrafts_1.ProductDrafts ? idOrEntity : { Id: idOrEntity });
+        return new core_1.DeleteRequestBuilder(ProductDrafts_1.ProductDrafts, idOrEntity instanceof ProductDrafts_1.ProductDrafts ? idOrEntity : { Id: idOrEntity });
     };
     return ProductDraftsRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.ProductDraftsRequestBuilder = ProductDraftsRequestBuilder;
 //# sourceMappingURL=ProductDraftsRequestBuilder.js.map

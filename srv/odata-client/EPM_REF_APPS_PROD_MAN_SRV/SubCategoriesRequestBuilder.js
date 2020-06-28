@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.SubCategoriesRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var SubCategories_1 = require("./SubCategories");
 /**
  * Request builder class for operations supported on the [[SubCategories]] entity.
@@ -34,16 +35,16 @@ var SubCategoriesRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `SubCategories` entity based on its keys.
      */
     SubCategoriesRequestBuilder.prototype.getByKey = function (id) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(SubCategories_1.SubCategories, { Id: id });
+        return new core_1.GetByKeyRequestBuilder(SubCategories_1.SubCategories, { Id: id });
     };
     /**
      * Returns a request builder for querying all `SubCategories` entities.
      * @returns A request builder for creating requests to retrieve all `SubCategories` entities.
      */
     SubCategoriesRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(SubCategories_1.SubCategories);
+        return new core_1.GetAllRequestBuilder(SubCategories_1.SubCategories);
     };
     return SubCategoriesRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.SubCategoriesRequestBuilder = SubCategoriesRequestBuilder;
 //# sourceMappingURL=SubCategoriesRequestBuilder.js.map

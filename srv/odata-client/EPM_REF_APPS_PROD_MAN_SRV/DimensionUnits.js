@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.DimensionUnits = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var DimensionUnitsRequestBuilder_1 = require("./DimensionUnitsRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "DimensionUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var DimensionUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `DimensionUnits`.
      */
     DimensionUnits.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(DimensionUnits);
+        return core_1.Entity.entityBuilder(DimensionUnits);
     };
     /**
      * Returns a request builder to construct requests for operations on the `DimensionUnits` entity type.
@@ -59,7 +60,7 @@ var DimensionUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `DimensionUnits`.
      */
     DimensionUnits.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, DimensionUnits);
+        return core_1.Entity.customFieldSelector(fieldName, DimensionUnits);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,24 +83,24 @@ var DimensionUnits = /** @class */ (function (_super) {
      */
     DimensionUnits._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return DimensionUnits;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.DimensionUnits = DimensionUnits;
 (function (DimensionUnits) {
     /**
      * Static representation of the [[unit]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    DimensionUnits.UNIT = new cloud_sdk_core_1.StringField('Unit', DimensionUnits, 'Edm.String');
+    DimensionUnits.UNIT = new core_1.StringField('Unit', DimensionUnits, 'Edm.String');
     /**
      * Static representation of the [[shorttext]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    DimensionUnits.SHORTTEXT = new cloud_sdk_core_1.StringField('Shorttext', DimensionUnits, 'Edm.String');
+    DimensionUnits.SHORTTEXT = new core_1.StringField('Shorttext', DimensionUnits, 'Edm.String');
     /**
      * Static representation of the [[text]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    DimensionUnits.TEXT = new cloud_sdk_core_1.StringField('Text', DimensionUnits, 'Edm.String');
+    DimensionUnits.TEXT = new core_1.StringField('Text', DimensionUnits, 'Edm.String');
     /**
      * All fields of the DimensionUnits entity.
      */
@@ -111,7 +112,7 @@ exports.DimensionUnits = DimensionUnits;
     /**
      * All fields selector.
      */
-    DimensionUnits.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', DimensionUnits);
+    DimensionUnits.ALL_FIELDS = new core_1.AllFields('*', DimensionUnits);
     /**
      * All key fields of the DimensionUnits entity.
      */

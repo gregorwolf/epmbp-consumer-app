@@ -1,12 +1,7 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { ProductDraftsRequestBuilder } from './ProductDraftsRequestBuilder';
 import { Moment } from 'moment';
 import { BigNumber } from 'bignumber.js';
-import { AllFields, BigNumberField, BooleanField, CustomField, DateField, Entity, EntityBuilderType, Link, OneToOneLink, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, BigNumberField, BooleanField, CustomField, DateField, Entity, EntityBuilderType, Field, Link, OneToOneLink, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "ProductDrafts" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -411,12 +406,12 @@ export declare namespace ProductDrafts {
     /**
      * All key fields of the ProductDrafts entity.
      */
-    const _keyFields: Array<Selectable<ProductDrafts>>;
+    const _keyFields: Array<Field<ProductDrafts>>;
     /**
      * Mapping of all key field names to the respective static field property ProductDrafts.
      */
     const _keys: {
-        [keys: string]: Selectable<ProductDrafts>;
+        [keys: string]: Field<ProductDrafts>;
     };
 }
 //# sourceMappingURL=ProductDrafts.d.ts.map

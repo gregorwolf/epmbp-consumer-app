@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.QuantityUnits = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var QuantityUnitsRequestBuilder_1 = require("./QuantityUnitsRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "QuantityUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var QuantityUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `QuantityUnits`.
      */
     QuantityUnits.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(QuantityUnits);
+        return core_1.Entity.entityBuilder(QuantityUnits);
     };
     /**
      * Returns a request builder to construct requests for operations on the `QuantityUnits` entity type.
@@ -59,7 +60,7 @@ var QuantityUnits = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `QuantityUnits`.
      */
     QuantityUnits.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, QuantityUnits);
+        return core_1.Entity.customFieldSelector(fieldName, QuantityUnits);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,24 +83,24 @@ var QuantityUnits = /** @class */ (function (_super) {
      */
     QuantityUnits._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return QuantityUnits;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.QuantityUnits = QuantityUnits;
 (function (QuantityUnits) {
     /**
      * Static representation of the [[unit]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    QuantityUnits.UNIT = new cloud_sdk_core_1.StringField('Unit', QuantityUnits, 'Edm.String');
+    QuantityUnits.UNIT = new core_1.StringField('Unit', QuantityUnits, 'Edm.String');
     /**
      * Static representation of the [[shorttext]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    QuantityUnits.SHORTTEXT = new cloud_sdk_core_1.StringField('Shorttext', QuantityUnits, 'Edm.String');
+    QuantityUnits.SHORTTEXT = new core_1.StringField('Shorttext', QuantityUnits, 'Edm.String');
     /**
      * Static representation of the [[text]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    QuantityUnits.TEXT = new cloud_sdk_core_1.StringField('Text', QuantityUnits, 'Edm.String');
+    QuantityUnits.TEXT = new core_1.StringField('Text', QuantityUnits, 'Edm.String');
     /**
      * All fields of the QuantityUnits entity.
      */
@@ -111,7 +112,7 @@ exports.QuantityUnits = QuantityUnits;
     /**
      * All fields selector.
      */
-    QuantityUnits.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', QuantityUnits);
+    QuantityUnits.ALL_FIELDS = new core_1.AllFields('*', QuantityUnits);
     /**
      * All key fields of the QuantityUnits entity.
      */

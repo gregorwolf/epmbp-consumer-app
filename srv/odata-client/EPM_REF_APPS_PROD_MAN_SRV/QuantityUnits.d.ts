@@ -1,10 +1,5 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { QuantityUnitsRequestBuilder } from './QuantityUnitsRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "QuantityUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -98,12 +93,12 @@ export declare namespace QuantityUnits {
     /**
      * All key fields of the QuantityUnits entity.
      */
-    const _keyFields: Array<Selectable<QuantityUnits>>;
+    const _keyFields: Array<Field<QuantityUnits>>;
     /**
      * Mapping of all key field names to the respective static field property QuantityUnits.
      */
     const _keys: {
-        [keys: string]: Selectable<QuantityUnits>;
+        [keys: string]: Field<QuantityUnits>;
     };
 }
 //# sourceMappingURL=QuantityUnits.d.ts.map

@@ -42,7 +42,7 @@
         "model": "srv/external/EPM_REF_APPS_PROD_MAN_SRV",
         "credentials": {
           "xdestination": "NETWEAVER_ABAP",
-          "destination": "ES5_CAP",
+          "destination": "ES5_SDK",
           "zdestination": "LOCAL",
           "requestTimeout": 30000
         },

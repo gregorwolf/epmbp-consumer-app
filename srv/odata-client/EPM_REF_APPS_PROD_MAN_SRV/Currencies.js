@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.Currencies = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var CurrenciesRequestBuilder_1 = require("./CurrenciesRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "Currencies" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var Currencies = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `Currencies`.
      */
     Currencies.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(Currencies);
+        return core_1.Entity.entityBuilder(Currencies);
     };
     /**
      * Returns a request builder to construct requests for operations on the `Currencies` entity type.
@@ -59,7 +60,7 @@ var Currencies = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `Currencies`.
      */
     Currencies.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, Currencies);
+        return core_1.Entity.customFieldSelector(fieldName, Currencies);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,19 +83,19 @@ var Currencies = /** @class */ (function (_super) {
      */
     Currencies._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return Currencies;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.Currencies = Currencies;
 (function (Currencies) {
     /**
      * Static representation of the [[code]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Currencies.CODE = new cloud_sdk_core_1.StringField('Code', Currencies, 'Edm.String');
+    Currencies.CODE = new core_1.StringField('Code', Currencies, 'Edm.String');
     /**
      * Static representation of the [[text]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    Currencies.TEXT = new cloud_sdk_core_1.StringField('Text', Currencies, 'Edm.String');
+    Currencies.TEXT = new core_1.StringField('Text', Currencies, 'Edm.String');
     /**
      * All fields of the Currencies entity.
      */
@@ -105,7 +106,7 @@ exports.Currencies = Currencies;
     /**
      * All fields selector.
      */
-    Currencies.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', Currencies);
+    Currencies.ALL_FIELDS = new core_1.AllFields('*', Currencies);
     /**
      * All key fields of the Currencies entity.
      */

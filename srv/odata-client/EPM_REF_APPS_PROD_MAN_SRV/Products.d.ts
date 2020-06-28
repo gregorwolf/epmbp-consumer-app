@@ -1,12 +1,7 @@
-/*!
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
- *
- * This is a generated file powered by the SAP Cloud SDK for JavaScript.
- */
 import { ProductsRequestBuilder } from './ProductsRequestBuilder';
 import { Moment } from 'moment';
 import { BigNumber } from 'bignumber.js';
-import { AllFields, BigNumberField, CustomField, DateField, Entity, EntityBuilderType, NumberField, OneToOneLink, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, BigNumberField, CustomField, DateField, Entity, EntityBuilderType, Field, NumberField, OneToOneLink, StringField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "Products" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -356,12 +351,12 @@ export declare namespace Products {
     /**
      * All key fields of the Products entity.
      */
-    const _keyFields: Array<Selectable<Products>>;
+    const _keyFields: Array<Field<Products>>;
     /**
      * Mapping of all key field names to the respective static field property Products.
      */
     const _keys: {
-        [keys: string]: Selectable<Products>;
+        [keys: string]: Field<Products>;
     };
 }
 //# sourceMappingURL=Products.d.ts.map

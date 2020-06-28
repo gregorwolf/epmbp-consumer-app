@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
@@ -6,7 +6,7 @@
 import { ProductDraftsRequestBuilder } from './ProductDraftsRequestBuilder';
 import { Moment } from 'moment';
 import { BigNumber } from 'bignumber.js';
-import { AllFields, BigNumberField, BooleanField, CustomField, DateField, Entity, EntityBuilderType, Link, OneToOneLink, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, BigNumberField, BooleanField, CustomField, DateField, Entity, EntityBuilderType, Field, Link, OneToOneLink, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "ProductDrafts" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -455,11 +455,11 @@ export namespace ProductDrafts {
   /**
    * All key fields of the ProductDrafts entity.
    */
-  export const _keyFields: Array<Selectable<ProductDrafts>> = [ProductDrafts.ID];
+  export const _keyFields: Array<Field<ProductDrafts>> = [ProductDrafts.ID];
   /**
    * Mapping of all key field names to the respective static field property ProductDrafts.
    */
-  export const _keys: { [keys: string]: Selectable<ProductDrafts> } = ProductDrafts._keyFields.reduce((acc: { [keys: string]: Selectable<ProductDrafts> }, field: Selectable<ProductDrafts>) => {
+  export const _keys: { [keys: string]: Field<ProductDrafts> } = ProductDrafts._keyFields.reduce((acc: { [keys: string]: Field<ProductDrafts> }, field: Field<ProductDrafts>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

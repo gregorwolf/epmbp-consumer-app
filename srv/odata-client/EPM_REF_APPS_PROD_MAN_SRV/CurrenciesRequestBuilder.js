@@ -13,12 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.CurrenciesRequestBuilder = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 var Currencies_1 = require("./Currencies");
 /**
  * Request builder class for operations supported on the [[Currencies]] entity.
@@ -34,16 +35,16 @@ var CurrenciesRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `Currencies` entity based on its keys.
      */
     CurrenciesRequestBuilder.prototype.getByKey = function (code) {
-        return new cloud_sdk_core_1.GetByKeyRequestBuilder(Currencies_1.Currencies, { Code: code });
+        return new core_1.GetByKeyRequestBuilder(Currencies_1.Currencies, { Code: code });
     };
     /**
      * Returns a request builder for querying all `Currencies` entities.
      * @returns A request builder for creating requests to retrieve all `Currencies` entities.
      */
     CurrenciesRequestBuilder.prototype.getAll = function () {
-        return new cloud_sdk_core_1.GetAllRequestBuilder(Currencies_1.Currencies);
+        return new core_1.GetAllRequestBuilder(Currencies_1.Currencies);
     };
     return CurrenciesRequestBuilder;
-}(cloud_sdk_core_1.RequestBuilder));
+}(core_1.RequestBuilder));
 exports.CurrenciesRequestBuilder = CurrenciesRequestBuilder;
 //# sourceMappingURL=CurrenciesRequestBuilder.js.map

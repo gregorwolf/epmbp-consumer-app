@@ -1,6 +1,6 @@
 {
   "name": "EPM_REF_APPS_PROD_MAN_SRV",
-  "version": "1.17.2",
+  "version": "1.22.0",
   "description": "SAP Cloud SDK for JavaScript: Virtual Data Model (VDM) for service EPM_REF_APPS_PROD_MAN_SRV",
   "homepage": "https://www.sap.com/cloud-sdk",
   "main": "./index.js",
@@ -24,14 +24,13 @@
     "doc": "npx typedoc"
   },
   "dependencies": {
-    "@sap/cloud-sdk-core": "^1.17.2"
+    "@sap-cloud-sdk/core": "^1.22.0"
   },
   "peerDependencies": {
-    "@sap/cloud-sdk-core": "^1.17.2"
+    "@sap-cloud-sdk/core": "^1.22.0"
   },
   "devDependencies": {
-    "@types/node": "^11.13.5",
-    "typedoc": "^0.15.0",
-    "typescript": "3.7.4"
+    "typedoc": "^0.17.0",
+    "typescript": "~3.8.3"
   }
 }

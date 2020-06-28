@@ -1,10 +1,10 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { MainCategoriesRequestBuilder } from './MainCategoriesRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Link, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, Link, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "MainCategories" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -117,11 +117,11 @@ export namespace MainCategories {
   /**
    * All key fields of the MainCategories entity.
    */
-  export const _keyFields: Array<Selectable<MainCategories>> = [MainCategories.ID];
+  export const _keyFields: Array<Field<MainCategories>> = [MainCategories.ID];
   /**
    * Mapping of all key field names to the respective static field property MainCategories.
    */
-  export const _keys: { [keys: string]: Selectable<MainCategories> } = MainCategories._keyFields.reduce((acc: { [keys: string]: Selectable<MainCategories> }, field: Selectable<MainCategories>) => {
+  export const _keys: { [keys: string]: Field<MainCategories> } = MainCategories._keyFields.reduce((acc: { [keys: string]: Field<MainCategories> }, field: Field<MainCategories>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

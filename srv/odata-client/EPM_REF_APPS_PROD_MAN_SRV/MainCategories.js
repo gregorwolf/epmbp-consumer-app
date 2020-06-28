@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.MainCategories = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var MainCategoriesRequestBuilder_1 = require("./MainCategoriesRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "MainCategories" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var MainCategories = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `MainCategories`.
      */
     MainCategories.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(MainCategories);
+        return core_1.Entity.entityBuilder(MainCategories);
     };
     /**
      * Returns a request builder to construct requests for operations on the `MainCategories` entity type.
@@ -59,7 +60,7 @@ var MainCategories = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `MainCategories`.
      */
     MainCategories.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, MainCategories);
+        return core_1.Entity.customFieldSelector(fieldName, MainCategories);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,7 +83,7 @@ var MainCategories = /** @class */ (function (_super) {
      */
     MainCategories._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return MainCategories;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.MainCategories = MainCategories;
 var SubCategories_1 = require("./SubCategories");
 (function (MainCategories) {
@@ -90,17 +91,17 @@ var SubCategories_1 = require("./SubCategories");
      * Static representation of the [[id]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    MainCategories.ID = new cloud_sdk_core_1.StringField('Id', MainCategories, 'Edm.String');
+    MainCategories.ID = new core_1.StringField('Id', MainCategories, 'Edm.String');
     /**
      * Static representation of the [[name]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    MainCategories.NAME = new cloud_sdk_core_1.StringField('Name', MainCategories, 'Edm.String');
+    MainCategories.NAME = new core_1.StringField('Name', MainCategories, 'Edm.String');
     /**
      * Static representation of the one-to-many navigation property [[subCategories]] for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    MainCategories.SUB_CATEGORIES = new cloud_sdk_core_1.Link('SubCategories', MainCategories, SubCategories_1.SubCategories);
+    MainCategories.SUB_CATEGORIES = new core_1.Link('SubCategories', MainCategories, SubCategories_1.SubCategories);
     /**
      * All fields of the MainCategories entity.
      */
@@ -112,7 +113,7 @@ var SubCategories_1 = require("./SubCategories");
     /**
      * All fields selector.
      */
-    MainCategories.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', MainCategories);
+    MainCategories.ALL_FIELDS = new core_1.AllFields('*', MainCategories);
     /**
      * All key fields of the MainCategories entity.
      */

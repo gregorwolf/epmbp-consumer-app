@@ -24,13 +24,14 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*!
+exports.ImageDrafts = void 0;
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 var ImageDraftsRequestBuilder_1 = require("./ImageDraftsRequestBuilder");
-var cloud_sdk_core_1 = require("@sap/cloud-sdk-core");
+var core_1 = require("@sap-cloud-sdk/core");
 /**
  * This class represents the entity "ImageDrafts" of service "EPM_REF_APPS_PROD_MAN_SRV".
  */
@@ -44,7 +45,7 @@ var ImageDrafts = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `ImageDrafts`.
      */
     ImageDrafts.builder = function () {
-        return cloud_sdk_core_1.Entity.entityBuilder(ImageDrafts);
+        return core_1.Entity.entityBuilder(ImageDrafts);
     };
     /**
      * Returns a request builder to construct requests for operations on the `ImageDrafts` entity type.
@@ -59,7 +60,7 @@ var ImageDrafts = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `ImageDrafts`.
      */
     ImageDrafts.customField = function (fieldName) {
-        return cloud_sdk_core_1.Entity.customFieldSelector(fieldName, ImageDrafts);
+        return core_1.Entity.customFieldSelector(fieldName, ImageDrafts);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -82,54 +83,54 @@ var ImageDrafts = /** @class */ (function (_super) {
      */
     ImageDrafts._defaultServicePath = '/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV';
     return ImageDrafts;
-}(cloud_sdk_core_1.Entity));
+}(core_1.Entity));
 exports.ImageDrafts = ImageDrafts;
 (function (ImageDrafts) {
     /**
      * Static representation of the [[createdBy]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.CREATED_BY = new cloud_sdk_core_1.StringField('CreatedBy', ImageDrafts, 'Edm.String');
+    ImageDrafts.CREATED_BY = new core_1.StringField('CreatedBy', ImageDrafts, 'Edm.String');
     /**
      * Static representation of the [[fileName]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.FILE_NAME = new cloud_sdk_core_1.StringField('FileName', ImageDrafts, 'Edm.String');
+    ImageDrafts.FILE_NAME = new core_1.StringField('FileName', ImageDrafts, 'Edm.String');
     /**
      * Static representation of the [[id]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.ID = new cloud_sdk_core_1.StringField('Id', ImageDrafts, 'Edm.Guid');
+    ImageDrafts.ID = new core_1.StringField('Id', ImageDrafts, 'Edm.Guid');
     /**
      * Static representation of the [[isDeletable]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.IS_DELETABLE = new cloud_sdk_core_1.BooleanField('IsDeletable', ImageDrafts, 'Edm.Boolean');
+    ImageDrafts.IS_DELETABLE = new core_1.BooleanField('IsDeletable', ImageDrafts, 'Edm.Boolean');
     /**
      * Static representation of the [[isModifiable]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.IS_MODIFIABLE = new cloud_sdk_core_1.BooleanField('IsModifiable', ImageDrafts, 'Edm.Boolean');
+    ImageDrafts.IS_MODIFIABLE = new core_1.BooleanField('IsModifiable', ImageDrafts, 'Edm.Boolean');
     /**
      * Static representation of the [[lastModified]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.LAST_MODIFIED = new cloud_sdk_core_1.DateField('LastModified', ImageDrafts, 'Edm.DateTime');
+    ImageDrafts.LAST_MODIFIED = new core_1.DateField('LastModified', ImageDrafts, 'Edm.DateTime');
     /**
      * Static representation of the [[productId]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.PRODUCT_ID = new cloud_sdk_core_1.StringField('ProductId', ImageDrafts, 'Edm.String');
+    ImageDrafts.PRODUCT_ID = new core_1.StringField('ProductId', ImageDrafts, 'Edm.String');
     /**
      * Static representation of the [[mimeType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.MIME_TYPE = new cloud_sdk_core_1.StringField('MimeType', ImageDrafts, 'Edm.String');
+    ImageDrafts.MIME_TYPE = new core_1.StringField('MimeType', ImageDrafts, 'Edm.String');
     /**
      * Static representation of the [[createdAt]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    ImageDrafts.CREATED_AT = new cloud_sdk_core_1.DateField('CreatedAt', ImageDrafts, 'Edm.DateTime');
+    ImageDrafts.CREATED_AT = new core_1.DateField('CreatedAt', ImageDrafts, 'Edm.DateTime');
     /**
      * All fields of the ImageDrafts entity.
      */
@@ -147,7 +148,7 @@ exports.ImageDrafts = ImageDrafts;
     /**
      * All fields selector.
      */
-    ImageDrafts.ALL_FIELDS = new cloud_sdk_core_1.AllFields('*', ImageDrafts);
+    ImageDrafts.ALL_FIELDS = new core_1.AllFields('*', ImageDrafts);
     /**
      * All key fields of the ImageDrafts entity.
      */

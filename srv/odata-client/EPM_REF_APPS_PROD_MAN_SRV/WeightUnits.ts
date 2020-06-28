@@ -1,10 +1,10 @@
-/*!
+/*
  * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { WeightUnitsRequestBuilder } from './WeightUnitsRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Selectable, StringField } from '@sap/cloud-sdk-core';
+import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "WeightUnits" of service "EPM_REF_APPS_PROD_MAN_SRV".
@@ -116,11 +116,11 @@ export namespace WeightUnits {
   /**
    * All key fields of the WeightUnits entity.
    */
-  export const _keyFields: Array<Selectable<WeightUnits>> = [WeightUnits.UNIT];
+  export const _keyFields: Array<Field<WeightUnits>> = [WeightUnits.UNIT];
   /**
    * Mapping of all key field names to the respective static field property WeightUnits.
    */
-  export const _keys: { [keys: string]: Selectable<WeightUnits> } = WeightUnits._keyFields.reduce((acc: { [keys: string]: Selectable<WeightUnits> }, field: Selectable<WeightUnits>) => {
+  export const _keys: { [keys: string]: Field<WeightUnits> } = WeightUnits._keyFields.reduce((acc: { [keys: string]: Field<WeightUnits> }, field: Field<WeightUnits>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});
