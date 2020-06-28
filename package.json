@@ -9,7 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "@sap/cds": "^3.34.3",
-    "@sap/cloud-sdk-core": "^1.6.1",
+    "@sap-cloud-sdk/core": "^1.22.0",
     "@sap/hana-client": "^2.5.86",
     "@sap/xsenv": "^3.0.0",
     "@sap/xssec": "^3.0.5",
@@ -28,7 +28,7 @@
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
-    "@sap-cloud-sdk/generator": "^1.21.1",
+    "@sap-cloud-sdk/generator": "^1.22.0",
     "sqlite3": "^4.2.0"
   },
   "cds": {

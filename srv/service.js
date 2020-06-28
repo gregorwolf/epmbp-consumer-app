@@ -27,7 +27,7 @@ function getJWT (req) {
 module.exports = async function (){
 
 	const { Suppliers: sdkSuppliers } = require('./odata-client/EPM_REF_APPS_PROD_MAN_SRV')
-	const { FilterList, serializeEntity, retrieveJwt } = require('@sap/cloud-sdk-core')
+	const { FilterList, serializeEntity, retrieveJwt } = require('@sap-cloud-sdk/core')
 	
   const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
   const { Products, Suppliers } = externalService.entities
