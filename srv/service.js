@@ -30,7 +30,7 @@ module.exports = async function (){
   const { FilterList, serializeEntity, retrieveJwt } = require('@sap-cloud-sdk/core')
   
   const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
-  const { Products, Suppliers } = externalService.entities
+  const { Products: externalProducts, Suppliers: externalSuppliers } = externalService.entities
   
   const destinationName = 'ES5_SDK'
   
@@ -97,7 +97,7 @@ module.exports = async function (){
 
   this.on ('READ','Suppliers', async req => {
     const tx = externalService.transaction(req)
-    const cqn = SELECT.from(Suppliers)
+    const cqn = getCQNforREAD(externalSuppliers, req)
     // const cqn = req.query.SELECT
     try {
       let result = await tx.run(cqn)
@@ -109,19 +109,7 @@ module.exports = async function (){
 
   this.on('READ', 'Products', async (req) => {
     const tx = externalService.transaction(req)
-    var cqn = SELECT.from(Products)
-    if(req.query.SELECT.limit) {
-      cqn.SELECT.limit = req.query.SELECT.limit
-    }
-    if(req._.query && req._.query.$select) {
-      cqn.SELECT.columns = req.query.SELECT.columns
-    }
-    if(req._.query && req._.query.$filter) {
-      cqn.SELECT.where = req.query.SELECT.where
-    }
-    if(req.query.SELECT.orderBy) {
-      cqn.SELECT.orderBy = req.query.SELECT.orderBy
-    }
+    var cqn = getCQNforREAD(externalProducts, req)
     try {
       let result = await tx.run(cqn)
       return result
@@ -131,4 +119,21 @@ module.exports = async function (){
       req.error(error.message)
     }
   })
+}
+
+function getCQNforREAD(entity, req) {
+  var cqn = SELECT.from(entity)
+  if(req.query.SELECT.limit) {
+    cqn.SELECT.limit = req.query.SELECT.limit
+  }
+  if(req._.query && req._.query.$select) {
+    cqn.SELECT.columns = req.query.SELECT.columns
+  }
+  if(req._.query && req._.query.$filter) {
+    cqn.SELECT.where = req.query.SELECT.where
+  }
+  if(req.query.SELECT.orderBy) {
+    cqn.SELECT.orderBy = req.query.SELECT.orderBy
+  }
+  return cqn
 }

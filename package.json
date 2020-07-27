@@ -18,7 +18,7 @@
   },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
-    "start": "npx cds run",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 cds run",
     "build": "cds build/all --clean",
     "build:cf": "mbt build -p=cf",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
@@ -43,7 +43,8 @@
         "credentials": {
           "zdestination": "LOCAL",
           "xdestination": "NPL",
-          "destination": "ES5",
+          "ydestination": "ES5",
+          "destination": "KPE",
           "requestTimeout": 30000
         },
         "pool": {

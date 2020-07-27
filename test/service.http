@@ -18,11 +18,18 @@ Authorization: Basic user:
 http://localhost:4004/catalog/Products?$select=Id,Name,SubCategoryId&$top=10&$filter=SubCategoryId%20eq%20'Notebooks'
 Authorization: Basic user:
 
-
-### Read only some columns sorted ascending
+### Read Products only some columns sorted ascending
 http://localhost:4004/catalog/Products?$top=5&$select=Id,Name&$orderby=Id%20desc
 Authorization: Basic user:
 
-### Skip entries
+### Read Products Skip entries
 http://localhost:4004/catalog/Products?$top=5&$skip=5&$select=Id,Name&$orderby=Id%20desc
+Authorization: Basic user:
+
+### Read Suppliers 
+http://localhost:4004/catalog/Suppliers
+Authorization: Basic user:
+
+### Read a limited number of Suppliers 
+http://localhost:4004/catalog/Suppliers?$top=5
 Authorization: Basic user:
