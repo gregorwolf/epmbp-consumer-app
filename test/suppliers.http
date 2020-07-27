@@ -1,0 +1,7 @@
+### Read Suppliers 
+GET http://localhost:4004/catalog/Suppliers
+Authorization: Basic user:
+
+### Read a limited number of Suppliers 
+GET http://localhost:4004/catalog/Suppliers?$top=5
+Authorization: Basic user:

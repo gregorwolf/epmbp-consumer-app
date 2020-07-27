@@ -8,8 +8,9 @@
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap/cds": "^3.34.3",
     "@sap-cloud-sdk/core": "^1.25.0",
+    "@sap/cds": "^3.34.3",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.33",
     "@sap/hana-client": "^2.5.101",
     "@sap/xsenv": "^3.0.0",
     "@sap/xssec": "^3.0.6",
@@ -18,12 +19,13 @@
   },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
-    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 cds run",
+    "start": "cds run",
+    "start:local": "npm run deploy:local && npm start",
     "build": "cds build/all --clean",
     "build:cf": "mbt build -p=cf",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
     "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
-    "deploy:local": "cds deploy db --to sqlite",
+    "deploy:local": "cds deploy",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
@@ -34,8 +36,7 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sqlite",
-        "model": "db"
+        "kind": "sqlite"
       },
       "EPM_REF_APPS_PROD_MAN_SRV": {
         "kind": "odata",

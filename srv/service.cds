@@ -15,8 +15,8 @@ service CatalogService @(requires: 'authenticated-user'){
   */
   @cds.persistence.skip
   entity sdkSuppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
-  @cds.persistence.skip
-  entity Suppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
+
+  entity Suppliers as projection on my.Suppliers;
   @cds.persistence.skip
   entity Products as projection on EPM_REF_APPS_PROD_MAN_SRV.Products;
 

@@ -1,0 +1,16 @@
+### Read a limited number of Books 
+GET http://localhost:4004/catalog/Books?$top=5
+Authorization: Basic user:
+
+### Read a limited number of Books OData V2
+GET http://localhost:4004/v2/catalog/Books?$top=5
+Authorization: Basic user:
+
+### Read a limited number of Books OData V2
+GET http://localhost:4004/v2/catalog/Books?$top=5&$expand=author,supplier
+Authorization: Basic user:
+
+
+### Read Supplier of Book
+GET http://localhost:4004/v2/catalog/Books(201)/supplier
+Authorization: Basic user:
