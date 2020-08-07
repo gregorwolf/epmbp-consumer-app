@@ -8,12 +8,13 @@
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap-cloud-sdk/core": "^1.25.0",
-    "@sap/cds": "^3.34.3",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.4.33",
-    "@sap/hana-client": "^2.5.101",
+    "@sap-cloud-sdk/core": "^1.26.1",
+    "@sap/cds": "^4.1.5",
+    "@sap/cds-dk": "^2.0.7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.41",
+    "@sap/hana-client": "^2.5.104",
     "@sap/xsenv": "^3.0.0",
-    "@sap/xssec": "^3.0.6",
+    "@sap/xssec": "^2.2.5",
     "express": "^4.17.1",
     "passport": "^0.4.1"
   },
@@ -30,7 +31,7 @@
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
-    "@sap-cloud-sdk/generator": "^1.25.0",
+    "@sap-cloud-sdk/generator": "^1.26.1",
     "sqlite3": "^5.0.0"
   },
   "cds": {

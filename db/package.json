@@ -4,7 +4,7 @@
     "node": "^10"
   },
   "dependencies": {
-    "@sap/hdi-deploy": "^3.11.10"
+    "@sap/hdi-deploy": "^3.11.11"
   },
   "scripts": {
     "postinstall": "node .build.js",
