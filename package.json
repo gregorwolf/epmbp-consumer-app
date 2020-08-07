@@ -10,7 +10,6 @@
   "dependencies": {
     "@sap-cloud-sdk/core": "^1.26.1",
     "@sap/cds": "^4.1.5",
-    "@sap/cds-dk": "^2.0.7",
     "@sap/cds-odata-v2-adapter-proxy": "^1.4.41",
     "@sap/hana-client": "^2.5.104",
     "@sap/xsenv": "^3.0.0",
@@ -31,6 +30,7 @@
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
   },
   "devDependencies": {
+    "@sap/cds-dk": "^2.0.7",
     "@sap-cloud-sdk/generator": "^1.26.1",
     "sqlite3": "^5.0.0"
   },

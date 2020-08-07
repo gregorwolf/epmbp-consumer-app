@@ -29,3 +29,8 @@ entity Suppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
 @cds.persistence.skip:false
 @cds.persistence.table
 entity Products as projection on EPM_REF_APPS_PROD_MAN_SRV.Products;
+
+entity A_BusinessPartner {
+  key BusinessPartner: String(10);
+  OrganizationBPName1: String(40);
+}

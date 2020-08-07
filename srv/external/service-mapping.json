@@ -1,4 +1,9 @@
 {
+  "API_BUSINESS_PARTNER": {
+    "directoryName": "business-partner-service",
+    "servicePath": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+    "npmPackageName": "business-partner-service"
+  },
   "EPM_REF_APPS_PROD_MAN_SRV": {
     "directoryName": "EPM_REF_APPS_PROD_MAN_SRV",
     "servicePath": "/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",

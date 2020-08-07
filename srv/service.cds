@@ -23,5 +23,6 @@ service CatalogService @(requires: 'authenticated-user'){
     SubCategoryId,
     SubCategoryName
   };
+  entity sdkBusinessPartner as projection on my.A_BusinessPartner;
 
 };

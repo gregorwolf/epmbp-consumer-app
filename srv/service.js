@@ -27,12 +27,14 @@ function getJWT (req) {
 module.exports = async function (){
 
   const { Suppliers: sdkSuppliers } = require('./odata-client/EPM_REF_APPS_PROD_MAN_SRV')
+  const { BusinessPartner: sdkBusinessPartner } = require('./odata-client/business-partner-service')
   const { FilterList, serializeEntity, retrieveJwt } = require('@sap-cloud-sdk/core')
   
   const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
   const { Products: externalProducts, Suppliers: externalSuppliers } = externalService.entities
   
   const destinationName = 'ES5_SDK'
+  const destinationS4Name = 'APIBusinessHub'
   
     
   /*
@@ -77,6 +79,35 @@ module.exports = async function (){
     }
   })
   */
+  this.on('READ', 'sdkBusinessPartner', async (results, req) => {
+    var jwt = getJWT(req)
+    try{
+      // Read API Key from Envoronment
+      const businessPartners = await sdkBusinessPartner
+      .requestBuilder()
+      .getAll()
+      .top(2)
+      .withCustomHeaders({
+        apikey: 'myApiKey'
+      })
+      .execute({ destinationName: destinationS4Name, jwt: jwt})
+      // console.log("epmSuppliers: " + JSON.stringify(epmSuppliers))
+      let mappedBusinessPartners = await businessPartners.map(bp => serializeEntity(bp, sdkBusinessPartner))
+      // console.log("mappedSuppliers: " + JSON.stringify(mappedSuppliers))
+      return mappedBusinessPartners
+    } catch (e) {
+      console.error("Error: " + e.message)
+      console.log("Stack: " + e.stack)
+      var msgError = {
+        code: "SY002",
+        message: e.message,
+        numericSeverity: 4
+      }
+      results.error(msgError)
+      return {}
+    }
+  })
+
   this.on('READ', 'sdkSuppliers', async (results, req) => {
     var jwt = getJWT(req)
     try{

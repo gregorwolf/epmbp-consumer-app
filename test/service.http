@@ -25,3 +25,7 @@ Authorization: Basic user:
 ### Read Products Skip entries
 GET http://localhost:4004/catalog/Products?$top=5&$skip=5&$select=Id,Name&$orderby=Id%20desc
 Authorization: Basic user:
+
+### Read Business Partner via SDK
+GET http://localhost:4004/catalog/sdkBusinessPartner
+Authorization: Basic user:
