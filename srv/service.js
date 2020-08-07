@@ -97,10 +97,10 @@ module.exports = async function (){
 
   this.on ('READ','Suppliers', async req => {
     const tx = externalService.transaction(req)
-    const cqn = getCQNforREAD(externalSuppliers, req)
+    // const cqn = getCQNforREAD(externalSuppliers, req)
     // const cqn = req.query.SELECT
     try {
-      let result = await tx.run(cqn)
+      let result = await tx.run(req.query)
       return result
     } catch (error) {
       console.error(error.message)
@@ -109,9 +109,10 @@ module.exports = async function (){
 
   this.on('READ', 'Products', async (req) => {
     const tx = externalService.transaction(req)
-    var cqn = getCQNforREAD(externalProducts, req)
+    // var cqn = getCQNforREAD(externalProducts, req)
     try {
-      let result = await tx.run(cqn)
+      // let result = await tx.run(cqn)
+      let result = await tx.run(req.query)
       return result
     } catch (error) {
       console.error(error.message)
@@ -126,10 +127,10 @@ function getCQNforREAD(entity, req) {
   if(req.query.SELECT.limit) {
     cqn.SELECT.limit = req.query.SELECT.limit
   }
-  if(req._.query && req._.query.$select) {
+  if(req.query && req.query.SELECT.columns) {
     cqn.SELECT.columns = req.query.SELECT.columns
   }
-  if(req._.query && req._.query.$filter) {
+  if(req.query && req.query.SELECT.where) {
     cqn.SELECT.where = req.query.SELECT.where
   }
   if(req.query.SELECT.orderBy) {

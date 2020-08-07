@@ -5,3 +5,7 @@ Authorization: Basic user:
 ### Read a limited number of Suppliers 
 GET http://localhost:4004/catalog/Suppliers?$top=5
 Authorization: Basic user:
+
+### Read Suppliers using SAP Cloud SDK
+GET http://localhost:4004/catalog/sdkSuppliers
+Authorization: Basic user:

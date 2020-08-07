@@ -23,5 +23,9 @@ entity Orders : cuid {
   quantity : Integer;
 }
 
-@cds.persistence.skip
+// @cds.persistence.skip
 entity Suppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
+
+@cds.persistence.skip:false
+@cds.persistence.table
+entity Products as projection on EPM_REF_APPS_PROD_MAN_SRV.Products;
