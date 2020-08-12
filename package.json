@@ -11,7 +11,7 @@
     "@sap-cloud-sdk/core": "^1.26.1",
     "@sap/cds": "^4.1.5",
     "@sap/cds-odata-v2-adapter-proxy": "^1.4.41",
-    "@sap/hana-client": "^2.5.104",
+    "@sap/hana-client": "^2.5.105",
     "@sap/xsenv": "^3.0.0",
     "@sap/xssec": "^2.2.5",
     "express": "^4.17.1",
@@ -27,7 +27,8 @@
     "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
-    "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229"
+    "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229",
+    "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },
   "devDependencies": {
     "@sap/cds-dk": "^2.0.7",
@@ -44,9 +45,9 @@
         "model": "srv/external/EPM_REF_APPS_PROD_MAN_SRV",
         "credentials": {
           "zdestination": "LOCAL",
-          "xdestination": "NPL",
-          "ydestination": "ES5",
-          "destination": "KPE",
+          "ydestination": "NPL",
+          "destination": "ES5",
+          "xdestination": "KPE",
           "requestTimeout": 30000
         },
         "pool": {
