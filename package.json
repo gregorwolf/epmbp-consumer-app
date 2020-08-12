@@ -26,7 +26,7 @@
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
     "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy",
-    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
+    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229",
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },

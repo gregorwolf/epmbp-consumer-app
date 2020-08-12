@@ -1,0 +1,8 @@
+_schema-version: '3.1'
+ID: epmbp-consumer-app.extension
+extends: epmbp-consumer-app
+
+resources:
+  - name: epmbp-consumer-app-db-hdi-container
+    parameters:
+      service: hanatrial
