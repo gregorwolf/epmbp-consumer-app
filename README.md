@@ -102,12 +102,12 @@ Description=SAP Gateway Demo System
 Type=HTTP
 Authentication=BasicAuthentication
 WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
-Name=ES5_CAP
+Name=ES5
 WebIDEEnabled=true
 URL=https\://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
 ProxyType=Internet
 User=<Your ES5 Username>
-WebIDESystem=ES5_CAP
+WebIDESystem=ES5
 ```
 
 Destination ES5_SDK used by the SAP Cloud SDK:
@@ -142,7 +142,7 @@ Destination ES5 used by the CAP:
 
 ```properties
 URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
-Name=ES5_CAP
+Name=ES5
 ProxyType=OnPremise
 Type=HTTP
 sap-client=001

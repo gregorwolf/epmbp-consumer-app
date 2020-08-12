@@ -29,7 +29,7 @@
 				"kind": "odata",
 				"model": "external/EPM_REF_APPS_PROD_MAN_SRV",
 				"credentials": {
-					"destination": "ES5_CAP",
+					"destination": "ES5",
 					"requestTimeout": 30000
 				},
 				"pool": {
