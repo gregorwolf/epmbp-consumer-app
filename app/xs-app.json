@@ -7,6 +7,13 @@
   },
   "routes": [
     {
+      "source": "/v2/catalog/(.*)$",
+      "target": "/v2/catalog/$1",
+      "authenticationType": "xsuaa",
+      "destination": "srv_api",
+      "csrfProtection": true
+    },
+    {
       "source": "/catalog/(.*)$",
       "target": "/catalog/$1",
       "authenticationType": "xsuaa",
@@ -23,7 +30,7 @@
     {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
-      "destination": "ES5"
+      "destination": "ES5_SDK"
     },
     {
       "source": "^/app/logout.html$", 
