@@ -8,8 +8,8 @@ modules:
   - name: epmbp-consumer-app-db
     type: hdb
     path: db
-    build-parameters:
-      ignore: ["node_modules/"]
+#    build-parameters:
+#      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 256M
@@ -18,8 +18,8 @@ modules:
   - name: epmbp-consumer-app-srv
     type: nodejs
     path: srv
-    build-parameters:
-      ignore: ["node_modules/"]
+#    build-parameters:
+#      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
@@ -36,8 +36,8 @@ modules:
   - name: epmbp-consumer-app-app
     type: nodejs
     path: app
-    build-parameters:
-      ignore: ["node_modules/"]
+#    build-parameters:
+#      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
@@ -55,24 +55,23 @@ modules:
 
 resources:
   - name: epmbp-consumer-app-db-hdi-container
-    parameters:
-      service: hanatrial
-      service-plan: hdi-shared
     type: com.sap.xs.hdi-container
+    parameters:
+      service-plan: hdi-shared
     properties:
       hdi-container-name: ${service-name}
   - name: epmbp-consumer-app-uaa
+    type: com.sap.xs.uaa
     parameters:
       path: ./xs-security.json
       service-plan: application
-    type: com.sap.xs.uaa
   - name: epmbp-consumer-app-destination-service
+    type: org.cloudfoundry.managed-service
     parameters:
        service-plan: lite
        service: destination
-    type: org.cloudfoundry.managed-service
   - name: epmbp-consumer-app-connectivity-service
+    type: org.cloudfoundry.managed-service
     parameters:
        service-plan: lite
        service: connectivity
-    type: org.cloudfoundry.managed-service
