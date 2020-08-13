@@ -11,7 +11,7 @@ service CatalogService @(requires: 'authenticated-user'){
     *,
     SDKBusinessPartner
   };
-  entity sdkSuppliers as projection on EPM_REF_APPS_PROD_MAN_SRV.Suppliers;
+  entity sdkSuppliers as projection on my.sdkSuppliers;
   entity Suppliers as projection on my.Suppliers;
   entity Products as projection on my.Products {
     Id,
