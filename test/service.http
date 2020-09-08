@@ -3,8 +3,14 @@ GET http://localhost:4004/catalog/$metadata
 Authorization: Basic user:
 
 ### Read Products
-GET http://localhost:4004/catalog/Products
+GET http://localhost:4004/v2/catalog/Products
 Authorization: Basic user:
+
+### Read Single Product
+GET http://localhost:4004/v2/catalog/Products('195490332')
+Authorization: Basic user:
+# Results in this backend request:
+# /sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/%5Bobject%20Object%5D?$select=Id,Name,MainCategoryId,MainCategoryName,SubCategoryId,SubCategoryName&$format=json
 
 ### Read a limited number of Products 
 GET http://localhost:4004/catalog/Products?$top=5
