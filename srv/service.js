@@ -143,6 +143,7 @@ module.exports = async function (){
     // var cqn = getCQNforREAD(externalProducts, req)
     try {
       // let result = await tx.run(cqn)
+      console.info(req.query)
       let result = await tx.run(req.query)
       return result
     } catch (error) {

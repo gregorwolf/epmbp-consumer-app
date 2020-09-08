@@ -1,0 +1,13 @@
+{ SELECT: {
+  from: {ref:['CatalogService.Products']},
+  columns: [
+    {ref:['Id']},
+    {ref:['Name']},
+    {ref:['MainCategoryId']},
+    {ref:['MainCategoryName']},
+    {ref:['SubCategoryId']},
+    {ref:['SubCategoryName']}
+  ],
+  limit: { rows: {val:1000} },
+  orderBy: [ {ref:[ 'Id' ], sort: 'asc' } ]
+}}
