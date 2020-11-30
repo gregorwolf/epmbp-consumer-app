@@ -22,10 +22,6 @@ To run against the local mock service [epmbp-mock-service](https://github.com/gr
     {
       "name": "ES5",
       "url": "http://localhost:3000/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV"
-    },
-    {
-      "name": "ES5_SDK",
-      "url": "http://localhost:3000/"
     }
   ]
 }
@@ -41,12 +37,6 @@ If you want to da a local test against the ES5 system then use this content for 
     {
       "name": "ES5",
       "url": "https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",
-      "username": "<Your ES5 Username>",
-      "password": "<Your ES5 Password>"
-    },
-    {
-      "name": "ES5_SDK",
-      "url": "https://sapes5.sapdevcenter.com",
       "username": "<Your ES5 Username>",
       "password": "<Your ES5 Password>"
     }
@@ -80,7 +70,7 @@ Optional
 
 ### Preperation for a Connection to ES5
 
-Destination ES5 used by the approuter:
+Destination ES5 used by the approuter, CAP and SAP Cloud SDK:
 
 ```properties
 Description=SAP Gateway Demo System
@@ -93,41 +83,11 @@ URL=https\://sapes5.sapdevcenter.com
 ProxyType=Internet
 User=<Your ES5 Username>
 WebIDESystem=ES5
-```
-
-Destination ES5 used by the CAP:
-
-```properties
-Description=SAP Gateway Demo System
-Type=HTTP
-Authentication=BasicAuthentication
-WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
-Name=ES5
-WebIDEEnabled=true
-URL=https\://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
-ProxyType=Internet
-User=<Your ES5 Username>
-WebIDESystem=ES5
-```
-
-Destination ES5_SDK used by the SAP Cloud SDK:
-
-```properties
-Description=SAP Gateway Demo System
-Type=HTTP
-Authentication=BasicAuthentication
-WebIDEUsage=odata_abap,ui5_execute_abap,dev_abap,bsp_execute_abap
-Name=ES5_SDK
-WebIDEEnabled=true
-URL=https\://sapes5.sapdevcenter.com
-ProxyType=Internet
-User=<Your ES5 Username>
-WebIDESystem=ES5_SDK
 ```
 
 ### Preperation for on premise connection with principal propagation
 
-Destination ES5 used by the approuter:
+Destination ES5 used by the approuter, CAP and SAP Cloud SDK:
 
 ```properties
 URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>
@@ -136,28 +96,6 @@ ProxyType=OnPremise
 Type=HTTP
 sap-client=001
 Authentication=PrincipalPropagation
-```
-
-Destination ES5 used by the CAP:
-
-```properties
-URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV
-Name=ES5
-ProxyType=OnPremise
-Type=HTTP
-sap-client=001
-Authentication=PrincipalPropagation
-```
-
-Destination ES5_SDK used by the SAP Cloud SDK:
-
-```properties
-URL=http\://<Virtual Hostname of your ABAP Backend>\:<Virtual Port of your ABAP Backend>
-Name=ES5_SDK
-ProxyType=OnPremise
-Type=HTTP
-sap-client=001
-Authentication=NoAuthentication
 ```
 
 ### Build

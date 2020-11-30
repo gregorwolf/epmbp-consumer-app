@@ -1,4 +1,6 @@
 const cds = require('@sap/cds')
+const { retrieveJwt } = require('@sap/cloud-sdk-core')
+
 /*
 const createFilter = xs => {
   const andFilters = xs.map(x => new FilterList([
@@ -33,7 +35,7 @@ module.exports = async function (){
   const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
   const { Products: externalProducts, Suppliers: externalSuppliers } = externalService.entities
   
-  const destinationName = 'ES5_SDK'
+  const destinationName = 'ES5'
   const destinationS4Name = 'APIBusinessHub'
   
     
@@ -79,16 +81,17 @@ module.exports = async function (){
     }
   })
   */
-  this.on('READ', 'sdkBusinessPartner', async (results, req) => {
+  this.on('READ', 'sdkBusinessPartner', async (req, next) => {
     var jwt = getJWT(req)
     try{
       // Read API Key from Envoronment
+      const apikey = JSON.parse(process.env.destinations).filter(destination => destination.name === "APIBusinessHub")[0].apikey;
       const businessPartners = await sdkBusinessPartner
       .requestBuilder()
       .getAll()
       .top(2)
       .withCustomHeaders({
-        apikey: 'myApiKey'
+        apikey: apikey
       })
       .execute({ destinationName: destinationS4Name, jwt: jwt})
       // console.log("epmSuppliers: " + JSON.stringify(epmSuppliers))
@@ -103,7 +106,7 @@ module.exports = async function (){
         message: e.message,
         numericSeverity: 4
       }
-      results.error(msgError)
+      req.error(msgError)
       return {}
     }
   })
@@ -140,7 +143,6 @@ module.exports = async function (){
 
   this.on('READ', 'Products', async (req) => {
     const tx = externalService.transaction(req)
-    // var cqn = getCQNforREAD(externalProducts, req)
     try {
       // let result = await tx.run(cqn)
       console.info(req.query)
@@ -152,21 +154,4 @@ module.exports = async function (){
       req.error(error.message)
     }
   })
-}
-
-function getCQNforREAD(entity, req) {
-  var cqn = SELECT.from(entity)
-  if(req.query.SELECT.limit) {
-    cqn.SELECT.limit = req.query.SELECT.limit
-  }
-  if(req.query && req.query.SELECT.columns) {
-    cqn.SELECT.columns = req.query.SELECT.columns
-  }
-  if(req.query && req.query.SELECT.where) {
-    cqn.SELECT.where = req.query.SELECT.where
-  }
-  if(req.query.SELECT.orderBy) {
-    cqn.SELECT.orderBy = req.query.SELECT.orderBy
-  }
-  return cqn
 }
