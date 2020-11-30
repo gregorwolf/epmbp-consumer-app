@@ -8,12 +8,13 @@
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap-cloud-sdk/core": "^1.28.1",
-    "@sap/cds": "^4.1.9",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.4.44",
-    "@sap/hana-client": "^2.5.109",
-    "@sap/xsenv": "^3.0.0",
-    "@sap/xssec": "^3.0.9",
+    "@sap-cloud-sdk/core": "^1.32.1",
+    "@sap/cloud-sdk-core": "^1.17.2",
+    "@sap/cds": "^4.3.1",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.58",
+    "@sap/hana-client": "^2.6.61",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.0.10",
     "express": "^4.17.1",
     "passport": "^0.4.1"
   },
@@ -31,8 +32,8 @@
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },
   "devDependencies": {
-    "@sap/cds-dk": "^3.0.0",
-    "@sap-cloud-sdk/generator": "^1.28.1",
+    "@sap/cds-dk": "^3.2.1",
+    "@sap-cloud-sdk/generator": "^1.32.1",
     "sqlite3": "^5.0.0"
   },
   "cds": {
@@ -44,10 +45,11 @@
         "kind": "odata",
         "model": "srv/external/EPM_REF_APPS_PROD_MAN_SRV",
         "credentials": {
-          "destination": "LOCAL",
+          "adestination": "LOCAL",
           "ydestination": "NPL",
-          "zdestination": "ES5",
+          "destination": "ES5",
           "xdestination": "KPE",
+          "path": "/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",
           "requestTimeout": 30000
         },
         "pool": {
