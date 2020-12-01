@@ -66,8 +66,10 @@ modules:
         properties:
             name: ES5
             url: ~{url}
-            username: ~{username}
-            password: ~{password}
+# Providing this variables to the approuter in production causes the approuter to crash with:
+# VError: environment-destinations/password: Additional properties not allowed
+#            username: ~{username}
+#            password: ~{password}
 
 resources:
   - name: epmbp-consumer-app-db-hdi-container
