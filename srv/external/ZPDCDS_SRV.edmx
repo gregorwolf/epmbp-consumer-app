@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+  <edmx:Reference Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+  </edmx:Reference>
+  <edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema Namespace="ZPDCDS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="SEPMRA_I_Product_EType" sap:label="Product" sap:content-version="1">
+        <Key>
+          <PropertyRef Name="Product" />
+        </Key>
+        <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Product ID" sap:quickinfo="EPM Fiori Ref Apps: Product ID" />
+        <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="EPM: Currency Code" sap:semantics="currency-code" />
+        <Property Name="Height" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="DimensionUnit" sap:label="Product Height" sap:quickinfo="EPM: Height" />
+        <Property Name="Width" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="DimensionUnit" sap:label="Product Width" sap:quickinfo="EPM: Width" />
+        <Property Name="Depth" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="DimensionUnit" sap:label="Product Depth" sap:quickinfo="EPM: Depth" />
+        <Property Name="DimensionUnit" Type="Edm.String" MaxLength="3" sap:label="Dimension Unit" sap:quickinfo="EPM: Dimension Unit" sap:semantics="unit-of-measure" />
+        <Property Name="ProductPictureURL" Type="Edm.String" MaxLength="255" sap:display-format="UpperCase" sap:label="Image" sap:quickinfo="EPM: URI of Product Image" />
+        <Property Name="ProductValueAddedTax" Type="Edm.Byte" sap:label="Tax Tariff Code" sap:quickinfo="EPM: Product Tax Tariff Code" />
+        <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier" sap:quickinfo="EPM: Business Partner ID" />
+        <Property Name="ProductBaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit" sap:quickinfo="EPM: Quantity Unit" sap:semantics="unit-of-measure" />
+        <Property Name="Weight" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="WeightUnit" sap:label="Weight" sap:quickinfo="EPM: Weight Measure" />
+        <Property Name="ProductUUID" Type="Edm.Guid" sap:label="Generic Node Key" sap:quickinfo="EPM: Generic Node Key" />
+        <Property Name="WeightUnit" Type="Edm.String" MaxLength="3" sap:label="Weight Unit" sap:quickinfo="EPM: Weight Unit" sap:semantics="unit-of-measure" />
+        <Property Name="OriginalLanguage" Type="Edm.String" MaxLength="2" sap:label="Original Language" sap:quickinfo="Language Key" />
+        <Property Name="ProductType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Product Type Code" sap:quickinfo="EPM: Product Type Code" />
+        <Property Name="ProductCategory" Type="Edm.String" MaxLength="40" sap:label="Sub-Category" sap:quickinfo="EPM: Product Category" />
+        <Property Name="CreatedByUser" Type="Edm.Guid" sap:label="Created By (UUID)" sap:quickinfo="EPM: Generic Node Key" />
+        <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:quickinfo="EPM: Created At" />
+        <Property Name="LastChangedByUser" Type="Edm.Guid" sap:label="Changed By (UUID)" sap:quickinfo="EPM: Generic Node Key" />
+        <Property Name="LastChangedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed At" sap:quickinfo="EPM: Changed At" />
+        <Property Name="Price" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Product Unit Price" sap:quickinfo="EPM: Product Unit Price" />
+      </EntityType>
+      <EntityContainer Name="ZPDCDS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+        <EntitySet Name="SEPMRA_I_Product_E" EntityType="ZPDCDS_SRV.SEPMRA_I_Product_EType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1" />
+      </EntityContainer>
+      <Annotations Target="ZPDCDS_SRV.SEPMRA_I_Product_EType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SemanticKey">
+          <Collection>
+            <PropertyPath>Product</PropertyPath>
+          </Collection>
+        </Annotation>
+      </Annotations>
+      <atom:link rel="self" href="https://sapes5.sapdevcenter.com/sap/opu/odata/sap/ZPDCDS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" />
+      <atom:link rel="latest-version" href="https://sapes5.sapdevcenter.com/sap/opu/odata/sap/ZPDCDS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" />
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

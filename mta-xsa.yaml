@@ -3,13 +3,19 @@ _schema-version: "2.1"
 version: 0.0.1
 parameters:
   enable-parallel-deployments: true
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
 
 modules:
   - name: epmbp-consumer-app-db
     type: hdb
-    path: db
-#    build-parameters:
-#      ignore: ["node_modules/"]
+    path: gen/db
+    build-parameters:
+      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 256M
@@ -17,9 +23,9 @@ modules:
       - name: epmbp-consumer-app-db-hdi-container
   - name: epmbp-consumer-app-srv
     type: nodejs
-    path: srv
-#    build-parameters:
-#      ignore: ["node_modules/"]
+    path: gen/srv
+    build-parameters:
+      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
@@ -30,20 +36,21 @@ modules:
     requires:
       - name: epmbp-consumer-app-db-hdi-container
       - name: epmbp-consumer-app-uaa
-      - name: epmbp-consumer-app-destination-service
-      - name: epmbp-consumer-app-connectivity-service
+      - name: es5destination
+        group: destinations
+        properties:
+            name: ES5
+            url: ~{url}
 
   - name: epmbp-consumer-app-app
     type: nodejs
     path: app
-#    build-parameters:
-#      ignore: ["node_modules/"]
+    build-parameters:
+      ignore: ["node_modules/"]
     parameters:
       memory: 256M
       disk-quota: 1024M
     requires:
-      - name: epmbp-consumer-app-destination-service
-      - name: epmbp-consumer-app-connectivity-service
       - name: epmbp-consumer-app-uaa
       - name: srv_api
         group: destinations
@@ -51,6 +58,11 @@ modules:
             forwardAuthToken: true
             strictSSL: false
             name: srv_api
+            url: ~{url}
+      - name: es5destination
+        group: destinations
+        properties:
+            name: ES5
             url: ~{url}
 
 resources:
@@ -64,14 +76,12 @@ resources:
     type: com.sap.xs.uaa
     parameters:
       path: ./xs-security.json
-      service-plan: application
-  - name: epmbp-consumer-app-destination-service
-    type: org.cloudfoundry.managed-service
+      service-plan: space
+  - name: es5destination
+    type: org.cloudfoundry.user-provided-service
+    properties:
+      url: https://sapes5.sapdevcenter.com
+      name: ES5
     parameters:
-       service-plan: lite
-       service: destination
-  - name: epmbp-consumer-app-connectivity-service
-    type: org.cloudfoundry.managed-service
-    parameters:
-       service-plan: lite
-       service: connectivity
+      service: es5destination
+      path: ./default-es5destination.json

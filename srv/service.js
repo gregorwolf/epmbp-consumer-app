@@ -33,6 +33,7 @@ module.exports = async function (){
   const { FilterList, serializeEntity, retrieveJwt } = require('@sap-cloud-sdk/core')
   
   const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
+  const es5Service = await cds.connect.to('ZPDCDS_SRV')
   const { Products: externalProducts, Suppliers: externalSuppliers } = externalService.entities
   
   const destinationName = 'ES5'
@@ -143,6 +144,20 @@ module.exports = async function (){
 
   this.on('READ', 'Products', async (req) => {
     const tx = externalService.transaction(req)
+    try {
+      // let result = await tx.run(cqn)
+      console.info(req.query)
+      let result = await tx.run(req.query)
+      return result
+    } catch (error) {
+      console.error(error.message)
+      console.error(error.request._header)
+      req.error(error.message)
+    }
+  })
+
+  this.on('READ', 'SEPMRA_I_Product_E', async (req) => {
+    const tx = es5Service.transaction(req)
     try {
       // let result = await tx.run(cqn)
       console.info(req.query)

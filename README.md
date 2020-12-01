@@ -2,7 +2,7 @@
 
 This example application demonstrates how to use an OData Service available on the [SAP Gateway Demo Server - ES5](https://developers.sap.com/tutorials/gateway-demo-signup.html) with the SAP Cloud SDK for NodeJS and the SAP Cloud Application Programming Model.
 
-You can also run this app against your on premise [ABAP Developer Edition](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) using the SAP Cloud Connection. Here you can then configure end-to-end authentication with principal propagation. In that case the service in the ABAP Backend is called not with a technical user, but with the user that was authenticated in the SAP Cloud Platform.
+You can also run this app against your on premise [ABAP Developer Edition](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) using the SAP Cloud Connector to establish the connection. Here you can then configure end-to-end authentication with principal propagation. In that case the service in the ABAP Backend is called not with a technical user, but with the user that was authenticated in the SAP Cloud Platform.
 
 This example wouldn't work without the help of [Dennis Hempfing](https://github.com/mr-flannery) who steped in to help in this questions:
 
@@ -105,3 +105,30 @@ Authentication=PrincipalPropagation
 ### Deploy
 
 `npm run deploy:cf`
+
+## Deploy to SAP HANA XSA on Premise
+
+It's possible to deploy this application also to an on Premise instance of SAP HANA. 
+
+### Preperation
+
+The connection information to the ES5 system is provided via a user-provided service. Such a services needs a configuration file. The actual content can't be used in the destination. Please create *default-es5destination.json* in the root folder of the project and fill it with:
+
+```JSON
+{
+  "name": "ES5",
+  "url": "https://sapes5.sapdevcenter.com"
+}
+```
+
+### Build
+
+`npm run build:xsa`
+
+### Deploy
+
+`npm run deploy:xsa`
+
+### Test
+
+Start the Application: epmbp-consumer-app-app via the created Application Route from the SAP HANA XS Advanced Cockpit. You should be able to open the Link */catalog/SEPMRA_I_Product_E - Public Service from ES5* and see a list of Products returned as JSON. 

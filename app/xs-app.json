@@ -30,7 +30,7 @@
     {
       "source": "/sap/(.*)$",
       "target": "/sap/$1",
-      "destination": "ES5_SDK"
+      "destination": "ES5"
     },
     {
       "source": "^/app/logout.html$", 

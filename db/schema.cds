@@ -2,7 +2,7 @@ namespace my.bookshop;
 
 using cuid from '@sap/cds/common';
 using EPM_REF_APPS_PROD_MAN_SRV from '../srv/external/EPM_REF_APPS_PROD_MAN_SRV';
-
+using ZPDCDS_SRV from '../srv/external/ZPDCDS_SRV';
 
 entity Books {
   key ID : Integer;
@@ -35,3 +35,5 @@ entity A_BusinessPartner {
   key BusinessPartner: String(10);
   OrganizationBPName1: String(40);
 }
+
+entity SEPMRA_I_Product_E as projection on ZPDCDS_SRV.SEPMRA_I_Product_E;

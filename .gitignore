@@ -22,3 +22,6 @@ mta-op*
 .DS_Store
 *.orig
 *.log
+
+Makefile*
+mta.yaml
