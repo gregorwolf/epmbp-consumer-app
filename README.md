@@ -121,13 +121,28 @@ The connection information to the ES5 system is provided via a user-provided ser
 }
 ```
 
+The credentials for the backend access should never appear in a Git repository. That is why I suggest to use a MTA extension. Please create the file *xsa.mtaext* in the root folder with the following content. Replace YourES5user and YourES5password with your own credentials.
+
+```YAML
+_schema-version: '3.1'
+ID: epmbp-consumer-app.extension
+extends: epmbp-consumer-app
+
+resources:
+  - name: es5destination
+    properties:
+      name: ES5
+      username: YourES5user
+      password: YourES5password
+```
+
 ### Build
 
 `npm run build:xsa`
 
 ### Deploy
 
-`npm run deploy:xsa`
+`npm run deploy:xsa:user`
 
 ### Test
 

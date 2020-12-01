@@ -30,6 +30,7 @@
     "deploy:local": "cds deploy",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
     "deploy:xsa": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
+    "deploy:xsa:user": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e xsa.mtaext",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229",
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },
