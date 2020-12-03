@@ -33,6 +33,15 @@
       ],
       "program": "${workspaceFolder}/srv/express",
       "cwd": "${workspaceFolder}/srv"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach cloud app ",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/home/vcap/app"
     }
   ]
 }

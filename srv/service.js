@@ -1,5 +1,5 @@
 const cds = require('@sap/cds')
-const { retrieveJwt } = require('@sap/cloud-sdk-core')
+const { retrieveJwt } = require('@sap-cloud-sdk/core')
 
 /*
 const createFilter = xs => {

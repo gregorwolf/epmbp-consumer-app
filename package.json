@@ -9,7 +9,6 @@
   "license": "ISC",
   "dependencies": {
     "@sap-cloud-sdk/core": "^1.32.1",
-    "@sap/cloud-sdk-core": "^1.17.2",
     "@sap/cds": "^4.3.1",
     "@sap/cds-odata-v2-adapter-proxy": "^1.4.58",
     "@sap/hana-client": "^2.6.61",
@@ -20,7 +19,9 @@
   },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
-    "start": "cds run",
+    "start": "npm run start:cds",
+    "start:debug": "node --inspect srv/cds.js run",
+    "start:cds": "cds run",
     "start:local": "npm run deploy:local && npm start",
     "build": "cds build/all --clean",
     "build:cf": "cp mta-cf.yaml mta.yaml && mbt build -p=cf && rm mta.yaml",
@@ -31,7 +32,8 @@
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
     "deploy:xsa": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "deploy:xsa:user": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e xsa.mtaext",
-    "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:127.0.0.1:9229",
+    "enable:ssh": "cf enable-ssh epmbp-consumer-app-srv",
+    "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:localhost:9229",
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },
   "devDependencies": {
