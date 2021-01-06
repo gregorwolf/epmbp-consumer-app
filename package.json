@@ -17,6 +17,10 @@
     "express": "^4.17.1",
     "passport": "^0.4.1"
   },
+  "devDependencies": {
+    "@sap-cloud-sdk/generator": "^1.34.0",
+    "sqlite3": "^5.0.0"
+  },
   "scripts": {
     "setup": "npm install && npm run build && npm run deploy:local",
     "start": "npm run start:cds",
@@ -35,11 +39,6 @@
     "enable:ssh": "cf enable-ssh epmbp-consumer-app-srv",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:localhost:9229",
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
-  },
-  "devDependencies": {
-    "@sap/cds-dk": "^3.3.3",
-    "@sap-cloud-sdk/generator": "^1.34.0",
-    "sqlite3": "^5.0.0"
   },
   "cds": {
     "requires": {
