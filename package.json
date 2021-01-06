@@ -15,10 +15,12 @@
     "@sap/xsenv": "^3.1.0",
     "@sap/xssec": "^3.0.10",
     "express": "^4.17.1",
+    "hdb": "^0.18.2",
     "passport": "^0.4.1"
   },
   "devDependencies": {
     "@sap-cloud-sdk/generator": "^1.34.0",
+    "@sap/hdi-deploy": "3.11.15",
     "sqlite3": "^5.0.0"
   },
   "scripts": {
@@ -43,7 +45,10 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sqlite"
+        "kind": "sqlite",
+        "credentials": {
+          "database": "my.db"
+        }
       },
       "EPM_REF_APPS_PROD_MAN_SRV": {
         "kind": "odata",

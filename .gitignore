@@ -25,3 +25,5 @@ mta-op*
 Makefile*
 mta.yaml
 xsa.mtaext
+# auto generated wildcard
+.env2

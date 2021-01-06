@@ -1,47 +1,56 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
     {
-      "name": "cds run",
-      "type": "node",
+      "name": "Run epmbp-consumer-app-1",
       "request": "launch",
-      "env": {
-        "NODE_TLS_REJECT_UNAUTHORIZED":"0",
-        "DEBUG":"",
-      },
-      "program": "${workspaceFolder}/.vscode/cds",
-      "args": [ "run", "--with-mocks", "--in-memory?" ],
-      "skipFiles": [ "<node_internals>/**" ],
-      "internalConsoleOptions": "openOnSessionStart",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "-n"
+      ],
+      "args": [
+        "--",
+        "cds",
+        "run",
+        "--in-memory?"
+      ],
       "console": "internalConsole",
-      "autoAttachChildProcesses": true
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "srv/express",
-      "env": {
-        "XS_APP_LOG_LEVEL":"DEBUG",
-        "DEBUG":"X",
-      },
+      "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/srv/express",
-      "cwd": "${workspaceFolder}/srv"
+      "envFile": "${workspaceFolder}/.env1",
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/epmbp-consumer-app\\\",\\\"profileName\\\":\\\"CAPDefaultProfile\\\"}\"}"
+      }
     },
     {
+      "name": "Run epmbp-consumer-app",
+      "request": "launch",
       "type": "node",
-      "request": "attach",
-      "name": "Attach cloud app ",
-      "address": "localhost",
-      "port": 9229,
-      "localRoot": "${workspaceFolder}",
-      "remoteRoot": "/home/vcap/app"
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "-n"
+      ],
+      "args": [
+        "--",
+        "cds",
+        "run",
+        "--in-memory?"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "envFile": "${workspaceFolder}/.env2",
+      "env": {
+        "NODE_ENV": "production",
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/epmbp-consumer-app\\\",\\\"profileName\\\":\\\"production\\\"}\"}"
+      }
     }
   ]
 }

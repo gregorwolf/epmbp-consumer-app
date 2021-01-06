@@ -1,23 +1,35 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "cds-deploy-epmbp-consumer-app-my.db",
       "type": "shell",
-      "label": "cds watch",
-      "command": ["cds", "watch"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "sqlite:my.db",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": []
+      "isBackground": true
     },
     {
+      "label": "cds-deploy-to-hana-epmbp-consumer-app-epmbp-consumer-app-db-hdi-container",
       "type": "shell",
-      "label": "cds run",
-      "command": ["cds", "run", "--with-mocks", "--in-memory?"],
-      "problemMatcher": []
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "hana:epmbp-consumer-app-db-hdi-container",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true
     }
   ]
 }
