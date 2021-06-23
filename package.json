@@ -2,24 +2,24 @@
   "name": "epmbp-consumer-app",
   "version": "1.0.0",
   "engines": {
-    "node": "^12"
+    "node": "^14"
   },
   "description": "A simple CAP project.",
   "repository": "<Add your repository here>",
   "license": "ISC",
   "dependencies": {
-    "@sap-cloud-sdk/core": "^1.42.0",
-    "@sap/cds": "^4.6.5",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.6.2",
-    "@sap/hana-client": "^2.8.20",
+    "@sap-cloud-sdk/core": "^1.45.0",
+    "@sap/cds": "^5.1.5",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.7.4",
+    "@sap/hana-client": "^2.8.22",
     "@sap/xsenv": "^3.1.0",
-    "@sap/xssec": "^3.2.0",
+    "@sap/xssec": "^3.2.2",
     "express": "^4.17.1",
     "hdb": "^0.18.3",
     "passport": "^0.4.1"
   },
   "devDependencies": {
-    "@sap-cloud-sdk/generator": "^1.42.0",
+    "@sap-cloud-sdk/generator": "^1.45.0",
     "@sap/hdi-deploy": "4.0.5",
     "sqlite3": "^5.0.2"
   },
@@ -35,7 +35,8 @@
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
     "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy",
-    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
+    "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
+    "deploy:cf:trial": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
     "deploy:xsa": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "deploy:xsa:user": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e xsa.mtaext",
     "enable:ssh": "cf enable-ssh epmbp-consumer-app-srv",
@@ -43,6 +44,9 @@
     "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
   },
   "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
     "requires": {
       "db": {
         "kind": "sqlite",
