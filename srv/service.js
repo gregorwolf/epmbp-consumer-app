@@ -1,5 +1,5 @@
-const cds = require('@sap/cds')
-const { retrieveJwt } = require('@sap-cloud-sdk/core')
+const cds = require("@sap/cds");
+const { retrieveJwt } = require("@sap-cloud-sdk/core");
 
 /*
 const createFilter = xs => {
@@ -18,28 +18,35 @@ function SELECT (columns) {
 }
 */
 
-function getJWT (req) {
-  if(typeof(req._) !== 'undefined') {
-    return retrieveJwt(req._.req)
+function getJWT(req) {
+  if (typeof req._ !== "undefined") {
+    return retrieveJwt(req._.req);
   } else {
-    return ""
+    return "";
   }
 }
 
-module.exports = async function (){
+module.exports = async function () {
+  const {
+    Suppliers: sdkSuppliers,
+  } = require("./odata-client/EPM_REF_APPS_PROD_MAN_SRV");
+  const {
+    BusinessPartner: sdkBusinessPartner,
+  } = require("./odata-client/business-partner-service");
+  const {
+    FilterList,
+    serializeEntity,
+    retrieveJwt,
+  } = require("@sap-cloud-sdk/core");
 
-  const { Suppliers: sdkSuppliers } = require('./odata-client/EPM_REF_APPS_PROD_MAN_SRV')
-  const { BusinessPartner: sdkBusinessPartner } = require('./odata-client/business-partner-service')
-  const { FilterList, serializeEntity, retrieveJwt } = require('@sap-cloud-sdk/core')
-  
-  const externalService = await cds.connect.to('EPM_REF_APPS_PROD_MAN_SRV')
-  const es5Service = await cds.connect.to('ZPDCDS_SRV')
-  const { Products: externalProducts, Suppliers: externalSuppliers } = externalService.entities
-  
-  const destinationName = 'ES5'
-  const destinationS4Name = 'APIBusinessHub'
-  
-    
+  const externalService = await cds.connect.to("EPM_REF_APPS_PROD_MAN_SRV");
+  const es5Service = await cds.connect.to("ZPDCDS_SRV");
+  const { Products: externalProducts, Suppliers: externalSuppliers } =
+    externalService.entities;
+
+  const destinationName = "ES5";
+  const destinationS4Name = "APIBusinessHub";
+
   /*
   this.before('READ', 'Orders', async (req) => {
 
@@ -82,91 +89,97 @@ module.exports = async function (){
     }
   })
   */
-  this.on('READ', 'sdkBusinessPartner', async (req, next) => {
-    var jwt = getJWT(req)
-    try{
+  this.on("READ", "sdkBusinessPartner", async (req, next) => {
+    var jwt = getJWT(req);
+    try {
       // Read API Key from Envoronment
-      const apikey = JSON.parse(process.env.destinations).filter(destination => destination.name === "APIBusinessHub")[0].apikey;
+      const apikey = JSON.parse(process.env.destinations).filter(
+        (destination) => destination.name === "APIBusinessHub"
+      )[0].apikey;
       const businessPartners = await sdkBusinessPartner
-      .requestBuilder()
-      .getAll()
-      .top(2)
-      .withCustomHeaders({
-        apikey: apikey
-      })
-      .execute({ destinationName: destinationS4Name, jwt: jwt})
+        .requestBuilder()
+        .getAll()
+        .top(2)
+        .withCustomHeaders({
+          apikey: apikey,
+        })
+        .execute({ destinationName: destinationS4Name, jwt: jwt });
       // console.log("epmSuppliers: " + JSON.stringify(epmSuppliers))
-      let mappedBusinessPartners = await businessPartners.map(bp => serializeEntity(bp, sdkBusinessPartner))
+      let mappedBusinessPartners = await businessPartners.map((bp) =>
+        serializeEntity(bp, sdkBusinessPartner)
+      );
       // console.log("mappedSuppliers: " + JSON.stringify(mappedSuppliers))
-      return mappedBusinessPartners
+      return mappedBusinessPartners;
     } catch (e) {
-      console.error("Error: " + e.message)
-      console.log("Stack: " + e.stack)
+      console.error("Error: " + e.message);
+      console.log("Stack: " + e.stack);
       var msgError = {
         code: "SY002",
         message: e.message,
-        numericSeverity: 4
-      }
-      req.error(msgError)
-      return {}
+        numericSeverity: 4,
+      };
+      req.error(msgError);
+      return {};
     }
-  })
+  });
 
-  this.on('READ', 'sdkSuppliers', async (results, req) => {
-    var jwt = getJWT(req)
-    try{
+  this.on("READ", "sdkSuppliers", async (req) => {
+    var jwt = getJWT(req);
+    try {
       const epmSuppliers = await sdkSuppliers
-      .requestBuilder()
-      .getAll()
-      .execute({ destinationName: destinationName, jwt: jwt})
+        .requestBuilder()
+        .getAll()
+        .execute({ destinationName: destinationName, jwt: jwt });
       // console.log("epmSuppliers: " + JSON.stringify(epmSuppliers))
-      let mappedSuppliers = await epmSuppliers.map(bp => serializeEntity(bp, sdkSuppliers))
+      let mappedSuppliers = await epmSuppliers.map((bp) =>
+        serializeEntity(bp, sdkSuppliers)
+      );
       // console.log("mappedSuppliers: " + JSON.stringify(mappedSuppliers))
-      return mappedSuppliers
+      return mappedSuppliers;
     } catch (e) {
       debugger;
-      console.error("Error: " + e.message)
-      console.log("Stack: " + e.stack)
+      console.error("Error: " + e.message);
+      console.log("Stack: " + e.stack);
     }
-  })
+  });
 
-  this.on ('READ','Suppliers', async req => {
-    const tx = externalService.transaction(req)
+  this.on("READ", "Suppliers", async (req) => {
+    const tx = externalService.transaction(req);
     // const cqn = getCQNforREAD(externalSuppliers, req)
     // const cqn = req.query.SELECT
     try {
-      let result = await tx.run(req.query)
-      return result
+      let result = await tx.run(req.query);
+      return result;
     } catch (error) {
-      console.error(error.message)
+      console.error(error.message);
     }
-  })
+  });
 
-  this.on('READ', 'Products', async (req) => {
-    const tx = externalService.transaction(req)
+  this.on("READ", "Products", async (req) => {
+    const tx = externalService.transaction(req);
     try {
       // let result = await tx.run(cqn)
-      console.info(req.query)
-      let result = await tx.run(req.query)
-      return result
+      console.info(req.query);
+      let result = await tx.run(req.query);
+      return result;
     } catch (error) {
-      console.error(error.message)
-      console.error(error.request._header)
-      req.error(error.message)
+      console.error(error.message);
+      console.error(error.request._header);
+      req.error(error.message);
     }
-  })
+  });
 
-  this.on('READ', 'SEPMRA_I_Product_E', async (req) => {
-    const tx = es5Service.transaction(req)
+  this.on("READ", "SEPMRA_I_Product_E", async (req) => {
+    const tx = es5Service.transaction(req);
     try {
       // let result = await tx.run(cqn)
-      console.info(req.query)
-      let result = await tx.run(req.query)
-      return result
+      console.info(req.query);
+      let result = await tx.run(req.query);
+      return result;
     } catch (error) {
-      console.error(error.message)
-      console.error(error.request._header)
-      req.error(error.message)
+      console.error(error.message);
+      console.error(error.request._header);
+      req.error(error.message);
     }
-  })
-}
+  });
+};
