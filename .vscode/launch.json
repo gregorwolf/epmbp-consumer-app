@@ -7,20 +7,11 @@
       "type": "node",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npx",
-      "runtimeArgs": [
-        "-n"
-      ],
-      "args": [
-        "--",
-        "cds",
-        "run",
-        "--in-memory?"
-      ],
+      "runtimeArgs": ["-n"],
+      "args": ["--", "cds", "run", "--in-memory?"],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "envFile": "${workspaceFolder}/.env1",
       "env": {
         "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/epmbp-consumer-app\\\",\\\"profileName\\\":\\\"CAPDefaultProfile\\\"}\"}"
@@ -32,25 +23,24 @@
       "type": "node",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npx",
-      "runtimeArgs": [
-        "-n"
-      ],
-      "args": [
-        "--",
-        "cds",
-        "run",
-        "--in-memory?"
-      ],
+      "runtimeArgs": ["-n"],
+      "args": ["--", "cds", "run", "--in-memory?"],
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "envFile": "${workspaceFolder}/.env2",
       "env": {
         "NODE_ENV": "production",
         "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/epmbp-consumer-app\\\",\\\"profileName\\\":\\\"production\\\"}\"}"
       }
+    },
+    {
+      "name": "Attach to a Cloud Foundry Instance on Port 9229",
+      "port": 9229,
+      "request": "attach",
+      "type": "node",
+      "localRoot": "${workspacefolder}",
+      "remoteRoot": "/home/vcap/app"
     }
   ]
 }
