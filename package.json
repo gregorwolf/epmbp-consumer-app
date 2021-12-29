@@ -55,7 +55,7 @@
         }
       },
       "EPM_REF_APPS_PROD_MAN_SRV": {
-        "kind": "odata",
+        "kind": "odata-v2",
         "model": "srv/external/EPM_REF_APPS_PROD_MAN_SRV",
         "credentials": {
           "adestination": "LOCAL",
@@ -71,7 +71,7 @@
         }
       },
       "ZPDCDS_SRV": {
-        "kind": "odata",
+        "kind": "odata-v2",
         "model": "srv/external/ZPDCDS_SRV",
         "credentials": {
           "destination": "ES5",
