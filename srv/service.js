@@ -164,7 +164,9 @@ module.exports = async function () {
       return result;
     } catch (error) {
       console.error(error.message);
-      console.error(error.request._header);
+      if (error.request && error.request._header) {
+        console.error(error.request._header);
+      }
       req.error(error.message);
     }
   });
