@@ -3,11 +3,13 @@ GET http://localhost:4004/catalog/$metadata
 Authorization: Basic user:
 
 ### Read Products
+# @name produtcs
 GET http://localhost:4004/v2/catalog/Products
 Authorization: Basic user:
-
+###
+@productID = {{produtcs.response.body.d.results[0].Id}}
 ### Read Single Product
-GET http://localhost:4004/v2/catalog/Products('195490332')
+GET http://localhost:4004/v2/catalog/Products('{{productID}}')
 Authorization: Basic user:
 # Results in this backend request:
 # /sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/%5Bobject%20Object%5D?$select=Id,Name,MainCategoryId,MainCategoryName,SubCategoryId,SubCategoryName&$format=json
