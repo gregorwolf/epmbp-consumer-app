@@ -44,7 +44,7 @@
     "deploy:xsa:user": "xs deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e xsa.mtaext",
     "enable:ssh": "cf enable-ssh epmbp-consumer-app-srv",
     "debug:cf": "cf ssh epmbp-consumer-app-srv -N -T -L 9229:localhost:9229",
-    "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-services --delete-service-brokers"
+    "undeploy:cf": "cf undeploy epmbp-consumer-app --delete-service-keys --delete-services --delete-service-brokers"
   },
   "cds": {
     "hana": {
