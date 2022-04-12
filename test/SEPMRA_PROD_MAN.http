@@ -1,0 +1,21 @@
+###
+http://mbp16-2019.local:50000/sap/opu/odata/sap/SEPMRA_PROD_MAN
+Authorization: Basic {{$dotenv username}}:{{$dotenv password}}
+### Read Products
+# @name produtcs
+GET http://localhost:4004/catalog/SEPMRA_C_PD_Product?$top=10
+Authorization: Basic user:
+###
+POST http://localhost:4004/catalog/SEPMRA_C_PD_Product
+Authorization: Basic user:
+Content-Type: application/json
+
+{
+      "ProductForEdit": "GW-2000",
+      "Price": 42,
+      "Currency": "EUR"
+}
+###
+GET http://localhost:4004/catalog/SEPMRA_C_PD_Product
+    ?$filter=ProductForEdit eq 'GW-2000'
+Authorization: Basic user:

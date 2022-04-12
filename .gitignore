@@ -27,3 +27,4 @@ mta.yaml
 xsa.mtaext
 # auto generated wildcard
 .env2
+.env

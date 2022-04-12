@@ -39,6 +39,7 @@ module.exports = async function () {
     retrieveJwt,
   } = require("@sap-cloud-sdk/core");
 
+  const sepmraProdService = await cds.connect.to("SEPMRA_PROD_MAN");
   const externalService = await cds.connect.to("EPM_REF_APPS_PROD_MAN_SRV");
   const es5Service = await cds.connect.to("ZPDCDS_SRV");
   const { Products: externalProducts, Suppliers: externalSuppliers } =
@@ -183,5 +184,9 @@ module.exports = async function () {
       console.error(error.request._header);
       req.error(error.message);
     }
+  });
+
+  this.on("*", "SEPMRA_C_PD_Product", async (req) => {
+    return sepmraProdService.run(req.query);
   });
 };
