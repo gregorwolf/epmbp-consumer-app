@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddressPhoneNumber = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var AddressPhoneNumber = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `AddressPhoneNumber`.
+     * Returns an entity builder to construct instances of `AddressPhoneNumber`.
      * @returns A builder that constructs instances of entity type `AddressPhoneNumber`.
      */
     AddressPhoneNumber.builder = function () {
-        return core_1.Entity.entityBuilder(AddressPhoneNumber);
+        return core_1.EntityV2.entityBuilder(AddressPhoneNumber);
     };
     /**
      * Returns a request builder to construct requests for operations on the `AddressPhoneNumber` entity type.
@@ -60,7 +62,7 @@ var AddressPhoneNumber = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `AddressPhoneNumber`.
      */
     AddressPhoneNumber.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, AddressPhoneNumber);
+        return core_1.EntityV2.customFieldSelector(fieldName, AddressPhoneNumber);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,68 +76,64 @@ var AddressPhoneNumber = /** @class */ (function (_super) {
      */
     AddressPhoneNumber._entityName = 'A_AddressPhoneNumber';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for AddressPhoneNumber.
-     */
-    AddressPhoneNumber._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     AddressPhoneNumber._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return AddressPhoneNumber;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.AddressPhoneNumber = AddressPhoneNumber;
 (function (AddressPhoneNumber) {
+    var _fieldBuilder = new core_1.FieldBuilder(AddressPhoneNumber);
     /**
      * Static representation of the [[addressId]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.ADDRESS_ID = new core_1.StringField('AddressID', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.ADDRESS_ID = _fieldBuilder.buildEdmTypeField('AddressID', 'Edm.String', false);
     /**
      * Static representation of the [[person]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.PERSON = new core_1.StringField('Person', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.PERSON = _fieldBuilder.buildEdmTypeField('Person', 'Edm.String', false);
     /**
      * Static representation of the [[ordinalNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.ORDINAL_NUMBER = new core_1.StringField('OrdinalNumber', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.ORDINAL_NUMBER = _fieldBuilder.buildEdmTypeField('OrdinalNumber', 'Edm.String', false);
     /**
      * Static representation of the [[destinationLocationCountry]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.DESTINATION_LOCATION_COUNTRY = new core_1.StringField('DestinationLocationCountry', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.DESTINATION_LOCATION_COUNTRY = _fieldBuilder.buildEdmTypeField('DestinationLocationCountry', 'Edm.String', true);
     /**
      * Static representation of the [[isDefaultPhoneNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.IS_DEFAULT_PHONE_NUMBER = new core_1.BooleanField('IsDefaultPhoneNumber', AddressPhoneNumber, 'Edm.Boolean');
+    AddressPhoneNumber.IS_DEFAULT_PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('IsDefaultPhoneNumber', 'Edm.Boolean', true);
     /**
      * Static representation of the [[phoneNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.PHONE_NUMBER = new core_1.StringField('PhoneNumber', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('PhoneNumber', 'Edm.String', true);
     /**
      * Static representation of the [[phoneNumberExtension]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.PHONE_NUMBER_EXTENSION = new core_1.StringField('PhoneNumberExtension', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.PHONE_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('PhoneNumberExtension', 'Edm.String', true);
     /**
      * Static representation of the [[internationalPhoneNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.INTERNATIONAL_PHONE_NUMBER = new core_1.StringField('InternationalPhoneNumber', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.INTERNATIONAL_PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('InternationalPhoneNumber', 'Edm.String', true);
     /**
      * Static representation of the [[phoneNumberType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.PHONE_NUMBER_TYPE = new core_1.StringField('PhoneNumberType', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.PHONE_NUMBER_TYPE = _fieldBuilder.buildEdmTypeField('PhoneNumberType', 'Edm.String', true);
     /**
      * Static representation of the [[addressCommunicationRemarkText]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressPhoneNumber.ADDRESS_COMMUNICATION_REMARK_TEXT = new core_1.StringField('AddressCommunicationRemarkText', AddressPhoneNumber, 'Edm.String');
+    AddressPhoneNumber.ADDRESS_COMMUNICATION_REMARK_TEXT = _fieldBuilder.buildEdmTypeField('AddressCommunicationRemarkText', 'Edm.String', true);
     /**
      * All fields of the AddressPhoneNumber entity.
      */

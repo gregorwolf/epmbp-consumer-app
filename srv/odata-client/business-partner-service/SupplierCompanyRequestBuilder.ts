@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { SupplierCompany } from './SupplierCompany';
 
 /**
@@ -16,8 +16,8 @@ export class SupplierCompanyRequestBuilder extends RequestBuilder<SupplierCompan
    * @param companyCode Key property. See [[SupplierCompany.companyCode]].
    * @returns A request builder for creating requests to retrieve one `SupplierCompany` entity based on its keys.
    */
-  getByKey(supplier: string, companyCode: string): GetByKeyRequestBuilder<SupplierCompany> {
-    return new GetByKeyRequestBuilder(SupplierCompany, {
+  getByKey(supplier: string, companyCode: string): GetByKeyRequestBuilderV2<SupplierCompany> {
+    return new GetByKeyRequestBuilderV2(SupplierCompany, {
       Supplier: supplier,
       CompanyCode: companyCode
     });
@@ -27,8 +27,8 @@ export class SupplierCompanyRequestBuilder extends RequestBuilder<SupplierCompan
    * Returns a request builder for querying all `SupplierCompany` entities.
    * @returns A request builder for creating requests to retrieve all `SupplierCompany` entities.
    */
-  getAll(): GetAllRequestBuilder<SupplierCompany> {
-    return new GetAllRequestBuilder(SupplierCompany);
+  getAll(): GetAllRequestBuilderV2<SupplierCompany> {
+    return new GetAllRequestBuilderV2(SupplierCompany);
   }
 
   /**
@@ -36,8 +36,8 @@ export class SupplierCompanyRequestBuilder extends RequestBuilder<SupplierCompan
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `SupplierCompany`.
    */
-  create(entity: SupplierCompany): CreateRequestBuilder<SupplierCompany> {
-    return new CreateRequestBuilder(SupplierCompany, entity);
+  create(entity: SupplierCompany): CreateRequestBuilderV2<SupplierCompany> {
+    return new CreateRequestBuilderV2(SupplierCompany, entity);
   }
 
   /**
@@ -45,7 +45,7 @@ export class SupplierCompanyRequestBuilder extends RequestBuilder<SupplierCompan
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `SupplierCompany`.
    */
-  update(entity: SupplierCompany): UpdateRequestBuilder<SupplierCompany> {
-    return new UpdateRequestBuilder(SupplierCompany, entity);
+  update(entity: SupplierCompany): UpdateRequestBuilderV2<SupplierCompany> {
+    return new UpdateRequestBuilderV2(SupplierCompany, entity);
   }
 }

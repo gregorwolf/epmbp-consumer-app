@@ -1,97 +1,81 @@
 import { SupplierPartnerFuncRequestBuilder } from './SupplierPartnerFuncRequestBuilder';
 import { Moment } from 'moment';
-import { AllFields, BooleanField, CustomField, DateField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
+import { AllFields, CustomFieldV2, EdmTypeField, EntityBuilderType, EntityV2, Field, OrderableEdmTypeField } from '@sap-cloud-sdk/core';
 /**
  * This class represents the entity "A_SupplierPartnerFunc" of service "API_BUSINESS_PARTNER".
  */
-export declare class SupplierPartnerFunc extends Entity implements SupplierPartnerFuncType {
+export declare class SupplierPartnerFunc extends EntityV2 implements SupplierPartnerFuncType {
     /**
      * Technical entity name for SupplierPartnerFunc.
      */
     static _entityName: string;
-    /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for SupplierPartnerFunc.
-     */
-    static _serviceName: string;
     /**
      * Default url path for the according service.
      */
     static _defaultServicePath: string;
     /**
      * Account Number of Supplier.
-     * Specifies an alphanumeric key that uniquely identifies the supplier in the SAP system.
      * Maximum length: 10.
      */
     supplier: string;
     /**
      * Purchasing Organization.
-     * Denotes the purchasing organization.
      * Maximum length: 4.
      */
     purchasingOrganization: string;
     /**
      * Supplier Subrange.
-     * Subdivision of a supplier's overall product range according to various criteria.
-     * For each supplier sub-range:The master data is kept on a common basisCertain conditions applyIn the supplier master, you can create different purchasing data and different  partner functions for each  supplier sub-range.You can also maintain and change the conditions for each supplier sub-range. You assign a material to a supplier sub-range in the info record.In the supplier master, you can maintain different data for particular supplier sub-ranges, such as ordering addresses or terms of payment, for example.When creating a purchase order with a known supplier, different data is only determined if the supplier sub-range is entered in the initial screen.Your supplier Smith in Houston has two sub-ranges: paint and glue.All materials from the "paint" sub-range are ordered in Houston.You have maintained an alternative ordering address in Detroit for the "glue" sub-range.If you order materials from the "glue" sub-range, the supplier sub-range finds the Detroit ordering address.
      * Maximum length: 6.
      */
     supplierSubrange: string;
     /**
      * Plant.
-     * Key uniquely identifying a plant.
      * Maximum length: 4.
      */
     plant: string;
     /**
      * Partner Function.
-     * The abbreviated form of the name that identifies the partner function.
      * Maximum length: 2.
      */
     partnerFunction: string;
     /**
      * Partner counter.
-     * The sequential number that the system applies when there is more than one partner for a particular partner function.
-     * When you create a sales order for a particular customer, there may be more than one ship-to party defined. The different ship-to parties are numbered sequentially.
      * Maximum length: 3.
      */
     partnerCounter: string;
     /**
      * Default Partner.
-     * Specifies a partner as the default for a particular partner function.
-     * When you enter more than one partner for a particular partner function (for example, you define three different ship-to parties), you can select one partner as the default. During sales or purchasing processing, if you have defined multiple partners for a partner function, the system prompts you to choose just one partner. The system presents the default partner as the first choice in the pop-up window.
      * @nullable
      */
     defaultPartner?: boolean;
     /**
-     * Date on Which Record Was Created.
+     * Record Created On.
      * @nullable
      */
     creationDate?: Moment;
     /**
-     * Name of Person Who Created Object.
+     * Name of Person Responsible for Creating the Object.
      * Maximum length: 12.
      * @nullable
      */
     createdByUser?: string;
     /**
-     * Reference to other vendor.
+     * Reference to other supplier.
      * Maximum length: 10.
      * @nullable
      */
     referenceSupplier?: string;
     /**
      * Authorization Group.
-     * The authorization group allows extended authorization protection for particular objects. The authorization groups are freely definable. The authorization groups usually occur in authorization objects together with an activity.
      * Maximum length: 4.
      * @nullable
      */
     authorizationGroup?: string;
     /**
-     * Returns an entity builder to construct instances `SupplierPartnerFunc`.
+     * Returns an entity builder to construct instances of `SupplierPartnerFunc`.
      * @returns A builder that constructs instances of entity type `SupplierPartnerFunc`.
      */
-    static builder(): EntityBuilderType<SupplierPartnerFunc, SupplierPartnerFuncTypeForceMandatory>;
+    static builder(): EntityBuilderType<SupplierPartnerFunc, SupplierPartnerFuncType>;
     /**
      * Returns a request builder to construct requests for operations on the `SupplierPartnerFunc` entity type.
      * @returns A `SupplierPartnerFunc` request builder.
@@ -102,7 +86,7 @@ export declare class SupplierPartnerFunc extends Entity implements SupplierPartn
      * @param fieldName Name of the custom field to select
      * @returns A builder that constructs instances of entity type `SupplierPartnerFunc`.
      */
-    static customField(fieldName: string): CustomField<SupplierPartnerFunc>;
+    static customField(fieldName: string): CustomFieldV2<SupplierPartnerFunc>;
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
      * @returns An object containing all instance variables + custom fields.
@@ -118,85 +102,72 @@ export interface SupplierPartnerFuncType {
     plant: string;
     partnerFunction: string;
     partnerCounter: string;
-    defaultPartner?: boolean;
-    creationDate?: Moment;
-    createdByUser?: string;
-    referenceSupplier?: string;
-    authorizationGroup?: string;
-}
-export interface SupplierPartnerFuncTypeForceMandatory {
-    supplier: string;
-    purchasingOrganization: string;
-    supplierSubrange: string;
-    plant: string;
-    partnerFunction: string;
-    partnerCounter: string;
-    defaultPartner: boolean;
-    creationDate: Moment;
-    createdByUser: string;
-    referenceSupplier: string;
-    authorizationGroup: string;
+    defaultPartner?: boolean | null;
+    creationDate?: Moment | null;
+    createdByUser?: string | null;
+    referenceSupplier?: string | null;
+    authorizationGroup?: string | null;
 }
 export declare namespace SupplierPartnerFunc {
     /**
      * Static representation of the [[supplier]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const SUPPLIER: StringField<SupplierPartnerFunc>;
+    const SUPPLIER: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[purchasingOrganization]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const PURCHASING_ORGANIZATION: StringField<SupplierPartnerFunc>;
+    const PURCHASING_ORGANIZATION: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[supplierSubrange]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const SUPPLIER_SUBRANGE: StringField<SupplierPartnerFunc>;
+    const SUPPLIER_SUBRANGE: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[plant]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const PLANT: StringField<SupplierPartnerFunc>;
+    const PLANT: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[partnerFunction]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const PARTNER_FUNCTION: StringField<SupplierPartnerFunc>;
+    const PARTNER_FUNCTION: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[partnerCounter]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const PARTNER_COUNTER: StringField<SupplierPartnerFunc>;
+    const PARTNER_COUNTER: EdmTypeField<SupplierPartnerFunc, "Edm.String", false, true>;
     /**
      * Static representation of the [[defaultPartner]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const DEFAULT_PARTNER: BooleanField<SupplierPartnerFunc>;
+    const DEFAULT_PARTNER: EdmTypeField<SupplierPartnerFunc, "Edm.Boolean", true, true>;
     /**
      * Static representation of the [[creationDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const CREATION_DATE: DateField<SupplierPartnerFunc>;
+    const CREATION_DATE: OrderableEdmTypeField<SupplierPartnerFunc, "Edm.DateTime", true, true>;
     /**
      * Static representation of the [[createdByUser]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const CREATED_BY_USER: StringField<SupplierPartnerFunc>;
+    const CREATED_BY_USER: EdmTypeField<SupplierPartnerFunc, "Edm.String", true, true>;
     /**
      * Static representation of the [[referenceSupplier]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const REFERENCE_SUPPLIER: StringField<SupplierPartnerFunc>;
+    const REFERENCE_SUPPLIER: EdmTypeField<SupplierPartnerFunc, "Edm.String", true, true>;
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    const AUTHORIZATION_GROUP: StringField<SupplierPartnerFunc>;
+    const AUTHORIZATION_GROUP: EdmTypeField<SupplierPartnerFunc, "Edm.String", true, true>;
     /**
      * All fields of the SupplierPartnerFunc entity.
      */
-    const _allFields: Array<StringField<SupplierPartnerFunc> | BooleanField<SupplierPartnerFunc> | DateField<SupplierPartnerFunc>>;
+    const _allFields: Array<EdmTypeField<SupplierPartnerFunc, 'Edm.String', false, true> | EdmTypeField<SupplierPartnerFunc, 'Edm.Boolean', true, true> | OrderableEdmTypeField<SupplierPartnerFunc, 'Edm.DateTime', true, true> | EdmTypeField<SupplierPartnerFunc, 'Edm.String', true, true>>;
     /**
      * All fields selector.
      */
@@ -204,12 +175,12 @@ export declare namespace SupplierPartnerFunc {
     /**
      * All key fields of the SupplierPartnerFunc entity.
      */
-    const _keyFields: Array<Field<SupplierPartnerFunc>>;
+    const _keyFields: Array<Field<SupplierPartnerFunc, boolean, boolean>>;
     /**
      * Mapping of all key field names to the respective static field property SupplierPartnerFunc.
      */
     const _keys: {
-        [keys: string]: Field<SupplierPartnerFunc>;
+        [keys: string]: Field<SupplierPartnerFunc, boolean, boolean>;
     };
 }
 //# sourceMappingURL=SupplierPartnerFunc.d.ts.map

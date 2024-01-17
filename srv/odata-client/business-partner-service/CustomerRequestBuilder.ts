@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { Customer } from './Customer';
 
 /**
@@ -15,16 +15,16 @@ export class CustomerRequestBuilder extends RequestBuilder<Customer> {
    * @param customer Key property. See [[Customer.customer]].
    * @returns A request builder for creating requests to retrieve one `Customer` entity based on its keys.
    */
-  getByKey(customer: string): GetByKeyRequestBuilder<Customer> {
-    return new GetByKeyRequestBuilder(Customer, { Customer: customer });
+  getByKey(customer: string): GetByKeyRequestBuilderV2<Customer> {
+    return new GetByKeyRequestBuilderV2(Customer, { Customer: customer });
   }
 
   /**
    * Returns a request builder for querying all `Customer` entities.
    * @returns A request builder for creating requests to retrieve all `Customer` entities.
    */
-  getAll(): GetAllRequestBuilder<Customer> {
-    return new GetAllRequestBuilder(Customer);
+  getAll(): GetAllRequestBuilderV2<Customer> {
+    return new GetAllRequestBuilderV2(Customer);
   }
 
   /**
@@ -32,7 +32,7 @@ export class CustomerRequestBuilder extends RequestBuilder<Customer> {
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `Customer`.
    */
-  update(entity: Customer): UpdateRequestBuilder<Customer> {
-    return new UpdateRequestBuilder(Customer, entity);
+  update(entity: Customer): UpdateRequestBuilderV2<Customer> {
+    return new UpdateRequestBuilderV2(Customer, entity);
   }
 }

@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustomerSalesAreaText } from './CustomerSalesAreaText';
 
 /**
@@ -20,8 +20,8 @@ export class CustomerSalesAreaTextRequestBuilder extends RequestBuilder<Customer
    * @param longTextId Key property. See [[CustomerSalesAreaText.longTextId]].
    * @returns A request builder for creating requests to retrieve one `CustomerSalesAreaText` entity based on its keys.
    */
-  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, language: string, longTextId: string): GetByKeyRequestBuilder<CustomerSalesAreaText> {
-    return new GetByKeyRequestBuilder(CustomerSalesAreaText, {
+  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, language: string, longTextId: string): GetByKeyRequestBuilderV2<CustomerSalesAreaText> {
+    return new GetByKeyRequestBuilderV2(CustomerSalesAreaText, {
       Customer: customer,
       SalesOrganization: salesOrganization,
       DistributionChannel: distributionChannel,
@@ -35,8 +35,8 @@ export class CustomerSalesAreaTextRequestBuilder extends RequestBuilder<Customer
    * Returns a request builder for querying all `CustomerSalesAreaText` entities.
    * @returns A request builder for creating requests to retrieve all `CustomerSalesAreaText` entities.
    */
-  getAll(): GetAllRequestBuilder<CustomerSalesAreaText> {
-    return new GetAllRequestBuilder(CustomerSalesAreaText);
+  getAll(): GetAllRequestBuilderV2<CustomerSalesAreaText> {
+    return new GetAllRequestBuilderV2(CustomerSalesAreaText);
   }
 
   /**
@@ -44,8 +44,8 @@ export class CustomerSalesAreaTextRequestBuilder extends RequestBuilder<Customer
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `CustomerSalesAreaText`.
    */
-  create(entity: CustomerSalesAreaText): CreateRequestBuilder<CustomerSalesAreaText> {
-    return new CreateRequestBuilder(CustomerSalesAreaText, entity);
+  create(entity: CustomerSalesAreaText): CreateRequestBuilderV2<CustomerSalesAreaText> {
+    return new CreateRequestBuilderV2(CustomerSalesAreaText, entity);
   }
 
   /**
@@ -53,8 +53,8 @@ export class CustomerSalesAreaTextRequestBuilder extends RequestBuilder<Customer
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `CustomerSalesAreaText`.
    */
-  update(entity: CustomerSalesAreaText): UpdateRequestBuilder<CustomerSalesAreaText> {
-    return new UpdateRequestBuilder(CustomerSalesAreaText, entity);
+  update(entity: CustomerSalesAreaText): UpdateRequestBuilderV2<CustomerSalesAreaText> {
+    return new UpdateRequestBuilderV2(CustomerSalesAreaText, entity);
   }
 
   /**
@@ -67,15 +67,15 @@ export class CustomerSalesAreaTextRequestBuilder extends RequestBuilder<Customer
    * @param longTextId Key property. See [[CustomerSalesAreaText.longTextId]].
    * @returns A request builder for creating requests that delete an entity of type `CustomerSalesAreaText`.
    */
-  delete(customer: string, salesOrganization: string, distributionChannel: string, division: string, language: string, longTextId: string): DeleteRequestBuilder<CustomerSalesAreaText>;
+  delete(customer: string, salesOrganization: string, distributionChannel: string, division: string, language: string, longTextId: string): DeleteRequestBuilderV2<CustomerSalesAreaText>;
   /**
    * Returns a request builder for deleting an entity of type `CustomerSalesAreaText`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `CustomerSalesAreaText` by taking the entity as a parameter.
    */
-  delete(entity: CustomerSalesAreaText): DeleteRequestBuilder<CustomerSalesAreaText>;
-  delete(customerOrEntity: any, salesOrganization?: string, distributionChannel?: string, division?: string, language?: string, longTextId?: string): DeleteRequestBuilder<CustomerSalesAreaText> {
-    return new DeleteRequestBuilder(CustomerSalesAreaText, customerOrEntity instanceof CustomerSalesAreaText ? customerOrEntity : {
+  delete(entity: CustomerSalesAreaText): DeleteRequestBuilderV2<CustomerSalesAreaText>;
+  delete(customerOrEntity: any, salesOrganization?: string, distributionChannel?: string, division?: string, language?: string, longTextId?: string): DeleteRequestBuilderV2<CustomerSalesAreaText> {
+    return new DeleteRequestBuilderV2(CustomerSalesAreaText, customerOrEntity instanceof CustomerSalesAreaText ? customerOrEntity : {
       Customer: customerOrEntity!,
       SalesOrganization: salesOrganization!,
       DistributionChannel: distributionChannel!,

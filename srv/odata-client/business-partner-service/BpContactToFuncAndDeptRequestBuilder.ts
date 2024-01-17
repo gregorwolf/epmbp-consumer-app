@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { Moment } from 'moment';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { BpContactToFuncAndDept } from './BpContactToFuncAndDept';
 
 /**
@@ -19,8 +19,8 @@ export class BpContactToFuncAndDeptRequestBuilder extends RequestBuilder<BpConta
    * @param validityEndDate Key property. See [[BpContactToFuncAndDept.validityEndDate]].
    * @returns A request builder for creating requests to retrieve one `BpContactToFuncAndDept` entity based on its keys.
    */
-  getByKey(relationshipNumber: string, businessPartnerCompany: string, businessPartnerPerson: string, validityEndDate: Moment): GetByKeyRequestBuilder<BpContactToFuncAndDept> {
-    return new GetByKeyRequestBuilder(BpContactToFuncAndDept, {
+  getByKey(relationshipNumber: string, businessPartnerCompany: string, businessPartnerPerson: string, validityEndDate: Moment): GetByKeyRequestBuilderV2<BpContactToFuncAndDept> {
+    return new GetByKeyRequestBuilderV2(BpContactToFuncAndDept, {
       RelationshipNumber: relationshipNumber,
       BusinessPartnerCompany: businessPartnerCompany,
       BusinessPartnerPerson: businessPartnerPerson,
@@ -32,8 +32,8 @@ export class BpContactToFuncAndDeptRequestBuilder extends RequestBuilder<BpConta
    * Returns a request builder for querying all `BpContactToFuncAndDept` entities.
    * @returns A request builder for creating requests to retrieve all `BpContactToFuncAndDept` entities.
    */
-  getAll(): GetAllRequestBuilder<BpContactToFuncAndDept> {
-    return new GetAllRequestBuilder(BpContactToFuncAndDept);
+  getAll(): GetAllRequestBuilderV2<BpContactToFuncAndDept> {
+    return new GetAllRequestBuilderV2(BpContactToFuncAndDept);
   }
 
   /**
@@ -41,7 +41,7 @@ export class BpContactToFuncAndDeptRequestBuilder extends RequestBuilder<BpConta
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `BpContactToFuncAndDept`.
    */
-  update(entity: BpContactToFuncAndDept): UpdateRequestBuilder<BpContactToFuncAndDept> {
-    return new UpdateRequestBuilder(BpContactToFuncAndDept, entity);
+  update(entity: BpContactToFuncAndDept): UpdateRequestBuilderV2<BpContactToFuncAndDept> {
+    return new UpdateRequestBuilderV2(BpContactToFuncAndDept, entity);
   }
 }

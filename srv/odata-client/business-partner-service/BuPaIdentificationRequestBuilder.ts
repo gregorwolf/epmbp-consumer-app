@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { BuPaIdentification } from './BuPaIdentification';
 
 /**
@@ -17,8 +17,8 @@ export class BuPaIdentificationRequestBuilder extends RequestBuilder<BuPaIdentif
    * @param bpIdentificationNumber Key property. See [[BuPaIdentification.bpIdentificationNumber]].
    * @returns A request builder for creating requests to retrieve one `BuPaIdentification` entity based on its keys.
    */
-  getByKey(businessPartner: string, bpIdentificationType: string, bpIdentificationNumber: string): GetByKeyRequestBuilder<BuPaIdentification> {
-    return new GetByKeyRequestBuilder(BuPaIdentification, {
+  getByKey(businessPartner: string, bpIdentificationType: string, bpIdentificationNumber: string): GetByKeyRequestBuilderV2<BuPaIdentification> {
+    return new GetByKeyRequestBuilderV2(BuPaIdentification, {
       BusinessPartner: businessPartner,
       BPIdentificationType: bpIdentificationType,
       BPIdentificationNumber: bpIdentificationNumber
@@ -29,8 +29,8 @@ export class BuPaIdentificationRequestBuilder extends RequestBuilder<BuPaIdentif
    * Returns a request builder for querying all `BuPaIdentification` entities.
    * @returns A request builder for creating requests to retrieve all `BuPaIdentification` entities.
    */
-  getAll(): GetAllRequestBuilder<BuPaIdentification> {
-    return new GetAllRequestBuilder(BuPaIdentification);
+  getAll(): GetAllRequestBuilderV2<BuPaIdentification> {
+    return new GetAllRequestBuilderV2(BuPaIdentification);
   }
 
   /**
@@ -38,8 +38,8 @@ export class BuPaIdentificationRequestBuilder extends RequestBuilder<BuPaIdentif
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `BuPaIdentification`.
    */
-  create(entity: BuPaIdentification): CreateRequestBuilder<BuPaIdentification> {
-    return new CreateRequestBuilder(BuPaIdentification, entity);
+  create(entity: BuPaIdentification): CreateRequestBuilderV2<BuPaIdentification> {
+    return new CreateRequestBuilderV2(BuPaIdentification, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class BuPaIdentificationRequestBuilder extends RequestBuilder<BuPaIdentif
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `BuPaIdentification`.
    */
-  update(entity: BuPaIdentification): UpdateRequestBuilder<BuPaIdentification> {
-    return new UpdateRequestBuilder(BuPaIdentification, entity);
+  update(entity: BuPaIdentification): UpdateRequestBuilderV2<BuPaIdentification> {
+    return new UpdateRequestBuilderV2(BuPaIdentification, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class BuPaIdentificationRequestBuilder extends RequestBuilder<BuPaIdentif
    * @param bpIdentificationNumber Key property. See [[BuPaIdentification.bpIdentificationNumber]].
    * @returns A request builder for creating requests that delete an entity of type `BuPaIdentification`.
    */
-  delete(businessPartner: string, bpIdentificationType: string, bpIdentificationNumber: string): DeleteRequestBuilder<BuPaIdentification>;
+  delete(businessPartner: string, bpIdentificationType: string, bpIdentificationNumber: string): DeleteRequestBuilderV2<BuPaIdentification>;
   /**
    * Returns a request builder for deleting an entity of type `BuPaIdentification`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `BuPaIdentification` by taking the entity as a parameter.
    */
-  delete(entity: BuPaIdentification): DeleteRequestBuilder<BuPaIdentification>;
-  delete(businessPartnerOrEntity: any, bpIdentificationType?: string, bpIdentificationNumber?: string): DeleteRequestBuilder<BuPaIdentification> {
-    return new DeleteRequestBuilder(BuPaIdentification, businessPartnerOrEntity instanceof BuPaIdentification ? businessPartnerOrEntity : {
+  delete(entity: BuPaIdentification): DeleteRequestBuilderV2<BuPaIdentification>;
+  delete(businessPartnerOrEntity: any, bpIdentificationType?: string, bpIdentificationNumber?: string): DeleteRequestBuilderV2<BuPaIdentification> {
+    return new DeleteRequestBuilderV2(BuPaIdentification, businessPartnerOrEntity instanceof BuPaIdentification ? businessPartnerOrEntity : {
       BusinessPartner: businessPartnerOrEntity!,
       BPIdentificationType: bpIdentificationType!,
       BPIdentificationNumber: bpIdentificationNumber!

@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerSalesArea = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerSalesArea = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerSalesArea`.
+     * Returns an entity builder to construct instances of `CustomerSalesArea`.
      * @returns A builder that constructs instances of entity type `CustomerSalesArea`.
      */
     CustomerSalesArea.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerSalesArea);
+        return core_1.EntityV2.entityBuilder(CustomerSalesArea);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerSalesArea` entity type.
@@ -60,7 +62,7 @@ var CustomerSalesArea = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerSalesArea`.
      */
     CustomerSalesArea.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerSalesArea);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerSalesArea);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,236 +76,318 @@ var CustomerSalesArea = /** @class */ (function (_super) {
      */
     CustomerSalesArea._entityName = 'A_CustomerSalesArea';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerSalesArea.
-     */
-    CustomerSalesArea._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerSalesArea._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerSalesArea;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerSalesArea = CustomerSalesArea;
 var CustSalesPartnerFunc_1 = require("./CustSalesPartnerFunc");
 var CustomerSalesAreaTax_1 = require("./CustomerSalesAreaTax");
 var CustomerSalesAreaText_1 = require("./CustomerSalesAreaText");
+var CustSlsAreaAddrDepdntInfo_1 = require("./CustSlsAreaAddrDepdntInfo");
 (function (CustomerSalesArea) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerSalesArea);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER = new core_1.StringField('Customer', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[salesOrganization]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SALES_ORGANIZATION = new core_1.StringField('SalesOrganization', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SALES_ORGANIZATION = _fieldBuilder.buildEdmTypeField('SalesOrganization', 'Edm.String', false);
     /**
      * Static representation of the [[distributionChannel]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.DISTRIBUTION_CHANNEL = new core_1.StringField('DistributionChannel', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.DISTRIBUTION_CHANNEL = _fieldBuilder.buildEdmTypeField('DistributionChannel', 'Edm.String', false);
     /**
      * Static representation of the [[division]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.DIVISION = new core_1.StringField('Division', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.DIVISION = _fieldBuilder.buildEdmTypeField('Division', 'Edm.String', false);
     /**
      * Static representation of the [[accountByCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ACCOUNT_BY_CUSTOMER = new core_1.StringField('AccountByCustomer', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ACCOUNT_BY_CUSTOMER = _fieldBuilder.buildEdmTypeField('AccountByCustomer', 'Edm.String', true);
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.AUTHORIZATION_GROUP = new core_1.StringField('AuthorizationGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
     /**
      * Static representation of the [[billingIsBlockedForCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.BILLING_IS_BLOCKED_FOR_CUSTOMER = new core_1.StringField('BillingIsBlockedForCustomer', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.BILLING_IS_BLOCKED_FOR_CUSTOMER = _fieldBuilder.buildEdmTypeField('BillingIsBlockedForCustomer', 'Edm.String', true);
     /**
      * Static representation of the [[completeDeliveryIsDefined]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.COMPLETE_DELIVERY_IS_DEFINED = new core_1.BooleanField('CompleteDeliveryIsDefined', CustomerSalesArea, 'Edm.Boolean');
+    CustomerSalesArea.COMPLETE_DELIVERY_IS_DEFINED = _fieldBuilder.buildEdmTypeField('CompleteDeliveryIsDefined', 'Edm.Boolean', true);
+    /**
+     * Static representation of the [[creditControlArea]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.CREDIT_CONTROL_AREA = _fieldBuilder.buildEdmTypeField('CreditControlArea', 'Edm.String', true);
     /**
      * Static representation of the [[currency]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CURRENCY = new core_1.StringField('Currency', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CURRENCY = _fieldBuilder.buildEdmTypeField('Currency', 'Edm.String', true);
+    /**
+     * Static representation of the [[custIsRlvtForSettlmtMgmt]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.CUST_IS_RLVT_FOR_SETTLMT_MGMT = _fieldBuilder.buildEdmTypeField('CustIsRlvtForSettlmtMgmt', 'Edm.Boolean', true);
     /**
      * Static representation of the [[customerAbcClassification]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_ABC_CLASSIFICATION = new core_1.StringField('CustomerABCClassification', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_ABC_CLASSIFICATION = _fieldBuilder.buildEdmTypeField('CustomerABCClassification', 'Edm.String', true);
     /**
      * Static representation of the [[customerAccountAssignmentGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_ACCOUNT_ASSIGNMENT_GROUP = new core_1.StringField('CustomerAccountAssignmentGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_ACCOUNT_ASSIGNMENT_GROUP = _fieldBuilder.buildEdmTypeField('CustomerAccountAssignmentGroup', 'Edm.String', true);
     /**
      * Static representation of the [[customerGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_GROUP = new core_1.StringField('CustomerGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_GROUP = _fieldBuilder.buildEdmTypeField('CustomerGroup', 'Edm.String', true);
+    /**
+     * Static representation of the [[customerIsRebateRelevant]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.CUSTOMER_IS_REBATE_RELEVANT = _fieldBuilder.buildEdmTypeField('CustomerIsRebateRelevant', 'Edm.Boolean', true);
     /**
      * Static representation of the [[customerPaymentTerms]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_PAYMENT_TERMS = new core_1.StringField('CustomerPaymentTerms', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_PAYMENT_TERMS = _fieldBuilder.buildEdmTypeField('CustomerPaymentTerms', 'Edm.String', true);
     /**
      * Static representation of the [[customerPriceGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_PRICE_GROUP = new core_1.StringField('CustomerPriceGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_PRICE_GROUP = _fieldBuilder.buildEdmTypeField('CustomerPriceGroup', 'Edm.String', true);
     /**
      * Static representation of the [[customerPricingProcedure]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_PRICING_PROCEDURE = new core_1.StringField('CustomerPricingProcedure', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_PRICING_PROCEDURE = _fieldBuilder.buildEdmTypeField('CustomerPricingProcedure', 'Edm.String', true);
+    /**
+     * Static representation of the [[custProdProposalProcedure]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.CUST_PROD_PROPOSAL_PROCEDURE = _fieldBuilder.buildEdmTypeField('CustProdProposalProcedure', 'Edm.String', true);
     /**
      * Static representation of the [[deliveryIsBlockedForCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.DELIVERY_IS_BLOCKED_FOR_CUSTOMER = new core_1.StringField('DeliveryIsBlockedForCustomer', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.DELIVERY_IS_BLOCKED_FOR_CUSTOMER = _fieldBuilder.buildEdmTypeField('DeliveryIsBlockedForCustomer', 'Edm.String', true);
     /**
      * Static representation of the [[deliveryPriority]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.DELIVERY_PRIORITY = new core_1.StringField('DeliveryPriority', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.DELIVERY_PRIORITY = _fieldBuilder.buildEdmTypeField('DeliveryPriority', 'Edm.String', true);
     /**
      * Static representation of the [[incotermsClassification]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INCOTERMS_CLASSIFICATION = new core_1.StringField('IncotermsClassification', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INCOTERMS_CLASSIFICATION = _fieldBuilder.buildEdmTypeField('IncotermsClassification', 'Edm.String', true);
     /**
      * Static representation of the [[incotermsLocation2]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INCOTERMS_LOCATION_2 = new core_1.StringField('IncotermsLocation2', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INCOTERMS_LOCATION_2 = _fieldBuilder.buildEdmTypeField('IncotermsLocation2', 'Edm.String', true);
     /**
      * Static representation of the [[incotermsVersion]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INCOTERMS_VERSION = new core_1.StringField('IncotermsVersion', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INCOTERMS_VERSION = _fieldBuilder.buildEdmTypeField('IncotermsVersion', 'Edm.String', true);
     /**
      * Static representation of the [[incotermsLocation1]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INCOTERMS_LOCATION_1 = new core_1.StringField('IncotermsLocation1', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INCOTERMS_LOCATION_1 = _fieldBuilder.buildEdmTypeField('IncotermsLocation1', 'Edm.String', true);
+    /**
+     * Static representation of the [[incotermsSupChnLoc1AddlUuid]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID = _fieldBuilder.buildEdmTypeField('IncotermsSupChnLoc1AddlUUID', 'Edm.Guid', true);
+    /**
+     * Static representation of the [[incotermsSupChnLoc2AddlUuid]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID = _fieldBuilder.buildEdmTypeField('IncotermsSupChnLoc2AddlUUID', 'Edm.Guid', true);
+    /**
+     * Static representation of the [[incotermsSupChnDvtgLocAddlUuid]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID = _fieldBuilder.buildEdmTypeField('IncotermsSupChnDvtgLocAddlUUID', 'Edm.Guid', true);
     /**
      * Static representation of the [[deletionIndicator]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.DELETION_INDICATOR = new core_1.BooleanField('DeletionIndicator', CustomerSalesArea, 'Edm.Boolean');
+    CustomerSalesArea.DELETION_INDICATOR = _fieldBuilder.buildEdmTypeField('DeletionIndicator', 'Edm.Boolean', true);
     /**
      * Static representation of the [[incotermsTransferLocation]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INCOTERMS_TRANSFER_LOCATION = new core_1.StringField('IncotermsTransferLocation', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INCOTERMS_TRANSFER_LOCATION = _fieldBuilder.buildEdmTypeField('IncotermsTransferLocation', 'Edm.String', true);
+    /**
+     * Static representation of the [[inspSbstHasNoTimeOrQuantity]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.INSP_SBST_HAS_NO_TIME_OR_QUANTITY = _fieldBuilder.buildEdmTypeField('InspSbstHasNoTimeOrQuantity', 'Edm.Boolean', true);
     /**
      * Static representation of the [[invoiceDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INVOICE_DATE = new core_1.StringField('InvoiceDate', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INVOICE_DATE = _fieldBuilder.buildEdmTypeField('InvoiceDate', 'Edm.String', true);
     /**
      * Static representation of the [[itemOrderProbabilityInPercent]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ITEM_ORDER_PROBABILITY_IN_PERCENT = new core_1.StringField('ItemOrderProbabilityInPercent', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ITEM_ORDER_PROBABILITY_IN_PERCENT = _fieldBuilder.buildEdmTypeField('ItemOrderProbabilityInPercent', 'Edm.String', true);
+    /**
+     * Static representation of the [[manualInvoiceMaintIsRelevant]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.MANUAL_INVOICE_MAINT_IS_RELEVANT = _fieldBuilder.buildEdmTypeField('ManualInvoiceMaintIsRelevant', 'Edm.Boolean', true);
+    /**
+     * Static representation of the [[maxNmbrOfPartialDelivery]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.MAX_NMBR_OF_PARTIAL_DELIVERY = _fieldBuilder.buildEdmTypeField('MaxNmbrOfPartialDelivery', 'Edm.Decimal', true);
     /**
      * Static representation of the [[orderCombinationIsAllowed]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ORDER_COMBINATION_IS_ALLOWED = new core_1.BooleanField('OrderCombinationIsAllowed', CustomerSalesArea, 'Edm.Boolean');
+    CustomerSalesArea.ORDER_COMBINATION_IS_ALLOWED = _fieldBuilder.buildEdmTypeField('OrderCombinationIsAllowed', 'Edm.Boolean', true);
     /**
      * Static representation of the [[orderIsBlockedForCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ORDER_IS_BLOCKED_FOR_CUSTOMER = new core_1.StringField('OrderIsBlockedForCustomer', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ORDER_IS_BLOCKED_FOR_CUSTOMER = _fieldBuilder.buildEdmTypeField('OrderIsBlockedForCustomer', 'Edm.String', true);
+    /**
+     * Static representation of the [[overdelivTolrtdLmtRatioInPct]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.OVERDELIV_TOLRTD_LMT_RATIO_IN_PCT = _fieldBuilder.buildEdmTypeField('OverdelivTolrtdLmtRatioInPct', 'Edm.Decimal', true);
     /**
      * Static representation of the [[partialDeliveryIsAllowed]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.PARTIAL_DELIVERY_IS_ALLOWED = new core_1.StringField('PartialDeliveryIsAllowed', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.PARTIAL_DELIVERY_IS_ALLOWED = _fieldBuilder.buildEdmTypeField('PartialDeliveryIsAllowed', 'Edm.String', true);
     /**
      * Static representation of the [[priceListType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.PRICE_LIST_TYPE = new core_1.StringField('PriceListType', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.PRICE_LIST_TYPE = _fieldBuilder.buildEdmTypeField('PriceListType', 'Edm.String', true);
+    /**
+     * Static representation of the [[productUnitGroup]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.PRODUCT_UNIT_GROUP = _fieldBuilder.buildEdmTypeField('ProductUnitGroup', 'Edm.String', true);
+    /**
+     * Static representation of the [[proofOfDeliveryTimeValue]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.PROOF_OF_DELIVERY_TIME_VALUE = _fieldBuilder.buildEdmTypeField('ProofOfDeliveryTimeValue', 'Edm.Decimal', true);
     /**
      * Static representation of the [[salesGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SALES_GROUP = new core_1.StringField('SalesGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SALES_GROUP = _fieldBuilder.buildEdmTypeField('SalesGroup', 'Edm.String', true);
+    /**
+     * Static representation of the [[salesItemProposal]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.SALES_ITEM_PROPOSAL = _fieldBuilder.buildEdmTypeField('SalesItemProposal', 'Edm.String', true);
     /**
      * Static representation of the [[salesOffice]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SALES_OFFICE = new core_1.StringField('SalesOffice', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SALES_OFFICE = _fieldBuilder.buildEdmTypeField('SalesOffice', 'Edm.String', true);
     /**
      * Static representation of the [[shippingCondition]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SHIPPING_CONDITION = new core_1.StringField('ShippingCondition', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SHIPPING_CONDITION = _fieldBuilder.buildEdmTypeField('ShippingCondition', 'Edm.String', true);
+    /**
+     * Static representation of the [[slsDocIsRlvtForProofOfDeliv]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.SLS_DOC_IS_RLVT_FOR_PROOF_OF_DELIV = _fieldBuilder.buildEdmTypeField('SlsDocIsRlvtForProofOfDeliv', 'Edm.Boolean', true);
+    /**
+     * Static representation of the [[slsUnlmtdOvrdelivIsAllwd]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.SLS_UNLMTD_OVRDELIV_IS_ALLWD = _fieldBuilder.buildEdmTypeField('SlsUnlmtdOvrdelivIsAllwd', 'Edm.Boolean', true);
     /**
      * Static representation of the [[supplyingPlant]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SUPPLYING_PLANT = new core_1.StringField('SupplyingPlant', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SUPPLYING_PLANT = _fieldBuilder.buildEdmTypeField('SupplyingPlant', 'Edm.String', true);
     /**
      * Static representation of the [[salesDistrict]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.SALES_DISTRICT = new core_1.StringField('SalesDistrict', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.SALES_DISTRICT = _fieldBuilder.buildEdmTypeField('SalesDistrict', 'Edm.String', true);
+    /**
+     * Static representation of the [[underdelivTolrtdLmtRatioInPct]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.UNDERDELIV_TOLRTD_LMT_RATIO_IN_PCT = _fieldBuilder.buildEdmTypeField('UnderdelivTolrtdLmtRatioInPct', 'Edm.Decimal', true);
     /**
      * Static representation of the [[invoiceListSchedule]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.INVOICE_LIST_SCHEDULE = new core_1.StringField('InvoiceListSchedule', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.INVOICE_LIST_SCHEDULE = _fieldBuilder.buildEdmTypeField('InvoiceListSchedule', 'Edm.String', true);
     /**
      * Static representation of the [[exchangeRateType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.EXCHANGE_RATE_TYPE = new core_1.StringField('ExchangeRateType', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.EXCHANGE_RATE_TYPE = _fieldBuilder.buildEdmTypeField('ExchangeRateType', 'Edm.String', true);
     /**
      * Static representation of the [[additionalCustomerGroup1]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_1 = new core_1.StringField('AdditionalCustomerGroup1', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_1 = _fieldBuilder.buildEdmTypeField('AdditionalCustomerGroup1', 'Edm.String', true);
     /**
      * Static representation of the [[additionalCustomerGroup2]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_2 = new core_1.StringField('AdditionalCustomerGroup2', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_2 = _fieldBuilder.buildEdmTypeField('AdditionalCustomerGroup2', 'Edm.String', true);
     /**
      * Static representation of the [[additionalCustomerGroup3]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_3 = new core_1.StringField('AdditionalCustomerGroup3', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_3 = _fieldBuilder.buildEdmTypeField('AdditionalCustomerGroup3', 'Edm.String', true);
     /**
      * Static representation of the [[additionalCustomerGroup4]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_4 = new core_1.StringField('AdditionalCustomerGroup4', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_4 = _fieldBuilder.buildEdmTypeField('AdditionalCustomerGroup4', 'Edm.String', true);
     /**
      * Static representation of the [[additionalCustomerGroup5]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_5 = new core_1.StringField('AdditionalCustomerGroup5', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_5 = _fieldBuilder.buildEdmTypeField('AdditionalCustomerGroup5', 'Edm.String', true);
     /**
      * Static representation of the [[paymentGuaranteeProcedure]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.PAYMENT_GUARANTEE_PROCEDURE = new core_1.StringField('PaymentGuaranteeProcedure', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.PAYMENT_GUARANTEE_PROCEDURE = _fieldBuilder.buildEdmTypeField('PaymentGuaranteeProcedure', 'Edm.String', true);
     /**
      * Static representation of the [[customerAccountGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesArea.CUSTOMER_ACCOUNT_GROUP = new core_1.StringField('CustomerAccountGroup', CustomerSalesArea, 'Edm.String');
+    CustomerSalesArea.CUSTOMER_ACCOUNT_GROUP = _fieldBuilder.buildEdmTypeField('CustomerAccountGroup', 'Edm.String', true);
     /**
      * Static representation of the one-to-many navigation property [[toPartnerFunction]] for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
@@ -320,6 +404,11 @@ var CustomerSalesAreaText_1 = require("./CustomerSalesAreaText");
      */
     CustomerSalesArea.TO_SALES_AREA_TEXT = new core_1.Link('to_SalesAreaText', CustomerSalesArea, CustomerSalesAreaText_1.CustomerSalesAreaText);
     /**
+     * Static representation of the one-to-many navigation property [[toSlsAreaAddrDepdntInfo]] for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesArea.TO_SLS_AREA_ADDR_DEPDNT_INFO = new core_1.Link('to_SlsAreaAddrDepdntInfo', CustomerSalesArea, CustSlsAreaAddrDepdntInfo_1.CustSlsAreaAddrDepdntInfo);
+    /**
      * All fields of the CustomerSalesArea entity.
      */
     CustomerSalesArea._allFields = [
@@ -331,32 +420,49 @@ var CustomerSalesAreaText_1 = require("./CustomerSalesAreaText");
         CustomerSalesArea.AUTHORIZATION_GROUP,
         CustomerSalesArea.BILLING_IS_BLOCKED_FOR_CUSTOMER,
         CustomerSalesArea.COMPLETE_DELIVERY_IS_DEFINED,
+        CustomerSalesArea.CREDIT_CONTROL_AREA,
         CustomerSalesArea.CURRENCY,
+        CustomerSalesArea.CUST_IS_RLVT_FOR_SETTLMT_MGMT,
         CustomerSalesArea.CUSTOMER_ABC_CLASSIFICATION,
         CustomerSalesArea.CUSTOMER_ACCOUNT_ASSIGNMENT_GROUP,
         CustomerSalesArea.CUSTOMER_GROUP,
+        CustomerSalesArea.CUSTOMER_IS_REBATE_RELEVANT,
         CustomerSalesArea.CUSTOMER_PAYMENT_TERMS,
         CustomerSalesArea.CUSTOMER_PRICE_GROUP,
         CustomerSalesArea.CUSTOMER_PRICING_PROCEDURE,
+        CustomerSalesArea.CUST_PROD_PROPOSAL_PROCEDURE,
         CustomerSalesArea.DELIVERY_IS_BLOCKED_FOR_CUSTOMER,
         CustomerSalesArea.DELIVERY_PRIORITY,
         CustomerSalesArea.INCOTERMS_CLASSIFICATION,
         CustomerSalesArea.INCOTERMS_LOCATION_2,
         CustomerSalesArea.INCOTERMS_VERSION,
         CustomerSalesArea.INCOTERMS_LOCATION_1,
+        CustomerSalesArea.INCOTERMS_SUP_CHN_LOC_1_ADDL_UUID,
+        CustomerSalesArea.INCOTERMS_SUP_CHN_LOC_2_ADDL_UUID,
+        CustomerSalesArea.INCOTERMS_SUP_CHN_DVTG_LOC_ADDL_UUID,
         CustomerSalesArea.DELETION_INDICATOR,
         CustomerSalesArea.INCOTERMS_TRANSFER_LOCATION,
+        CustomerSalesArea.INSP_SBST_HAS_NO_TIME_OR_QUANTITY,
         CustomerSalesArea.INVOICE_DATE,
         CustomerSalesArea.ITEM_ORDER_PROBABILITY_IN_PERCENT,
+        CustomerSalesArea.MANUAL_INVOICE_MAINT_IS_RELEVANT,
+        CustomerSalesArea.MAX_NMBR_OF_PARTIAL_DELIVERY,
         CustomerSalesArea.ORDER_COMBINATION_IS_ALLOWED,
         CustomerSalesArea.ORDER_IS_BLOCKED_FOR_CUSTOMER,
+        CustomerSalesArea.OVERDELIV_TOLRTD_LMT_RATIO_IN_PCT,
         CustomerSalesArea.PARTIAL_DELIVERY_IS_ALLOWED,
         CustomerSalesArea.PRICE_LIST_TYPE,
+        CustomerSalesArea.PRODUCT_UNIT_GROUP,
+        CustomerSalesArea.PROOF_OF_DELIVERY_TIME_VALUE,
         CustomerSalesArea.SALES_GROUP,
+        CustomerSalesArea.SALES_ITEM_PROPOSAL,
         CustomerSalesArea.SALES_OFFICE,
         CustomerSalesArea.SHIPPING_CONDITION,
+        CustomerSalesArea.SLS_DOC_IS_RLVT_FOR_PROOF_OF_DELIV,
+        CustomerSalesArea.SLS_UNLMTD_OVRDELIV_IS_ALLWD,
         CustomerSalesArea.SUPPLYING_PLANT,
         CustomerSalesArea.SALES_DISTRICT,
+        CustomerSalesArea.UNDERDELIV_TOLRTD_LMT_RATIO_IN_PCT,
         CustomerSalesArea.INVOICE_LIST_SCHEDULE,
         CustomerSalesArea.EXCHANGE_RATE_TYPE,
         CustomerSalesArea.ADDITIONAL_CUSTOMER_GROUP_1,
@@ -368,7 +474,8 @@ var CustomerSalesAreaText_1 = require("./CustomerSalesAreaText");
         CustomerSalesArea.CUSTOMER_ACCOUNT_GROUP,
         CustomerSalesArea.TO_PARTNER_FUNCTION,
         CustomerSalesArea.TO_SALES_AREA_TAX,
-        CustomerSalesArea.TO_SALES_AREA_TEXT
+        CustomerSalesArea.TO_SALES_AREA_TEXT,
+        CustomerSalesArea.TO_SLS_AREA_ADDR_DEPDNT_INFO
     ];
     /**
      * All fields selector.

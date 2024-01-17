@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustomerTaxGrouping } from './CustomerTaxGrouping';
 
 /**
@@ -16,8 +16,8 @@ export class CustomerTaxGroupingRequestBuilder extends RequestBuilder<CustomerTa
    * @param customerTaxGroupingCode Key property. See [[CustomerTaxGrouping.customerTaxGroupingCode]].
    * @returns A request builder for creating requests to retrieve one `CustomerTaxGrouping` entity based on its keys.
    */
-  getByKey(customer: string, customerTaxGroupingCode: string): GetByKeyRequestBuilder<CustomerTaxGrouping> {
-    return new GetByKeyRequestBuilder(CustomerTaxGrouping, {
+  getByKey(customer: string, customerTaxGroupingCode: string): GetByKeyRequestBuilderV2<CustomerTaxGrouping> {
+    return new GetByKeyRequestBuilderV2(CustomerTaxGrouping, {
       Customer: customer,
       CustomerTaxGroupingCode: customerTaxGroupingCode
     });
@@ -27,8 +27,8 @@ export class CustomerTaxGroupingRequestBuilder extends RequestBuilder<CustomerTa
    * Returns a request builder for querying all `CustomerTaxGrouping` entities.
    * @returns A request builder for creating requests to retrieve all `CustomerTaxGrouping` entities.
    */
-  getAll(): GetAllRequestBuilder<CustomerTaxGrouping> {
-    return new GetAllRequestBuilder(CustomerTaxGrouping);
+  getAll(): GetAllRequestBuilderV2<CustomerTaxGrouping> {
+    return new GetAllRequestBuilderV2(CustomerTaxGrouping);
   }
 
   /**
@@ -36,8 +36,8 @@ export class CustomerTaxGroupingRequestBuilder extends RequestBuilder<CustomerTa
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `CustomerTaxGrouping`.
    */
-  update(entity: CustomerTaxGrouping): UpdateRequestBuilder<CustomerTaxGrouping> {
-    return new UpdateRequestBuilder(CustomerTaxGrouping, entity);
+  update(entity: CustomerTaxGrouping): UpdateRequestBuilderV2<CustomerTaxGrouping> {
+    return new UpdateRequestBuilderV2(CustomerTaxGrouping, entity);
   }
 
   /**
@@ -46,15 +46,15 @@ export class CustomerTaxGroupingRequestBuilder extends RequestBuilder<CustomerTa
    * @param customerTaxGroupingCode Key property. See [[CustomerTaxGrouping.customerTaxGroupingCode]].
    * @returns A request builder for creating requests that delete an entity of type `CustomerTaxGrouping`.
    */
-  delete(customer: string, customerTaxGroupingCode: string): DeleteRequestBuilder<CustomerTaxGrouping>;
+  delete(customer: string, customerTaxGroupingCode: string): DeleteRequestBuilderV2<CustomerTaxGrouping>;
   /**
    * Returns a request builder for deleting an entity of type `CustomerTaxGrouping`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `CustomerTaxGrouping` by taking the entity as a parameter.
    */
-  delete(entity: CustomerTaxGrouping): DeleteRequestBuilder<CustomerTaxGrouping>;
-  delete(customerOrEntity: any, customerTaxGroupingCode?: string): DeleteRequestBuilder<CustomerTaxGrouping> {
-    return new DeleteRequestBuilder(CustomerTaxGrouping, customerOrEntity instanceof CustomerTaxGrouping ? customerOrEntity : {
+  delete(entity: CustomerTaxGrouping): DeleteRequestBuilderV2<CustomerTaxGrouping>;
+  delete(customerOrEntity: any, customerTaxGroupingCode?: string): DeleteRequestBuilderV2<CustomerTaxGrouping> {
+    return new DeleteRequestBuilderV2(CustomerTaxGrouping, customerOrEntity instanceof CustomerTaxGrouping ? customerOrEntity : {
       Customer: customerOrEntity!,
       CustomerTaxGroupingCode: customerTaxGroupingCode!
     });

@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustSalesPartnerFunc } from './CustSalesPartnerFunc';
 
 /**
@@ -20,8 +20,8 @@ export class CustSalesPartnerFuncRequestBuilder extends RequestBuilder<CustSales
    * @param partnerFunction Key property. See [[CustSalesPartnerFunc.partnerFunction]].
    * @returns A request builder for creating requests to retrieve one `CustSalesPartnerFunc` entity based on its keys.
    */
-  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, partnerCounter: string, partnerFunction: string): GetByKeyRequestBuilder<CustSalesPartnerFunc> {
-    return new GetByKeyRequestBuilder(CustSalesPartnerFunc, {
+  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, partnerCounter: string, partnerFunction: string): GetByKeyRequestBuilderV2<CustSalesPartnerFunc> {
+    return new GetByKeyRequestBuilderV2(CustSalesPartnerFunc, {
       Customer: customer,
       SalesOrganization: salesOrganization,
       DistributionChannel: distributionChannel,
@@ -35,8 +35,8 @@ export class CustSalesPartnerFuncRequestBuilder extends RequestBuilder<CustSales
    * Returns a request builder for querying all `CustSalesPartnerFunc` entities.
    * @returns A request builder for creating requests to retrieve all `CustSalesPartnerFunc` entities.
    */
-  getAll(): GetAllRequestBuilder<CustSalesPartnerFunc> {
-    return new GetAllRequestBuilder(CustSalesPartnerFunc);
+  getAll(): GetAllRequestBuilderV2<CustSalesPartnerFunc> {
+    return new GetAllRequestBuilderV2(CustSalesPartnerFunc);
   }
 
   /**
@@ -44,8 +44,8 @@ export class CustSalesPartnerFuncRequestBuilder extends RequestBuilder<CustSales
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `CustSalesPartnerFunc`.
    */
-  create(entity: CustSalesPartnerFunc): CreateRequestBuilder<CustSalesPartnerFunc> {
-    return new CreateRequestBuilder(CustSalesPartnerFunc, entity);
+  create(entity: CustSalesPartnerFunc): CreateRequestBuilderV2<CustSalesPartnerFunc> {
+    return new CreateRequestBuilderV2(CustSalesPartnerFunc, entity);
   }
 
   /**
@@ -53,8 +53,8 @@ export class CustSalesPartnerFuncRequestBuilder extends RequestBuilder<CustSales
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `CustSalesPartnerFunc`.
    */
-  update(entity: CustSalesPartnerFunc): UpdateRequestBuilder<CustSalesPartnerFunc> {
-    return new UpdateRequestBuilder(CustSalesPartnerFunc, entity);
+  update(entity: CustSalesPartnerFunc): UpdateRequestBuilderV2<CustSalesPartnerFunc> {
+    return new UpdateRequestBuilderV2(CustSalesPartnerFunc, entity);
   }
 
   /**
@@ -67,15 +67,15 @@ export class CustSalesPartnerFuncRequestBuilder extends RequestBuilder<CustSales
    * @param partnerFunction Key property. See [[CustSalesPartnerFunc.partnerFunction]].
    * @returns A request builder for creating requests that delete an entity of type `CustSalesPartnerFunc`.
    */
-  delete(customer: string, salesOrganization: string, distributionChannel: string, division: string, partnerCounter: string, partnerFunction: string): DeleteRequestBuilder<CustSalesPartnerFunc>;
+  delete(customer: string, salesOrganization: string, distributionChannel: string, division: string, partnerCounter: string, partnerFunction: string): DeleteRequestBuilderV2<CustSalesPartnerFunc>;
   /**
    * Returns a request builder for deleting an entity of type `CustSalesPartnerFunc`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `CustSalesPartnerFunc` by taking the entity as a parameter.
    */
-  delete(entity: CustSalesPartnerFunc): DeleteRequestBuilder<CustSalesPartnerFunc>;
-  delete(customerOrEntity: any, salesOrganization?: string, distributionChannel?: string, division?: string, partnerCounter?: string, partnerFunction?: string): DeleteRequestBuilder<CustSalesPartnerFunc> {
-    return new DeleteRequestBuilder(CustSalesPartnerFunc, customerOrEntity instanceof CustSalesPartnerFunc ? customerOrEntity : {
+  delete(entity: CustSalesPartnerFunc): DeleteRequestBuilderV2<CustSalesPartnerFunc>;
+  delete(customerOrEntity: any, salesOrganization?: string, distributionChannel?: string, division?: string, partnerCounter?: string, partnerFunction?: string): DeleteRequestBuilderV2<CustSalesPartnerFunc> {
+    return new DeleteRequestBuilderV2(CustSalesPartnerFunc, customerOrEntity instanceof CustSalesPartnerFunc ? customerOrEntity : {
       Customer: customerOrEntity!,
       SalesOrganization: salesOrganization!,
       DistributionChannel: distributionChannel!,

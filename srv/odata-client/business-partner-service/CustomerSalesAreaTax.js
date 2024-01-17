@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerSalesAreaTax = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerSalesAreaTax = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerSalesAreaTax`.
+     * Returns an entity builder to construct instances of `CustomerSalesAreaTax`.
      * @returns A builder that constructs instances of entity type `CustomerSalesAreaTax`.
      */
     CustomerSalesAreaTax.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerSalesAreaTax);
+        return core_1.EntityV2.entityBuilder(CustomerSalesAreaTax);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerSalesAreaTax` entity type.
@@ -60,7 +62,7 @@ var CustomerSalesAreaTax = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerSalesAreaTax`.
      */
     CustomerSalesAreaTax.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerSalesAreaTax);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerSalesAreaTax);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,53 +76,55 @@ var CustomerSalesAreaTax = /** @class */ (function (_super) {
      */
     CustomerSalesAreaTax._entityName = 'A_CustomerSalesAreaTax';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerSalesAreaTax.
-     */
-    CustomerSalesAreaTax._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerSalesAreaTax._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerSalesAreaTax;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerSalesAreaTax = CustomerSalesAreaTax;
+var CustSlsAreaAddrDepdntTaxInfo_1 = require("./CustSlsAreaAddrDepdntTaxInfo");
 (function (CustomerSalesAreaTax) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerSalesAreaTax);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.CUSTOMER = new core_1.StringField('Customer', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[salesOrganization]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.SALES_ORGANIZATION = new core_1.StringField('SalesOrganization', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.SALES_ORGANIZATION = _fieldBuilder.buildEdmTypeField('SalesOrganization', 'Edm.String', false);
     /**
      * Static representation of the [[distributionChannel]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.DISTRIBUTION_CHANNEL = new core_1.StringField('DistributionChannel', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.DISTRIBUTION_CHANNEL = _fieldBuilder.buildEdmTypeField('DistributionChannel', 'Edm.String', false);
     /**
      * Static representation of the [[division]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.DIVISION = new core_1.StringField('Division', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.DIVISION = _fieldBuilder.buildEdmTypeField('Division', 'Edm.String', false);
     /**
      * Static representation of the [[departureCountry]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.DEPARTURE_COUNTRY = new core_1.StringField('DepartureCountry', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.DEPARTURE_COUNTRY = _fieldBuilder.buildEdmTypeField('DepartureCountry', 'Edm.String', false);
     /**
      * Static representation of the [[customerTaxCategory]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.CUSTOMER_TAX_CATEGORY = new core_1.StringField('CustomerTaxCategory', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.CUSTOMER_TAX_CATEGORY = _fieldBuilder.buildEdmTypeField('CustomerTaxCategory', 'Edm.String', false);
     /**
      * Static representation of the [[customerTaxClassification]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerSalesAreaTax.CUSTOMER_TAX_CLASSIFICATION = new core_1.StringField('CustomerTaxClassification', CustomerSalesAreaTax, 'Edm.String');
+    CustomerSalesAreaTax.CUSTOMER_TAX_CLASSIFICATION = _fieldBuilder.buildEdmTypeField('CustomerTaxClassification', 'Edm.String', true);
+    /**
+     * Static representation of the one-to-many navigation property [[toSlsAreaAddrDepdntTax]] for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerSalesAreaTax.TO_SLS_AREA_ADDR_DEPDNT_TAX = new core_1.Link('to_SlsAreaAddrDepdntTax', CustomerSalesAreaTax, CustSlsAreaAddrDepdntTaxInfo_1.CustSlsAreaAddrDepdntTaxInfo);
     /**
      * All fields of the CustomerSalesAreaTax entity.
      */
@@ -131,7 +135,8 @@ exports.CustomerSalesAreaTax = CustomerSalesAreaTax;
         CustomerSalesAreaTax.DIVISION,
         CustomerSalesAreaTax.DEPARTURE_COUNTRY,
         CustomerSalesAreaTax.CUSTOMER_TAX_CATEGORY,
-        CustomerSalesAreaTax.CUSTOMER_TAX_CLASSIFICATION
+        CustomerSalesAreaTax.CUSTOMER_TAX_CLASSIFICATION,
+        CustomerSalesAreaTax.TO_SLS_AREA_ADDR_DEPDNT_TAX
     ];
     /**
      * All fields selector.

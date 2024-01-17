@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "@sap-cloud-sdk/core": "^1",
+    "@sap-cloud-sdk/resilience": "^3",
     "@sap/cds": "^7",
     "@sap/cds-odata-v2-adapter-proxy": "^1",
     "@sap/xsenv": "^3",
@@ -18,7 +19,7 @@
     "passport": "^0"
   },
   "devDependencies": {
-    "@sap-cloud-sdk/generator": "^3",
+    "@sap-cloud-sdk/generator": "^1",
     "@sap/hdi-deploy": "^4",
     "npm-run-all": "^4.1.5",
     "sqlite3": "^5"
@@ -36,7 +37,8 @@
     "build:cf": "cp mta-cf.yaml mta.yaml && mbt build -p=cf && rm mta.yaml",
     "build:xsa": "cp mta-xsa.yaml mta.yaml && mbt build -p=xsa && rm mta.yaml",
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
-    "generate-odata-client": "generate-odata-client --inputDir srv/external --outputDir srv/odata-client --forceOverwrite",
+    "generate-odata-client": "generate-odata-client --input srv/external --outputDir srv/odata-client --overwrite",
+    "generate-odata-client:API_BUSINESS_PARTNER": "generate-odata-client --inputDir srv/external/API_BUSINESS_PARTNER --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "deploy:cf:trial": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
@@ -91,6 +93,15 @@
         "credentials": {
           "destination": "ES5",
           "path": "/sap/opu/odata/sap/SEPMRA_PROD_MAN",
+          "requestTimeout": 30000
+        }
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "credentials": {
+          "destination": "APIBusinessHub",
+          "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
           "requestTimeout": 30000
         }
       }

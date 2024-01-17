@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { Supplier } from './Supplier';
 
 /**
@@ -15,16 +15,16 @@ export class SupplierRequestBuilder extends RequestBuilder<Supplier> {
    * @param supplier Key property. See [[Supplier.supplier]].
    * @returns A request builder for creating requests to retrieve one `Supplier` entity based on its keys.
    */
-  getByKey(supplier: string): GetByKeyRequestBuilder<Supplier> {
-    return new GetByKeyRequestBuilder(Supplier, { Supplier: supplier });
+  getByKey(supplier: string): GetByKeyRequestBuilderV2<Supplier> {
+    return new GetByKeyRequestBuilderV2(Supplier, { Supplier: supplier });
   }
 
   /**
    * Returns a request builder for querying all `Supplier` entities.
    * @returns A request builder for creating requests to retrieve all `Supplier` entities.
    */
-  getAll(): GetAllRequestBuilder<Supplier> {
-    return new GetAllRequestBuilder(Supplier);
+  getAll(): GetAllRequestBuilderV2<Supplier> {
+    return new GetAllRequestBuilderV2(Supplier);
   }
 
   /**
@@ -32,7 +32,7 @@ export class SupplierRequestBuilder extends RequestBuilder<Supplier> {
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `Supplier`.
    */
-  update(entity: Supplier): UpdateRequestBuilder<Supplier> {
-    return new UpdateRequestBuilder(Supplier, entity);
+  update(entity: Supplier): UpdateRequestBuilderV2<Supplier> {
+    return new UpdateRequestBuilderV2(Supplier, entity);
   }
 }

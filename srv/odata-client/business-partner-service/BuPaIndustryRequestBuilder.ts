@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { BuPaIndustry } from './BuPaIndustry';
 
 /**
@@ -17,8 +17,8 @@ export class BuPaIndustryRequestBuilder extends RequestBuilder<BuPaIndustry> {
    * @param businessPartner Key property. See [[BuPaIndustry.businessPartner]].
    * @returns A request builder for creating requests to retrieve one `BuPaIndustry` entity based on its keys.
    */
-  getByKey(industrySector: string, industrySystemType: string, businessPartner: string): GetByKeyRequestBuilder<BuPaIndustry> {
-    return new GetByKeyRequestBuilder(BuPaIndustry, {
+  getByKey(industrySector: string, industrySystemType: string, businessPartner: string): GetByKeyRequestBuilderV2<BuPaIndustry> {
+    return new GetByKeyRequestBuilderV2(BuPaIndustry, {
       IndustrySector: industrySector,
       IndustrySystemType: industrySystemType,
       BusinessPartner: businessPartner
@@ -29,8 +29,8 @@ export class BuPaIndustryRequestBuilder extends RequestBuilder<BuPaIndustry> {
    * Returns a request builder for querying all `BuPaIndustry` entities.
    * @returns A request builder for creating requests to retrieve all `BuPaIndustry` entities.
    */
-  getAll(): GetAllRequestBuilder<BuPaIndustry> {
-    return new GetAllRequestBuilder(BuPaIndustry);
+  getAll(): GetAllRequestBuilderV2<BuPaIndustry> {
+    return new GetAllRequestBuilderV2(BuPaIndustry);
   }
 
   /**
@@ -38,8 +38,8 @@ export class BuPaIndustryRequestBuilder extends RequestBuilder<BuPaIndustry> {
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `BuPaIndustry`.
    */
-  create(entity: BuPaIndustry): CreateRequestBuilder<BuPaIndustry> {
-    return new CreateRequestBuilder(BuPaIndustry, entity);
+  create(entity: BuPaIndustry): CreateRequestBuilderV2<BuPaIndustry> {
+    return new CreateRequestBuilderV2(BuPaIndustry, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class BuPaIndustryRequestBuilder extends RequestBuilder<BuPaIndustry> {
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `BuPaIndustry`.
    */
-  update(entity: BuPaIndustry): UpdateRequestBuilder<BuPaIndustry> {
-    return new UpdateRequestBuilder(BuPaIndustry, entity);
+  update(entity: BuPaIndustry): UpdateRequestBuilderV2<BuPaIndustry> {
+    return new UpdateRequestBuilderV2(BuPaIndustry, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class BuPaIndustryRequestBuilder extends RequestBuilder<BuPaIndustry> {
    * @param businessPartner Key property. See [[BuPaIndustry.businessPartner]].
    * @returns A request builder for creating requests that delete an entity of type `BuPaIndustry`.
    */
-  delete(industrySector: string, industrySystemType: string, businessPartner: string): DeleteRequestBuilder<BuPaIndustry>;
+  delete(industrySector: string, industrySystemType: string, businessPartner: string): DeleteRequestBuilderV2<BuPaIndustry>;
   /**
    * Returns a request builder for deleting an entity of type `BuPaIndustry`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `BuPaIndustry` by taking the entity as a parameter.
    */
-  delete(entity: BuPaIndustry): DeleteRequestBuilder<BuPaIndustry>;
-  delete(industrySectorOrEntity: any, industrySystemType?: string, businessPartner?: string): DeleteRequestBuilder<BuPaIndustry> {
-    return new DeleteRequestBuilder(BuPaIndustry, industrySectorOrEntity instanceof BuPaIndustry ? industrySectorOrEntity : {
+  delete(entity: BuPaIndustry): DeleteRequestBuilderV2<BuPaIndustry>;
+  delete(industrySectorOrEntity: any, industrySystemType?: string, businessPartner?: string): DeleteRequestBuilderV2<BuPaIndustry> {
+    return new DeleteRequestBuilderV2(BuPaIndustry, industrySectorOrEntity instanceof BuPaIndustry ? industrySectorOrEntity : {
       IndustrySector: industrySectorOrEntity!,
       IndustrySystemType: industrySystemType!,
       BusinessPartner: businessPartner!

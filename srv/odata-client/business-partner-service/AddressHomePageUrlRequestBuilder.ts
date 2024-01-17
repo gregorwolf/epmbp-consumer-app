@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { Moment } from 'moment';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { AddressHomePageUrl } from './AddressHomePageUrl';
 
 /**
@@ -20,8 +20,8 @@ export class AddressHomePageUrlRequestBuilder extends RequestBuilder<AddressHome
    * @param isDefaultUrlAddress Key property. See [[AddressHomePageUrl.isDefaultUrlAddress]].
    * @returns A request builder for creating requests to retrieve one `AddressHomePageUrl` entity based on its keys.
    */
-  getByKey(addressId: string, person: string, ordinalNumber: string, validityStartDate: Moment, isDefaultUrlAddress: boolean): GetByKeyRequestBuilder<AddressHomePageUrl> {
-    return new GetByKeyRequestBuilder(AddressHomePageUrl, {
+  getByKey(addressId: string, person: string, ordinalNumber: string, validityStartDate: Moment, isDefaultUrlAddress: boolean): GetByKeyRequestBuilderV2<AddressHomePageUrl> {
+    return new GetByKeyRequestBuilderV2(AddressHomePageUrl, {
       AddressID: addressId,
       Person: person,
       OrdinalNumber: ordinalNumber,
@@ -34,8 +34,8 @@ export class AddressHomePageUrlRequestBuilder extends RequestBuilder<AddressHome
    * Returns a request builder for querying all `AddressHomePageUrl` entities.
    * @returns A request builder for creating requests to retrieve all `AddressHomePageUrl` entities.
    */
-  getAll(): GetAllRequestBuilder<AddressHomePageUrl> {
-    return new GetAllRequestBuilder(AddressHomePageUrl);
+  getAll(): GetAllRequestBuilderV2<AddressHomePageUrl> {
+    return new GetAllRequestBuilderV2(AddressHomePageUrl);
   }
 
   /**
@@ -43,8 +43,8 @@ export class AddressHomePageUrlRequestBuilder extends RequestBuilder<AddressHome
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `AddressHomePageUrl`.
    */
-  create(entity: AddressHomePageUrl): CreateRequestBuilder<AddressHomePageUrl> {
-    return new CreateRequestBuilder(AddressHomePageUrl, entity);
+  create(entity: AddressHomePageUrl): CreateRequestBuilderV2<AddressHomePageUrl> {
+    return new CreateRequestBuilderV2(AddressHomePageUrl, entity);
   }
 
   /**
@@ -52,8 +52,8 @@ export class AddressHomePageUrlRequestBuilder extends RequestBuilder<AddressHome
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `AddressHomePageUrl`.
    */
-  update(entity: AddressHomePageUrl): UpdateRequestBuilder<AddressHomePageUrl> {
-    return new UpdateRequestBuilder(AddressHomePageUrl, entity);
+  update(entity: AddressHomePageUrl): UpdateRequestBuilderV2<AddressHomePageUrl> {
+    return new UpdateRequestBuilderV2(AddressHomePageUrl, entity);
   }
 
   /**
@@ -65,15 +65,15 @@ export class AddressHomePageUrlRequestBuilder extends RequestBuilder<AddressHome
    * @param isDefaultUrlAddress Key property. See [[AddressHomePageUrl.isDefaultUrlAddress]].
    * @returns A request builder for creating requests that delete an entity of type `AddressHomePageUrl`.
    */
-  delete(addressId: string, person: string, ordinalNumber: string, validityStartDate: Moment, isDefaultUrlAddress: boolean): DeleteRequestBuilder<AddressHomePageUrl>;
+  delete(addressId: string, person: string, ordinalNumber: string, validityStartDate: Moment, isDefaultUrlAddress: boolean): DeleteRequestBuilderV2<AddressHomePageUrl>;
   /**
    * Returns a request builder for deleting an entity of type `AddressHomePageUrl`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `AddressHomePageUrl` by taking the entity as a parameter.
    */
-  delete(entity: AddressHomePageUrl): DeleteRequestBuilder<AddressHomePageUrl>;
-  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string, validityStartDate?: Moment, isDefaultUrlAddress?: boolean): DeleteRequestBuilder<AddressHomePageUrl> {
-    return new DeleteRequestBuilder(AddressHomePageUrl, addressIdOrEntity instanceof AddressHomePageUrl ? addressIdOrEntity : {
+  delete(entity: AddressHomePageUrl): DeleteRequestBuilderV2<AddressHomePageUrl>;
+  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string, validityStartDate?: Moment, isDefaultUrlAddress?: boolean): DeleteRequestBuilderV2<AddressHomePageUrl> {
+    return new DeleteRequestBuilderV2(AddressHomePageUrl, addressIdOrEntity instanceof AddressHomePageUrl ? addressIdOrEntity : {
       AddressID: addressIdOrEntity!,
       Person: person!,
       OrdinalNumber: ordinalNumber!,

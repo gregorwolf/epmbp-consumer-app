@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -34,7 +36,7 @@ var AddressHomePageUrlRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `AddressHomePageUrl` entity based on its keys.
      */
     AddressHomePageUrlRequestBuilder.prototype.getByKey = function (addressId, person, ordinalNumber, validityStartDate, isDefaultUrlAddress) {
-        return new core_1.GetByKeyRequestBuilder(AddressHomePageUrl_1.AddressHomePageUrl, {
+        return new core_1.GetByKeyRequestBuilderV2(AddressHomePageUrl_1.AddressHomePageUrl, {
             AddressID: addressId,
             Person: person,
             OrdinalNumber: ordinalNumber,
@@ -47,7 +49,7 @@ var AddressHomePageUrlRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve all `AddressHomePageUrl` entities.
      */
     AddressHomePageUrlRequestBuilder.prototype.getAll = function () {
-        return new core_1.GetAllRequestBuilder(AddressHomePageUrl_1.AddressHomePageUrl);
+        return new core_1.GetAllRequestBuilderV2(AddressHomePageUrl_1.AddressHomePageUrl);
     };
     /**
      * Returns a request builder for creating a `AddressHomePageUrl` entity.
@@ -55,7 +57,7 @@ var AddressHomePageUrlRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that create an entity of type `AddressHomePageUrl`.
      */
     AddressHomePageUrlRequestBuilder.prototype.create = function (entity) {
-        return new core_1.CreateRequestBuilder(AddressHomePageUrl_1.AddressHomePageUrl, entity);
+        return new core_1.CreateRequestBuilderV2(AddressHomePageUrl_1.AddressHomePageUrl, entity);
     };
     /**
      * Returns a request builder for updating an entity of type `AddressHomePageUrl`.
@@ -63,10 +65,10 @@ var AddressHomePageUrlRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `AddressHomePageUrl`.
      */
     AddressHomePageUrlRequestBuilder.prototype.update = function (entity) {
-        return new core_1.UpdateRequestBuilder(AddressHomePageUrl_1.AddressHomePageUrl, entity);
+        return new core_1.UpdateRequestBuilderV2(AddressHomePageUrl_1.AddressHomePageUrl, entity);
     };
     AddressHomePageUrlRequestBuilder.prototype.delete = function (addressIdOrEntity, person, ordinalNumber, validityStartDate, isDefaultUrlAddress) {
-        return new core_1.DeleteRequestBuilder(AddressHomePageUrl_1.AddressHomePageUrl, addressIdOrEntity instanceof AddressHomePageUrl_1.AddressHomePageUrl ? addressIdOrEntity : {
+        return new core_1.DeleteRequestBuilderV2(AddressHomePageUrl_1.AddressHomePageUrl, addressIdOrEntity instanceof AddressHomePageUrl_1.AddressHomePageUrl ? addressIdOrEntity : {
             AddressID: addressIdOrEntity,
             Person: person,
             OrdinalNumber: ordinalNumber,

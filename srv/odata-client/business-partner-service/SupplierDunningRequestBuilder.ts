@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { SupplierDunning } from './SupplierDunning';
 
 /**
@@ -17,8 +17,8 @@ export class SupplierDunningRequestBuilder extends RequestBuilder<SupplierDunnin
    * @param dunningArea Key property. See [[SupplierDunning.dunningArea]].
    * @returns A request builder for creating requests to retrieve one `SupplierDunning` entity based on its keys.
    */
-  getByKey(supplier: string, companyCode: string, dunningArea: string): GetByKeyRequestBuilder<SupplierDunning> {
-    return new GetByKeyRequestBuilder(SupplierDunning, {
+  getByKey(supplier: string, companyCode: string, dunningArea: string): GetByKeyRequestBuilderV2<SupplierDunning> {
+    return new GetByKeyRequestBuilderV2(SupplierDunning, {
       Supplier: supplier,
       CompanyCode: companyCode,
       DunningArea: dunningArea
@@ -29,8 +29,8 @@ export class SupplierDunningRequestBuilder extends RequestBuilder<SupplierDunnin
    * Returns a request builder for querying all `SupplierDunning` entities.
    * @returns A request builder for creating requests to retrieve all `SupplierDunning` entities.
    */
-  getAll(): GetAllRequestBuilder<SupplierDunning> {
-    return new GetAllRequestBuilder(SupplierDunning);
+  getAll(): GetAllRequestBuilderV2<SupplierDunning> {
+    return new GetAllRequestBuilderV2(SupplierDunning);
   }
 
   /**
@@ -38,8 +38,8 @@ export class SupplierDunningRequestBuilder extends RequestBuilder<SupplierDunnin
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `SupplierDunning`.
    */
-  create(entity: SupplierDunning): CreateRequestBuilder<SupplierDunning> {
-    return new CreateRequestBuilder(SupplierDunning, entity);
+  create(entity: SupplierDunning): CreateRequestBuilderV2<SupplierDunning> {
+    return new CreateRequestBuilderV2(SupplierDunning, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class SupplierDunningRequestBuilder extends RequestBuilder<SupplierDunnin
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `SupplierDunning`.
    */
-  update(entity: SupplierDunning): UpdateRequestBuilder<SupplierDunning> {
-    return new UpdateRequestBuilder(SupplierDunning, entity);
+  update(entity: SupplierDunning): UpdateRequestBuilderV2<SupplierDunning> {
+    return new UpdateRequestBuilderV2(SupplierDunning, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class SupplierDunningRequestBuilder extends RequestBuilder<SupplierDunnin
    * @param dunningArea Key property. See [[SupplierDunning.dunningArea]].
    * @returns A request builder for creating requests that delete an entity of type `SupplierDunning`.
    */
-  delete(supplier: string, companyCode: string, dunningArea: string): DeleteRequestBuilder<SupplierDunning>;
+  delete(supplier: string, companyCode: string, dunningArea: string): DeleteRequestBuilderV2<SupplierDunning>;
   /**
    * Returns a request builder for deleting an entity of type `SupplierDunning`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `SupplierDunning` by taking the entity as a parameter.
    */
-  delete(entity: SupplierDunning): DeleteRequestBuilder<SupplierDunning>;
-  delete(supplierOrEntity: any, companyCode?: string, dunningArea?: string): DeleteRequestBuilder<SupplierDunning> {
-    return new DeleteRequestBuilder(SupplierDunning, supplierOrEntity instanceof SupplierDunning ? supplierOrEntity : {
+  delete(entity: SupplierDunning): DeleteRequestBuilderV2<SupplierDunning>;
+  delete(supplierOrEntity: any, companyCode?: string, dunningArea?: string): DeleteRequestBuilderV2<SupplierDunning> {
+    return new DeleteRequestBuilderV2(SupplierDunning, supplierOrEntity instanceof SupplierDunning ? supplierOrEntity : {
       Supplier: supplierOrEntity!,
       CompanyCode: companyCode!,
       DunningArea: dunningArea!

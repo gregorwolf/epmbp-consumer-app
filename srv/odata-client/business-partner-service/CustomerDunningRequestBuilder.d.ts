@@ -1,4 +1,4 @@
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustomerDunning } from './CustomerDunning';
 /**
  * Request builder class for operations supported on the [[CustomerDunning]] entity.
@@ -11,24 +11,24 @@ export declare class CustomerDunningRequestBuilder extends RequestBuilder<Custom
      * @param dunningArea Key property. See [[CustomerDunning.dunningArea]].
      * @returns A request builder for creating requests to retrieve one `CustomerDunning` entity based on its keys.
      */
-    getByKey(customer: string, companyCode: string, dunningArea: string): GetByKeyRequestBuilder<CustomerDunning>;
+    getByKey(customer: string, companyCode: string, dunningArea: string): GetByKeyRequestBuilderV2<CustomerDunning>;
     /**
      * Returns a request builder for querying all `CustomerDunning` entities.
      * @returns A request builder for creating requests to retrieve all `CustomerDunning` entities.
      */
-    getAll(): GetAllRequestBuilder<CustomerDunning>;
+    getAll(): GetAllRequestBuilderV2<CustomerDunning>;
     /**
      * Returns a request builder for creating a `CustomerDunning` entity.
      * @param entity The entity to be created
      * @returns A request builder for creating requests that create an entity of type `CustomerDunning`.
      */
-    create(entity: CustomerDunning): CreateRequestBuilder<CustomerDunning>;
+    create(entity: CustomerDunning): CreateRequestBuilderV2<CustomerDunning>;
     /**
      * Returns a request builder for updating an entity of type `CustomerDunning`.
      * @param entity The entity to be updated
      * @returns A request builder for creating requests that update an entity of type `CustomerDunning`.
      */
-    update(entity: CustomerDunning): UpdateRequestBuilder<CustomerDunning>;
+    update(entity: CustomerDunning): UpdateRequestBuilderV2<CustomerDunning>;
     /**
      * Returns a request builder for deleting an entity of type `CustomerDunning`.
      * @param customer Key property. See [[CustomerDunning.customer]].
@@ -36,12 +36,12 @@ export declare class CustomerDunningRequestBuilder extends RequestBuilder<Custom
      * @param dunningArea Key property. See [[CustomerDunning.dunningArea]].
      * @returns A request builder for creating requests that delete an entity of type `CustomerDunning`.
      */
-    delete(customer: string, companyCode: string, dunningArea: string): DeleteRequestBuilder<CustomerDunning>;
+    delete(customer: string, companyCode: string, dunningArea: string): DeleteRequestBuilderV2<CustomerDunning>;
     /**
      * Returns a request builder for deleting an entity of type `CustomerDunning`.
      * @param entity Pass the entity to be deleted.
      * @returns A request builder for creating requests that delete an entity of type `CustomerDunning` by taking the entity as a parameter.
      */
-    delete(entity: CustomerDunning): DeleteRequestBuilder<CustomerDunning>;
+    delete(entity: CustomerDunning): DeleteRequestBuilderV2<CustomerDunning>;
 }
 //# sourceMappingURL=CustomerDunningRequestBuilder.d.ts.map

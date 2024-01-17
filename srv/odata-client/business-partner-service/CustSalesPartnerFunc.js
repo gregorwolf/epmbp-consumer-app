@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustSalesPartnerFunc = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustSalesPartnerFunc = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustSalesPartnerFunc`.
+     * Returns an entity builder to construct instances of `CustSalesPartnerFunc`.
      * @returns A builder that constructs instances of entity type `CustSalesPartnerFunc`.
      */
     CustSalesPartnerFunc.builder = function () {
-        return core_1.Entity.entityBuilder(CustSalesPartnerFunc);
+        return core_1.EntityV2.entityBuilder(CustSalesPartnerFunc);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustSalesPartnerFunc` entity type.
@@ -60,7 +62,7 @@ var CustSalesPartnerFunc = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustSalesPartnerFunc`.
      */
     CustSalesPartnerFunc.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustSalesPartnerFunc);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustSalesPartnerFunc);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,83 +76,84 @@ var CustSalesPartnerFunc = /** @class */ (function (_super) {
      */
     CustSalesPartnerFunc._entityName = 'A_CustSalesPartnerFunc';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustSalesPartnerFunc.
-     */
-    CustSalesPartnerFunc._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustSalesPartnerFunc._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustSalesPartnerFunc;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustSalesPartnerFunc = CustSalesPartnerFunc;
 (function (CustSalesPartnerFunc) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustSalesPartnerFunc);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.CUSTOMER = new core_1.StringField('Customer', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[salesOrganization]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.SALES_ORGANIZATION = new core_1.StringField('SalesOrganization', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.SALES_ORGANIZATION = _fieldBuilder.buildEdmTypeField('SalesOrganization', 'Edm.String', false);
     /**
      * Static representation of the [[distributionChannel]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.DISTRIBUTION_CHANNEL = new core_1.StringField('DistributionChannel', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.DISTRIBUTION_CHANNEL = _fieldBuilder.buildEdmTypeField('DistributionChannel', 'Edm.String', false);
     /**
      * Static representation of the [[division]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.DIVISION = new core_1.StringField('Division', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.DIVISION = _fieldBuilder.buildEdmTypeField('Division', 'Edm.String', false);
     /**
      * Static representation of the [[partnerCounter]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.PARTNER_COUNTER = new core_1.StringField('PartnerCounter', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.PARTNER_COUNTER = _fieldBuilder.buildEdmTypeField('PartnerCounter', 'Edm.String', false);
     /**
      * Static representation of the [[partnerFunction]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.PARTNER_FUNCTION = new core_1.StringField('PartnerFunction', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.PARTNER_FUNCTION = _fieldBuilder.buildEdmTypeField('PartnerFunction', 'Edm.String', false);
     /**
      * Static representation of the [[bpCustomerNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.BP_CUSTOMER_NUMBER = new core_1.StringField('BPCustomerNumber', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.BP_CUSTOMER_NUMBER = _fieldBuilder.buildEdmTypeField('BPCustomerNumber', 'Edm.String', true);
     /**
      * Static representation of the [[customerPartnerDescription]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.CUSTOMER_PARTNER_DESCRIPTION = new core_1.StringField('CustomerPartnerDescription', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.CUSTOMER_PARTNER_DESCRIPTION = _fieldBuilder.buildEdmTypeField('CustomerPartnerDescription', 'Edm.String', true);
     /**
      * Static representation of the [[defaultPartner]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.DEFAULT_PARTNER = new core_1.BooleanField('DefaultPartner', CustSalesPartnerFunc, 'Edm.Boolean');
+    CustSalesPartnerFunc.DEFAULT_PARTNER = _fieldBuilder.buildEdmTypeField('DefaultPartner', 'Edm.Boolean', true);
     /**
      * Static representation of the [[supplier]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.SUPPLIER = new core_1.StringField('Supplier', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.SUPPLIER = _fieldBuilder.buildEdmTypeField('Supplier', 'Edm.String', true);
     /**
      * Static representation of the [[personnelNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.PERSONNEL_NUMBER = new core_1.StringField('PersonnelNumber', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.PERSONNEL_NUMBER = _fieldBuilder.buildEdmTypeField('PersonnelNumber', 'Edm.String', true);
     /**
      * Static representation of the [[contactPerson]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.CONTACT_PERSON = new core_1.StringField('ContactPerson', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.CONTACT_PERSON = _fieldBuilder.buildEdmTypeField('ContactPerson', 'Edm.String', true);
+    /**
+     * Static representation of the [[addressId]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustSalesPartnerFunc.ADDRESS_ID = _fieldBuilder.buildEdmTypeField('AddressID', 'Edm.String', true);
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustSalesPartnerFunc.AUTHORIZATION_GROUP = new core_1.StringField('AuthorizationGroup', CustSalesPartnerFunc, 'Edm.String');
+    CustSalesPartnerFunc.AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
     /**
      * All fields of the CustSalesPartnerFunc entity.
      */
@@ -167,6 +170,7 @@ exports.CustSalesPartnerFunc = CustSalesPartnerFunc;
         CustSalesPartnerFunc.SUPPLIER,
         CustSalesPartnerFunc.PERSONNEL_NUMBER,
         CustSalesPartnerFunc.CONTACT_PERSON,
+        CustSalesPartnerFunc.ADDRESS_ID,
         CustSalesPartnerFunc.AUTHORIZATION_GROUP
     ];
     /**

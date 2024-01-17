@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustomerWithHoldingTax } from './CustomerWithHoldingTax';
 
 /**
@@ -17,8 +17,8 @@ export class CustomerWithHoldingTaxRequestBuilder extends RequestBuilder<Custome
    * @param withholdingTaxType Key property. See [[CustomerWithHoldingTax.withholdingTaxType]].
    * @returns A request builder for creating requests to retrieve one `CustomerWithHoldingTax` entity based on its keys.
    */
-  getByKey(customer: string, companyCode: string, withholdingTaxType: string): GetByKeyRequestBuilder<CustomerWithHoldingTax> {
-    return new GetByKeyRequestBuilder(CustomerWithHoldingTax, {
+  getByKey(customer: string, companyCode: string, withholdingTaxType: string): GetByKeyRequestBuilderV2<CustomerWithHoldingTax> {
+    return new GetByKeyRequestBuilderV2(CustomerWithHoldingTax, {
       Customer: customer,
       CompanyCode: companyCode,
       WithholdingTaxType: withholdingTaxType
@@ -29,8 +29,8 @@ export class CustomerWithHoldingTaxRequestBuilder extends RequestBuilder<Custome
    * Returns a request builder for querying all `CustomerWithHoldingTax` entities.
    * @returns A request builder for creating requests to retrieve all `CustomerWithHoldingTax` entities.
    */
-  getAll(): GetAllRequestBuilder<CustomerWithHoldingTax> {
-    return new GetAllRequestBuilder(CustomerWithHoldingTax);
+  getAll(): GetAllRequestBuilderV2<CustomerWithHoldingTax> {
+    return new GetAllRequestBuilderV2(CustomerWithHoldingTax);
   }
 
   /**
@@ -38,8 +38,8 @@ export class CustomerWithHoldingTaxRequestBuilder extends RequestBuilder<Custome
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `CustomerWithHoldingTax`.
    */
-  create(entity: CustomerWithHoldingTax): CreateRequestBuilder<CustomerWithHoldingTax> {
-    return new CreateRequestBuilder(CustomerWithHoldingTax, entity);
+  create(entity: CustomerWithHoldingTax): CreateRequestBuilderV2<CustomerWithHoldingTax> {
+    return new CreateRequestBuilderV2(CustomerWithHoldingTax, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class CustomerWithHoldingTaxRequestBuilder extends RequestBuilder<Custome
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `CustomerWithHoldingTax`.
    */
-  update(entity: CustomerWithHoldingTax): UpdateRequestBuilder<CustomerWithHoldingTax> {
-    return new UpdateRequestBuilder(CustomerWithHoldingTax, entity);
+  update(entity: CustomerWithHoldingTax): UpdateRequestBuilderV2<CustomerWithHoldingTax> {
+    return new UpdateRequestBuilderV2(CustomerWithHoldingTax, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class CustomerWithHoldingTaxRequestBuilder extends RequestBuilder<Custome
    * @param withholdingTaxType Key property. See [[CustomerWithHoldingTax.withholdingTaxType]].
    * @returns A request builder for creating requests that delete an entity of type `CustomerWithHoldingTax`.
    */
-  delete(customer: string, companyCode: string, withholdingTaxType: string): DeleteRequestBuilder<CustomerWithHoldingTax>;
+  delete(customer: string, companyCode: string, withholdingTaxType: string): DeleteRequestBuilderV2<CustomerWithHoldingTax>;
   /**
    * Returns a request builder for deleting an entity of type `CustomerWithHoldingTax`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `CustomerWithHoldingTax` by taking the entity as a parameter.
    */
-  delete(entity: CustomerWithHoldingTax): DeleteRequestBuilder<CustomerWithHoldingTax>;
-  delete(customerOrEntity: any, companyCode?: string, withholdingTaxType?: string): DeleteRequestBuilder<CustomerWithHoldingTax> {
-    return new DeleteRequestBuilder(CustomerWithHoldingTax, customerOrEntity instanceof CustomerWithHoldingTax ? customerOrEntity : {
+  delete(entity: CustomerWithHoldingTax): DeleteRequestBuilderV2<CustomerWithHoldingTax>;
+  delete(customerOrEntity: any, companyCode?: string, withholdingTaxType?: string): DeleteRequestBuilderV2<CustomerWithHoldingTax> {
+    return new DeleteRequestBuilderV2(CustomerWithHoldingTax, customerOrEntity instanceof CustomerWithHoldingTax ? customerOrEntity : {
       Customer: customerOrEntity!,
       CompanyCode: companyCode!,
       WithholdingTaxType: withholdingTaxType!

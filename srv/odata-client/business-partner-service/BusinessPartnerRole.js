@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BusinessPartnerRole = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var BusinessPartnerRole = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `BusinessPartnerRole`.
+     * Returns an entity builder to construct instances of `BusinessPartnerRole`.
      * @returns A builder that constructs instances of entity type `BusinessPartnerRole`.
      */
     BusinessPartnerRole.builder = function () {
-        return core_1.Entity.entityBuilder(BusinessPartnerRole);
+        return core_1.EntityV2.entityBuilder(BusinessPartnerRole);
     };
     /**
      * Returns a request builder to construct requests for operations on the `BusinessPartnerRole` entity type.
@@ -60,7 +62,7 @@ var BusinessPartnerRole = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `BusinessPartnerRole`.
      */
     BusinessPartnerRole.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, BusinessPartnerRole);
+        return core_1.EntityV2.customFieldSelector(fieldName, BusinessPartnerRole);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,43 +76,39 @@ var BusinessPartnerRole = /** @class */ (function (_super) {
      */
     BusinessPartnerRole._entityName = 'A_BusinessPartnerRole';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for BusinessPartnerRole.
-     */
-    BusinessPartnerRole._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     BusinessPartnerRole._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return BusinessPartnerRole;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.BusinessPartnerRole = BusinessPartnerRole;
 (function (BusinessPartnerRole) {
+    var _fieldBuilder = new core_1.FieldBuilder(BusinessPartnerRole);
     /**
      * Static representation of the [[businessPartner]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerRole.BUSINESS_PARTNER = new core_1.StringField('BusinessPartner', BusinessPartnerRole, 'Edm.String');
+    BusinessPartnerRole.BUSINESS_PARTNER = _fieldBuilder.buildEdmTypeField('BusinessPartner', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartnerRole]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerRole.BUSINESS_PARTNER_ROLE = new core_1.StringField('BusinessPartnerRole', BusinessPartnerRole, 'Edm.String');
+    BusinessPartnerRole.BUSINESS_PARTNER_ROLE = _fieldBuilder.buildEdmTypeField('BusinessPartnerRole', 'Edm.String', false);
     /**
      * Static representation of the [[validFrom]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerRole.VALID_FROM = new core_1.DateField('ValidFrom', BusinessPartnerRole, 'Edm.DateTimeOffset');
+    BusinessPartnerRole.VALID_FROM = _fieldBuilder.buildEdmTypeField('ValidFrom', 'Edm.DateTimeOffset', true);
     /**
      * Static representation of the [[validTo]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerRole.VALID_TO = new core_1.DateField('ValidTo', BusinessPartnerRole, 'Edm.DateTimeOffset');
+    BusinessPartnerRole.VALID_TO = _fieldBuilder.buildEdmTypeField('ValidTo', 'Edm.DateTimeOffset', true);
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerRole.AUTHORIZATION_GROUP = new core_1.StringField('AuthorizationGroup', BusinessPartnerRole, 'Edm.String');
+    BusinessPartnerRole.AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
     /**
      * All fields of the BusinessPartnerRole entity.
      */

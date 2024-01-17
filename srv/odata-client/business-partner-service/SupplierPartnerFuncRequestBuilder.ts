@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { SupplierPartnerFunc } from './SupplierPartnerFunc';
 
 /**
@@ -20,8 +20,8 @@ export class SupplierPartnerFuncRequestBuilder extends RequestBuilder<SupplierPa
    * @param partnerCounter Key property. See [[SupplierPartnerFunc.partnerCounter]].
    * @returns A request builder for creating requests to retrieve one `SupplierPartnerFunc` entity based on its keys.
    */
-  getByKey(supplier: string, purchasingOrganization: string, supplierSubrange: string, plant: string, partnerFunction: string, partnerCounter: string): GetByKeyRequestBuilder<SupplierPartnerFunc> {
-    return new GetByKeyRequestBuilder(SupplierPartnerFunc, {
+  getByKey(supplier: string, purchasingOrganization: string, supplierSubrange: string, plant: string, partnerFunction: string, partnerCounter: string): GetByKeyRequestBuilderV2<SupplierPartnerFunc> {
+    return new GetByKeyRequestBuilderV2(SupplierPartnerFunc, {
       Supplier: supplier,
       PurchasingOrganization: purchasingOrganization,
       SupplierSubrange: supplierSubrange,
@@ -35,8 +35,8 @@ export class SupplierPartnerFuncRequestBuilder extends RequestBuilder<SupplierPa
    * Returns a request builder for querying all `SupplierPartnerFunc` entities.
    * @returns A request builder for creating requests to retrieve all `SupplierPartnerFunc` entities.
    */
-  getAll(): GetAllRequestBuilder<SupplierPartnerFunc> {
-    return new GetAllRequestBuilder(SupplierPartnerFunc);
+  getAll(): GetAllRequestBuilderV2<SupplierPartnerFunc> {
+    return new GetAllRequestBuilderV2(SupplierPartnerFunc);
   }
 
   /**
@@ -44,8 +44,8 @@ export class SupplierPartnerFuncRequestBuilder extends RequestBuilder<SupplierPa
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `SupplierPartnerFunc`.
    */
-  create(entity: SupplierPartnerFunc): CreateRequestBuilder<SupplierPartnerFunc> {
-    return new CreateRequestBuilder(SupplierPartnerFunc, entity);
+  create(entity: SupplierPartnerFunc): CreateRequestBuilderV2<SupplierPartnerFunc> {
+    return new CreateRequestBuilderV2(SupplierPartnerFunc, entity);
   }
 
   /**
@@ -53,8 +53,8 @@ export class SupplierPartnerFuncRequestBuilder extends RequestBuilder<SupplierPa
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `SupplierPartnerFunc`.
    */
-  update(entity: SupplierPartnerFunc): UpdateRequestBuilder<SupplierPartnerFunc> {
-    return new UpdateRequestBuilder(SupplierPartnerFunc, entity);
+  update(entity: SupplierPartnerFunc): UpdateRequestBuilderV2<SupplierPartnerFunc> {
+    return new UpdateRequestBuilderV2(SupplierPartnerFunc, entity);
   }
 
   /**
@@ -67,15 +67,15 @@ export class SupplierPartnerFuncRequestBuilder extends RequestBuilder<SupplierPa
    * @param partnerCounter Key property. See [[SupplierPartnerFunc.partnerCounter]].
    * @returns A request builder for creating requests that delete an entity of type `SupplierPartnerFunc`.
    */
-  delete(supplier: string, purchasingOrganization: string, supplierSubrange: string, plant: string, partnerFunction: string, partnerCounter: string): DeleteRequestBuilder<SupplierPartnerFunc>;
+  delete(supplier: string, purchasingOrganization: string, supplierSubrange: string, plant: string, partnerFunction: string, partnerCounter: string): DeleteRequestBuilderV2<SupplierPartnerFunc>;
   /**
    * Returns a request builder for deleting an entity of type `SupplierPartnerFunc`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `SupplierPartnerFunc` by taking the entity as a parameter.
    */
-  delete(entity: SupplierPartnerFunc): DeleteRequestBuilder<SupplierPartnerFunc>;
-  delete(supplierOrEntity: any, purchasingOrganization?: string, supplierSubrange?: string, plant?: string, partnerFunction?: string, partnerCounter?: string): DeleteRequestBuilder<SupplierPartnerFunc> {
-    return new DeleteRequestBuilder(SupplierPartnerFunc, supplierOrEntity instanceof SupplierPartnerFunc ? supplierOrEntity : {
+  delete(entity: SupplierPartnerFunc): DeleteRequestBuilderV2<SupplierPartnerFunc>;
+  delete(supplierOrEntity: any, purchasingOrganization?: string, supplierSubrange?: string, plant?: string, partnerFunction?: string, partnerCounter?: string): DeleteRequestBuilderV2<SupplierPartnerFunc> {
+    return new DeleteRequestBuilderV2(SupplierPartnerFunc, supplierOrEntity instanceof SupplierPartnerFunc ? supplierOrEntity : {
       Supplier: supplierOrEntity!,
       PurchasingOrganization: purchasingOrganization!,
       SupplierSubrange: supplierSubrange!,

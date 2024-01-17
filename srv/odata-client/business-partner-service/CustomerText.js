@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerText = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerText = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerText`.
+     * Returns an entity builder to construct instances of `CustomerText`.
      * @returns A builder that constructs instances of entity type `CustomerText`.
      */
     CustomerText.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerText);
+        return core_1.EntityV2.entityBuilder(CustomerText);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerText` entity type.
@@ -60,7 +62,7 @@ var CustomerText = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerText`.
      */
     CustomerText.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerText);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerText);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,38 +76,34 @@ var CustomerText = /** @class */ (function (_super) {
      */
     CustomerText._entityName = 'A_CustomerText';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerText.
-     */
-    CustomerText._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerText._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerText;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerText = CustomerText;
 (function (CustomerText) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerText);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerText.CUSTOMER = new core_1.StringField('Customer', CustomerText, 'Edm.String');
+    CustomerText.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[language]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerText.LANGUAGE = new core_1.StringField('Language', CustomerText, 'Edm.String');
+    CustomerText.LANGUAGE = _fieldBuilder.buildEdmTypeField('Language', 'Edm.String', false);
     /**
      * Static representation of the [[longTextId]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerText.LONG_TEXT_ID = new core_1.StringField('LongTextID', CustomerText, 'Edm.String');
+    CustomerText.LONG_TEXT_ID = _fieldBuilder.buildEdmTypeField('LongTextID', 'Edm.String', false);
     /**
      * Static representation of the [[longText]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerText.LONG_TEXT = new core_1.StringField('LongText', CustomerText, 'Edm.String');
+    CustomerText.LONG_TEXT = _fieldBuilder.buildEdmTypeField('LongText', 'Edm.String', true);
     /**
      * All fields of the CustomerText entity.
      */

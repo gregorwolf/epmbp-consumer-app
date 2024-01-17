@@ -1,70 +1,58 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { BusinessPartnerTaxNumberRequestBuilder } from './BusinessPartnerTaxNumberRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
+import { AllFields, Constructable, CustomFieldV2, EdmTypeField, EntityBuilderType, EntityV2, Field, FieldBuilder } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "A_BusinessPartnerTaxNumber" of service "API_BUSINESS_PARTNER".
  */
-export class BusinessPartnerTaxNumber extends Entity implements BusinessPartnerTaxNumberType {
+export class BusinessPartnerTaxNumber extends EntityV2 implements BusinessPartnerTaxNumberType {
   /**
    * Technical entity name for BusinessPartnerTaxNumber.
    */
   static _entityName = 'A_BusinessPartnerTaxNumber';
-  /**
-   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-   * Technical service name for BusinessPartnerTaxNumber.
-   */
-  static _serviceName = 'API_BUSINESS_PARTNER';
   /**
    * Default url path for the according service.
    */
   static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * Business Partner Number.
-   * Key identifying a business partner in the SAP system. The key is unique within a client.
    * Maximum length: 10.
    */
   businessPartner!: string;
   /**
    * Tax Number Category.
-   * Specifies the tax number category.
    * Maximum length: 4.
    */
   bpTaxType!: string;
   /**
    * Business Partner Tax Number.
-   * Specifies the tax number.
    * Maximum length: 20.
    * @nullable
    */
   bpTaxNumber?: string;
   /**
    * Business Partner Tax Number.
-   * Specifies the tax number.
-   * You can enter up to 60 characters in this field.
    * Maximum length: 60.
    * @nullable
    */
   bpTaxLongNumber?: string;
   /**
    * Authorization Group.
-   * You can use authorization groups to stipulate which business partners a user is allowed to process.
-   * Use the following authorization object:'Business partners: authorization groups' (B_BUPA_GRP).The system only checks this authorization if you made an entry in the "Authorization group" field for the business partner. Otherwise, any user may process the business partner.
    * Maximum length: 4.
    * @nullable
    */
   authorizationGroup?: string;
 
   /**
-   * Returns an entity builder to construct instances `BusinessPartnerTaxNumber`.
+   * Returns an entity builder to construct instances of `BusinessPartnerTaxNumber`.
    * @returns A builder that constructs instances of entity type `BusinessPartnerTaxNumber`.
    */
-  static builder(): EntityBuilderType<BusinessPartnerTaxNumber, BusinessPartnerTaxNumberTypeForceMandatory> {
-    return Entity.entityBuilder(BusinessPartnerTaxNumber);
+  static builder(): EntityBuilderType<BusinessPartnerTaxNumber, BusinessPartnerTaxNumberType> {
+    return EntityV2.entityBuilder(BusinessPartnerTaxNumber);
   }
 
   /**
@@ -80,8 +68,8 @@ export class BusinessPartnerTaxNumber extends Entity implements BusinessPartnerT
    * @param fieldName Name of the custom field to select
    * @returns A builder that constructs instances of entity type `BusinessPartnerTaxNumber`.
    */
-  static customField(fieldName: string): CustomField<BusinessPartnerTaxNumber> {
-    return Entity.customFieldSelector(fieldName, BusinessPartnerTaxNumber);
+  static customField(fieldName: string): CustomFieldV2<BusinessPartnerTaxNumber> {
+    return EntityV2.customFieldSelector(fieldName, BusinessPartnerTaxNumber);
   }
 
   /**
@@ -96,49 +84,42 @@ export class BusinessPartnerTaxNumber extends Entity implements BusinessPartnerT
 export interface BusinessPartnerTaxNumberType {
   businessPartner: string;
   bpTaxType: string;
-  bpTaxNumber?: string;
-  bpTaxLongNumber?: string;
-  authorizationGroup?: string;
-}
-
-export interface BusinessPartnerTaxNumberTypeForceMandatory {
-  businessPartner: string;
-  bpTaxType: string;
-  bpTaxNumber: string;
-  bpTaxLongNumber: string;
-  authorizationGroup: string;
+  bpTaxNumber?: string | null;
+  bpTaxLongNumber?: string | null;
+  authorizationGroup?: string | null;
 }
 
 export namespace BusinessPartnerTaxNumber {
+  const _fieldBuilder: FieldBuilder<Constructable<BusinessPartnerTaxNumber>> = new FieldBuilder(BusinessPartnerTaxNumber);
   /**
    * Static representation of the [[businessPartner]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BUSINESS_PARTNER: StringField<BusinessPartnerTaxNumber> = new StringField('BusinessPartner', BusinessPartnerTaxNumber, 'Edm.String');
+  export const BUSINESS_PARTNER = _fieldBuilder.buildEdmTypeField('BusinessPartner', 'Edm.String', false);
   /**
    * Static representation of the [[bpTaxType]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BP_TAX_TYPE: StringField<BusinessPartnerTaxNumber> = new StringField('BPTaxType', BusinessPartnerTaxNumber, 'Edm.String');
+  export const BP_TAX_TYPE = _fieldBuilder.buildEdmTypeField('BPTaxType', 'Edm.String', false);
   /**
    * Static representation of the [[bpTaxNumber]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BP_TAX_NUMBER: StringField<BusinessPartnerTaxNumber> = new StringField('BPTaxNumber', BusinessPartnerTaxNumber, 'Edm.String');
+  export const BP_TAX_NUMBER = _fieldBuilder.buildEdmTypeField('BPTaxNumber', 'Edm.String', true);
   /**
    * Static representation of the [[bpTaxLongNumber]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BP_TAX_LONG_NUMBER: StringField<BusinessPartnerTaxNumber> = new StringField('BPTaxLongNumber', BusinessPartnerTaxNumber, 'Edm.String');
+  export const BP_TAX_LONG_NUMBER = _fieldBuilder.buildEdmTypeField('BPTaxLongNumber', 'Edm.String', true);
   /**
    * Static representation of the [[authorizationGroup]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const AUTHORIZATION_GROUP: StringField<BusinessPartnerTaxNumber> = new StringField('AuthorizationGroup', BusinessPartnerTaxNumber, 'Edm.String');
+  export const AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
   /**
    * All fields of the BusinessPartnerTaxNumber entity.
    */
-  export const _allFields: Array<StringField<BusinessPartnerTaxNumber>> = [
+  export const _allFields: Array<EdmTypeField<BusinessPartnerTaxNumber, 'Edm.String', false, true> | EdmTypeField<BusinessPartnerTaxNumber, 'Edm.String', true, true>> = [
     BusinessPartnerTaxNumber.BUSINESS_PARTNER,
     BusinessPartnerTaxNumber.BP_TAX_TYPE,
     BusinessPartnerTaxNumber.BP_TAX_NUMBER,
@@ -152,11 +133,11 @@ export namespace BusinessPartnerTaxNumber {
   /**
    * All key fields of the BusinessPartnerTaxNumber entity.
    */
-  export const _keyFields: Array<Field<BusinessPartnerTaxNumber>> = [BusinessPartnerTaxNumber.BUSINESS_PARTNER, BusinessPartnerTaxNumber.BP_TAX_TYPE];
+  export const _keyFields: Array<Field<BusinessPartnerTaxNumber, boolean, boolean>> = [BusinessPartnerTaxNumber.BUSINESS_PARTNER, BusinessPartnerTaxNumber.BP_TAX_TYPE];
   /**
    * Mapping of all key field names to the respective static field property BusinessPartnerTaxNumber.
    */
-  export const _keys: { [keys: string]: Field<BusinessPartnerTaxNumber> } = BusinessPartnerTaxNumber._keyFields.reduce((acc: { [keys: string]: Field<BusinessPartnerTaxNumber> }, field: Field<BusinessPartnerTaxNumber>) => {
+  export const _keys: { [keys: string]: Field<BusinessPartnerTaxNumber, boolean, boolean> } = BusinessPartnerTaxNumber._keyFields.reduce((acc: { [keys: string]: Field<BusinessPartnerTaxNumber, boolean, boolean> }, field: Field<BusinessPartnerTaxNumber, boolean, boolean>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

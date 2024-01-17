@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddressFaxNumber = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var AddressFaxNumber = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `AddressFaxNumber`.
+     * Returns an entity builder to construct instances of `AddressFaxNumber`.
      * @returns A builder that constructs instances of entity type `AddressFaxNumber`.
      */
     AddressFaxNumber.builder = function () {
-        return core_1.Entity.entityBuilder(AddressFaxNumber);
+        return core_1.EntityV2.entityBuilder(AddressFaxNumber);
     };
     /**
      * Returns a request builder to construct requests for operations on the `AddressFaxNumber` entity type.
@@ -60,7 +62,7 @@ var AddressFaxNumber = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `AddressFaxNumber`.
      */
     AddressFaxNumber.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, AddressFaxNumber);
+        return core_1.EntityV2.customFieldSelector(fieldName, AddressFaxNumber);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,63 +76,59 @@ var AddressFaxNumber = /** @class */ (function (_super) {
      */
     AddressFaxNumber._entityName = 'A_AddressFaxNumber';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for AddressFaxNumber.
-     */
-    AddressFaxNumber._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     AddressFaxNumber._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return AddressFaxNumber;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.AddressFaxNumber = AddressFaxNumber;
 (function (AddressFaxNumber) {
+    var _fieldBuilder = new core_1.FieldBuilder(AddressFaxNumber);
     /**
      * Static representation of the [[addressId]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.ADDRESS_ID = new core_1.StringField('AddressID', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.ADDRESS_ID = _fieldBuilder.buildEdmTypeField('AddressID', 'Edm.String', false);
     /**
      * Static representation of the [[person]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.PERSON = new core_1.StringField('Person', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.PERSON = _fieldBuilder.buildEdmTypeField('Person', 'Edm.String', false);
     /**
      * Static representation of the [[ordinalNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.ORDINAL_NUMBER = new core_1.StringField('OrdinalNumber', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.ORDINAL_NUMBER = _fieldBuilder.buildEdmTypeField('OrdinalNumber', 'Edm.String', false);
     /**
      * Static representation of the [[isDefaultFaxNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.IS_DEFAULT_FAX_NUMBER = new core_1.BooleanField('IsDefaultFaxNumber', AddressFaxNumber, 'Edm.Boolean');
+    AddressFaxNumber.IS_DEFAULT_FAX_NUMBER = _fieldBuilder.buildEdmTypeField('IsDefaultFaxNumber', 'Edm.Boolean', true);
     /**
      * Static representation of the [[faxCountry]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.FAX_COUNTRY = new core_1.StringField('FaxCountry', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.FAX_COUNTRY = _fieldBuilder.buildEdmTypeField('FaxCountry', 'Edm.String', true);
     /**
      * Static representation of the [[faxNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.FAX_NUMBER = new core_1.StringField('FaxNumber', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.FAX_NUMBER = _fieldBuilder.buildEdmTypeField('FaxNumber', 'Edm.String', true);
     /**
      * Static representation of the [[faxNumberExtension]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.FAX_NUMBER_EXTENSION = new core_1.StringField('FaxNumberExtension', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.FAX_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('FaxNumberExtension', 'Edm.String', true);
     /**
      * Static representation of the [[internationalFaxNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.INTERNATIONAL_FAX_NUMBER = new core_1.StringField('InternationalFaxNumber', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.INTERNATIONAL_FAX_NUMBER = _fieldBuilder.buildEdmTypeField('InternationalFaxNumber', 'Edm.String', true);
     /**
      * Static representation of the [[addressCommunicationRemarkText]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    AddressFaxNumber.ADDRESS_COMMUNICATION_REMARK_TEXT = new core_1.StringField('AddressCommunicationRemarkText', AddressFaxNumber, 'Edm.String');
+    AddressFaxNumber.ADDRESS_COMMUNICATION_REMARK_TEXT = _fieldBuilder.buildEdmTypeField('AddressCommunicationRemarkText', 'Edm.String', true);
     /**
      * All fields of the AddressFaxNumber entity.
      */

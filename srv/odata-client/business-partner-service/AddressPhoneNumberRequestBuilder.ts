@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { AddressPhoneNumber } from './AddressPhoneNumber';
 
 /**
@@ -17,8 +17,8 @@ export class AddressPhoneNumberRequestBuilder extends RequestBuilder<AddressPhon
    * @param ordinalNumber Key property. See [[AddressPhoneNumber.ordinalNumber]].
    * @returns A request builder for creating requests to retrieve one `AddressPhoneNumber` entity based on its keys.
    */
-  getByKey(addressId: string, person: string, ordinalNumber: string): GetByKeyRequestBuilder<AddressPhoneNumber> {
-    return new GetByKeyRequestBuilder(AddressPhoneNumber, {
+  getByKey(addressId: string, person: string, ordinalNumber: string): GetByKeyRequestBuilderV2<AddressPhoneNumber> {
+    return new GetByKeyRequestBuilderV2(AddressPhoneNumber, {
       AddressID: addressId,
       Person: person,
       OrdinalNumber: ordinalNumber
@@ -29,8 +29,8 @@ export class AddressPhoneNumberRequestBuilder extends RequestBuilder<AddressPhon
    * Returns a request builder for querying all `AddressPhoneNumber` entities.
    * @returns A request builder for creating requests to retrieve all `AddressPhoneNumber` entities.
    */
-  getAll(): GetAllRequestBuilder<AddressPhoneNumber> {
-    return new GetAllRequestBuilder(AddressPhoneNumber);
+  getAll(): GetAllRequestBuilderV2<AddressPhoneNumber> {
+    return new GetAllRequestBuilderV2(AddressPhoneNumber);
   }
 
   /**
@@ -38,8 +38,8 @@ export class AddressPhoneNumberRequestBuilder extends RequestBuilder<AddressPhon
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `AddressPhoneNumber`.
    */
-  create(entity: AddressPhoneNumber): CreateRequestBuilder<AddressPhoneNumber> {
-    return new CreateRequestBuilder(AddressPhoneNumber, entity);
+  create(entity: AddressPhoneNumber): CreateRequestBuilderV2<AddressPhoneNumber> {
+    return new CreateRequestBuilderV2(AddressPhoneNumber, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class AddressPhoneNumberRequestBuilder extends RequestBuilder<AddressPhon
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `AddressPhoneNumber`.
    */
-  update(entity: AddressPhoneNumber): UpdateRequestBuilder<AddressPhoneNumber> {
-    return new UpdateRequestBuilder(AddressPhoneNumber, entity);
+  update(entity: AddressPhoneNumber): UpdateRequestBuilderV2<AddressPhoneNumber> {
+    return new UpdateRequestBuilderV2(AddressPhoneNumber, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class AddressPhoneNumberRequestBuilder extends RequestBuilder<AddressPhon
    * @param ordinalNumber Key property. See [[AddressPhoneNumber.ordinalNumber]].
    * @returns A request builder for creating requests that delete an entity of type `AddressPhoneNumber`.
    */
-  delete(addressId: string, person: string, ordinalNumber: string): DeleteRequestBuilder<AddressPhoneNumber>;
+  delete(addressId: string, person: string, ordinalNumber: string): DeleteRequestBuilderV2<AddressPhoneNumber>;
   /**
    * Returns a request builder for deleting an entity of type `AddressPhoneNumber`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `AddressPhoneNumber` by taking the entity as a parameter.
    */
-  delete(entity: AddressPhoneNumber): DeleteRequestBuilder<AddressPhoneNumber>;
-  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string): DeleteRequestBuilder<AddressPhoneNumber> {
-    return new DeleteRequestBuilder(AddressPhoneNumber, addressIdOrEntity instanceof AddressPhoneNumber ? addressIdOrEntity : {
+  delete(entity: AddressPhoneNumber): DeleteRequestBuilderV2<AddressPhoneNumber>;
+  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string): DeleteRequestBuilderV2<AddressPhoneNumber> {
+    return new DeleteRequestBuilderV2(AddressPhoneNumber, addressIdOrEntity instanceof AddressPhoneNumber ? addressIdOrEntity : {
       AddressID: addressIdOrEntity!,
       Person: person!,
       OrdinalNumber: ordinalNumber!

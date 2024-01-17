@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { BusinessPartnerRole } from './BusinessPartnerRole';
 
 /**
@@ -16,8 +16,8 @@ export class BusinessPartnerRoleRequestBuilder extends RequestBuilder<BusinessPa
    * @param businessPartnerRole Key property. See [[BusinessPartnerRole.businessPartnerRole]].
    * @returns A request builder for creating requests to retrieve one `BusinessPartnerRole` entity based on its keys.
    */
-  getByKey(businessPartner: string, businessPartnerRole: string): GetByKeyRequestBuilder<BusinessPartnerRole> {
-    return new GetByKeyRequestBuilder(BusinessPartnerRole, {
+  getByKey(businessPartner: string, businessPartnerRole: string): GetByKeyRequestBuilderV2<BusinessPartnerRole> {
+    return new GetByKeyRequestBuilderV2(BusinessPartnerRole, {
       BusinessPartner: businessPartner,
       BusinessPartnerRole: businessPartnerRole
     });
@@ -27,8 +27,8 @@ export class BusinessPartnerRoleRequestBuilder extends RequestBuilder<BusinessPa
    * Returns a request builder for querying all `BusinessPartnerRole` entities.
    * @returns A request builder for creating requests to retrieve all `BusinessPartnerRole` entities.
    */
-  getAll(): GetAllRequestBuilder<BusinessPartnerRole> {
-    return new GetAllRequestBuilder(BusinessPartnerRole);
+  getAll(): GetAllRequestBuilderV2<BusinessPartnerRole> {
+    return new GetAllRequestBuilderV2(BusinessPartnerRole);
   }
 
   /**
@@ -36,8 +36,8 @@ export class BusinessPartnerRoleRequestBuilder extends RequestBuilder<BusinessPa
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `BusinessPartnerRole`.
    */
-  create(entity: BusinessPartnerRole): CreateRequestBuilder<BusinessPartnerRole> {
-    return new CreateRequestBuilder(BusinessPartnerRole, entity);
+  create(entity: BusinessPartnerRole): CreateRequestBuilderV2<BusinessPartnerRole> {
+    return new CreateRequestBuilderV2(BusinessPartnerRole, entity);
   }
 
   /**
@@ -45,7 +45,7 @@ export class BusinessPartnerRoleRequestBuilder extends RequestBuilder<BusinessPa
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `BusinessPartnerRole`.
    */
-  update(entity: BusinessPartnerRole): UpdateRequestBuilder<BusinessPartnerRole> {
-    return new UpdateRequestBuilder(BusinessPartnerRole, entity);
+  update(entity: BusinessPartnerRole): UpdateRequestBuilderV2<BusinessPartnerRole> {
+    return new UpdateRequestBuilderV2(BusinessPartnerRole, entity);
   }
 }

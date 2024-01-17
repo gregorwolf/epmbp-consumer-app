@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -15,7 +17,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddressFaxNumberRequestBuilder = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -37,7 +39,7 @@ var AddressFaxNumberRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `AddressFaxNumber` entity based on its keys.
      */
     AddressFaxNumberRequestBuilder.prototype.getByKey = function (addressId, person, ordinalNumber) {
-        return new core_1.GetByKeyRequestBuilder(AddressFaxNumber_1.AddressFaxNumber, {
+        return new core_1.GetByKeyRequestBuilderV2(AddressFaxNumber_1.AddressFaxNumber, {
             AddressID: addressId,
             Person: person,
             OrdinalNumber: ordinalNumber
@@ -48,7 +50,7 @@ var AddressFaxNumberRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve all `AddressFaxNumber` entities.
      */
     AddressFaxNumberRequestBuilder.prototype.getAll = function () {
-        return new core_1.GetAllRequestBuilder(AddressFaxNumber_1.AddressFaxNumber);
+        return new core_1.GetAllRequestBuilderV2(AddressFaxNumber_1.AddressFaxNumber);
     };
     /**
      * Returns a request builder for creating a `AddressFaxNumber` entity.
@@ -56,7 +58,7 @@ var AddressFaxNumberRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that create an entity of type `AddressFaxNumber`.
      */
     AddressFaxNumberRequestBuilder.prototype.create = function (entity) {
-        return new core_1.CreateRequestBuilder(AddressFaxNumber_1.AddressFaxNumber, entity);
+        return new core_1.CreateRequestBuilderV2(AddressFaxNumber_1.AddressFaxNumber, entity);
     };
     /**
      * Returns a request builder for updating an entity of type `AddressFaxNumber`.
@@ -64,10 +66,10 @@ var AddressFaxNumberRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `AddressFaxNumber`.
      */
     AddressFaxNumberRequestBuilder.prototype.update = function (entity) {
-        return new core_1.UpdateRequestBuilder(AddressFaxNumber_1.AddressFaxNumber, entity);
+        return new core_1.UpdateRequestBuilderV2(AddressFaxNumber_1.AddressFaxNumber, entity);
     };
     AddressFaxNumberRequestBuilder.prototype.delete = function (addressIdOrEntity, person, ordinalNumber) {
-        return new core_1.DeleteRequestBuilder(AddressFaxNumber_1.AddressFaxNumber, addressIdOrEntity instanceof AddressFaxNumber_1.AddressFaxNumber ? addressIdOrEntity : {
+        return new core_1.DeleteRequestBuilderV2(AddressFaxNumber_1.AddressFaxNumber, addressIdOrEntity instanceof AddressFaxNumber_1.AddressFaxNumber ? addressIdOrEntity : {
             AddressID: addressIdOrEntity,
             Person: person,
             OrdinalNumber: ordinalNumber

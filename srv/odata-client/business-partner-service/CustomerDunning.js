@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerDunning = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerDunning = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerDunning`.
+     * Returns an entity builder to construct instances of `CustomerDunning`.
      * @returns A builder that constructs instances of entity type `CustomerDunning`.
      */
     CustomerDunning.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerDunning);
+        return core_1.EntityV2.entityBuilder(CustomerDunning);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerDunning` entity type.
@@ -60,7 +62,7 @@ var CustomerDunning = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerDunning`.
      */
     CustomerDunning.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerDunning);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerDunning);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,78 +76,74 @@ var CustomerDunning = /** @class */ (function (_super) {
      */
     CustomerDunning._entityName = 'A_CustomerDunning';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerDunning.
-     */
-    CustomerDunning._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerDunning._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerDunning;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerDunning = CustomerDunning;
 (function (CustomerDunning) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerDunning);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.CUSTOMER = new core_1.StringField('Customer', CustomerDunning, 'Edm.String');
+    CustomerDunning.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[companyCode]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.COMPANY_CODE = new core_1.StringField('CompanyCode', CustomerDunning, 'Edm.String');
+    CustomerDunning.COMPANY_CODE = _fieldBuilder.buildEdmTypeField('CompanyCode', 'Edm.String', false);
     /**
      * Static representation of the [[dunningArea]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_AREA = new core_1.StringField('DunningArea', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_AREA = _fieldBuilder.buildEdmTypeField('DunningArea', 'Edm.String', false);
     /**
      * Static representation of the [[dunningBlock]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_BLOCK = new core_1.StringField('DunningBlock', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_BLOCK = _fieldBuilder.buildEdmTypeField('DunningBlock', 'Edm.String', true);
     /**
      * Static representation of the [[dunningLevel]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_LEVEL = new core_1.StringField('DunningLevel', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_LEVEL = _fieldBuilder.buildEdmTypeField('DunningLevel', 'Edm.String', true);
     /**
      * Static representation of the [[dunningProcedure]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_PROCEDURE = new core_1.StringField('DunningProcedure', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_PROCEDURE = _fieldBuilder.buildEdmTypeField('DunningProcedure', 'Edm.String', true);
     /**
      * Static representation of the [[dunningRecipient]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_RECIPIENT = new core_1.StringField('DunningRecipient', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_RECIPIENT = _fieldBuilder.buildEdmTypeField('DunningRecipient', 'Edm.String', true);
     /**
      * Static representation of the [[lastDunnedOn]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.LAST_DUNNED_ON = new core_1.DateField('LastDunnedOn', CustomerDunning, 'Edm.DateTime');
+    CustomerDunning.LAST_DUNNED_ON = _fieldBuilder.buildEdmTypeField('LastDunnedOn', 'Edm.DateTime', true);
     /**
      * Static representation of the [[legDunningProcedureOn]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.LEG_DUNNING_PROCEDURE_ON = new core_1.DateField('LegDunningProcedureOn', CustomerDunning, 'Edm.DateTime');
+    CustomerDunning.LEG_DUNNING_PROCEDURE_ON = _fieldBuilder.buildEdmTypeField('LegDunningProcedureOn', 'Edm.DateTime', true);
     /**
      * Static representation of the [[dunningClerk]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.DUNNING_CLERK = new core_1.StringField('DunningClerk', CustomerDunning, 'Edm.String');
+    CustomerDunning.DUNNING_CLERK = _fieldBuilder.buildEdmTypeField('DunningClerk', 'Edm.String', true);
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.AUTHORIZATION_GROUP = new core_1.StringField('AuthorizationGroup', CustomerDunning, 'Edm.String');
+    CustomerDunning.AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
     /**
      * Static representation of the [[customerAccountGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerDunning.CUSTOMER_ACCOUNT_GROUP = new core_1.StringField('CustomerAccountGroup', CustomerDunning, 'Edm.String');
+    CustomerDunning.CUSTOMER_ACCOUNT_GROUP = _fieldBuilder.buildEdmTypeField('CustomerAccountGroup', 'Edm.String', true);
     /**
      * All fields of the CustomerDunning entity.
      */

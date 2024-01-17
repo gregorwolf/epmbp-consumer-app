@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { SupplierWithHoldingTax } from './SupplierWithHoldingTax';
 
 /**
@@ -17,8 +17,8 @@ export class SupplierWithHoldingTaxRequestBuilder extends RequestBuilder<Supplie
    * @param withholdingTaxType Key property. See [[SupplierWithHoldingTax.withholdingTaxType]].
    * @returns A request builder for creating requests to retrieve one `SupplierWithHoldingTax` entity based on its keys.
    */
-  getByKey(supplier: string, companyCode: string, withholdingTaxType: string): GetByKeyRequestBuilder<SupplierWithHoldingTax> {
-    return new GetByKeyRequestBuilder(SupplierWithHoldingTax, {
+  getByKey(supplier: string, companyCode: string, withholdingTaxType: string): GetByKeyRequestBuilderV2<SupplierWithHoldingTax> {
+    return new GetByKeyRequestBuilderV2(SupplierWithHoldingTax, {
       Supplier: supplier,
       CompanyCode: companyCode,
       WithholdingTaxType: withholdingTaxType
@@ -29,8 +29,8 @@ export class SupplierWithHoldingTaxRequestBuilder extends RequestBuilder<Supplie
    * Returns a request builder for querying all `SupplierWithHoldingTax` entities.
    * @returns A request builder for creating requests to retrieve all `SupplierWithHoldingTax` entities.
    */
-  getAll(): GetAllRequestBuilder<SupplierWithHoldingTax> {
-    return new GetAllRequestBuilder(SupplierWithHoldingTax);
+  getAll(): GetAllRequestBuilderV2<SupplierWithHoldingTax> {
+    return new GetAllRequestBuilderV2(SupplierWithHoldingTax);
   }
 
   /**
@@ -38,8 +38,8 @@ export class SupplierWithHoldingTaxRequestBuilder extends RequestBuilder<Supplie
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `SupplierWithHoldingTax`.
    */
-  create(entity: SupplierWithHoldingTax): CreateRequestBuilder<SupplierWithHoldingTax> {
-    return new CreateRequestBuilder(SupplierWithHoldingTax, entity);
+  create(entity: SupplierWithHoldingTax): CreateRequestBuilderV2<SupplierWithHoldingTax> {
+    return new CreateRequestBuilderV2(SupplierWithHoldingTax, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class SupplierWithHoldingTaxRequestBuilder extends RequestBuilder<Supplie
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `SupplierWithHoldingTax`.
    */
-  update(entity: SupplierWithHoldingTax): UpdateRequestBuilder<SupplierWithHoldingTax> {
-    return new UpdateRequestBuilder(SupplierWithHoldingTax, entity);
+  update(entity: SupplierWithHoldingTax): UpdateRequestBuilderV2<SupplierWithHoldingTax> {
+    return new UpdateRequestBuilderV2(SupplierWithHoldingTax, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class SupplierWithHoldingTaxRequestBuilder extends RequestBuilder<Supplie
    * @param withholdingTaxType Key property. See [[SupplierWithHoldingTax.withholdingTaxType]].
    * @returns A request builder for creating requests that delete an entity of type `SupplierWithHoldingTax`.
    */
-  delete(supplier: string, companyCode: string, withholdingTaxType: string): DeleteRequestBuilder<SupplierWithHoldingTax>;
+  delete(supplier: string, companyCode: string, withholdingTaxType: string): DeleteRequestBuilderV2<SupplierWithHoldingTax>;
   /**
    * Returns a request builder for deleting an entity of type `SupplierWithHoldingTax`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `SupplierWithHoldingTax` by taking the entity as a parameter.
    */
-  delete(entity: SupplierWithHoldingTax): DeleteRequestBuilder<SupplierWithHoldingTax>;
-  delete(supplierOrEntity: any, companyCode?: string, withholdingTaxType?: string): DeleteRequestBuilder<SupplierWithHoldingTax> {
-    return new DeleteRequestBuilder(SupplierWithHoldingTax, supplierOrEntity instanceof SupplierWithHoldingTax ? supplierOrEntity : {
+  delete(entity: SupplierWithHoldingTax): DeleteRequestBuilderV2<SupplierWithHoldingTax>;
+  delete(supplierOrEntity: any, companyCode?: string, withholdingTaxType?: string): DeleteRequestBuilderV2<SupplierWithHoldingTax> {
+    return new DeleteRequestBuilderV2(SupplierWithHoldingTax, supplierOrEntity instanceof SupplierWithHoldingTax ? supplierOrEntity : {
       Supplier: supplierOrEntity!,
       CompanyCode: companyCode!,
       WithholdingTaxType: withholdingTaxType!

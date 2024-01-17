@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -15,7 +17,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerTaxGroupingRequestBuilder = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -36,7 +38,7 @@ var CustomerTaxGroupingRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `CustomerTaxGrouping` entity based on its keys.
      */
     CustomerTaxGroupingRequestBuilder.prototype.getByKey = function (customer, customerTaxGroupingCode) {
-        return new core_1.GetByKeyRequestBuilder(CustomerTaxGrouping_1.CustomerTaxGrouping, {
+        return new core_1.GetByKeyRequestBuilderV2(CustomerTaxGrouping_1.CustomerTaxGrouping, {
             Customer: customer,
             CustomerTaxGroupingCode: customerTaxGroupingCode
         });
@@ -46,7 +48,7 @@ var CustomerTaxGroupingRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve all `CustomerTaxGrouping` entities.
      */
     CustomerTaxGroupingRequestBuilder.prototype.getAll = function () {
-        return new core_1.GetAllRequestBuilder(CustomerTaxGrouping_1.CustomerTaxGrouping);
+        return new core_1.GetAllRequestBuilderV2(CustomerTaxGrouping_1.CustomerTaxGrouping);
     };
     /**
      * Returns a request builder for updating an entity of type `CustomerTaxGrouping`.
@@ -54,10 +56,10 @@ var CustomerTaxGroupingRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `CustomerTaxGrouping`.
      */
     CustomerTaxGroupingRequestBuilder.prototype.update = function (entity) {
-        return new core_1.UpdateRequestBuilder(CustomerTaxGrouping_1.CustomerTaxGrouping, entity);
+        return new core_1.UpdateRequestBuilderV2(CustomerTaxGrouping_1.CustomerTaxGrouping, entity);
     };
     CustomerTaxGroupingRequestBuilder.prototype.delete = function (customerOrEntity, customerTaxGroupingCode) {
-        return new core_1.DeleteRequestBuilder(CustomerTaxGrouping_1.CustomerTaxGrouping, customerOrEntity instanceof CustomerTaxGrouping_1.CustomerTaxGrouping ? customerOrEntity : {
+        return new core_1.DeleteRequestBuilderV2(CustomerTaxGrouping_1.CustomerTaxGrouping, customerOrEntity instanceof CustomerTaxGrouping_1.CustomerTaxGrouping ? customerOrEntity : {
             Customer: customerOrEntity,
             CustomerTaxGroupingCode: customerTaxGroupingCode
         });

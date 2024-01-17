@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BpContactToFuncAndDept = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var BpContactToFuncAndDept = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `BpContactToFuncAndDept`.
+     * Returns an entity builder to construct instances of `BpContactToFuncAndDept`.
      * @returns A builder that constructs instances of entity type `BpContactToFuncAndDept`.
      */
     BpContactToFuncAndDept.builder = function () {
-        return core_1.Entity.entityBuilder(BpContactToFuncAndDept);
+        return core_1.EntityV2.entityBuilder(BpContactToFuncAndDept);
     };
     /**
      * Returns a request builder to construct requests for operations on the `BpContactToFuncAndDept` entity type.
@@ -60,7 +62,7 @@ var BpContactToFuncAndDept = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `BpContactToFuncAndDept`.
      */
     BpContactToFuncAndDept.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, BpContactToFuncAndDept);
+        return core_1.EntityV2.customFieldSelector(fieldName, BpContactToFuncAndDept);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,78 +76,99 @@ var BpContactToFuncAndDept = /** @class */ (function (_super) {
      */
     BpContactToFuncAndDept._entityName = 'A_BPContactToFuncAndDept';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for BpContactToFuncAndDept.
-     */
-    BpContactToFuncAndDept._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     BpContactToFuncAndDept._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return BpContactToFuncAndDept;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.BpContactToFuncAndDept = BpContactToFuncAndDept;
 (function (BpContactToFuncAndDept) {
+    var _fieldBuilder = new core_1.FieldBuilder(BpContactToFuncAndDept);
     /**
      * Static representation of the [[relationshipNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.RELATIONSHIP_NUMBER = new core_1.StringField('RelationshipNumber', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.RELATIONSHIP_NUMBER = _fieldBuilder.buildEdmTypeField('RelationshipNumber', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartnerCompany]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY = new core_1.StringField('BusinessPartnerCompany', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY = _fieldBuilder.buildEdmTypeField('BusinessPartnerCompany', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartnerPerson]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON = new core_1.StringField('BusinessPartnerPerson', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON = _fieldBuilder.buildEdmTypeField('BusinessPartnerPerson', 'Edm.String', false);
     /**
      * Static representation of the [[validityEndDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.VALIDITY_END_DATE = new core_1.DateField('ValidityEndDate', BpContactToFuncAndDept, 'Edm.DateTime');
+    BpContactToFuncAndDept.VALIDITY_END_DATE = _fieldBuilder.buildEdmTypeField('ValidityEndDate', 'Edm.DateTime', false);
     /**
-     * Static representation of the [[contactPersonFunction]] property for query construction.
+     * Static representation of the [[contactPersonAuthorityType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION = new core_1.StringField('ContactPersonFunction', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_AUTHORITY_TYPE = _fieldBuilder.buildEdmTypeField('ContactPersonAuthorityType', 'Edm.String', true);
     /**
      * Static representation of the [[contactPersonDepartment]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT = new core_1.StringField('ContactPersonDepartment', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT = _fieldBuilder.buildEdmTypeField('ContactPersonDepartment', 'Edm.String', true);
     /**
-     * Static representation of the [[phoneNumber]] property for query construction.
+     * Static representation of the [[contactPersonDepartmentName]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.PHONE_NUMBER = new core_1.StringField('PhoneNumber', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT_NAME = _fieldBuilder.buildEdmTypeField('ContactPersonDepartmentName', 'Edm.String', true);
     /**
-     * Static representation of the [[phoneNumberExtension]] property for query construction.
+     * Static representation of the [[contactPersonFunction]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION = new core_1.StringField('PhoneNumberExtension', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION = _fieldBuilder.buildEdmTypeField('ContactPersonFunction', 'Edm.String', true);
     /**
-     * Static representation of the [[faxNumber]] property for query construction.
+     * Static representation of the [[contactPersonFunctionName]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.FAX_NUMBER = new core_1.StringField('FaxNumber', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION_NAME = _fieldBuilder.buildEdmTypeField('ContactPersonFunctionName', 'Edm.String', true);
     /**
-     * Static representation of the [[faxNumberExtension]] property for query construction.
+     * Static representation of the [[contactPersonRemarkText]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.FAX_NUMBER_EXTENSION = new core_1.StringField('FaxNumberExtension', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.CONTACT_PERSON_REMARK_TEXT = _fieldBuilder.buildEdmTypeField('ContactPersonRemarkText', 'Edm.String', true);
+    /**
+     * Static representation of the [[contactPersonVipType]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    BpContactToFuncAndDept.CONTACT_PERSON_VIP_TYPE = _fieldBuilder.buildEdmTypeField('ContactPersonVIPType', 'Edm.String', true);
     /**
      * Static representation of the [[emailAddress]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.EMAIL_ADDRESS = new core_1.StringField('EmailAddress', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.EMAIL_ADDRESS = _fieldBuilder.buildEdmTypeField('EmailAddress', 'Edm.String', true);
+    /**
+     * Static representation of the [[faxNumber]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    BpContactToFuncAndDept.FAX_NUMBER = _fieldBuilder.buildEdmTypeField('FaxNumber', 'Edm.String', true);
+    /**
+     * Static representation of the [[faxNumberExtension]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    BpContactToFuncAndDept.FAX_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('FaxNumberExtension', 'Edm.String', true);
+    /**
+     * Static representation of the [[phoneNumber]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    BpContactToFuncAndDept.PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('PhoneNumber', 'Edm.String', true);
+    /**
+     * Static representation of the [[phoneNumberExtension]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('PhoneNumberExtension', 'Edm.String', true);
     /**
      * Static representation of the [[relationshipCategory]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BpContactToFuncAndDept.RELATIONSHIP_CATEGORY = new core_1.StringField('RelationshipCategory', BpContactToFuncAndDept, 'Edm.String');
+    BpContactToFuncAndDept.RELATIONSHIP_CATEGORY = _fieldBuilder.buildEdmTypeField('RelationshipCategory', 'Edm.String', true);
     /**
      * All fields of the BpContactToFuncAndDept entity.
      */
@@ -154,13 +177,18 @@ exports.BpContactToFuncAndDept = BpContactToFuncAndDept;
         BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY,
         BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON,
         BpContactToFuncAndDept.VALIDITY_END_DATE,
-        BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION,
+        BpContactToFuncAndDept.CONTACT_PERSON_AUTHORITY_TYPE,
         BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT,
-        BpContactToFuncAndDept.PHONE_NUMBER,
-        BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION,
+        BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT_NAME,
+        BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION,
+        BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION_NAME,
+        BpContactToFuncAndDept.CONTACT_PERSON_REMARK_TEXT,
+        BpContactToFuncAndDept.CONTACT_PERSON_VIP_TYPE,
+        BpContactToFuncAndDept.EMAIL_ADDRESS,
         BpContactToFuncAndDept.FAX_NUMBER,
         BpContactToFuncAndDept.FAX_NUMBER_EXTENSION,
-        BpContactToFuncAndDept.EMAIL_ADDRESS,
+        BpContactToFuncAndDept.PHONE_NUMBER,
+        BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION,
         BpContactToFuncAndDept.RELATIONSHIP_CATEGORY
     ];
     /**

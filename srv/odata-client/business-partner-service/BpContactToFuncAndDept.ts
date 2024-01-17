@@ -1,44 +1,36 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { BpContactToFuncAndDeptRequestBuilder } from './BpContactToFuncAndDeptRequestBuilder';
 import { Moment } from 'moment';
-import { AllFields, CustomField, DateField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
+import { AllFields, Constructable, CustomFieldV2, EdmTypeField, EntityBuilderType, EntityV2, Field, FieldBuilder, OrderableEdmTypeField } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "A_BPContactToFuncAndDept" of service "API_BUSINESS_PARTNER".
  */
-export class BpContactToFuncAndDept extends Entity implements BpContactToFuncAndDeptType {
+export class BpContactToFuncAndDept extends EntityV2 implements BpContactToFuncAndDeptType {
   /**
    * Technical entity name for BpContactToFuncAndDept.
    */
   static _entityName = 'A_BPContactToFuncAndDept';
-  /**
-   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-   * Technical service name for BpContactToFuncAndDept.
-   */
-  static _serviceName = 'API_BUSINESS_PARTNER';
   /**
    * Default url path for the according service.
    */
   static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * BP Relationship Number.
-   * The business partner relationship number is an internal number that identifies the business partner relationship set.
    * Maximum length: 12.
    */
   relationshipNumber!: string;
   /**
    * Business Partner Number.
-   * Key identifying a business partner in the SAP system. The key is unique within a client.
    * Maximum length: 10.
    */
   businessPartnerCompany!: string;
   /**
    * Business Partner Number.
-   * Key identifying a business partner in the SAP system. The key is unique within a client.
    * Maximum length: 10.
    */
   businessPartnerPerson!: string;
@@ -47,76 +39,90 @@ export class BpContactToFuncAndDept extends Entity implements BpContactToFuncAnd
    */
   validityEndDate!: Moment;
   /**
-   * Function of partner.
-   * Identifies the function that a person has within a company.
-   * This is a contact person attribute that you can define in Customizing.Personnel managerSecretary.
-   * Maximum length: 4.
+   * Partner's Authority.
+   * Maximum length: 1.
    * @nullable
    */
-  contactPersonFunction?: string;
+  contactPersonAuthorityType?: string;
   /**
    * Department.
-   * Name of the department of a business partner for your internal usage.
-   * The name given by the business partner to this particular department may differ from the name that you use. You can enter the name given by the business partner in the field company department.This is a contact person attribute that you can define in Customizing.For your purposes, the department name is "Sales". The business partner names the same department "Sales South".
    * Maximum length: 4.
    * @nullable
    */
   contactPersonDepartment?: string;
   /**
-   * Telephone no.: dialling code+number.
-   * Telephone number, consisting of dialling code and number, but without country dialling code.
-   * If the telephone number consists of a company number and an extension, the extension must be entered in the field extension.Telephone number, as it is dialled from within the country.For the number "01234/567-0" enter the following:Telephone: 01234/567Estension: 0For the number "01234/567-891" enter the following:Telephone: 01234/567Extension: 891For the number "012-345-678" (678 as extension) enter the following:Telepone: 012-345Extension: 678In the following cases enter the complete number (without country dialling code) in the field Telephone:No part of the number can be regarded as an extension.You are not sure which part of the number can be regarded as an extension.
-   * Maximum length: 30.
+   * Department at business partner.
+   * Maximum length: 40.
    * @nullable
    */
-  phoneNumber?: string;
+  contactPersonDepartmentName?: string;
   /**
-   * Telephone no.: Extension.
-   * Telephone extension number
-   * If the telephone number consists of a company number and an extension, the extension should be entered here.Enter the extension.The following rules apply for the format of telephone and fax numbers:The length of the entries in the field Telephone and Extension (Fax and Extension) cannot be more than 24 characters in total.Leading spaces are not allowed in the field Telephone or Fax or in the field Extension.Valid characters are:Numbers (0123456789)Letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)Following other characters:  /, (, ), - *, # and " " (space), but not as a leading space.If an + is entered as the first character, the system checks whether the specified number starts with a country code. If so, a warning message is displayed because the country code is automatically determined by the system and should not be stored in the Telephone number (Fax number) field.If an &amp; is entered as the first character, the automatic check and formatting of the telephone number (fax number), as well as the determination of the country code, is suppressed.For the number "01234/567-0" enter the following:Telephone: 01234/567Estension: 0For the number "01234/567-891" enter the following:Telephone: 01234/567Extension: 891For the number "012-345-678" (678 as extension) enter the following:Telepone: 012-345Extension: 678In the following cases enter the complete number (without country dialling code) in the field Telephone:No part of the number can be regarded as an extension.You are not sure which part of the number can be regarded as an extension.
-   * Maximum length: 10.
+   * Function of partner.
+   * Maximum length: 4.
    * @nullable
    */
-  phoneNumberExtension?: string;
+  contactPersonFunction?: string;
   /**
-   * Fax number: dialling code+number.
-   * Fax number, consisting of dialling code and number, but without country dialling code.
-   * If the fax number consists of a company number and an extension, the extension must be entered in the field extension.Fax number, as it is to be dialled from within the same country.Enter the following for the number "01234/567-0":Fax: 01234/567Extension: 0Enter the following for the number "01234/567-891":Fax: 01234/567Extension: 891For the number "012-345-678" (678 as extension) enter the following:Fax: 012-345Extension: 678In the following cases, enter the complete number (without country dialing code) in the field Fax:No part of the number can be considered as an extension.You are not sure which part of the number can be considered as an extension.
+   * Function name of partner.
+   * Maximum length: 40.
+   * @nullable
+   */
+  contactPersonFunctionName?: string;
+  /**
+   * Notes for Partner.
+   * Maximum length: 40.
+   * @nullable
+   */
+  contactPersonRemarkText?: string;
+  /**
+   * VIP Partner.
+   * Maximum length: 1.
+   * @nullable
+   */
+  contactPersonVipType?: string;
+  /**
+   * Email Address.
+   * Maximum length: 241.
+   * @nullable
+   */
+  emailAddress?: string;
+  /**
+   * Fax Number: Dialing Code and Number.
    * Maximum length: 30.
    * @nullable
    */
   faxNumber?: string;
   /**
    * Fax no.: Extension.
-   * Fax extension number
-   * If the fax number consists of a company number and an extension, the extension must be entered here.Enter the extensionThe following rules apply for the format of telephone and fax numbers:The length of the entries in the field Telephone and Extension (Fax and Extension) cannot be more than 24 characters in total.Leading spaces are not allowed in the field Telephone or Fax or in the field Extension.Valid characters are:Numbers (0123456789)Letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)Following other characters:  /, (, ), - *, # and " " (space), but not as a leading space.If an + is entered as the first character, the system checks whether the specified number starts with a country code. If so, a warning message is displayed because the country code is automatically determined by the system and should not be stored in the Telephone number (Fax number) field.If an &amp; is entered as the first character, the automatic check and formatting of the telephone number (fax number), as well as the determination of the country code, is suppressed.Enter the following for the number "01234/567-0":Fax: 01234/567Extension: 0Enter the following for the number "01234/567-891":Fax: 01234/567Extension: 891For the number "012-345-678" (678 as extension) enter the following:Fax: 012-345Extension: 678In the following cases, enter the complete number (without country dialing code) in the field Fax:No part of the number can be considered as an extension.You are not sure which part of the number can be considered as an extension.
    * Maximum length: 10.
    * @nullable
    */
   faxNumberExtension?: string;
   /**
-   * Email Address.
-   * Internet mail address, also called e-mail address.
-   * Example: user.name@company.comThe Internet mail address is used to send mail via the Internet world-wide; the protocol used is SMTP (Simple Mail Transfer Protocol).The Internet mail address format is specified in various RFCs (Internet Request for Comment), including RFCs 821 and 822.This is not an IP address (192.56.30.6).
-   * Maximum length: 241.
+   * Telephone No.: Dialing Code and Number.
+   * Maximum length: 30.
    * @nullable
    */
-  emailAddress?: string;
+  phoneNumber?: string;
+  /**
+   * Telephone no.: Extension.
+   * Maximum length: 10.
+   * @nullable
+   */
+  phoneNumberExtension?: string;
   /**
    * Business Partner Relationship Category.
-   * A relationship may exist between two business partners. The business partner relationship category characterizes the features of the relationship.
-   * A distinction is made between a one-way and an undirected business partner relationship category. In a one-way relationship category, the relationship extends from one partner to another, but not vice versa.Marriage (undirected)Employee (one-way)Contact person (one-way).
    * Maximum length: 6.
    * @nullable
    */
   relationshipCategory?: string;
 
   /**
-   * Returns an entity builder to construct instances `BpContactToFuncAndDept`.
+   * Returns an entity builder to construct instances of `BpContactToFuncAndDept`.
    * @returns A builder that constructs instances of entity type `BpContactToFuncAndDept`.
    */
-  static builder(): EntityBuilderType<BpContactToFuncAndDept, BpContactToFuncAndDeptTypeForceMandatory> {
-    return Entity.entityBuilder(BpContactToFuncAndDept);
+  static builder(): EntityBuilderType<BpContactToFuncAndDept, BpContactToFuncAndDeptType> {
+    return EntityV2.entityBuilder(BpContactToFuncAndDept);
   }
 
   /**
@@ -132,8 +138,8 @@ export class BpContactToFuncAndDept extends Entity implements BpContactToFuncAnd
    * @param fieldName Name of the custom field to select
    * @returns A builder that constructs instances of entity type `BpContactToFuncAndDept`.
    */
-  static customField(fieldName: string): CustomField<BpContactToFuncAndDept> {
-    return Entity.customFieldSelector(fieldName, BpContactToFuncAndDept);
+  static customField(fieldName: string): CustomFieldV2<BpContactToFuncAndDept> {
+    return EntityV2.customFieldSelector(fieldName, BpContactToFuncAndDept);
   }
 
   /**
@@ -150,107 +156,128 @@ export interface BpContactToFuncAndDeptType {
   businessPartnerCompany: string;
   businessPartnerPerson: string;
   validityEndDate: Moment;
-  contactPersonFunction?: string;
-  contactPersonDepartment?: string;
-  phoneNumber?: string;
-  phoneNumberExtension?: string;
-  faxNumber?: string;
-  faxNumberExtension?: string;
-  emailAddress?: string;
-  relationshipCategory?: string;
-}
-
-export interface BpContactToFuncAndDeptTypeForceMandatory {
-  relationshipNumber: string;
-  businessPartnerCompany: string;
-  businessPartnerPerson: string;
-  validityEndDate: Moment;
-  contactPersonFunction: string;
-  contactPersonDepartment: string;
-  phoneNumber: string;
-  phoneNumberExtension: string;
-  faxNumber: string;
-  faxNumberExtension: string;
-  emailAddress: string;
-  relationshipCategory: string;
+  contactPersonAuthorityType?: string | null;
+  contactPersonDepartment?: string | null;
+  contactPersonDepartmentName?: string | null;
+  contactPersonFunction?: string | null;
+  contactPersonFunctionName?: string | null;
+  contactPersonRemarkText?: string | null;
+  contactPersonVipType?: string | null;
+  emailAddress?: string | null;
+  faxNumber?: string | null;
+  faxNumberExtension?: string | null;
+  phoneNumber?: string | null;
+  phoneNumberExtension?: string | null;
+  relationshipCategory?: string | null;
 }
 
 export namespace BpContactToFuncAndDept {
+  const _fieldBuilder: FieldBuilder<Constructable<BpContactToFuncAndDept>> = new FieldBuilder(BpContactToFuncAndDept);
   /**
    * Static representation of the [[relationshipNumber]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const RELATIONSHIP_NUMBER: StringField<BpContactToFuncAndDept> = new StringField('RelationshipNumber', BpContactToFuncAndDept, 'Edm.String');
+  export const RELATIONSHIP_NUMBER = _fieldBuilder.buildEdmTypeField('RelationshipNumber', 'Edm.String', false);
   /**
    * Static representation of the [[businessPartnerCompany]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BUSINESS_PARTNER_COMPANY: StringField<BpContactToFuncAndDept> = new StringField('BusinessPartnerCompany', BpContactToFuncAndDept, 'Edm.String');
+  export const BUSINESS_PARTNER_COMPANY = _fieldBuilder.buildEdmTypeField('BusinessPartnerCompany', 'Edm.String', false);
   /**
    * Static representation of the [[businessPartnerPerson]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const BUSINESS_PARTNER_PERSON: StringField<BpContactToFuncAndDept> = new StringField('BusinessPartnerPerson', BpContactToFuncAndDept, 'Edm.String');
+  export const BUSINESS_PARTNER_PERSON = _fieldBuilder.buildEdmTypeField('BusinessPartnerPerson', 'Edm.String', false);
   /**
    * Static representation of the [[validityEndDate]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const VALIDITY_END_DATE: DateField<BpContactToFuncAndDept> = new DateField('ValidityEndDate', BpContactToFuncAndDept, 'Edm.DateTime');
+  export const VALIDITY_END_DATE = _fieldBuilder.buildEdmTypeField('ValidityEndDate', 'Edm.DateTime', false);
   /**
-   * Static representation of the [[contactPersonFunction]] property for query construction.
+   * Static representation of the [[contactPersonAuthorityType]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const CONTACT_PERSON_FUNCTION: StringField<BpContactToFuncAndDept> = new StringField('ContactPersonFunction', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_AUTHORITY_TYPE = _fieldBuilder.buildEdmTypeField('ContactPersonAuthorityType', 'Edm.String', true);
   /**
    * Static representation of the [[contactPersonDepartment]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const CONTACT_PERSON_DEPARTMENT: StringField<BpContactToFuncAndDept> = new StringField('ContactPersonDepartment', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_DEPARTMENT = _fieldBuilder.buildEdmTypeField('ContactPersonDepartment', 'Edm.String', true);
   /**
-   * Static representation of the [[phoneNumber]] property for query construction.
+   * Static representation of the [[contactPersonDepartmentName]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const PHONE_NUMBER: StringField<BpContactToFuncAndDept> = new StringField('PhoneNumber', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_DEPARTMENT_NAME = _fieldBuilder.buildEdmTypeField('ContactPersonDepartmentName', 'Edm.String', true);
   /**
-   * Static representation of the [[phoneNumberExtension]] property for query construction.
+   * Static representation of the [[contactPersonFunction]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const PHONE_NUMBER_EXTENSION: StringField<BpContactToFuncAndDept> = new StringField('PhoneNumberExtension', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_FUNCTION = _fieldBuilder.buildEdmTypeField('ContactPersonFunction', 'Edm.String', true);
   /**
-   * Static representation of the [[faxNumber]] property for query construction.
+   * Static representation of the [[contactPersonFunctionName]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const FAX_NUMBER: StringField<BpContactToFuncAndDept> = new StringField('FaxNumber', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_FUNCTION_NAME = _fieldBuilder.buildEdmTypeField('ContactPersonFunctionName', 'Edm.String', true);
   /**
-   * Static representation of the [[faxNumberExtension]] property for query construction.
+   * Static representation of the [[contactPersonRemarkText]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const FAX_NUMBER_EXTENSION: StringField<BpContactToFuncAndDept> = new StringField('FaxNumberExtension', BpContactToFuncAndDept, 'Edm.String');
+  export const CONTACT_PERSON_REMARK_TEXT = _fieldBuilder.buildEdmTypeField('ContactPersonRemarkText', 'Edm.String', true);
+  /**
+   * Static representation of the [[contactPersonVipType]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const CONTACT_PERSON_VIP_TYPE = _fieldBuilder.buildEdmTypeField('ContactPersonVIPType', 'Edm.String', true);
   /**
    * Static representation of the [[emailAddress]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const EMAIL_ADDRESS: StringField<BpContactToFuncAndDept> = new StringField('EmailAddress', BpContactToFuncAndDept, 'Edm.String');
+  export const EMAIL_ADDRESS = _fieldBuilder.buildEdmTypeField('EmailAddress', 'Edm.String', true);
+  /**
+   * Static representation of the [[faxNumber]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const FAX_NUMBER = _fieldBuilder.buildEdmTypeField('FaxNumber', 'Edm.String', true);
+  /**
+   * Static representation of the [[faxNumberExtension]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const FAX_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('FaxNumberExtension', 'Edm.String', true);
+  /**
+   * Static representation of the [[phoneNumber]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('PhoneNumber', 'Edm.String', true);
+  /**
+   * Static representation of the [[phoneNumberExtension]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const PHONE_NUMBER_EXTENSION = _fieldBuilder.buildEdmTypeField('PhoneNumberExtension', 'Edm.String', true);
   /**
    * Static representation of the [[relationshipCategory]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const RELATIONSHIP_CATEGORY: StringField<BpContactToFuncAndDept> = new StringField('RelationshipCategory', BpContactToFuncAndDept, 'Edm.String');
+  export const RELATIONSHIP_CATEGORY = _fieldBuilder.buildEdmTypeField('RelationshipCategory', 'Edm.String', true);
   /**
    * All fields of the BpContactToFuncAndDept entity.
    */
-  export const _allFields: Array<StringField<BpContactToFuncAndDept> | DateField<BpContactToFuncAndDept>> = [
+  export const _allFields: Array<EdmTypeField<BpContactToFuncAndDept, 'Edm.String', false, true> | OrderableEdmTypeField<BpContactToFuncAndDept, 'Edm.DateTime', false, true> | EdmTypeField<BpContactToFuncAndDept, 'Edm.String', true, true>> = [
     BpContactToFuncAndDept.RELATIONSHIP_NUMBER,
     BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY,
     BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON,
     BpContactToFuncAndDept.VALIDITY_END_DATE,
-    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION,
+    BpContactToFuncAndDept.CONTACT_PERSON_AUTHORITY_TYPE,
     BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT,
-    BpContactToFuncAndDept.PHONE_NUMBER,
-    BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION,
+    BpContactToFuncAndDept.CONTACT_PERSON_DEPARTMENT_NAME,
+    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION,
+    BpContactToFuncAndDept.CONTACT_PERSON_FUNCTION_NAME,
+    BpContactToFuncAndDept.CONTACT_PERSON_REMARK_TEXT,
+    BpContactToFuncAndDept.CONTACT_PERSON_VIP_TYPE,
+    BpContactToFuncAndDept.EMAIL_ADDRESS,
     BpContactToFuncAndDept.FAX_NUMBER,
     BpContactToFuncAndDept.FAX_NUMBER_EXTENSION,
-    BpContactToFuncAndDept.EMAIL_ADDRESS,
+    BpContactToFuncAndDept.PHONE_NUMBER,
+    BpContactToFuncAndDept.PHONE_NUMBER_EXTENSION,
     BpContactToFuncAndDept.RELATIONSHIP_CATEGORY
   ];
   /**
@@ -260,11 +287,11 @@ export namespace BpContactToFuncAndDept {
   /**
    * All key fields of the BpContactToFuncAndDept entity.
    */
-  export const _keyFields: Array<Field<BpContactToFuncAndDept>> = [BpContactToFuncAndDept.RELATIONSHIP_NUMBER, BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY, BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON, BpContactToFuncAndDept.VALIDITY_END_DATE];
+  export const _keyFields: Array<Field<BpContactToFuncAndDept, boolean, boolean>> = [BpContactToFuncAndDept.RELATIONSHIP_NUMBER, BpContactToFuncAndDept.BUSINESS_PARTNER_COMPANY, BpContactToFuncAndDept.BUSINESS_PARTNER_PERSON, BpContactToFuncAndDept.VALIDITY_END_DATE];
   /**
    * Mapping of all key field names to the respective static field property BpContactToFuncAndDept.
    */
-  export const _keys: { [keys: string]: Field<BpContactToFuncAndDept> } = BpContactToFuncAndDept._keyFields.reduce((acc: { [keys: string]: Field<BpContactToFuncAndDept> }, field: Field<BpContactToFuncAndDept>) => {
+  export const _keys: { [keys: string]: Field<BpContactToFuncAndDept, boolean, boolean> } = BpContactToFuncAndDept._keyFields.reduce((acc: { [keys: string]: Field<BpContactToFuncAndDept, boolean, boolean> }, field: Field<BpContactToFuncAndDept, boolean, boolean>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BuPaIndustry = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var BuPaIndustry = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `BuPaIndustry`.
+     * Returns an entity builder to construct instances of `BuPaIndustry`.
      * @returns A builder that constructs instances of entity type `BuPaIndustry`.
      */
     BuPaIndustry.builder = function () {
-        return core_1.Entity.entityBuilder(BuPaIndustry);
+        return core_1.EntityV2.entityBuilder(BuPaIndustry);
     };
     /**
      * Returns a request builder to construct requests for operations on the `BuPaIndustry` entity type.
@@ -60,7 +62,7 @@ var BuPaIndustry = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `BuPaIndustry`.
      */
     BuPaIndustry.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, BuPaIndustry);
+        return core_1.EntityV2.customFieldSelector(fieldName, BuPaIndustry);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,43 +76,39 @@ var BuPaIndustry = /** @class */ (function (_super) {
      */
     BuPaIndustry._entityName = 'A_BuPaIndustry';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for BuPaIndustry.
-     */
-    BuPaIndustry._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     BuPaIndustry._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return BuPaIndustry;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.BuPaIndustry = BuPaIndustry;
 (function (BuPaIndustry) {
+    var _fieldBuilder = new core_1.FieldBuilder(BuPaIndustry);
     /**
      * Static representation of the [[industrySector]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BuPaIndustry.INDUSTRY_SECTOR = new core_1.StringField('IndustrySector', BuPaIndustry, 'Edm.String');
+    BuPaIndustry.INDUSTRY_SECTOR = _fieldBuilder.buildEdmTypeField('IndustrySector', 'Edm.String', false);
     /**
      * Static representation of the [[industrySystemType]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BuPaIndustry.INDUSTRY_SYSTEM_TYPE = new core_1.StringField('IndustrySystemType', BuPaIndustry, 'Edm.String');
+    BuPaIndustry.INDUSTRY_SYSTEM_TYPE = _fieldBuilder.buildEdmTypeField('IndustrySystemType', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartner]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BuPaIndustry.BUSINESS_PARTNER = new core_1.StringField('BusinessPartner', BuPaIndustry, 'Edm.String');
+    BuPaIndustry.BUSINESS_PARTNER = _fieldBuilder.buildEdmTypeField('BusinessPartner', 'Edm.String', false);
     /**
      * Static representation of the [[isStandardIndustry]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BuPaIndustry.IS_STANDARD_INDUSTRY = new core_1.StringField('IsStandardIndustry', BuPaIndustry, 'Edm.String');
+    BuPaIndustry.IS_STANDARD_INDUSTRY = _fieldBuilder.buildEdmTypeField('IsStandardIndustry', 'Edm.String', true);
     /**
      * Static representation of the [[industryKeyDescription]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BuPaIndustry.INDUSTRY_KEY_DESCRIPTION = new core_1.StringField('IndustryKeyDescription', BuPaIndustry, 'Edm.String');
+    BuPaIndustry.INDUSTRY_KEY_DESCRIPTION = _fieldBuilder.buildEdmTypeField('IndustryKeyDescription', 'Edm.String', true);
     /**
      * All fields of the BuPaIndustry entity.
      */

@@ -1,44 +1,35 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { SupplierTextRequestBuilder } from './SupplierTextRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
+import { AllFields, Constructable, CustomFieldV2, EdmTypeField, EntityBuilderType, EntityV2, Field, FieldBuilder } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "A_SupplierText" of service "API_BUSINESS_PARTNER".
  */
-export class SupplierText extends Entity implements SupplierTextType {
+export class SupplierText extends EntityV2 implements SupplierTextType {
   /**
    * Technical entity name for SupplierText.
    */
   static _entityName = 'A_SupplierText';
-  /**
-   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-   * Technical service name for SupplierText.
-   */
-  static _serviceName = 'API_BUSINESS_PARTNER';
   /**
    * Default url path for the according service.
    */
   static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * Account Number of Supplier.
-   * Specifies an alphanumeric key that uniquely identifies the supplier in the SAP system.
    * Maximum length: 10.
    */
   supplier!: string;
   /**
    * Language key.
-   * The language key is an abbreviation for the language of the object being processed (for example, standard text, form, style).
    * Maximum length: 2.
    */
   language!: string;
   /**
    * Text ID.
-   * The text ID defines the various types of texts related to a text object. For example, the object "TEXT" (standard texts) can have the following text IDs:
-   * ST for user-specific standard texts (individual texts)SYST for cross-application system textsvarious IDs for specific application departments. You must have the appropriate access authorization in order to access these texts.
    * Maximum length: 4.
    */
   longTextId!: string;
@@ -49,11 +40,11 @@ export class SupplierText extends Entity implements SupplierTextType {
   longText?: string;
 
   /**
-   * Returns an entity builder to construct instances `SupplierText`.
+   * Returns an entity builder to construct instances of `SupplierText`.
    * @returns A builder that constructs instances of entity type `SupplierText`.
    */
-  static builder(): EntityBuilderType<SupplierText, SupplierTextTypeForceMandatory> {
-    return Entity.entityBuilder(SupplierText);
+  static builder(): EntityBuilderType<SupplierText, SupplierTextType> {
+    return EntityV2.entityBuilder(SupplierText);
   }
 
   /**
@@ -69,8 +60,8 @@ export class SupplierText extends Entity implements SupplierTextType {
    * @param fieldName Name of the custom field to select
    * @returns A builder that constructs instances of entity type `SupplierText`.
    */
-  static customField(fieldName: string): CustomField<SupplierText> {
-    return Entity.customFieldSelector(fieldName, SupplierText);
+  static customField(fieldName: string): CustomFieldV2<SupplierText> {
+    return EntityV2.customFieldSelector(fieldName, SupplierText);
   }
 
   /**
@@ -86,41 +77,35 @@ export interface SupplierTextType {
   supplier: string;
   language: string;
   longTextId: string;
-  longText?: string;
-}
-
-export interface SupplierTextTypeForceMandatory {
-  supplier: string;
-  language: string;
-  longTextId: string;
-  longText: string;
+  longText?: string | null;
 }
 
 export namespace SupplierText {
+  const _fieldBuilder: FieldBuilder<Constructable<SupplierText>> = new FieldBuilder(SupplierText);
   /**
    * Static representation of the [[supplier]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const SUPPLIER: StringField<SupplierText> = new StringField('Supplier', SupplierText, 'Edm.String');
+  export const SUPPLIER = _fieldBuilder.buildEdmTypeField('Supplier', 'Edm.String', false);
   /**
    * Static representation of the [[language]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LANGUAGE: StringField<SupplierText> = new StringField('Language', SupplierText, 'Edm.String');
+  export const LANGUAGE = _fieldBuilder.buildEdmTypeField('Language', 'Edm.String', false);
   /**
    * Static representation of the [[longTextId]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LONG_TEXT_ID: StringField<SupplierText> = new StringField('LongTextID', SupplierText, 'Edm.String');
+  export const LONG_TEXT_ID = _fieldBuilder.buildEdmTypeField('LongTextID', 'Edm.String', false);
   /**
    * Static representation of the [[longText]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LONG_TEXT: StringField<SupplierText> = new StringField('LongText', SupplierText, 'Edm.String');
+  export const LONG_TEXT = _fieldBuilder.buildEdmTypeField('LongText', 'Edm.String', true);
   /**
    * All fields of the SupplierText entity.
    */
-  export const _allFields: Array<StringField<SupplierText>> = [
+  export const _allFields: Array<EdmTypeField<SupplierText, 'Edm.String', false, true> | EdmTypeField<SupplierText, 'Edm.String', true, true>> = [
     SupplierText.SUPPLIER,
     SupplierText.LANGUAGE,
     SupplierText.LONG_TEXT_ID,
@@ -133,11 +118,11 @@ export namespace SupplierText {
   /**
    * All key fields of the SupplierText entity.
    */
-  export const _keyFields: Array<Field<SupplierText>> = [SupplierText.SUPPLIER, SupplierText.LANGUAGE, SupplierText.LONG_TEXT_ID];
+  export const _keyFields: Array<Field<SupplierText, boolean, boolean>> = [SupplierText.SUPPLIER, SupplierText.LANGUAGE, SupplierText.LONG_TEXT_ID];
   /**
    * Mapping of all key field names to the respective static field property SupplierText.
    */
-  export const _keys: { [keys: string]: Field<SupplierText> } = SupplierText._keyFields.reduce((acc: { [keys: string]: Field<SupplierText> }, field: Field<SupplierText>) => {
+  export const _keys: { [keys: string]: Field<SupplierText, boolean, boolean> } = SupplierText._keyFields.reduce((acc: { [keys: string]: Field<SupplierText, boolean, boolean> }, field: Field<SupplierText, boolean, boolean>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});

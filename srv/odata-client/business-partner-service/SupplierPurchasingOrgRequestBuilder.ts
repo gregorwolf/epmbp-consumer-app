@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { SupplierPurchasingOrg } from './SupplierPurchasingOrg';
 
 /**
@@ -16,8 +16,8 @@ export class SupplierPurchasingOrgRequestBuilder extends RequestBuilder<Supplier
    * @param purchasingOrganization Key property. See [[SupplierPurchasingOrg.purchasingOrganization]].
    * @returns A request builder for creating requests to retrieve one `SupplierPurchasingOrg` entity based on its keys.
    */
-  getByKey(supplier: string, purchasingOrganization: string): GetByKeyRequestBuilder<SupplierPurchasingOrg> {
-    return new GetByKeyRequestBuilder(SupplierPurchasingOrg, {
+  getByKey(supplier: string, purchasingOrganization: string): GetByKeyRequestBuilderV2<SupplierPurchasingOrg> {
+    return new GetByKeyRequestBuilderV2(SupplierPurchasingOrg, {
       Supplier: supplier,
       PurchasingOrganization: purchasingOrganization
     });
@@ -27,8 +27,8 @@ export class SupplierPurchasingOrgRequestBuilder extends RequestBuilder<Supplier
    * Returns a request builder for querying all `SupplierPurchasingOrg` entities.
    * @returns A request builder for creating requests to retrieve all `SupplierPurchasingOrg` entities.
    */
-  getAll(): GetAllRequestBuilder<SupplierPurchasingOrg> {
-    return new GetAllRequestBuilder(SupplierPurchasingOrg);
+  getAll(): GetAllRequestBuilderV2<SupplierPurchasingOrg> {
+    return new GetAllRequestBuilderV2(SupplierPurchasingOrg);
   }
 
   /**
@@ -36,8 +36,8 @@ export class SupplierPurchasingOrgRequestBuilder extends RequestBuilder<Supplier
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `SupplierPurchasingOrg`.
    */
-  create(entity: SupplierPurchasingOrg): CreateRequestBuilder<SupplierPurchasingOrg> {
-    return new CreateRequestBuilder(SupplierPurchasingOrg, entity);
+  create(entity: SupplierPurchasingOrg): CreateRequestBuilderV2<SupplierPurchasingOrg> {
+    return new CreateRequestBuilderV2(SupplierPurchasingOrg, entity);
   }
 
   /**
@@ -45,7 +45,7 @@ export class SupplierPurchasingOrgRequestBuilder extends RequestBuilder<Supplier
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `SupplierPurchasingOrg`.
    */
-  update(entity: SupplierPurchasingOrg): UpdateRequestBuilder<SupplierPurchasingOrg> {
-    return new UpdateRequestBuilder(SupplierPurchasingOrg, entity);
+  update(entity: SupplierPurchasingOrg): UpdateRequestBuilderV2<SupplierPurchasingOrg> {
+    return new UpdateRequestBuilderV2(SupplierPurchasingOrg, entity);
   }
 }

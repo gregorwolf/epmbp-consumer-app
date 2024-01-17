@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerCompany = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerCompany = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerCompany`.
+     * Returns an entity builder to construct instances of `CustomerCompany`.
      * @returns A builder that constructs instances of entity type `CustomerCompany`.
      */
     CustomerCompany.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerCompany);
+        return core_1.EntityV2.entityBuilder(CustomerCompany);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerCompany` entity type.
@@ -60,7 +62,7 @@ var CustomerCompany = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerCompany`.
      */
     CustomerCompany.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerCompany);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerCompany);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,191 +76,192 @@ var CustomerCompany = /** @class */ (function (_super) {
      */
     CustomerCompany._entityName = 'A_CustomerCompany';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerCompany.
-     */
-    CustomerCompany._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerCompany._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerCompany;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerCompany = CustomerCompany;
 var CustomerCompanyText_1 = require("./CustomerCompanyText");
 var CustomerDunning_1 = require("./CustomerDunning");
 var CustomerWithHoldingTax_1 = require("./CustomerWithHoldingTax");
 (function (CustomerCompany) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerCompany);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CUSTOMER = new core_1.StringField('Customer', CustomerCompany, 'Edm.String');
+    CustomerCompany.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[companyCode]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.COMPANY_CODE = new core_1.StringField('CompanyCode', CustomerCompany, 'Edm.String');
+    CustomerCompany.COMPANY_CODE = _fieldBuilder.buildEdmTypeField('CompanyCode', 'Edm.String', false);
     /**
      * Static representation of the [[aparToleranceGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.APAR_TOLERANCE_GROUP = new core_1.StringField('APARToleranceGroup', CustomerCompany, 'Edm.String');
+    CustomerCompany.APAR_TOLERANCE_GROUP = _fieldBuilder.buildEdmTypeField('APARToleranceGroup', 'Edm.String', true);
     /**
      * Static representation of the [[accountByCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ACCOUNT_BY_CUSTOMER = new core_1.StringField('AccountByCustomer', CustomerCompany, 'Edm.String');
+    CustomerCompany.ACCOUNT_BY_CUSTOMER = _fieldBuilder.buildEdmTypeField('AccountByCustomer', 'Edm.String', true);
     /**
      * Static representation of the [[accountingClerk]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ACCOUNTING_CLERK = new core_1.StringField('AccountingClerk', CustomerCompany, 'Edm.String');
+    CustomerCompany.ACCOUNTING_CLERK = _fieldBuilder.buildEdmTypeField('AccountingClerk', 'Edm.String', true);
     /**
      * Static representation of the [[accountingClerkFaxNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ACCOUNTING_CLERK_FAX_NUMBER = new core_1.StringField('AccountingClerkFaxNumber', CustomerCompany, 'Edm.String');
+    CustomerCompany.ACCOUNTING_CLERK_FAX_NUMBER = _fieldBuilder.buildEdmTypeField('AccountingClerkFaxNumber', 'Edm.String', true);
     /**
      * Static representation of the [[accountingClerkInternetAddress]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ACCOUNTING_CLERK_INTERNET_ADDRESS = new core_1.StringField('AccountingClerkInternetAddress', CustomerCompany, 'Edm.String');
+    CustomerCompany.ACCOUNTING_CLERK_INTERNET_ADDRESS = _fieldBuilder.buildEdmTypeField('AccountingClerkInternetAddress', 'Edm.String', true);
     /**
      * Static representation of the [[accountingClerkPhoneNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ACCOUNTING_CLERK_PHONE_NUMBER = new core_1.StringField('AccountingClerkPhoneNumber', CustomerCompany, 'Edm.String');
+    CustomerCompany.ACCOUNTING_CLERK_PHONE_NUMBER = _fieldBuilder.buildEdmTypeField('AccountingClerkPhoneNumber', 'Edm.String', true);
     /**
      * Static representation of the [[alternativePayerAccount]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ALTERNATIVE_PAYER_ACCOUNT = new core_1.StringField('AlternativePayerAccount', CustomerCompany, 'Edm.String');
+    CustomerCompany.ALTERNATIVE_PAYER_ACCOUNT = _fieldBuilder.buildEdmTypeField('AlternativePayerAccount', 'Edm.String', true);
     /**
      * Static representation of the [[authorizationGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.AUTHORIZATION_GROUP = new core_1.StringField('AuthorizationGroup', CustomerCompany, 'Edm.String');
+    CustomerCompany.AUTHORIZATION_GROUP = _fieldBuilder.buildEdmTypeField('AuthorizationGroup', 'Edm.String', true);
     /**
      * Static representation of the [[collectiveInvoiceVariant]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.COLLECTIVE_INVOICE_VARIANT = new core_1.StringField('CollectiveInvoiceVariant', CustomerCompany, 'Edm.String');
+    CustomerCompany.COLLECTIVE_INVOICE_VARIANT = _fieldBuilder.buildEdmTypeField('CollectiveInvoiceVariant', 'Edm.String', true);
     /**
      * Static representation of the [[customerAccountNote]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CUSTOMER_ACCOUNT_NOTE = new core_1.StringField('CustomerAccountNote', CustomerCompany, 'Edm.String');
+    CustomerCompany.CUSTOMER_ACCOUNT_NOTE = _fieldBuilder.buildEdmTypeField('CustomerAccountNote', 'Edm.String', true);
     /**
      * Static representation of the [[customerHeadOffice]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CUSTOMER_HEAD_OFFICE = new core_1.StringField('CustomerHeadOffice', CustomerCompany, 'Edm.String');
+    CustomerCompany.CUSTOMER_HEAD_OFFICE = _fieldBuilder.buildEdmTypeField('CustomerHeadOffice', 'Edm.String', true);
     /**
      * Static representation of the [[customerSupplierClearingIsUsed]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CUSTOMER_SUPPLIER_CLEARING_IS_USED = new core_1.BooleanField('CustomerSupplierClearingIsUsed', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.CUSTOMER_SUPPLIER_CLEARING_IS_USED = _fieldBuilder.buildEdmTypeField('CustomerSupplierClearingIsUsed', 'Edm.Boolean', true);
     /**
      * Static representation of the [[houseBank]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.HOUSE_BANK = new core_1.StringField('HouseBank', CustomerCompany, 'Edm.String');
+    CustomerCompany.HOUSE_BANK = _fieldBuilder.buildEdmTypeField('HouseBank', 'Edm.String', true);
     /**
      * Static representation of the [[interestCalculationCode]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.INTEREST_CALCULATION_CODE = new core_1.StringField('InterestCalculationCode', CustomerCompany, 'Edm.String');
+    CustomerCompany.INTEREST_CALCULATION_CODE = _fieldBuilder.buildEdmTypeField('InterestCalculationCode', 'Edm.String', true);
     /**
      * Static representation of the [[interestCalculationDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.INTEREST_CALCULATION_DATE = new core_1.DateField('InterestCalculationDate', CustomerCompany, 'Edm.DateTime');
+    CustomerCompany.INTEREST_CALCULATION_DATE = _fieldBuilder.buildEdmTypeField('InterestCalculationDate', 'Edm.DateTime', true);
     /**
      * Static representation of the [[intrstCalcFrequencyInMonths]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.INTRST_CALC_FREQUENCY_IN_MONTHS = new core_1.StringField('IntrstCalcFrequencyInMonths', CustomerCompany, 'Edm.String');
+    CustomerCompany.INTRST_CALC_FREQUENCY_IN_MONTHS = _fieldBuilder.buildEdmTypeField('IntrstCalcFrequencyInMonths', 'Edm.String', true);
     /**
      * Static representation of the [[isToBeLocallyProcessed]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.IS_TO_BE_LOCALLY_PROCESSED = new core_1.BooleanField('IsToBeLocallyProcessed', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.IS_TO_BE_LOCALLY_PROCESSED = _fieldBuilder.buildEdmTypeField('IsToBeLocallyProcessed', 'Edm.Boolean', true);
     /**
      * Static representation of the [[itemIsToBePaidSeparately]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.ITEM_IS_TO_BE_PAID_SEPARATELY = new core_1.BooleanField('ItemIsToBePaidSeparately', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.ITEM_IS_TO_BE_PAID_SEPARATELY = _fieldBuilder.buildEdmTypeField('ItemIsToBePaidSeparately', 'Edm.Boolean', true);
     /**
      * Static representation of the [[layoutSortingRule]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.LAYOUT_SORTING_RULE = new core_1.StringField('LayoutSortingRule', CustomerCompany, 'Edm.String');
+    CustomerCompany.LAYOUT_SORTING_RULE = _fieldBuilder.buildEdmTypeField('LayoutSortingRule', 'Edm.String', true);
     /**
      * Static representation of the [[paymentBlockingReason]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.PAYMENT_BLOCKING_REASON = new core_1.StringField('PaymentBlockingReason', CustomerCompany, 'Edm.String');
+    CustomerCompany.PAYMENT_BLOCKING_REASON = _fieldBuilder.buildEdmTypeField('PaymentBlockingReason', 'Edm.String', true);
     /**
      * Static representation of the [[paymentMethodsList]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.PAYMENT_METHODS_LIST = new core_1.StringField('PaymentMethodsList', CustomerCompany, 'Edm.String');
+    CustomerCompany.PAYMENT_METHODS_LIST = _fieldBuilder.buildEdmTypeField('PaymentMethodsList', 'Edm.String', true);
+    /**
+     * Static representation of the [[paymentReason]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    CustomerCompany.PAYMENT_REASON = _fieldBuilder.buildEdmTypeField('PaymentReason', 'Edm.String', true);
     /**
      * Static representation of the [[paymentTerms]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.PAYMENT_TERMS = new core_1.StringField('PaymentTerms', CustomerCompany, 'Edm.String');
+    CustomerCompany.PAYMENT_TERMS = _fieldBuilder.buildEdmTypeField('PaymentTerms', 'Edm.String', true);
     /**
      * Static representation of the [[paytAdviceIsSentbyEdi]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.PAYT_ADVICE_IS_SENTBY_EDI = new core_1.BooleanField('PaytAdviceIsSentbyEDI', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.PAYT_ADVICE_IS_SENTBY_EDI = _fieldBuilder.buildEdmTypeField('PaytAdviceIsSentbyEDI', 'Edm.Boolean', true);
     /**
      * Static representation of the [[physicalInventoryBlockInd]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.PHYSICAL_INVENTORY_BLOCK_IND = new core_1.BooleanField('PhysicalInventoryBlockInd', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.PHYSICAL_INVENTORY_BLOCK_IND = _fieldBuilder.buildEdmTypeField('PhysicalInventoryBlockInd', 'Edm.Boolean', true);
     /**
      * Static representation of the [[reconciliationAccount]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.RECONCILIATION_ACCOUNT = new core_1.StringField('ReconciliationAccount', CustomerCompany, 'Edm.String');
+    CustomerCompany.RECONCILIATION_ACCOUNT = _fieldBuilder.buildEdmTypeField('ReconciliationAccount', 'Edm.String', true);
     /**
      * Static representation of the [[recordPaymentHistoryIndicator]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.RECORD_PAYMENT_HISTORY_INDICATOR = new core_1.BooleanField('RecordPaymentHistoryIndicator', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.RECORD_PAYMENT_HISTORY_INDICATOR = _fieldBuilder.buildEdmTypeField('RecordPaymentHistoryIndicator', 'Edm.Boolean', true);
     /**
      * Static representation of the [[userAtCustomer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.USER_AT_CUSTOMER = new core_1.StringField('UserAtCustomer', CustomerCompany, 'Edm.String');
+    CustomerCompany.USER_AT_CUSTOMER = _fieldBuilder.buildEdmTypeField('UserAtCustomer', 'Edm.String', true);
     /**
      * Static representation of the [[deletionIndicator]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.DELETION_INDICATOR = new core_1.BooleanField('DeletionIndicator', CustomerCompany, 'Edm.Boolean');
+    CustomerCompany.DELETION_INDICATOR = _fieldBuilder.buildEdmTypeField('DeletionIndicator', 'Edm.Boolean', true);
     /**
      * Static representation of the [[cashPlanningGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CASH_PLANNING_GROUP = new core_1.StringField('CashPlanningGroup', CustomerCompany, 'Edm.String');
+    CustomerCompany.CASH_PLANNING_GROUP = _fieldBuilder.buildEdmTypeField('CashPlanningGroup', 'Edm.String', true);
     /**
      * Static representation of the [[knownOrNegotiatedLeave]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.KNOWN_OR_NEGOTIATED_LEAVE = new core_1.StringField('KnownOrNegotiatedLeave', CustomerCompany, 'Edm.String');
+    CustomerCompany.KNOWN_OR_NEGOTIATED_LEAVE = _fieldBuilder.buildEdmTypeField('KnownOrNegotiatedLeave', 'Edm.String', true);
     /**
      * Static representation of the [[valueAdjustmentKey]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.VALUE_ADJUSTMENT_KEY = new core_1.StringField('ValueAdjustmentKey', CustomerCompany, 'Edm.String');
+    CustomerCompany.VALUE_ADJUSTMENT_KEY = _fieldBuilder.buildEdmTypeField('ValueAdjustmentKey', 'Edm.String', true);
     /**
      * Static representation of the [[customerAccountGroup]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerCompany.CUSTOMER_ACCOUNT_GROUP = new core_1.StringField('CustomerAccountGroup', CustomerCompany, 'Edm.String');
+    CustomerCompany.CUSTOMER_ACCOUNT_GROUP = _fieldBuilder.buildEdmTypeField('CustomerAccountGroup', 'Edm.String', true);
     /**
      * Static representation of the one-to-many navigation property [[toCompanyText]] for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
@@ -301,6 +304,7 @@ var CustomerWithHoldingTax_1 = require("./CustomerWithHoldingTax");
         CustomerCompany.LAYOUT_SORTING_RULE,
         CustomerCompany.PAYMENT_BLOCKING_REASON,
         CustomerCompany.PAYMENT_METHODS_LIST,
+        CustomerCompany.PAYMENT_REASON,
         CustomerCompany.PAYMENT_TERMS,
         CustomerCompany.PAYT_ADVICE_IS_SENTBY_EDI,
         CustomerCompany.PHYSICAL_INVENTORY_BLOCK_IND,

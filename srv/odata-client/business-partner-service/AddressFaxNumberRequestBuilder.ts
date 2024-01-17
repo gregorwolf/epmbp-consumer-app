@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2, DeleteRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { AddressFaxNumber } from './AddressFaxNumber';
 
 /**
@@ -17,8 +17,8 @@ export class AddressFaxNumberRequestBuilder extends RequestBuilder<AddressFaxNum
    * @param ordinalNumber Key property. See [[AddressFaxNumber.ordinalNumber]].
    * @returns A request builder for creating requests to retrieve one `AddressFaxNumber` entity based on its keys.
    */
-  getByKey(addressId: string, person: string, ordinalNumber: string): GetByKeyRequestBuilder<AddressFaxNumber> {
-    return new GetByKeyRequestBuilder(AddressFaxNumber, {
+  getByKey(addressId: string, person: string, ordinalNumber: string): GetByKeyRequestBuilderV2<AddressFaxNumber> {
+    return new GetByKeyRequestBuilderV2(AddressFaxNumber, {
       AddressID: addressId,
       Person: person,
       OrdinalNumber: ordinalNumber
@@ -29,8 +29,8 @@ export class AddressFaxNumberRequestBuilder extends RequestBuilder<AddressFaxNum
    * Returns a request builder for querying all `AddressFaxNumber` entities.
    * @returns A request builder for creating requests to retrieve all `AddressFaxNumber` entities.
    */
-  getAll(): GetAllRequestBuilder<AddressFaxNumber> {
-    return new GetAllRequestBuilder(AddressFaxNumber);
+  getAll(): GetAllRequestBuilderV2<AddressFaxNumber> {
+    return new GetAllRequestBuilderV2(AddressFaxNumber);
   }
 
   /**
@@ -38,8 +38,8 @@ export class AddressFaxNumberRequestBuilder extends RequestBuilder<AddressFaxNum
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `AddressFaxNumber`.
    */
-  create(entity: AddressFaxNumber): CreateRequestBuilder<AddressFaxNumber> {
-    return new CreateRequestBuilder(AddressFaxNumber, entity);
+  create(entity: AddressFaxNumber): CreateRequestBuilderV2<AddressFaxNumber> {
+    return new CreateRequestBuilderV2(AddressFaxNumber, entity);
   }
 
   /**
@@ -47,8 +47,8 @@ export class AddressFaxNumberRequestBuilder extends RequestBuilder<AddressFaxNum
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `AddressFaxNumber`.
    */
-  update(entity: AddressFaxNumber): UpdateRequestBuilder<AddressFaxNumber> {
-    return new UpdateRequestBuilder(AddressFaxNumber, entity);
+  update(entity: AddressFaxNumber): UpdateRequestBuilderV2<AddressFaxNumber> {
+    return new UpdateRequestBuilderV2(AddressFaxNumber, entity);
   }
 
   /**
@@ -58,15 +58,15 @@ export class AddressFaxNumberRequestBuilder extends RequestBuilder<AddressFaxNum
    * @param ordinalNumber Key property. See [[AddressFaxNumber.ordinalNumber]].
    * @returns A request builder for creating requests that delete an entity of type `AddressFaxNumber`.
    */
-  delete(addressId: string, person: string, ordinalNumber: string): DeleteRequestBuilder<AddressFaxNumber>;
+  delete(addressId: string, person: string, ordinalNumber: string): DeleteRequestBuilderV2<AddressFaxNumber>;
   /**
    * Returns a request builder for deleting an entity of type `AddressFaxNumber`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `AddressFaxNumber` by taking the entity as a parameter.
    */
-  delete(entity: AddressFaxNumber): DeleteRequestBuilder<AddressFaxNumber>;
-  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string): DeleteRequestBuilder<AddressFaxNumber> {
-    return new DeleteRequestBuilder(AddressFaxNumber, addressIdOrEntity instanceof AddressFaxNumber ? addressIdOrEntity : {
+  delete(entity: AddressFaxNumber): DeleteRequestBuilderV2<AddressFaxNumber>;
+  delete(addressIdOrEntity: any, person?: string, ordinalNumber?: string): DeleteRequestBuilderV2<AddressFaxNumber> {
+    return new DeleteRequestBuilderV2(AddressFaxNumber, addressIdOrEntity instanceof AddressFaxNumber ? addressIdOrEntity : {
       AddressID: addressIdOrEntity!,
       Person: person!,
       OrdinalNumber: ordinalNumber!

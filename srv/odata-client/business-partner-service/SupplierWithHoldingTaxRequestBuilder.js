@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -15,7 +17,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SupplierWithHoldingTaxRequestBuilder = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -37,7 +39,7 @@ var SupplierWithHoldingTaxRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve one `SupplierWithHoldingTax` entity based on its keys.
      */
     SupplierWithHoldingTaxRequestBuilder.prototype.getByKey = function (supplier, companyCode, withholdingTaxType) {
-        return new core_1.GetByKeyRequestBuilder(SupplierWithHoldingTax_1.SupplierWithHoldingTax, {
+        return new core_1.GetByKeyRequestBuilderV2(SupplierWithHoldingTax_1.SupplierWithHoldingTax, {
             Supplier: supplier,
             CompanyCode: companyCode,
             WithholdingTaxType: withholdingTaxType
@@ -48,7 +50,7 @@ var SupplierWithHoldingTaxRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests to retrieve all `SupplierWithHoldingTax` entities.
      */
     SupplierWithHoldingTaxRequestBuilder.prototype.getAll = function () {
-        return new core_1.GetAllRequestBuilder(SupplierWithHoldingTax_1.SupplierWithHoldingTax);
+        return new core_1.GetAllRequestBuilderV2(SupplierWithHoldingTax_1.SupplierWithHoldingTax);
     };
     /**
      * Returns a request builder for creating a `SupplierWithHoldingTax` entity.
@@ -56,7 +58,7 @@ var SupplierWithHoldingTaxRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that create an entity of type `SupplierWithHoldingTax`.
      */
     SupplierWithHoldingTaxRequestBuilder.prototype.create = function (entity) {
-        return new core_1.CreateRequestBuilder(SupplierWithHoldingTax_1.SupplierWithHoldingTax, entity);
+        return new core_1.CreateRequestBuilderV2(SupplierWithHoldingTax_1.SupplierWithHoldingTax, entity);
     };
     /**
      * Returns a request builder for updating an entity of type `SupplierWithHoldingTax`.
@@ -64,10 +66,10 @@ var SupplierWithHoldingTaxRequestBuilder = /** @class */ (function (_super) {
      * @returns A request builder for creating requests that update an entity of type `SupplierWithHoldingTax`.
      */
     SupplierWithHoldingTaxRequestBuilder.prototype.update = function (entity) {
-        return new core_1.UpdateRequestBuilder(SupplierWithHoldingTax_1.SupplierWithHoldingTax, entity);
+        return new core_1.UpdateRequestBuilderV2(SupplierWithHoldingTax_1.SupplierWithHoldingTax, entity);
     };
     SupplierWithHoldingTaxRequestBuilder.prototype.delete = function (supplierOrEntity, companyCode, withholdingTaxType) {
-        return new core_1.DeleteRequestBuilder(SupplierWithHoldingTax_1.SupplierWithHoldingTax, supplierOrEntity instanceof SupplierWithHoldingTax_1.SupplierWithHoldingTax ? supplierOrEntity : {
+        return new core_1.DeleteRequestBuilderV2(SupplierWithHoldingTax_1.SupplierWithHoldingTax, supplierOrEntity instanceof SupplierWithHoldingTax_1.SupplierWithHoldingTax ? supplierOrEntity : {
             Supplier: supplierOrEntity,
             CompanyCode: companyCode,
             WithholdingTaxType: withholdingTaxType

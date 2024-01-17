@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomerTaxGrouping = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var CustomerTaxGrouping = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `CustomerTaxGrouping`.
+     * Returns an entity builder to construct instances of `CustomerTaxGrouping`.
      * @returns A builder that constructs instances of entity type `CustomerTaxGrouping`.
      */
     CustomerTaxGrouping.builder = function () {
-        return core_1.Entity.entityBuilder(CustomerTaxGrouping);
+        return core_1.EntityV2.entityBuilder(CustomerTaxGrouping);
     };
     /**
      * Returns a request builder to construct requests for operations on the `CustomerTaxGrouping` entity type.
@@ -60,7 +62,7 @@ var CustomerTaxGrouping = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `CustomerTaxGrouping`.
      */
     CustomerTaxGrouping.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, CustomerTaxGrouping);
+        return core_1.EntityV2.customFieldSelector(fieldName, CustomerTaxGrouping);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,58 +76,54 @@ var CustomerTaxGrouping = /** @class */ (function (_super) {
      */
     CustomerTaxGrouping._entityName = 'A_CustomerTaxGrouping';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for CustomerTaxGrouping.
-     */
-    CustomerTaxGrouping._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     CustomerTaxGrouping._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return CustomerTaxGrouping;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.CustomerTaxGrouping = CustomerTaxGrouping;
 (function (CustomerTaxGrouping) {
+    var _fieldBuilder = new core_1.FieldBuilder(CustomerTaxGrouping);
     /**
      * Static representation of the [[customer]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUSTOMER = new core_1.StringField('Customer', CustomerTaxGrouping, 'Edm.String');
+    CustomerTaxGrouping.CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
     /**
      * Static representation of the [[customerTaxGroupingCode]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUSTOMER_TAX_GROUPING_CODE = new core_1.StringField('CustomerTaxGroupingCode', CustomerTaxGrouping, 'Edm.String');
+    CustomerTaxGrouping.CUSTOMER_TAX_GROUPING_CODE = _fieldBuilder.buildEdmTypeField('CustomerTaxGroupingCode', 'Edm.String', false);
     /**
      * Static representation of the [[custTaxGrpExemptionCertificate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GRP_EXEMPTION_CERTIFICATE = new core_1.StringField('CustTaxGrpExemptionCertificate', CustomerTaxGrouping, 'Edm.String');
+    CustomerTaxGrouping.CUST_TAX_GRP_EXEMPTION_CERTIFICATE = _fieldBuilder.buildEdmTypeField('CustTaxGrpExemptionCertificate', 'Edm.String', true);
     /**
      * Static representation of the [[custTaxGroupExemptionRate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_RATE = new core_1.BigNumberField('CustTaxGroupExemptionRate', CustomerTaxGrouping, 'Edm.Decimal');
+    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_RATE = _fieldBuilder.buildEdmTypeField('CustTaxGroupExemptionRate', 'Edm.Decimal', true);
     /**
      * Static representation of the [[custTaxGroupExemptionStartDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_START_DATE = new core_1.DateField('CustTaxGroupExemptionStartDate', CustomerTaxGrouping, 'Edm.DateTime');
+    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_START_DATE = _fieldBuilder.buildEdmTypeField('CustTaxGroupExemptionStartDate', 'Edm.DateTime', true);
     /**
      * Static representation of the [[custTaxGroupExemptionEndDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_END_DATE = new core_1.DateField('CustTaxGroupExemptionEndDate', CustomerTaxGrouping, 'Edm.DateTime');
+    CustomerTaxGrouping.CUST_TAX_GROUP_EXEMPTION_END_DATE = _fieldBuilder.buildEdmTypeField('CustTaxGroupExemptionEndDate', 'Edm.DateTime', true);
     /**
      * Static representation of the [[custTaxGroupSubjectedStartDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GROUP_SUBJECTED_START_DATE = new core_1.DateField('CustTaxGroupSubjectedStartDate', CustomerTaxGrouping, 'Edm.DateTime');
+    CustomerTaxGrouping.CUST_TAX_GROUP_SUBJECTED_START_DATE = _fieldBuilder.buildEdmTypeField('CustTaxGroupSubjectedStartDate', 'Edm.DateTime', true);
     /**
      * Static representation of the [[custTaxGroupSubjectedEndDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    CustomerTaxGrouping.CUST_TAX_GROUP_SUBJECTED_END_DATE = new core_1.DateField('CustTaxGroupSubjectedEndDate', CustomerTaxGrouping, 'Edm.DateTime');
+    CustomerTaxGrouping.CUST_TAX_GROUP_SUBJECTED_END_DATE = _fieldBuilder.buildEdmTypeField('CustTaxGroupSubjectedEndDate', 'Edm.DateTime', true);
     /**
      * All fields of the CustomerTaxGrouping entity.
      */

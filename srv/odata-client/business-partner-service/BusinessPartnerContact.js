@@ -3,10 +3,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -26,7 +28,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BusinessPartnerContact = void 0;
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
@@ -41,11 +43,11 @@ var BusinessPartnerContact = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Returns an entity builder to construct instances `BusinessPartnerContact`.
+     * Returns an entity builder to construct instances of `BusinessPartnerContact`.
      * @returns A builder that constructs instances of entity type `BusinessPartnerContact`.
      */
     BusinessPartnerContact.builder = function () {
-        return core_1.Entity.entityBuilder(BusinessPartnerContact);
+        return core_1.EntityV2.entityBuilder(BusinessPartnerContact);
     };
     /**
      * Returns a request builder to construct requests for operations on the `BusinessPartnerContact` entity type.
@@ -60,7 +62,7 @@ var BusinessPartnerContact = /** @class */ (function (_super) {
      * @returns A builder that constructs instances of entity type `BusinessPartnerContact`.
      */
     BusinessPartnerContact.customField = function (fieldName) {
-        return core_1.Entity.customFieldSelector(fieldName, BusinessPartnerContact);
+        return core_1.EntityV2.customFieldSelector(fieldName, BusinessPartnerContact);
     };
     /**
      * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
@@ -74,55 +76,51 @@ var BusinessPartnerContact = /** @class */ (function (_super) {
      */
     BusinessPartnerContact._entityName = 'A_BusinessPartnerContact';
     /**
-     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-     * Technical service name for BusinessPartnerContact.
-     */
-    BusinessPartnerContact._serviceName = 'API_BUSINESS_PARTNER';
-    /**
      * Default url path for the according service.
      */
     BusinessPartnerContact._defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
     return BusinessPartnerContact;
-}(core_1.Entity));
+}(core_1.EntityV2));
 exports.BusinessPartnerContact = BusinessPartnerContact;
 var BpContactToAddress_1 = require("./BpContactToAddress");
 var BpContactToFuncAndDept_1 = require("./BpContactToFuncAndDept");
 (function (BusinessPartnerContact) {
+    var _fieldBuilder = new core_1.FieldBuilder(BusinessPartnerContact);
     /**
      * Static representation of the [[relationshipNumber]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.RELATIONSHIP_NUMBER = new core_1.StringField('RelationshipNumber', BusinessPartnerContact, 'Edm.String');
+    BusinessPartnerContact.RELATIONSHIP_NUMBER = _fieldBuilder.buildEdmTypeField('RelationshipNumber', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartnerCompany]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.BUSINESS_PARTNER_COMPANY = new core_1.StringField('BusinessPartnerCompany', BusinessPartnerContact, 'Edm.String');
+    BusinessPartnerContact.BUSINESS_PARTNER_COMPANY = _fieldBuilder.buildEdmTypeField('BusinessPartnerCompany', 'Edm.String', false);
     /**
      * Static representation of the [[businessPartnerPerson]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.BUSINESS_PARTNER_PERSON = new core_1.StringField('BusinessPartnerPerson', BusinessPartnerContact, 'Edm.String');
+    BusinessPartnerContact.BUSINESS_PARTNER_PERSON = _fieldBuilder.buildEdmTypeField('BusinessPartnerPerson', 'Edm.String', false);
     /**
      * Static representation of the [[validityEndDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.VALIDITY_END_DATE = new core_1.DateField('ValidityEndDate', BusinessPartnerContact, 'Edm.DateTime');
+    BusinessPartnerContact.VALIDITY_END_DATE = _fieldBuilder.buildEdmTypeField('ValidityEndDate', 'Edm.DateTime', false);
     /**
      * Static representation of the [[validityStartDate]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.VALIDITY_START_DATE = new core_1.DateField('ValidityStartDate', BusinessPartnerContact, 'Edm.DateTime');
+    BusinessPartnerContact.VALIDITY_START_DATE = _fieldBuilder.buildEdmTypeField('ValidityStartDate', 'Edm.DateTime', true);
     /**
      * Static representation of the [[isStandardRelationship]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.IS_STANDARD_RELATIONSHIP = new core_1.BooleanField('IsStandardRelationship', BusinessPartnerContact, 'Edm.Boolean');
+    BusinessPartnerContact.IS_STANDARD_RELATIONSHIP = _fieldBuilder.buildEdmTypeField('IsStandardRelationship', 'Edm.Boolean', true);
     /**
      * Static representation of the [[relationshipCategory]] property for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.
      */
-    BusinessPartnerContact.RELATIONSHIP_CATEGORY = new core_1.StringField('RelationshipCategory', BusinessPartnerContact, 'Edm.String');
+    BusinessPartnerContact.RELATIONSHIP_CATEGORY = _fieldBuilder.buildEdmTypeField('RelationshipCategory', 'Edm.String', true);
     /**
      * Static representation of the one-to-many navigation property [[toContactAddress]] for query construction.
      * Use to reference this property in query operations such as 'select' in the fluent request API.

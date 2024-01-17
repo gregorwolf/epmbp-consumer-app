@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { CustomerSalesAreaTax } from './CustomerSalesAreaTax';
 
 /**
@@ -20,8 +20,8 @@ export class CustomerSalesAreaTaxRequestBuilder extends RequestBuilder<CustomerS
    * @param customerTaxCategory Key property. See [[CustomerSalesAreaTax.customerTaxCategory]].
    * @returns A request builder for creating requests to retrieve one `CustomerSalesAreaTax` entity based on its keys.
    */
-  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, departureCountry: string, customerTaxCategory: string): GetByKeyRequestBuilder<CustomerSalesAreaTax> {
-    return new GetByKeyRequestBuilder(CustomerSalesAreaTax, {
+  getByKey(customer: string, salesOrganization: string, distributionChannel: string, division: string, departureCountry: string, customerTaxCategory: string): GetByKeyRequestBuilderV2<CustomerSalesAreaTax> {
+    return new GetByKeyRequestBuilderV2(CustomerSalesAreaTax, {
       Customer: customer,
       SalesOrganization: salesOrganization,
       DistributionChannel: distributionChannel,
@@ -35,8 +35,8 @@ export class CustomerSalesAreaTaxRequestBuilder extends RequestBuilder<CustomerS
    * Returns a request builder for querying all `CustomerSalesAreaTax` entities.
    * @returns A request builder for creating requests to retrieve all `CustomerSalesAreaTax` entities.
    */
-  getAll(): GetAllRequestBuilder<CustomerSalesAreaTax> {
-    return new GetAllRequestBuilder(CustomerSalesAreaTax);
+  getAll(): GetAllRequestBuilderV2<CustomerSalesAreaTax> {
+    return new GetAllRequestBuilderV2(CustomerSalesAreaTax);
   }
 
   /**
@@ -44,8 +44,8 @@ export class CustomerSalesAreaTaxRequestBuilder extends RequestBuilder<CustomerS
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `CustomerSalesAreaTax`.
    */
-  create(entity: CustomerSalesAreaTax): CreateRequestBuilder<CustomerSalesAreaTax> {
-    return new CreateRequestBuilder(CustomerSalesAreaTax, entity);
+  create(entity: CustomerSalesAreaTax): CreateRequestBuilderV2<CustomerSalesAreaTax> {
+    return new CreateRequestBuilderV2(CustomerSalesAreaTax, entity);
   }
 
   /**
@@ -53,7 +53,7 @@ export class CustomerSalesAreaTaxRequestBuilder extends RequestBuilder<CustomerS
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `CustomerSalesAreaTax`.
    */
-  update(entity: CustomerSalesAreaTax): UpdateRequestBuilder<CustomerSalesAreaTax> {
-    return new UpdateRequestBuilder(CustomerSalesAreaTax, entity);
+  update(entity: CustomerSalesAreaTax): UpdateRequestBuilderV2<CustomerSalesAreaTax> {
+    return new UpdateRequestBuilderV2(CustomerSalesAreaTax, entity);
   }
 }

@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { Moment } from 'moment';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder } from '@sap-cloud-sdk/core';
+import { RequestBuilder, GetAllRequestBuilderV2, GetByKeyRequestBuilderV2, CreateRequestBuilderV2, UpdateRequestBuilderV2 } from '@sap-cloud-sdk/core';
 import { BpContactToAddress } from './BpContactToAddress';
 
 /**
@@ -20,8 +20,8 @@ export class BpContactToAddressRequestBuilder extends RequestBuilder<BpContactTo
    * @param addressId Key property. See [[BpContactToAddress.addressId]].
    * @returns A request builder for creating requests to retrieve one `BpContactToAddress` entity based on its keys.
    */
-  getByKey(relationshipNumber: string, businessPartnerCompany: string, businessPartnerPerson: string, validityEndDate: Moment, addressId: string): GetByKeyRequestBuilder<BpContactToAddress> {
-    return new GetByKeyRequestBuilder(BpContactToAddress, {
+  getByKey(relationshipNumber: string, businessPartnerCompany: string, businessPartnerPerson: string, validityEndDate: Moment, addressId: string): GetByKeyRequestBuilderV2<BpContactToAddress> {
+    return new GetByKeyRequestBuilderV2(BpContactToAddress, {
       RelationshipNumber: relationshipNumber,
       BusinessPartnerCompany: businessPartnerCompany,
       BusinessPartnerPerson: businessPartnerPerson,
@@ -34,7 +34,25 @@ export class BpContactToAddressRequestBuilder extends RequestBuilder<BpContactTo
    * Returns a request builder for querying all `BpContactToAddress` entities.
    * @returns A request builder for creating requests to retrieve all `BpContactToAddress` entities.
    */
-  getAll(): GetAllRequestBuilder<BpContactToAddress> {
-    return new GetAllRequestBuilder(BpContactToAddress);
+  getAll(): GetAllRequestBuilderV2<BpContactToAddress> {
+    return new GetAllRequestBuilderV2(BpContactToAddress);
+  }
+
+  /**
+   * Returns a request builder for creating a `BpContactToAddress` entity.
+   * @param entity The entity to be created
+   * @returns A request builder for creating requests that create an entity of type `BpContactToAddress`.
+   */
+  create(entity: BpContactToAddress): CreateRequestBuilderV2<BpContactToAddress> {
+    return new CreateRequestBuilderV2(BpContactToAddress, entity);
+  }
+
+  /**
+   * Returns a request builder for updating an entity of type `BpContactToAddress`.
+   * @param entity The entity to be updated
+   * @returns A request builder for creating requests that update an entity of type `BpContactToAddress`.
+   */
+  update(entity: BpContactToAddress): UpdateRequestBuilderV2<BpContactToAddress> {
+    return new UpdateRequestBuilderV2(BpContactToAddress, entity);
   }
 }

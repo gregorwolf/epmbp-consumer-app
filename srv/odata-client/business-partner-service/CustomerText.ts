@@ -1,44 +1,35 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { CustomerTextRequestBuilder } from './CustomerTextRequestBuilder';
-import { AllFields, CustomField, Entity, EntityBuilderType, Field, StringField } from '@sap-cloud-sdk/core';
+import { AllFields, Constructable, CustomFieldV2, EdmTypeField, EntityBuilderType, EntityV2, Field, FieldBuilder } from '@sap-cloud-sdk/core';
 
 /**
  * This class represents the entity "A_CustomerText" of service "API_BUSINESS_PARTNER".
  */
-export class CustomerText extends Entity implements CustomerTextType {
+export class CustomerText extends EntityV2 implements CustomerTextType {
   /**
    * Technical entity name for CustomerText.
    */
   static _entityName = 'A_CustomerText';
-  /**
-   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-   * Technical service name for CustomerText.
-   */
-  static _serviceName = 'API_BUSINESS_PARTNER';
   /**
    * Default url path for the according service.
    */
   static _defaultServicePath = '/sap/opu/odata/sap/API_BUSINESS_PARTNER';
   /**
    * Customer Number.
-   * Gives an alphanumeric key, which clearly identifies the customer or vendor in the SAP system.
    * Maximum length: 10.
    */
   customer!: string;
   /**
    * Language key.
-   * The language key is an abbreviation for the language of the object being processed (for example, standard text, form, style).
    * Maximum length: 2.
    */
   language!: string;
   /**
    * Text ID.
-   * The text ID defines the various types of texts related to a text object. For example, the object "TEXT" (standard texts) can have the following text IDs:
-   * ST for user-specific standard texts (individual texts)SYST for cross-application system textsvarious IDs for specific application departments. You must have the appropriate access authorization in order to access these texts.
    * Maximum length: 4.
    */
   longTextId!: string;
@@ -49,11 +40,11 @@ export class CustomerText extends Entity implements CustomerTextType {
   longText?: string;
 
   /**
-   * Returns an entity builder to construct instances `CustomerText`.
+   * Returns an entity builder to construct instances of `CustomerText`.
    * @returns A builder that constructs instances of entity type `CustomerText`.
    */
-  static builder(): EntityBuilderType<CustomerText, CustomerTextTypeForceMandatory> {
-    return Entity.entityBuilder(CustomerText);
+  static builder(): EntityBuilderType<CustomerText, CustomerTextType> {
+    return EntityV2.entityBuilder(CustomerText);
   }
 
   /**
@@ -69,8 +60,8 @@ export class CustomerText extends Entity implements CustomerTextType {
    * @param fieldName Name of the custom field to select
    * @returns A builder that constructs instances of entity type `CustomerText`.
    */
-  static customField(fieldName: string): CustomField<CustomerText> {
-    return Entity.customFieldSelector(fieldName, CustomerText);
+  static customField(fieldName: string): CustomFieldV2<CustomerText> {
+    return EntityV2.customFieldSelector(fieldName, CustomerText);
   }
 
   /**
@@ -86,41 +77,35 @@ export interface CustomerTextType {
   customer: string;
   language: string;
   longTextId: string;
-  longText?: string;
-}
-
-export interface CustomerTextTypeForceMandatory {
-  customer: string;
-  language: string;
-  longTextId: string;
-  longText: string;
+  longText?: string | null;
 }
 
 export namespace CustomerText {
+  const _fieldBuilder: FieldBuilder<Constructable<CustomerText>> = new FieldBuilder(CustomerText);
   /**
    * Static representation of the [[customer]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const CUSTOMER: StringField<CustomerText> = new StringField('Customer', CustomerText, 'Edm.String');
+  export const CUSTOMER = _fieldBuilder.buildEdmTypeField('Customer', 'Edm.String', false);
   /**
    * Static representation of the [[language]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LANGUAGE: StringField<CustomerText> = new StringField('Language', CustomerText, 'Edm.String');
+  export const LANGUAGE = _fieldBuilder.buildEdmTypeField('Language', 'Edm.String', false);
   /**
    * Static representation of the [[longTextId]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LONG_TEXT_ID: StringField<CustomerText> = new StringField('LongTextID', CustomerText, 'Edm.String');
+  export const LONG_TEXT_ID = _fieldBuilder.buildEdmTypeField('LongTextID', 'Edm.String', false);
   /**
    * Static representation of the [[longText]] property for query construction.
    * Use to reference this property in query operations such as 'select' in the fluent request API.
    */
-  export const LONG_TEXT: StringField<CustomerText> = new StringField('LongText', CustomerText, 'Edm.String');
+  export const LONG_TEXT = _fieldBuilder.buildEdmTypeField('LongText', 'Edm.String', true);
   /**
    * All fields of the CustomerText entity.
    */
-  export const _allFields: Array<StringField<CustomerText>> = [
+  export const _allFields: Array<EdmTypeField<CustomerText, 'Edm.String', false, true> | EdmTypeField<CustomerText, 'Edm.String', true, true>> = [
     CustomerText.CUSTOMER,
     CustomerText.LANGUAGE,
     CustomerText.LONG_TEXT_ID,
@@ -133,11 +118,11 @@ export namespace CustomerText {
   /**
    * All key fields of the CustomerText entity.
    */
-  export const _keyFields: Array<Field<CustomerText>> = [CustomerText.CUSTOMER, CustomerText.LANGUAGE, CustomerText.LONG_TEXT_ID];
+  export const _keyFields: Array<Field<CustomerText, boolean, boolean>> = [CustomerText.CUSTOMER, CustomerText.LANGUAGE, CustomerText.LONG_TEXT_ID];
   /**
    * Mapping of all key field names to the respective static field property CustomerText.
    */
-  export const _keys: { [keys: string]: Field<CustomerText> } = CustomerText._keyFields.reduce((acc: { [keys: string]: Field<CustomerText> }, field: Field<CustomerText>) => {
+  export const _keys: { [keys: string]: Field<CustomerText, boolean, boolean> } = CustomerText._keyFields.reduce((acc: { [keys: string]: Field<CustomerText, boolean, boolean> }, field: Field<CustomerText, boolean, boolean>) => {
     acc[field._fieldName] = field;
     return acc;
   }, {});
