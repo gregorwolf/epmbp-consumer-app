@@ -12,12 +12,11 @@ This example wouldn't work without the help of [Dennis Hempfing](https://github.
 
 ## Run local
 
-To run against the local mock service [epmbp-mock-service](https://github.com/gregorwolf/epmbp-mock-service) you have to create a file named *default-env.json* with the following content:
+To run against the local mock service [epmbp-mock-service](https://github.com/gregorwolf/epmbp-mock-service) you have to create a file named _default-env.json_ with the following content:
 
 ```json
 {
-  "VCAP_SERVICES": {
-  },
+  "VCAP_SERVICES": {},
   "destinations": [
     {
       "name": "ES5",
@@ -27,18 +26,24 @@ To run against the local mock service [epmbp-mock-service](https://github.com/gr
 }
 ```
 
-If you want to da a local test against the ES5 system then use this content for the *default-env.json*
+If you want to da a local test against the ES5 system / S/4HANA Cloud Sandbox then use this content for the _default-env.json_
 
 ```json
 {
-  "VCAP_SERVICES": {
-  },
+  "VCAP_SERVICES": {},
   "destinations": [
     {
       "name": "ES5",
       "url": "https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV",
       "username": "<Your ES5 Username>",
       "password": "<Your ES5 Password>"
+    },
+    {
+      "name": "APIBusinessHub",
+      "url": "https://sandbox.api.sap.com/s4hanacloud",
+      "headers": {
+        "APIKey": "Your API Key"
+      }
     }
   ]
 }
@@ -108,11 +113,11 @@ Authentication=PrincipalPropagation
 
 ## Deploy to SAP HANA XSA on Premise
 
-It's possible to deploy this application also to an on Premise instance of SAP HANA. 
+It's possible to deploy this application also to an on Premise instance of SAP HANA.
 
 ### Preperation
 
-The connection information to the ES5 system is provided via a user-provided service. Such a services needs a configuration file. The actual content can't be used in the destination. Please create *default-es5destination.json* in the root folder of the project and fill it with:
+The connection information to the ES5 system is provided via a user-provided service. Such a services needs a configuration file. The actual content can't be used in the destination. Please create _default-es5destination.json_ in the root folder of the project and fill it with:
 
 ```JSON
 {
@@ -121,7 +126,7 @@ The connection information to the ES5 system is provided via a user-provided ser
 }
 ```
 
-The credentials for the backend access should never appear in a Git repository. That is why I suggest to use a MTA extension. Please create the file *xsa.mtaext* in the root folder with the following content. Replace YourES5user and YourES5password with your own credentials.
+The credentials for the backend access should never appear in a Git repository. That is why I suggest to use a MTA extension. Please create the file _xsa.mtaext_ in the root folder with the following content. Replace YourES5user and YourES5password with your own credentials.
 
 ```YAML
 _schema-version: '3.1'
@@ -146,4 +151,4 @@ resources:
 
 ### Test
 
-Start the Application: epmbp-consumer-app-app via the created Application Route from the SAP HANA XS Advanced Cockpit. You should be able to open the Link */catalog/SEPMRA_I_Product_E - Public Service from ES5* and see a list of Products returned as JSON. 
+Start the Application: epmbp-consumer-app-app via the created Application Route from the SAP HANA XS Advanced Cockpit. You should be able to open the Link _/catalog/SEPMRA_I_Product_E - Public Service from ES5_ and see a list of Products returned as JSON.
