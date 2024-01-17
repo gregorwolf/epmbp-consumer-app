@@ -1,0 +1,8 @@
+###
+GET http://localhost:4004/odata/v4/business-partner
+###
+GET http://localhost:4004/odata/v4/business-partner/BusinessPartner
+  ?$top=10
+  &$select=BusinessPartner,BusinessPartnerFullName
+###
+GET http://localhost:4004/odata/v4/business-partner/getAllBusinessPartners()
