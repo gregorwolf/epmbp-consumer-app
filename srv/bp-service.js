@@ -25,7 +25,7 @@ module.exports = async function () {
       sdkBusinessPartnerAddress.BUSINESS_PARTNER.equals(bp)
     );
     const filter = [or(...bpFilter)];
-    
+
     // Create SAP Cloud SDK Filter for Country
     if (countries.length > 0) {
       const countryFilter = countries.map((country) =>
@@ -34,6 +34,7 @@ module.exports = async function () {
       filter.push(or(...countryFilter));
     }
     LOG._debug && LOG.debug("filter", JSON.stringify(filter));
+    const finalFilter = and(filter);
     const queryBuilderBPAddress = sdkBusinessPartnerAddress
       .requestBuilder()
       .getAll()
@@ -43,8 +44,10 @@ module.exports = async function () {
         sdkBusinessPartnerAddress.FULL_NAME
       )
       // TODO: Add filter filterBusinessPartnerAddress
-      .filter(and(filter));
-    const batchResponsesBPAddress = await bpBatch(queryBuilderBPAddress).execute({
+      .filter(finalFilter);
+    const batchResponsesBPAddress = await bpBatch(
+      queryBuilderBPAddress
+    ).execute({
       destinationName: "APIBusinessHub",
     });
     return batchResponsesBPAddress;
