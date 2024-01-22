@@ -1,0 +1,1931 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+  xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+  xmlns:sap="http://www.sap.com/Protocols/SAPData">
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIE',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+  </edmx:Reference>
+  <edmx:Reference
+    Uri="https://host:port/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation" />
+  </edmx:Reference>
+  <edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema Namespace="API_SLSPRICINGCONDITIONRECORD_SRV" xml:lang="en" sap:schema-version="1"
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="A_SlsPrcgCndnRecdSuplmntType" sap:label="Condition Supplements"
+        sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+          <PropertyRef Name="ConditionSequentialNumber" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionSequentialNumber" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Sequent. No. of Cond"
+          sap:quickinfo="Sequential number of the condition" />
+        <Property Name="ConditionTable" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Condition Table" />
+        <Property Name="ConditionApplication" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Application" />
+        <Property Name="ConditionType" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Condition Type" />
+        <Property Name="ConditionValidityEndDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date" />
+        <Property Name="ConditionValidityStartDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid-From Date" />
+        <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"
+          sap:display-format="UpperCase" sap:label="Created By"
+          sap:quickinfo="Name of Person Responsible for Creating the Object" />
+        <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"
+          sap:label="Created On" sap:quickinfo="Record Created On" />
+        <Property Name="ConditionTextID" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Text number" sap:quickinfo="Number of texts" />
+        <Property Name="PricingScaleType" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Scale Type" />
+        <Property Name="PricingScaleBasis" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Scale Base Type" />
+        <Property Name="ConditionScaleQuantity" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="BaseUnit" sap:label="Scale Quantity" sap:quickinfo="Condition Scale Quantity" />
+        <Property Name="ConditionScaleQuantityUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Scale Unit of Meas." sap:quickinfo="Condition Scale Unit of Measure"
+          sap:semantics="unit-of-measure" />
+        <Property Name="ConditionScaleAmount" Type="Edm.Decimal" Precision="16" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Scale Value" />
+        <Property Name="ConditionScaleAmountCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Scale Currency" sap:semantics="currency-code" />
+        <Property Name="ConditionCalculationType" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Calculation Type"
+          sap:quickinfo="Calculation Type for Condition" />
+        <Property Name="ConditionRateValue" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Condition Amount"
+          sap:quickinfo="Condition amount or percentage where no scale exists" />
+        <Property Name="ConditionRateValueUnit" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ConditionRateRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionRateRatioUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Unit of Measure" sap:semantics="unit-of-measure" />
+        <Property Name="ConditionRateAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ConditionQuantity" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:unit="ConditionQuantityUnit" sap:label="Pricing Unit"
+          sap:quickinfo="Condition Pricing Unit" />
+        <Property Name="ConditionQuantityUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Unit of Measure" sap:quickinfo="Condition Unit" sap:semantics="unit-of-measure" />
+        <Property Name="ConditionToBaseQtyNmrtr" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:label="NumeratorForConvers."
+          sap:quickinfo="Numerator for converting condition units to base units" />
+        <Property Name="ConditionToBaseQtyDnmntr" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:label="Denom.for Conversion"
+          sap:quickinfo="Denominator for converting condition units to base units" />
+        <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure"
+          sap:semantics="unit-of-measure" />
+        <Property Name="ConditionLowerLimit" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Lower limit"
+          sap:quickinfo="Lower limit of the condition rate/amount" />
+        <Property Name="ConditionLowerLimitAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionLowerLimitRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionUpperLimit" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Upper limit"
+          sap:quickinfo="Upper limit for the condition rate" />
+        <Property Name="ConditionUpperLimitAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionUpperLimitRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionAlternativeCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Currency (for Cumulation Fields)" sap:semantics="currency-code" />
+        <Property Name="ConditionExclusion" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Exclusion"
+          sap:quickinfo="Condition exclusion indicator" />
+        <Property Name="ConditionIsDeleted" Type="Edm.Boolean" sap:label="Deletion Indicator"
+          sap:quickinfo="Deletion Indicator for Condition Record" />
+        <Property Name="AdditionalValueDays" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Addit. Value Days"
+          sap:quickinfo="Additional Value Days" />
+        <Property Name="FixedValueDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"
+          sap:label="Fixed Value Date" />
+        <Property Name="PaymentTerms" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Terms of Payment" sap:quickinfo="Key for Terms of Payment" />
+        <Property Name="CndnMaxNumberOfSalesOrders" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Max.number.of.orders"
+          sap:quickinfo="Maximum number of sales orders per condition record" />
+        <Property Name="MinimumConditionBasisValue" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="BaseUnit" sap:label="Min.cond.base value"
+          sap:quickinfo="Minimum condition base value" />
+        <Property Name="MaximumConditionBasisValue" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="BaseUnit" sap:label="Max.cond.base value"
+          sap:quickinfo="Maximum condition base value" />
+        <Property Name="MaximumConditionAmount" Type="Edm.Decimal" Precision="14" Scale="3"
+          sap:unit="ConditionAlternativeCurrency" sap:label="Max.condition value"
+          sap:quickinfo="Maximum condition value" />
+        <Property Name="IncrementalScale" Type="Edm.String" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Incremental scale"
+          sap:quickinfo="Number of incremental scale" />
+        <Property Name="PricingScaleLine" Type="Edm.String" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Pricing scale"
+          sap:quickinfo="Scale number for pricing" />
+        <Property Name="ConditionReleaseStatus" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Release Status" />
+        <Property Name="SalesPriceApprovalRequest" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Approval Request"
+          sap:quickinfo="Approval Request for Price Conditions" />
+        <Property Name="ConditionChangeReason" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Cndn Change Reason"
+          sap:quickinfo="Reason for Changing Condition Record" />
+        <Property Name="PrevApprovedConditionRecord" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Previously Approved Condition Record" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdValidity"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_66BDC3B09DE48CB469A4D23A8CBBD859"
+          FromRole="FromRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859"
+          ToRole="ToRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecordScale"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_D07DD6E36895AFEB989C4F6388E6468D"
+          FromRole="FromRole_assoc_D07DD6E36895AFEB989C4F6388E6468D"
+          ToRole="ToRole_assoc_D07DD6E36895AFEB989C4F6388E6468D" />
+        <NavigationProperty Name="to_SlsPrcgCndnSupplementText"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_C722D36DC2514AFC46B126014FEAD5A4"
+          FromRole="FromRole_assoc_C722D36DC2514AFC46B126014FEAD5A4"
+          ToRole="ToRole_assoc_C722D36DC2514AFC46B126014FEAD5A4" />
+        <NavigationProperty Name="to_SlsPrcgConditionRecord"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_7A2D768E758D5C99F26B0CE1C6B396C8"
+          FromRole="FromRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8"
+          ToRole="ToRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8" />
+      </EntityType>
+      <EntityType Name="A_SlsPrcgCndnRecdValidityType" sap:label="Condition Record Validity"
+        sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+          <PropertyRef Name="ConditionValidityEndDate" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0"
+          sap:display-format="Date" sap:label="Valid To"
+          sap:quickinfo="Validity end date of the condition record" />
+        <Property Name="ConditionValidityStartDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="Valid From"
+          sap:quickinfo="Validity start date of the condition record" />
+        <Property Name="ConditionApplication" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Application" />
+        <Property Name="ConditionType" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Condition Type" />
+        <Property Name="ConditionReleaseStatus" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Release Status" />
+        <Property Name="DepartureCountry" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Departure Ctry/Reg."
+          sap:quickinfo="Departure Country/Region (from which the goods are sent)" />
+        <Property Name="SalesDocument" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Sales Document" />
+        <Property Name="SalesDocumentItem" Type="Edm.String" MaxLength="6"
+          sap:display-format="NonNegative" sap:label="Sales Document Item" />
+        <Property Name="BillableControl" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Accounting Indicator" />
+        <Property Name="Industry" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Industry" sap:quickinfo="Industry Key" />
+        <Property Name="CityCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="City Code" />
+        <Property Name="ConditionContract" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Contract" />
+        <Property Name="County" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="County Code" />
+        <Property Name="EngagementProject" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Customer Project ID"
+          sap:quickinfo="Commercial Project ID" />
+        <Property Name="ConfigurationNumber" Type="Edm.String" MaxLength="18"
+          sap:display-format="NonNegative" sap:label="Internal Object No."
+          sap:quickinfo="Configuration (Internal Object Number)" />
+        <Property Name="BR_NFDocumentType" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Document type" />
+        <Property Name="BRSpcfcFreeDefinedField1" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Dynamic Key Field 1" />
+        <Property Name="BRSpcfcFreeDefinedField2" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Dynamic Key Field 2" />
+        <Property Name="BRSpcfcFreeDefinedField3" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Dynamic Key Field 3" />
+        <Property Name="InternationalArticleNumber" Type="Edm.String" MaxLength="18"
+          sap:display-format="UpperCase" sap:label="EAN/UPC"
+          sap:quickinfo="International Article Number (EAN/UPC)" />
+        <Property Name="TechnicalObjectType" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Object Type"
+          sap:quickinfo="Type of Technical Object" />
+        <Property Name="Equipment" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase"
+          sap:label="Equipment" sap:quickinfo="Equipment Number" />
+        <Property Name="CustomerHierarchy" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Customer" />
+        <Property Name="IncotermsClassification" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Incoterms" sap:quickinfo="Incoterms (Part 1)" />
+        <Property Name="IncotermsTransferLocation" Type="Edm.String" MaxLength="28"
+          sap:label="Incoterms (Part 2)" />
+        <Property Name="AccountTaxType" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Tax Type" />
+        <Property Name="TxRlvnceClassfctnForArgentina" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Tax Rel. Classif."
+          sap:quickinfo="Tax relevant classification" />
+        <Property Name="BR_TaxCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+          sap:label="Tax Code" sap:quickinfo="SD tax code" />
+        <Property Name="LocalSalesTaxApplicabilityCode" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="LST CST Appl. Code"
+          sap:quickinfo="LST CST Applicability Code" />
+        <Property Name="CustomerGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Customer Group" />
+        <Property Name="CustomerPriceGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Price Group"
+          sap:quickinfo="Customer Price Group" />
+        <Property Name="MaterialPricingGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Material Price Grp"
+          sap:quickinfo="Material Price Group" />
+        <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Sold-to Party" />
+        <Property Name="BPForSoldToParty" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Business Partner"
+          sap:quickinfo="Business Partner Number" />
+        <Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Customer" sap:quickinfo="Customer number" />
+        <Property Name="BPForCustomer" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Business Partner"
+          sap:quickinfo="Business Partner Number" />
+        <Property Name="PayerParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Payer" />
+        <Property Name="BPForPayerParty" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Business Partner"
+          sap:quickinfo="Business Partner Number" />
+        <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Ship-to Party" />
+        <Property Name="BPForShipToParty" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Business Partner"
+          sap:quickinfo="Business Partner Number" />
+        <Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Supplier" sap:quickinfo="Supplier's Account Number" />
+        <Property Name="BPForSupplier" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Business Partner"
+          sap:quickinfo="Business Partner Number" />
+        <Property Name="DestinationCountry" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Dest. Country/Region"
+          sap:quickinfo="Destination Country/Region" />
+        <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9"
+          sap:display-format="UpperCase" sap:label="Material Group" />
+        <Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase"
+          sap:label="Material" sap:quickinfo="Material Number" />
+        <Property Name="ReturnsRefundExtent" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Refund Code" sap:quickinfo="Returns Refund Code" />
+        <Property Name="AdditionalMaterialGroup1" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Material Group 1" />
+        <Property Name="AdditionalMaterialGroup2" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Material Group 2" />
+        <Property Name="AdditionalMaterialGroup3" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Material Group 3" />
+        <Property Name="AdditionalMaterialGroup4" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Material Group 4" />
+        <Property Name="AdditionalMaterialGroup5" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Material Group 5" />
+        <Property Name="Personnel" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative"
+          sap:label="Personnel Number" />
+        <Property Name="PriceListType" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Price List Type" />
+        <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Postal Code" />
+        <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="Region" sap:quickinfo="Region (State, Province, County)" />
+        <Property Name="EngagementProjectServiceOrg" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Service Organization" />
+        <Property Name="RequirementSegment" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Requirement Segment" />
+        <Property Name="StockSegment" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Stock Segment" />
+        <Property Name="Division" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+          sap:label="Division" />
+        <Property Name="CommodityCode" Type="Edm.String" MaxLength="17"
+          sap:display-format="UpperCase" sap:label="Commodity Code" />
+        <Property Name="ConsumptionTaxCtrlCode" Type="Edm.String" MaxLength="16"
+          sap:display-format="UpperCase" sap:label="Control Code"
+          sap:quickinfo="Control code for consumption taxes in foreign trade" />
+        <Property Name="BRSpcfcTaxBasePercentageCode" Type="Edm.String" MaxLength="1"
+          sap:display-format="NonNegative" sap:label="Tax Base"
+          sap:quickinfo="Tax Base in Percentage" />
+        <Property Name="BRSpcfcTxGrpDynTaxExceptions" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Tax Group"
+          sap:quickinfo="Tax Group for Dynamic Tax Exceptions" />
+        <Property Name="CustomerTaxClassification1" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.1 Customer"
+          sap:quickinfo="Tax Classification 1 for Customer" />
+        <Property Name="CustomerTaxClassification2" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.2 Customer"
+          sap:quickinfo="Tax Classification 2 for Customer" />
+        <Property Name="CustomerTaxClassification3" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.3 Customer"
+          sap:quickinfo="Tax Classification 3 for Customer" />
+        <Property Name="CustomerTaxClassification4" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.4 Customer"
+          sap:quickinfo="Tax Classification 4 for Customer" />
+        <Property Name="CustomerTaxClassification5" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.5 Customer"
+          sap:quickinfo="Tax Classification 5 for Customer" />
+        <Property Name="CustomerTaxClassification6" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.6 Customer"
+          sap:quickinfo="Tax Classification 6 for Customer" />
+        <Property Name="CustomerTaxClassification7" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.7 Customer"
+          sap:quickinfo="Tax Classification 7 for Customer" />
+        <Property Name="CustomerTaxClassification8" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.8 Customer"
+          sap:quickinfo="Tax Classification 8 for Customer" />
+        <Property Name="CustomerTaxClassification9" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.9 Customer"
+          sap:quickinfo="Tax Classification 9 for Customer" />
+        <Property Name="ProductTaxClassification1" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class. Material"
+          sap:quickinfo="Tax Classification of Material" />
+        <Property Name="ProductTaxClassification2" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.2 Material"
+          sap:quickinfo="Tax Classification 2 for Material" />
+        <Property Name="ProductTaxClassification3" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.3 Material"
+          sap:quickinfo="Tax Classification 3 for Material" />
+        <Property Name="ProductTaxClassification4" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.4 Material"
+          sap:quickinfo="Tax Classification 4 for Material" />
+        <Property Name="ProductTaxClassification5" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.5 Material"
+          sap:quickinfo="Tax Classification 5 for Material" />
+        <Property Name="ProductTaxClassification6" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.6 Material"
+          sap:quickinfo="Tax Classification 6 for Material" />
+        <Property Name="ProductTaxClassification7" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.7 Material"
+          sap:quickinfo="Tax Classification 7 for Material" />
+        <Property Name="ProductTaxClassification8" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.8 Material"
+          sap:quickinfo="Tax Classification 8 for Material" />
+        <Property Name="ProductTaxClassification9" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Tax Class.9 Material"
+          sap:quickinfo="Tax Classification 9 for Material" />
+        <Property Name="TradingContract" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Trading Contract" />
+        <Property Name="TradingContractItem" Type="Edm.String" MaxLength="6"
+          sap:display-format="NonNegative" sap:label="Item Number"
+          sap:quickinfo="Item Number of Trading Contract" />
+        <Property Name="TaxJurisdiction" Type="Edm.String" MaxLength="15"
+          sap:display-format="UpperCase" sap:label="Tax Jurisdiction" />
+        <Property Name="BRSpcfcTaxDepartureRegion" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Ship from"
+          sap:quickinfo="Ship from location (tax region)" />
+        <Property Name="BRSpcfcTaxDestinationRegion" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Ship to"
+          sap:quickinfo="Ship to location (tax region)" />
+        <Property Name="MainItemMaterialPricingGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="MnItem MatPricingGrp"
+          sap:quickinfo="Material pricing group of main item" />
+        <Property Name="MainItemPricingRefMaterial" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Pricing Ref.Material"
+          sap:quickinfo="Pricing reference material of main item" />
+        <Property Name="VariantCondition" Type="Edm.String" MaxLength="26" sap:label="Variant Key"
+          sap:quickinfo="Variant Condition Key" />
+        <Property Name="ValueAddedServiceChargeCode" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="VAS Charge Code"
+          sap:quickinfo="VAS Charge Codes" />
+        <Property Name="SDDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="SD Document" sap:quickinfo="Sales and Distribution Document Number" />
+        <Property Name="ReferenceSDDocument" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Reference Document"
+          sap:quickinfo="Document Number of Reference Document" />
+        <Property Name="ReferenceSDDocumentItem" Type="Edm.String" MaxLength="6"
+          sap:display-format="NonNegative" sap:label="Reference Item"
+          sap:quickinfo="Item Number of the Reference Item" />
+        <Property Name="SalesOffice" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Sales Office" />
+        <Property Name="SalesGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="Sales Group" />
+        <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Sales Organization" />
+        <Property Name="SalesOrderSalesOrganization" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Sales Org. of Order"
+          sap:quickinfo="Sales organization of sales order" />
+        <Property Name="OrderQuantityUnit" Type="Edm.String" MaxLength="3" sap:label="Sales Unit"
+          sap:semantics="unit-of-measure" />
+        <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Distribution Channel" />
+        <Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Document Currency"
+          sap:quickinfo="SD Document Currency" sap:semantics="currency-code" />
+        <Property Name="WBSElementInternalID" Type="Edm.String" MaxLength="24"
+          sap:display-format="NonNegative" sap:label="WBS Bill Elem."
+          sap:quickinfo="WBS Billing Element" />
+        <Property Name="WBSElementExternalID" Type="Edm.String" MaxLength="24"
+          sap:display-format="UpperCase" sap:label="WBS Element"
+          sap:quickinfo="Work Breakdown Structure Element (WBS Element) Edited" />
+        <Property Name="WorkPackage" Type="Edm.String" MaxLength="24"
+          sap:display-format="NonNegative" sap:label="WBS Work Packg."
+          sap:quickinfo="WBS Work Package" />
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Plant" />
+        <Property Name="PlantRegion" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="Region of Dlv. Plant" sap:quickinfo="Region in which plant is located" />
+        <Property Name="WorkItem" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Work Item ID" />
+        <Property Name="ConditionProcessingStatus" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Processing Status"
+          sap:quickinfo="Processing status for conditions" />
+        <Property Name="PricingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"
+          sap:label="Cndn Pricing Date" sap:quickinfo="Condition Pricing Date" />
+        <Property Name="ConditionIsExclusive" Type="Edm.Boolean" sap:label="Exclusive"
+          sap:quickinfo="Indicator condition exclusive" />
+        <Property Name="ConditionScaleBasisValue" Type="Edm.String" MaxLength="7"
+          sap:display-format="NonNegative" sap:label="Scale Base Value"
+          sap:quickinfo="Condition Scale Base Value" />
+        <Property Name="TaxCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+          sap:label="Tax Code" sap:quickinfo="Tax on Sales/Purchases Code" />
+        <Property Name="ServiceDocument" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Transaction ID" />
+        <Property Name="ServiceDocumentItem" Type="Edm.String" MaxLength="6"
+          sap:display-format="NonNegative" sap:label="Item Number in Doc."
+          sap:quickinfo="Shortened Item Number in Document" />
+        <Property Name="TimeSheetOvertimeCategory" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Overtime Category" />
+        <Property Name="SalesSDDocumentCategory" Type="Edm.String" MaxLength="4"
+          sap:label="SD Document Category" />
+        <Property Name="ReturnReason" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="Return Reason" />
+        <Property Name="ProdUnivHierarchyNode" Type="Edm.String" MaxLength="24"
+          sap:display-format="UpperCase" sap:label="Node" sap:quickinfo="Product Hierarchy Node" />
+        <Property Name="ProductHierarchyNode" Type="Edm.String" MaxLength="24"
+          sap:display-format="UpperCase" sap:label="Prod. Hier. Node"
+          sap:quickinfo="Product Hierarchy Node" />
+        <Property Name="CustomerConditionGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="CustomerCondGrp"
+          sap:quickinfo="Customer Attribute for Condition Groups" />
+        <Property Name="ShippingType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+          sap:label="Shipping Type" />
+        <Property Name="SubscriptionContractDuration" Type="Edm.String" MaxLength="13"
+          sap:display-format="NonNegative" sap:label="Provider Durat."
+          sap:quickinfo="Numerical Value of Duration" />
+        <Property Name="SubscrpnContrDurationUnit" Type="Edm.String" MaxLength="12"
+          sap:display-format="UpperCase" sap:label="Time Unit"
+          sap:quickinfo="IS-T: Unit of Duration for a Telco Contract" />
+        <Property Name="SubscriptionContractLockReason" Type="Edm.String" MaxLength="8"
+          sap:display-format="UpperCase" sap:label="Lock Reason" />
+        <Property Name="CrsCtlgMappgPriceVersionNumber" Type="Edm.String" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Price Version" />
+        <Property Name="OrderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Order Type" />
+        <Property Name="SalesDocumentType" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Sales Document Type" />
+        <Property Name="SDDocumentReason" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Order Reason"
+          sap:quickinfo="Order Reason (Reason for the Business Transaction)" />
+        <Property Name="VolumeRebateGroup" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Volume Rebate Group"
+          sap:quickinfo="Volume rebate group" />
+        <Property Name="ValuationType" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Valuation Type" />
+        <Property Name="SalesDistrict" Type="Edm.String" MaxLength="6"
+          sap:display-format="UpperCase" sap:label="Sales District" />
+        <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Batch" sap:quickinfo="Batch Number" />
+        <Property Name="PurgDocSupplyingPlant" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Supplying Plant"
+          sap:quickinfo="Supplying (issuing) plant in case of stock transport order" />
+        <Property Name="MatUsageIndicator" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Usage" sap:quickinfo="Usage Indicator" />
+        <Property Name="ShippingCondition" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Shipping Conditions" />
+        <Property Name="PlantCounty" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="County of Dlv.Plant" sap:quickinfo="County in which plant is located" />
+        <Property Name="PlantCity" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="City of Deliv. Plant" sap:quickinfo="City in which plant is located" />
+        <Property Name="MaterialExternalGroup" Type="Edm.String" MaxLength="18"
+          sap:display-format="UpperCase" sap:label="Ext. Material Group"
+          sap:quickinfo="External Material Group" />
+        <Property Name="CustomerHierarchyRootNode" Type="Edm.String" MaxLength="20"
+          sap:display-format="UpperCase" sap:label="CH Rt. Nd. ID"
+          sap:quickinfo="Customer Hierarchy Root Node ID (Hier ID)" />
+        <Property Name="CustomerHierarchyNodeID" Type="Edm.String" MaxLength="40"
+          sap:display-format="UpperCase" sap:label="Cust. Hier. Node ID"
+          sap:quickinfo="Customer Hierarchy Node ID" />
+        <Property Name="CustomerHierarchyNodeType" Type="Edm.String" MaxLength="30"
+          sap:display-format="UpperCase" sap:label="Cust. Hier. Nd. Type"
+          sap:quickinfo="Customer Hierarchy Node Type" />
+        <Property Name="AdditionalCustomerGroup1" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Customer Group 1" />
+        <Property Name="AdditionalCustomerGroup2" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Customer Group 2" />
+        <Property Name="AdditionalCustomerGroup3" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Customer Group 3" />
+        <Property Name="AdditionalCustomerGroup4" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Customer Group 4" />
+        <Property Name="AdditionalCustomerGroup5" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Customer Group 5" />
+        <Property Name="SDDocumentItem" Type="Edm.String" MaxLength="6"
+          sap:display-format="NonNegative" sap:label="Item (SD)"
+          sap:quickinfo="Item number of the SD document" />
+        <Property Name="CndnBillingDocumentCategory" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Billing Category" />
+        <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase"
+          sap:label="Country/Region Key" />
+        <Property Name="PRAContract" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+          sap:label="Contract" sap:quickinfo="Contract Number" />
+        <Property Name="Well" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase"
+          sap:label="Well" sap:quickinfo="Well ID number" />
+        <Property Name="WellCompletion" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Well Completion"
+          sap:quickinfo="Well Completion Number" />
+        <Property Name="MeasurementPoint" Type="Edm.String" MaxLength="20"
+          sap:display-format="UpperCase" sap:label="Measurement Point"
+          sap:quickinfo="Measurement point number" />
+        <Property Name="PricingFormulaNumber" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Formula ID" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdSuplmnt"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_C9E8E350233D126D1870D9591D1CA300"
+          FromRole="FromRole_assoc_C9E8E350233D126D1870D9591D1CA300"
+          ToRole="ToRole_assoc_C9E8E350233D126D1870D9591D1CA300" />
+        <NavigationProperty Name="to_SlsPrcgConditionRecord"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_5F47B9A276FCBC7051E5300BA9BCCCD7"
+          FromRole="FromRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7"
+          ToRole="ToRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" />
+      </EntityType>
+      <EntityType Name="A_SlsPrcgCndnRecordScaleType" sap:label="Pricing Scales"
+        sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+          <PropertyRef Name="ConditionSequentialNumber" />
+          <PropertyRef Name="ConditionScaleLine" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionSequentialNumber" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Sequent. No. of Cond"
+          sap:quickinfo="Sequential number of the condition" />
+        <Property Name="ConditionScaleLine" Type="Edm.String" Nullable="false" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Line number"
+          sap:quickinfo="Current number of the line scale" />
+        <Property Name="ConditionScaleQuantity" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="ConditionScaleQuantityUnit" sap:label="Scale Quantity"
+          sap:quickinfo="Condition Scale Quantity" />
+        <Property Name="ConditionScaleQuantityUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Scale Unit of Meas." sap:quickinfo="Condition Scale Unit of Measure"
+          sap:semantics="unit-of-measure" />
+        <Property Name="ConditionScaleAmount" Type="Edm.Decimal" Precision="16" Scale="3"
+          sap:unit="ConditionScaleAmountCurrency" sap:label="Scale Value" />
+        <Property Name="ConditionScaleAmountCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Scale Currency" sap:semantics="currency-code" />
+        <Property Name="ConditionRateValue" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionRateValueUnit" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ConditionRateRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionRateRatioUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Unit of Measure" sap:semantics="unit-of-measure" />
+        <Property Name="ConditionRateAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdSuplmnt"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_2A2E895BB4BD1650AF5FD8F07A8053C6"
+          FromRole="FromRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6"
+          ToRole="ToRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" />
+        <NavigationProperty Name="to_SlsPrcgConditionRecord"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_A8740D8F3567BFDDA7CB94F012A7DBB6"
+          FromRole="FromRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6"
+          ToRole="ToRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" />
+      </EntityType>
+      <EntityType Name="A_SlsPrcgCndnSupplementTextType"
+        sap:label="Condition Supplement Descriptions" sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+          <PropertyRef Name="ConditionSequentialNumber" />
+          <PropertyRef Name="Language" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionSequentialNumber" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Sequent. No. of Cond"
+          sap:quickinfo="Sequential number of the condition" />
+        <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:label="Language Key" />
+        <Property Name="ConditionText" Type="Edm.String" MaxLength="40" sap:label="Description" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdSuplmnt"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_191E9FBCDD42F80A6AC85418B4390363"
+          FromRole="FromRole_assoc_191E9FBCDD42F80A6AC85418B4390363"
+          ToRole="ToRole_assoc_191E9FBCDD42F80A6AC85418B4390363" />
+      </EntityType>
+      <EntityType Name="A_SlsPrcgConditionRecordType" sap:label="Condition Records"
+        sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionSequentialNumber" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Sequent. No. of Cond"
+          sap:quickinfo="Sequential number of the condition" />
+        <Property Name="ConditionTable" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Condition Table" />
+        <Property Name="ConditionApplication" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Application" />
+        <Property Name="ConditionType" Type="Edm.String" MaxLength="4"
+          sap:display-format="UpperCase" sap:label="Condition Type" />
+        <Property Name="ConditionValidityEndDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date" />
+        <Property Name="ConditionValidityStartDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid-From Date" />
+        <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"
+          sap:display-format="UpperCase" sap:label="Created By"
+          sap:quickinfo="Name of Person Responsible for Creating the Object" />
+        <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"
+          sap:label="Created On" sap:quickinfo="Record Created On" />
+        <Property Name="ConditionTextID" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Text number" sap:quickinfo="Number of texts" />
+        <Property Name="PricingScaleType" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Scale Type" />
+        <Property Name="PricingScaleBasis" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Scale Base Type" />
+        <Property Name="ConditionScaleQuantity" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="ConditionScaleQuantityUnit" sap:label="Scale Quantity"
+          sap:quickinfo="Condition Scale Quantity" />
+        <Property Name="ConditionScaleQuantityUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Scale Unit of Meas." sap:quickinfo="Condition Scale Unit of Measure"
+          sap:semantics="unit-of-measure" />
+        <Property Name="ConditionScaleAmount" Type="Edm.Decimal" Precision="16" Scale="3"
+          sap:unit="ConditionScaleAmountCurrency" sap:label="Scale Value" />
+        <Property Name="ConditionScaleAmountCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Scale Currency" sap:semantics="currency-code" />
+        <Property Name="ConditionCalculationType" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Calculation Type"
+          sap:quickinfo="Calculation Type for Condition" />
+        <Property Name="ConditionRateValue" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Condition Amount"
+          sap:quickinfo="Condition amount or percentage where no scale exists" />
+        <Property Name="ConditionRateValueUnit" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ConditionRateRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionRateRatioUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Unit of Measure" sap:semantics="unit-of-measure" />
+        <Property Name="ConditionRateAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Unit (Currency or Percentage)" sap:semantics="currency-code" />
+        <Property Name="ConditionQuantity" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:unit="ConditionQuantityUnit" sap:label="Pricing Unit"
+          sap:quickinfo="Condition Pricing Unit" />
+        <Property Name="ConditionQuantityUnit" Type="Edm.String" MaxLength="3"
+          sap:label="Unit of Measure" sap:quickinfo="Condition Unit" sap:semantics="unit-of-measure" />
+        <Property Name="ConditionToBaseQtyNmrtr" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:label="NumeratorForConvers."
+          sap:quickinfo="Numerator for converting condition units to base units" />
+        <Property Name="ConditionToBaseQtyDnmntr" Type="Edm.Decimal" Precision="5" Scale="0"
+          sap:label="Denom.for Conversion"
+          sap:quickinfo="Denominator for converting condition units to base units" />
+        <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure"
+          sap:semantics="unit-of-measure" />
+        <Property Name="ConditionLowerLimit" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Lower limit"
+          sap:quickinfo="Lower limit of the condition rate/amount" />
+        <Property Name="ConditionLowerLimitAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionLowerLimitRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionUpperLimit" Type="Edm.Decimal" Precision="12" Scale="3"
+          sap:unit="ConditionRateValueUnit" sap:label="Upper limit"
+          sap:quickinfo="Upper limit for the condition rate" />
+        <Property Name="ConditionUpperLimitAmount" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionCurrency" sap:label="Amount"
+          sap:quickinfo="Condition Amount or Percentage" />
+        <Property Name="ConditionUpperLimitRatio" Type="Edm.Decimal" Precision="24" Scale="9"
+          sap:unit="ConditionRateRatioUnit" sap:label="Ratio"
+          sap:quickinfo="Condition Ratio (in Percent or Per Mille)" />
+        <Property Name="ConditionAlternativeCurrency" Type="Edm.String" MaxLength="5"
+          sap:display-format="UpperCase" sap:label="Condition Currency"
+          sap:quickinfo="Condition Currency (for Cumulation Fields)" sap:semantics="currency-code" />
+        <Property Name="ConditionExclusion" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Exclusion"
+          sap:quickinfo="Condition exclusion indicator" />
+        <Property Name="ConditionIsDeleted" Type="Edm.Boolean" sap:label="Deletion Indicator"
+          sap:quickinfo="Deletion Indicator for Condition Record" />
+        <Property Name="AdditionalValueDays" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Addit. Value Days"
+          sap:quickinfo="Additional Value Days" />
+        <Property Name="FixedValueDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"
+          sap:label="Fixed Value Date" />
+        <Property Name="PaymentTerms" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+          sap:label="Terms of Payment" sap:quickinfo="Key for Terms of Payment" />
+        <Property Name="CndnMaxNumberOfSalesOrders" Type="Edm.String" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Max.number.of.orders"
+          sap:quickinfo="Maximum number of sales orders per condition record" />
+        <Property Name="MinimumConditionBasisValue" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="ConditionQuantityUnit" sap:label="Min.cond.base value"
+          sap:quickinfo="Minimum condition base value" />
+        <Property Name="MaximumConditionBasisValue" Type="Edm.Decimal" Precision="15" Scale="3"
+          sap:unit="ConditionQuantityUnit" sap:label="Max.cond.base value"
+          sap:quickinfo="Maximum condition base value" />
+        <Property Name="MaximumConditionAmount" Type="Edm.Decimal" Precision="14" Scale="3"
+          sap:unit="ConditionAlternativeCurrency" sap:label="Max.condition value"
+          sap:quickinfo="Maximum condition value" />
+        <Property Name="IncrementalScale" Type="Edm.String" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Incremental scale"
+          sap:quickinfo="Number of incremental scale" />
+        <Property Name="PricingScaleLine" Type="Edm.String" MaxLength="4"
+          sap:display-format="NonNegative" sap:label="Pricing scale"
+          sap:quickinfo="Scale number for pricing" />
+        <Property Name="ConditionReleaseStatus" Type="Edm.String" MaxLength="1"
+          sap:display-format="UpperCase" sap:label="Release Status" />
+        <Property Name="SalesPriceApprovalRequest" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Approval Request"
+          sap:quickinfo="Approval Request for Price Conditions" />
+        <Property Name="ConditionChangeReason" Type="Edm.String" MaxLength="3"
+          sap:display-format="UpperCase" sap:label="Cndn Change Reason"
+          sap:quickinfo="Reason for Changing Condition Record" />
+        <Property Name="PrevApprovedConditionRecord" Type="Edm.String" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Previously Approved Condition Record" />
+        <Property Name="ConditionTaxCode" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="Tax Code"
+          sap:quickinfo="Tax on Sales/Purchases Code" />
+        <Property Name="ConditionWithholdingTaxCode" Type="Edm.String" MaxLength="2"
+          sap:display-format="UpperCase" sap:label="W/Tax Code" sap:quickinfo="Withholding Tax Code" />
+        <Property Name="TaxExemptionLicense" Type="Edm.String" MaxLength="24"
+          sap:display-format="UpperCase" sap:label="License Number"
+          sap:quickinfo="Tax Exemption License Number" />
+        <Property Name="LicenseGrantDate" Type="Edm.DateTime" Precision="0"
+          sap:display-format="Date" sap:label="License Date" sap:quickinfo="Date License Granted" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdSuplmnt"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_B431A6489012C00DAEA40C6C0011021C"
+          FromRole="FromRole_assoc_B431A6489012C00DAEA40C6C0011021C"
+          ToRole="ToRole_assoc_B431A6489012C00DAEA40C6C0011021C" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecdValidity"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_0B464C6B7360065BE8B8C6DF3BF967F2"
+          FromRole="FromRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2"
+          ToRole="ToRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2" />
+        <NavigationProperty Name="to_SlsPrcgCndnRecordScale"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_CBD47B59B403B8B34B4D2FAE42E54ABF"
+          FromRole="FromRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF"
+          ToRole="ToRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" />
+        <NavigationProperty Name="to_SlsPrcgConditionRecordText"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_0000A70AEE0DDD66B5679A7E5F7AD149"
+          FromRole="FromRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149"
+          ToRole="ToRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149" />
+      </EntityType>
+      <EntityType Name="A_SlsPrcgConditionRecordTextType" sap:label="Condition Record Descriptions"
+        sap:content-version="1">
+        <Key>
+          <PropertyRef Name="ConditionRecord" />
+          <PropertyRef Name="ConditionSequentialNumber" />
+          <PropertyRef Name="Language" />
+        </Key>
+        <Property Name="ConditionRecord" Type="Edm.String" Nullable="false" MaxLength="10"
+          sap:display-format="UpperCase" sap:label="Condition Record No."
+          sap:quickinfo="Number of Condition Record" />
+        <Property Name="ConditionSequentialNumber" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:display-format="NonNegative" sap:label="Sequent. No. of Cond"
+          sap:quickinfo="Sequential number of the condition" />
+        <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2"
+          sap:label="Language Key" />
+        <Property Name="ConditionText" Type="Edm.String" MaxLength="40" sap:label="Description" />
+        <Property Name="ETag" Type="Edm.String" MaxLength="40" ConcurrencyMode="Fixed" />
+        <NavigationProperty Name="to_SlsPrcgConditionRecord"
+          Relationship="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8"
+          FromRole="FromRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8"
+          ToRole="ToRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" />
+      </EntityType>
+      <Association Name="assoc_D07DD6E36895AFEB989C4F6388E6468D" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="1"
+          Role="FromRole_assoc_D07DD6E36895AFEB989C4F6388E6468D" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType" Multiplicity="*"
+          Role="ToRole_assoc_D07DD6E36895AFEB989C4F6388E6468D" />
+      </Association>
+      <Association Name="assoc_C722D36DC2514AFC46B126014FEAD5A4" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="1"
+          Role="FromRole_assoc_C722D36DC2514AFC46B126014FEAD5A4" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnSupplementTextType"
+          Multiplicity="*" Role="ToRole_assoc_C722D36DC2514AFC46B126014FEAD5A4" />
+      </Association>
+      <Association Name="assoc_7A2D768E758D5C99F26B0CE1C6B396C8" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="1"
+          Role="FromRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType"
+          Multiplicity="0..1" Role="ToRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8" />
+      </Association>
+      <Association Name="assoc_66BDC3B09DE48CB469A4D23A8CBBD859" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="1"
+          Role="FromRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType" Multiplicity="*"
+          Role="ToRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859" />
+      </Association>
+      <Association Name="assoc_B431A6489012C00DAEA40C6C0011021C" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType" Multiplicity="1"
+          Role="FromRole_assoc_B431A6489012C00DAEA40C6C0011021C" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="*"
+          Role="ToRole_assoc_B431A6489012C00DAEA40C6C0011021C" />
+      </Association>
+      <Association Name="assoc_0B464C6B7360065BE8B8C6DF3BF967F2" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType" Multiplicity="1"
+          Role="FromRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType" Multiplicity="*"
+          Role="ToRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2" />
+      </Association>
+      <Association Name="assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType" Multiplicity="1"
+          Role="FromRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType" Multiplicity="*"
+          Role="ToRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" />
+      </Association>
+      <Association Name="assoc_0000A70AEE0DDD66B5679A7E5F7AD149" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType" Multiplicity="1"
+          Role="FromRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordTextType"
+          Multiplicity="*" Role="ToRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149" />
+      </Association>
+      <Association Name="assoc_C9E8E350233D126D1870D9591D1CA300" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType" Multiplicity="1"
+          Role="FromRole_assoc_C9E8E350233D126D1870D9591D1CA300" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType" Multiplicity="*"
+          Role="ToRole_assoc_C9E8E350233D126D1870D9591D1CA300" />
+      </Association>
+      <Association Name="assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType" Multiplicity="1"
+          Role="FromRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType"
+          Multiplicity="0..1" Role="ToRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" />
+      </Association>
+      <Association Name="assoc_191E9FBCDD42F80A6AC85418B4390363" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnSupplementTextType"
+          Multiplicity="1" Role="FromRole_assoc_191E9FBCDD42F80A6AC85418B4390363" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType"
+          Multiplicity="0..1" Role="ToRole_assoc_191E9FBCDD42F80A6AC85418B4390363" />
+      </Association>
+      <Association Name="assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordTextType"
+          Multiplicity="1" Role="FromRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType"
+          Multiplicity="0..1" Role="ToRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" />
+      </Association>
+      <Association Name="assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType" Multiplicity="1"
+          Role="FromRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType"
+          Multiplicity="0..1" Role="ToRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" />
+      </Association>
+      <Association Name="assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" sap:content-version="1">
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType" Multiplicity="1"
+          Role="FromRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" />
+        <End Type="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType"
+          Multiplicity="0..1" Role="ToRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" />
+      </Association>
+      <EntityContainer Name="API_SLSPRICINGCONDITIONRECORD_SRV_Entities"
+        m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+        sap:supported-formats="atom json xlsx">
+        <EntitySet Name="A_SlsPrcgCndnRecdSuplmnt"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType"
+          sap:content-version="1" />
+        <EntitySet Name="A_SlsPrcgCndnRecdValidity"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType"
+          sap:creatable="false" sap:deletable="false" sap:content-version="1" />
+        <EntitySet Name="A_SlsPrcgCndnRecordScale"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType"
+          sap:content-version="1" />
+        <EntitySet Name="A_SlsPrcgCndnSupplementText"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnSupplementTextType"
+          sap:content-version="1" />
+        <EntitySet Name="A_SlsPrcgConditionRecord"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType"
+          sap:content-version="1" />
+        <EntitySet Name="A_SlsPrcgConditionRecordText"
+          EntityType="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordTextType"
+          sap:content-version="1" />
+        <AssociationSet Name="assoc_66BDC3B09DE48CB469A4D23A8CBBD859"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_66BDC3B09DE48CB469A4D23A8CBBD859"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="FromRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859" />
+          <End EntitySet="A_SlsPrcgCndnRecdValidity"
+            Role="ToRole_assoc_66BDC3B09DE48CB469A4D23A8CBBD859" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_A8740D8F3567BFDDA7CB94F012A7DBB6"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_A8740D8F3567BFDDA7CB94F012A7DBB6"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecordScale"
+            Role="FromRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" />
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="ToRole_assoc_A8740D8F3567BFDDA7CB94F012A7DBB6" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_7A2D768E758D5C99F26B0CE1C6B396C8"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_7A2D768E758D5C99F26B0CE1C6B396C8"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="FromRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8" />
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="ToRole_assoc_7A2D768E758D5C99F26B0CE1C6B396C8" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_191E9FBCDD42F80A6AC85418B4390363"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_191E9FBCDD42F80A6AC85418B4390363"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnSupplementText"
+            Role="FromRole_assoc_191E9FBCDD42F80A6AC85418B4390363" />
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="ToRole_assoc_191E9FBCDD42F80A6AC85418B4390363" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_0B464C6B7360065BE8B8C6DF3BF967F2"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_0B464C6B7360065BE8B8C6DF3BF967F2"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="FromRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2" />
+          <End EntitySet="A_SlsPrcgCndnRecdValidity"
+            Role="ToRole_assoc_0B464C6B7360065BE8B8C6DF3BF967F2" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_C9E8E350233D126D1870D9591D1CA300"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_C9E8E350233D126D1870D9591D1CA300"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdValidity"
+            Role="FromRole_assoc_C9E8E350233D126D1870D9591D1CA300" />
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="ToRole_assoc_C9E8E350233D126D1870D9591D1CA300" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_2A2E895BB4BD1650AF5FD8F07A8053C6"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_2A2E895BB4BD1650AF5FD8F07A8053C6"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecordScale"
+            Role="FromRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" />
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="ToRole_assoc_2A2E895BB4BD1650AF5FD8F07A8053C6" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_D07DD6E36895AFEB989C4F6388E6468D"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_D07DD6E36895AFEB989C4F6388E6468D"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="FromRole_assoc_D07DD6E36895AFEB989C4F6388E6468D" />
+          <End EntitySet="A_SlsPrcgCndnRecordScale"
+            Role="ToRole_assoc_D07DD6E36895AFEB989C4F6388E6468D" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_C722D36DC2514AFC46B126014FEAD5A4"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_C722D36DC2514AFC46B126014FEAD5A4"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="FromRole_assoc_C722D36DC2514AFC46B126014FEAD5A4" />
+          <End EntitySet="A_SlsPrcgCndnSupplementText"
+            Role="ToRole_assoc_C722D36DC2514AFC46B126014FEAD5A4" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_B431A6489012C00DAEA40C6C0011021C"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_B431A6489012C00DAEA40C6C0011021C"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="FromRole_assoc_B431A6489012C00DAEA40C6C0011021C" />
+          <End EntitySet="A_SlsPrcgCndnRecdSuplmnt"
+            Role="ToRole_assoc_B431A6489012C00DAEA40C6C0011021C" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgConditionRecordText"
+            Role="FromRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" />
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="ToRole_assoc_860B9F5CE9DD76E8C0CC40B79CA92BA8" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_0000A70AEE0DDD66B5679A7E5F7AD149"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_0000A70AEE0DDD66B5679A7E5F7AD149"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="FromRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149" />
+          <End EntitySet="A_SlsPrcgConditionRecordText"
+            Role="ToRole_assoc_0000A70AEE0DDD66B5679A7E5F7AD149" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_5F47B9A276FCBC7051E5300BA9BCCCD7"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_5F47B9A276FCBC7051E5300BA9BCCCD7"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgCndnRecdValidity"
+            Role="FromRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" />
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="ToRole_assoc_5F47B9A276FCBC7051E5300BA9BCCCD7" />
+        </AssociationSet>
+        <AssociationSet Name="assoc_CBD47B59B403B8B34B4D2FAE42E54ABF"
+          Association="API_SLSPRICINGCONDITIONRECORD_SRV.assoc_CBD47B59B403B8B34B4D2FAE42E54ABF"
+          sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+          <End EntitySet="A_SlsPrcgConditionRecord"
+            Role="FromRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" />
+          <End EntitySet="A_SlsPrcgCndnRecordScale"
+            Role="ToRole_assoc_CBD47B59B403B8B34B4D2FAE42E54ABF" />
+        </AssociationSet>
+      </EntityContainer>
+      <Annotation Term="Core.SchemaVersion" String="1.2.0"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm" />
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/ConditionRecord"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="SalesPricingConditionRecord" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/ConditionSequentialNumber"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecdSuplmnt"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdValidity" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="false" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnSupplementText" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecdValidity"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecordScale"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnSupplementText"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgConditionRecord"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdValidity" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="false" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecordText" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgConditionRecordText"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Insertable" Bool="true" />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/ConditionApplication"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingConditionApplication" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/ConditionCalculationType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PriceConditionCalculationType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/ConditionRecord"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="SalesPricingConditionRecord" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/ConditionType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="SalesPricingConditionType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/PaymentTerms"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PaymentTerms" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/PricingScaleBasis"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingScaleBasis" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdSuplmntType/PricingScaleType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingScaleType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType/AdditionalMaterialGroup1"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="AdditionalProductGroup1" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType/AdditionalMaterialGroup2"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="AdditionalProductGroup2" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType/AdditionalMaterialGroup3"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="AdditionalProductGroup3" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType/AdditionalMaterialGroup4"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="AdditionalProductGroup4" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecdValidityType/AdditionalMaterialGroup5"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="AdditionalProductGroup5" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgCndnRecordScaleType/ConditionRecord"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="SalesPricingConditionRecord" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/ConditionApplication"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingConditionApplication" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/ConditionCalculationType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PriceConditionCalculationType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/ConditionType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="SalesPricingConditionType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/PaymentTerms"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PaymentTerms" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/PricingScaleBasis"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingScaleBasis" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.A_SlsPrcgConditionRecordType/PricingScaleType"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Common.SAPObjectNodeTypeReference" String="PricingScaleType" />
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgConditionRecord"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Reads all condition records in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads all condition records for pricing in Sales." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description" String="Reads a specific condition record." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads a specific condition record for pricing in Sales, which the consumer specifies by passing the condition record number." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Creates one or more condition records." />
+            <PropertyValue Property="LongDescription"
+              String="Creates one or more condition records by using deep insert requests. This means that consumers must create a condition record together with validity of the condition record. Consumers do this by including the entity for condition record validity in the payload." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Updates a specific condition record." />
+            <PropertyValue Property="LongDescription"
+              String="Updates a specific condition record for pricing in Sales, which the consumer specifies by passing the condition record number." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Deletes a specific condition record." />
+            <PropertyValue Property="LongDescription"
+              String="Deletes a specific condition record, which the consumer specifies by passing the condition record number. When a condition record is deleted, its validity, pricing scales, and condition supplements are no longer valid in pricing." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition supplements of a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition supplements of a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdValidity" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the validity of a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the validity of a specific condition record, which the consumer specifies by passing the condition record. Validity includes fields such as valid from and to dates, condition fields, and condition type." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the pricing scales of a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the pricing scales of a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more pricing scales for a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more pricing scales for a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more condition supplements for a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more condition supplements for a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecordText" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the pricing record texts of a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the pricing record texts of a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecordText" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more pricing record texts for a specific condition record." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more pricing record texts for a specific condition record, which the consumer specifies by passing the condition record number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecdValidity"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Reads validity of all condition records in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads validity of all condition records for pricing in Sales. Validity includes fields such as valid from and to dates, condition fields, and condition type." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description"
+                  String="Reads the validity of a specific condition record." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads the validity of a specific condition record, which the consumer specifies by passing condition record number, valid-from date, and valid-to date. Validity includes fields such as valid from and to dates, condition fields, and condition type." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Updates the validity period of a specific condition record." />
+            <PropertyValue Property="LongDescription"
+              String="Updates the validity period of a specific condition record, which the consumer specifies by passing condition record number, valid-from date, and valid-to date." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition supplements for a specific condition record validity period." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition supplements for a specific validity period of a specific condition record, which the consumer specifies by passing  condition record number, valid-from date, and valid-to date." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition record for a specific condition record validity period." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition record data for a specific validity period of a specific condition record, which the consumer specifies by passing condition record number, valid-from date, and valid-to date." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more condition supplements for a specific condition record validity period." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more condition supplements for a specific validity period of a specific condition record, which the consumer specifies by passing  condition record number, valid-from date, and valid-to date." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecdSuplmnt"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Reads all condition supplements in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads all condition supplements for pricing in Sales." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description"
+                  String="Reads a specific condition supplement." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads a specific condition supplement for pricing in Sales, which the consumer specifies by passing condition record number and sequential number." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Creates one or more condition supplements." />
+            <PropertyValue Property="LongDescription"
+              String="Creates one or more condition supplements for existing condition records, which the consumer specifies by passing the condition record number in the payload." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Updates a specific condition supplement." />
+            <PropertyValue Property="LongDescription"
+              String="Updates a specific condition supplement for pricing in Sales, which the consumer specifies by passing the condition record number and sequential number." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Deletes a specific condition supplement." />
+            <PropertyValue Property="LongDescription"
+              String="Deletes a specific condition supplement for pricing in Sales, which the consumer specifies by passing the condition record number and sequential number." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition record for a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads condition record data for a specific condition supplement, which the consumer specifies by passing the condition record number and sequential number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdValidity" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads validity of the condition record for a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads data about validity of the condition record for a specific condition supplement for pricing in Sales, which the consumer specifies by passing the condition record number and sequential number. Validity includes fields such as valid from and to dates, condition fields, and condition type." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the pricing scales of a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the pricing scales of a specific condition supplement, which the consumer specifies by passing the condition record number and sequential number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecordScale" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more pricing scales for a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more pricing scales for a specific condition supplement, which the consumer specifies by passing condition record number and sequential number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnSupplementText" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the pricing supplement texts of a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the pricing supplement texts of a specific condition supplement, which the consumer specifies by passing the condition record number and sequential number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnSupplementText" />
+                  <PropertyValue Property="InsertRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Creates one or more pricing supplement texts for a specific condition supplement." />
+                      <PropertyValue Property="LongDescription"
+                        String="Creates one or more pricing supplement texts for a specific condition supplement, which the consumer specifies by passing condition record number and sequential number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnRecordScale"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Reads all pricing scales in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads all pricing scales defined for condition records and condition supplements in Sales." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description" String="Reads a specific pricing scale." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads a specific pricing scale which the consumer specifies by passing condition record number, sequential number, and scale line number." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Creates one or more pricing scales." />
+            <PropertyValue Property="LongDescription"
+              String="Creates one or more pricing scales for existing condition records or condition supplements, which the consumer specifies by passing condition record number and sequential number in the payload." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Updates a specific pricing scale." />
+            <PropertyValue Property="LongDescription"
+              String="Updates a specific pricing scale which the consumer specifies by passing condition record number, sequential number, and scale line number." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Deletes a specific pricing scale." />
+            <PropertyValue Property="LongDescription"
+              String="Deletes a specific pricing scale which the consumer specifies by passing condition record number, sequential number, and scale line number." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition supplement for a specific condition supplement pricing scale." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition record for a specific condition record pricing scale, which the consumer specifies by passing condition record number, sequential number, and scale line number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition record for a specific pricing scale." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition record for a specific condition record pricing scales, which the consumer specifies by passing condition record number, sequential number, and scale line number." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgConditionRecordText"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Reads all pricing record texts in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads all pricing record texts defined for condition records in Sales." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description" String="Reads a specific pricing record text." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads a specific pricing record text which the consumer specifies by passing condition record number, sequential number, and language." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Creates one or more pricing record texts." />
+            <PropertyValue Property="LongDescription"
+              String="Creates one or more pricing record texts for existing condition records, which the consumer specifies by passing condition record number and sequential number in the payload." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Updates a specific pricing record text." />
+            <PropertyValue Property="LongDescription"
+              String="Updates a specific pricing record text which the consumer specifies by passing condition record number, sequential number, and language." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Description" String="Deletes a specific pricing record text." />
+            <PropertyValue Property="LongDescription"
+              String="Deletes a specific pricing record text which the consumer specifies by passing condition record number, sequential number, and language." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgConditionRecord" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition record for a specific pricing record text." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition record for a specific condition record pricing record texts, which the consumer specifies by passing condition record number, sequential number, and language." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations
+        Target="API_SLSPRICINGCONDITIONRECORD_SRV.API_SLSPRICINGCONDITIONRECORD_SRV_Entities/A_SlsPrcgCndnSupplementText"
+        xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation Term="Capabilities.ReadRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Reads all pricing supplement texts in the system." />
+            <PropertyValue Property="LongDescription"
+              String="Reads all pricing supplement texts defined for condition records in Sales." />
+            <PropertyValue Property="ReadByKeyRestrictions">
+              <Record>
+                <PropertyValue Property="Description"
+                  String="Reads a specific pricing supplement text." />
+                <PropertyValue Property="LongDescription"
+                  String="Reads a specific pricing supplement text which the consumer specifies by passing condition record number, sequential number, and language." />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Creates one or more pricing supplement texts." />
+            <PropertyValue Property="LongDescription"
+              String="Creates one or more pricing supplement texts for existing condition records, which the consumer specifies by passing condition record number and sequential number in the payload." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Updates a specific pricing supplement text." />
+            <PropertyValue Property="LongDescription"
+              String="Updates a specific pricing supplement text which the consumer specifies by passing condition record number, sequential number, and language." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Description"
+              String="Deletes a specific pricing supplement text." />
+            <PropertyValue Property="LongDescription"
+              String="Deletes a specific pricing supplement text which the consumer specifies by passing condition record number, sequential number, and language." />
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.NavigationRestrictions">
+          <Record>
+            <PropertyValue Property="RestrictedProperties">
+              <Collection>
+                <Record>
+                  <PropertyValue Property="NavigationProperty"
+                    NavigationPropertyPath="to_SlsPrcgCndnRecdSuplmnt" />
+                  <PropertyValue Property="ReadRestrictions">
+                    <Record>
+                      <PropertyValue Property="Description"
+                        String="Reads the condition record for a specific pricing supplement text." />
+                      <PropertyValue Property="LongDescription"
+                        String="Reads the condition record for a specific condition record pricing supplement texts, which the consumer specifies by passing condition record number, sequential number, and language." />
+                    </Record>
+                  </PropertyValue>
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <atom:link rel="self"
+        href="https://host:port/sap/opu/odata/sap/API_SLSPRICINGCONDITIONRECORD_SRV/$metadata"
+        xmlns:atom="http://www.w3.org/2005/Atom" />
+      <atom:link rel="latest-version"
+        href="https://host:port/sap/opu/odata/sap/API_SLSPRICINGCONDITIONRECORD_SRV/$metadata"
+        xmlns:atom="http://www.w3.org/2005/Atom" />
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

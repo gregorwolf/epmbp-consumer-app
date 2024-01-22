@@ -1,0 +1,7 @@
+{
+  "API_SLSPRICINGCONDITIONRECORD_SRV": {
+    "directoryName": "slspricingconditionrecord-service",
+    "servicePath": "/sap/opu/odata/sap/API_SLSPRICINGCONDITIONRECORD_SRV",
+    "npmPackageName": "slspricingconditionrecord-service"
+  }
+}

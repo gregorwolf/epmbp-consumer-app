@@ -39,6 +39,7 @@
     "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
     "generate-odata-client": "generate-odata-client --input srv/external --outputDir srv/odata-client --overwrite",
     "generate-odata-client:API_BUSINESS_PARTNER": "generate-odata-client --inputDir srv/external/API_BUSINESS_PARTNER --outputDir srv/odata-client --forceOverwrite",
+    "generate-odata-client:API_SLSPRICINGCONDITIONRECORD_SRV": "generate-odata-client --inputDir srv/external/API_SLSPRICINGCONDITIONRECORD_SRV --outputDir srv/odata-client --forceOverwrite",
     "deploy:local": "cds deploy",
     "deploy:cf": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar",
     "deploy:cf:trial": "cf deploy mta_archives/epmbp-consumer-app_0.0.1.mtar -e cf.mtaext",
@@ -104,6 +105,10 @@
           "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
           "requestTimeout": 30000
         }
+      },
+      "API_SLSPRICINGCONDITIONRECORD_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_SLSPRICINGCONDITIONRECORD_SRV"
       }
     },
     "[production]": {
