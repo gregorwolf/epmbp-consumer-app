@@ -1,0 +1,13 @@
+### Read Condition Record Validity and filter for ConditionTable
+GET {{$dotenv APIBusinessHub}}/sap/opu/odata/sap/API_SLSPRICINGCONDITIONRECORD_SRV/A_SlsPrcgCndnRecdValidity
+  ?$inlinecount=allpages
+  &$top=5
+  &$filter=Material eq 'TG11' and ConditionType eq 'PPR0' and to_SlsPrcgConditionRecord/ConditionTable eq '304'
+  &$select=Material,ConditionType,ConditionValidityStartDate,ConditionValidityEndDate,to_SlsPrcgConditionRecord/ConditionTable
+  &$expand=to_SlsPrcgConditionRecord
+  &sap-language=en
+Accept: application/json
+Accept-Language: en
+APIKey: {{$dotenv APIKey}}
+###
+GET http://localhost:4004/odata/v4/condition/getConditionValidityForTable()
